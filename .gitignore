@@ -1,0 +1,15 @@
+# OS / Editor
+.DS_Store
+*.swp
+.vscode/
+
+# Node modules
+modules/**/node_modules/
+modules/**/dist/
+
+# Python
+modules/**/__pycache__/
+modules/**/.venv/
+
+# Logs
+*.log
