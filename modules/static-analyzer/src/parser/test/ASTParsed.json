@@ -1,0 +1,29 @@
+{
+  "file": "Hardcoded.java",
+  "ast": [
+    {
+      "type": "Stmt",
+      "code": "class Demo {\n  void test(int x, int y) {\n    if (x > 0) {\n      if (y > 0) {\n        System.out.println(\"both positive\")"
+    },
+    {
+      "type": "Stmt",
+      "code": "} else if (y < 0) {\n        System.out.println(\"y negative\")"
+    },
+    {
+      "type": "Stmt",
+      "code": "} else {\n        System.out.println(\"y zero\")"
+    },
+    {
+      "type": "Stmt",
+      "code": "}\n    } else if (x < 0) {\n      System.out.println(\"x negative\")"
+    },
+    {
+      "type": "Stmt",
+      "code": "} else {\n      System.out.println(\"x zero\")"
+    },
+    {
+      "type": "Stmt",
+      "code": "}\n  }\n}"
+    }
+  ]
+}
