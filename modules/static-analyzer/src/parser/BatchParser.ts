@@ -3,7 +3,8 @@ import { promises as fs } from "fs";
 import * as path from "path";
 import { pathToFileURL } from "url";
 
-import { scanJavaFiles } from "./FileScanner.js";
+import { scanJavaFiles } from "../core/FileScanner.js";
+
 import { parseJavaFile } from "./ASTParser.js";
 
 /**

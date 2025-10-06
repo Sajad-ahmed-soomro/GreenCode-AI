@@ -1,0 +1,23 @@
+{
+  "name": "static-analyzer",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "dist/cli.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/cli.js",
+    "dev": "ts-node src/cli.ts",
+    "batch": "node dist/core/BatchRunner.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "Static Analyzer module for GreenCode-AI",
+  "dependencies": {
+    "java-parser": "^3.0.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3",
+    "ts-node": "^10.9.2"
+  }
+}

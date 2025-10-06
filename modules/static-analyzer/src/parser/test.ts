@@ -65,7 +65,7 @@ function tokensText(tokens: any[]): string {
   txt = txt.replace(/\s+/g, " ").trim();
 
   // ✅ Fix generics safely
-txt = txt.replace(/<([^<>]+)>/g, (m: string, inner: string) => {
+txt = txt.replace(/<([^<>]+)>/g, (_: string, inner: string) => {
   let fixed = inner.trim().replace(/\s+/g, " ");
 
   // Insert commas only between identifiers without a comma
@@ -147,26 +147,17 @@ function findLoopsAndConditionals(node: any, methodObj: any ,isNested = false): 
     if (!list.includes(item)) list.push(item);
   };
 
-  // ---------- IF/ELSE Tree ----------
-  if (["ifStatement", "ifThenStatement", "ifThenElseStatement"].includes(node.name)) {
+   if (["ifStatement", "ifThenStatement", "ifThenElseStatement"].includes(node.name)) {
     const ifTree = parseIfStatement(node);
 
+    // ✅ Only push to root if not nested
     if (ifTree && !isNested) {
       if (!methodObj.conditionalsTree) methodObj.conditionalsTree = [];
       methodObj.conditionalsTree.push(ifTree);
     }
-
-    // 🚀 Recurse inside then/else to catch nested ifs
-    if (node.children?.statement) {
-      node.children.statement.forEach((stmt: any) => {
-        findLoopsAndConditionals(stmt, methodObj, true);
-      });
-    }
-
-    return; // stop here, already handled the if
   }
 
-  // ---------- Flat conditionals (for summary only) ----------
+  /* ---------- Flat conditionals ---------- */
   if (["ifStatement", "ifThenStatement"].includes(node.name)) {
     addUnique(methodObj.conditionals, "if");
   }
@@ -174,13 +165,18 @@ function findLoopsAndConditionals(node: any, methodObj: any ,isNested = false): 
     addUnique(methodObj.conditionals, "if");
     if (node.children?.statement?.[1]) {
       const elseBranch = node.children.statement[1];
-      if (elseBranch.name?.includes("if")) {
+      if (
+        elseBranch.name?.includes("if") ||
+        elseBranch.children?.statement?.[0]?.name?.includes("if")
+      ) {
         addUnique(methodObj.conditionals, "else if");
       } else {
         addUnique(methodObj.conditionals, "else");
       }
     }
   }
+
+  /* ---------- Other conditionals ---------- */
   if (node.name === "switchStatement") {
     addUnique(methodObj.conditionals, "switch");
     // detect case/default
@@ -238,15 +234,16 @@ if (node.name === "thisExpression") {
     addUnique(methodObj.conditionals, "synchronized");
   }
 
- 
-
-   if (node.children) {
+ // 🚨 Don't recurse into children if we already handled this as an if/else tree
+if (!["ifStatement", "ifThenStatement", "ifThenElseStatement"].includes(node.name)) {
+  if (node.children) {
     for (const arr of Object.values(node.children)) {
       if (Array.isArray(arr)) {
         arr.forEach(child => findLoopsAndConditionals(child, methodObj, isNested));
       }
     }
   }
+}
 
 }
 
@@ -258,73 +255,67 @@ function parseIfStatement(node: any): any {
   const ifNode: any = {
     type: "IfStatement",
     thenBlock: [],
-    elseBlock: null,
+    elseBlock: null
   };
 
-  // THEN
+  // Handle THEN
   if (node.children?.statement?.[0]) {
-    ifNode.thenBlock = collectStatements(node.children.statement[0]);
+    ifNode.thenBlock = collectConditionals(node.children.statement[0]);
   }
 
-  // ELSE
+  // Handle ELSE
   if (node.children?.statement?.[1]) {
     const elseBranch = node.children.statement[1];
-    if (elseBranch.name?.includes("if")) {
-      ifNode.elseBlock = parseIfStatement(elseBranch); // else-if
+    if (["ifStatement", "ifThenStatement", "ifThenElseStatement"].includes(elseBranch.name)) {
+      // else-if chain
+      ifNode.elseBlock = [parseIfStatement(elseBranch)];
     } else {
-      ifNode.elseBlock = collectStatements(elseBranch); // else
+      ifNode.elseBlock = collectConditionals(elseBranch);
     }
   }
 
   return ifNode;
 }
 
-
-function collectStatements(node: any): any[] {
+// --- new collector that checks for conditionals inside any statement ---
+function collectConditionals(node: any): any[] {
   if (!node) return [];
   const stmts: any[] = [];
 
   if (Array.isArray(node)) {
-    node.forEach(n => stmts.push(...collectStatements(n)));
+    node.forEach(n => stmts.push(...collectConditionals(n)));
     return stmts;
   }
 
-  // ✅ Direct if/else/else-if
+  // If we find another IF → recurse into it
   if (["ifStatement", "ifThenStatement", "ifThenElseStatement"].includes(node.name)) {
-    const innerIf = parseIfStatement(node);
-    if (innerIf) stmts.push(innerIf);
+    const nestedIf = parseIfStatement(node);
+    if (nestedIf) stmts.push(nestedIf);
     return stmts;
   }
 
-  // ✅ Unwrap wrappers (block, blockStatements, statement)
-  if (["block", "blockStatements", "statement"].includes(node.name)) {
+  // If it's a block { ... }, go inside
+  if (node.name === "block" || node.name === "blockStatements") {
     for (const arr of Object.values(node.children)) {
-      if (Array.isArray(arr)) {
-        arr.forEach(child => stmts.push(...collectStatements(child)));
-      }
+      if (Array.isArray(arr)) arr.forEach(child => stmts.push(...collectConditionals(child)));
     }
     return stmts;
   }
 
-  // ✅ Real leaf statements
+  // Otherwise just treat as simple statement
   if (
+    node.name?.endsWith("Statement") ||
     node.name === "expressionStatement" ||
-    node.name === "statementExpression" ||
-    node.name === "returnStatement" ||
-    node.name === "throwStatement" ||
-    node.name === "breakStatement" ||
-    node.name === "continueStatement"
+    node.name === "statementExpression"
   ) {
     stmts.push({ type: "Statement" });
     return stmts;
   }
 
-  // ✅ Fallback recursion
+  // Fallback: dive deeper
   if (node.children) {
     for (const arr of Object.values(node.children)) {
-      if (Array.isArray(arr)) {
-        arr.forEach(child => stmts.push(...collectStatements(child)));
-      }
+      if (Array.isArray(arr)) arr.forEach(child => stmts.push(...collectConditionals(child)));
     }
   }
 
@@ -371,7 +362,10 @@ function extractMethods(node: any, className: string): any[] {
     const params = extractParams(decl);
 
     const methodObj: any = { name: methodName, params, loops: [], conditionals: [] };
-    
+     if (node.children?.methodBody?.[0]) {
+    const body = node.children.methodBody[0];
+    findLoopsAndConditionals(body, methodObj); 
+  }
     if (node.children.methodBody?.[0]) {
       findLoopsAndConditionals(node.children.methodBody[0], methodObj);
     }
@@ -459,25 +453,19 @@ function extractExtraInfo(node: any, context: "class" | "method" | "constructor"
 
   // ---------- CLASS LEVEL ----------
   if (context === "class") {
-// Extends
-if (node.children?.superclass?.[0]) {
-  const typeNode = node.children.superclass[0].children?.classType?.[0] 
-                 || node.children.superclass[0];
-  const toks: any[] = [];
-  gatherTokens(typeNode, toks);
-  info.extends = tokensText(toks);   // e.g. "Base<String>"
-}
+    // Extends
+    if (node.children?.superclass?.[0]) {
+      const toks: any[] = [];
+      gatherTokens(node.children.superclass[0], toks);
+      info.extends = tokensText(toks);
+    }
 
-// Implements
-if (node.children?.superinterfaces?.[0]) {
-  const intfs = node.children.superinterfaces[0].children.interfaceTypeList?.[0] 
-              || node.children.superinterfaces[0];
-  const toks: any[] = [];
-  gatherTokens(intfs, toks);
-  info.implements = tokensText(toks).split(",").map(s => s.trim());
-}
-
-
+    // Implements
+    if (node.children?.superinterfaces?.[0]) {
+      const toks: any[] = [];
+      gatherTokens(node.children.superinterfaces[0], toks);
+      info.implements = tokensText(toks).split(",").map(s => s.trim());
+    }
 // ✅ Generic type parameters for class
     if (node.children?.typeParameters?.[0]) {
       const toks: any[] = [];
@@ -506,18 +494,6 @@ if (node.children?.superinterfaces?.[0]) {
       gatherTokens(mh.children.typeParameters[0], toks);
       info.methodGenerics = tokensText(toks);
     }
-  // ✅ CLEAN throws extraction
-  if (node.children?.throws_?.[0]) {
-    const exList = node.children.throws_[0].children?.exceptionTypeList?.[0];
-    if (exList?.children?.exceptionType) {
-      info.throws = exList.children.exceptionType.map((et: any) => {
-        const toks: any[] = [];
-        gatherTokens(et, toks);
-        return tokensText(toks);
-      });
-    }
-  }
-
     // Return type (methods only, constructors have no return type)
     if (context === "method" && node.children?.methodHeader?.[0]?.children?.result?.[0]) {
       const toks: any[] = [];
@@ -590,4 +566,4 @@ export async function parseJavaFile(filePath: string) {
 const hardcodedFile = path.join("samples", "Main.java");
 parseJavaFile(hardcodedFile)
   .then(r => console.log(JSON.stringify(r, null, 2)))
-  .catch(err => console.error("❌ Parse error:", err));
+  .catch(err => console.error(" Parse error:", err));
