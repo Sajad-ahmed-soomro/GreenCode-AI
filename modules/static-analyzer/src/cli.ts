@@ -5,7 +5,7 @@ import path from "path";
 
 const inputPath = process.argv[2];
 if (!inputPath) {
-  console.error("❌ Please provide a file or directory path");
+  console.error(" Please provide a file or directory path");
   process.exit(1);
 }
 
