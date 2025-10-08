@@ -46,28 +46,28 @@ function findFirstNodeByName(node: any, name: string): any {
 function tokensText(tokens: any[]): string {
   let txt = tokens.map(t => t.image).join(" ").replace(/\s+/g, " ").trim();
 
-  // ✅ Arrays → String[]
+  //  Arrays → String[]
   txt = txt.replace(/\[\s*\]/g, "[]");
 
-  // ✅ Varargs → int...
+  //  Varargs → int...
   txt = txt.replace(/\.\s*\.\s*\./g, "...");
 
-  // ✅ Remove spaces inside < >
+  // Remove spaces inside < >
   txt = txt.replace(/<\s+/g, "<").replace(/\s+>/g, ">");
 
-  // ✅ Ensure single space after commas (keep commas)
+  // Ensure single space after commas (keep commas)
   txt = txt.replace(/,\s*/g, ", ");
 
-  // ✅ Remove space before ; ( ) <>
+  // Remove space before ; ( ) <>
   txt = txt.replace(/\s+([;()<>])/g, "$1");
 
-  // ✅ Remove space after ( or <
+  // Remove space after ( or <
   txt = txt.replace(/([(<])\s+/g, "$1");
 
-  // ✅ Collapse spaces
+  //  Collapse spaces
   txt = txt.replace(/\s+/g, " ").trim();
 
-  // ✅ Fix generics safely
+  // Fix generics safely
 txt = txt.replace(/<([^<>]+)>/g, (_: string, inner: string) => {
   let fixed = inner.trim().replace(/\s+/g, " ");
 
@@ -108,7 +108,7 @@ function extractIdentifierText(node: any): string {
 function extractParamTypeAndName(paramNode: any) {
 const core =
     paramNode.children?.variableParaRegularParameter?.[0] ||
-    paramNode.children?.variableArityParameter?.[0] || // ✅ varargs case
+    paramNode.children?.variableArityParameter?.[0] || //  varargs case
     paramNode;
  let typeNode = core.children?.unannType?.[0];
   let nameNode = core.children?.variableDeclaratorId?.[0];
@@ -135,7 +135,7 @@ const core =
     gatherTokens(core, toks);
     const ids = toks.filter(t => t.tokenType && t.tokenType.name === "Identifier");
     if (ids.length) {
-      // ✅ The *last Identifier* in varargs subtree is always the parameter name
+      //  The *last Identifier* in varargs subtree is always the parameter name
       nameText = ids[ids.length - 1].image;
     }
   }
@@ -159,7 +159,7 @@ function findLoopsAndConditionals(node: any, methodObj: any ,isNested = false): 
       methodObj.conditionalsTree.push(ifTree);
     }
 
-    // 🚀 Recurse inside then/else to catch nested ifs
+    //  Recurse inside then/else to catch nested ifs
     if (node.children?.statement) {
       node.children.statement.forEach((stmt: any) => {
         findLoopsAndConditionals(stmt, methodObj, true);
@@ -292,14 +292,14 @@ function collectStatements(node: any): any[] {
     return stmts;
   }
 
-  // ✅ Direct if/else/else-if
+  // Direct if/else/else-if
   if (["ifStatement", "ifThenStatement", "ifThenElseStatement"].includes(node.name)) {
     const innerIf = parseIfStatement(node);
     if (innerIf) stmts.push(innerIf);
     return stmts;
   }
 
-  // ✅ Unwrap wrappers (block, blockStatements, statement)
+  // Unwrap wrappers (block, blockStatements, statement)
   if (["block", "blockStatements", "statement"].includes(node.name)) {
     for (const arr of Object.values(node.children)) {
       if (Array.isArray(arr)) {
@@ -309,7 +309,7 @@ function collectStatements(node: any): any[] {
     return stmts;
   }
 
-  // ✅ Real leaf statements
+  // Real leaf statements
   if (
     node.name === "expressionStatement" ||
     node.name === "statementExpression" ||
@@ -322,7 +322,7 @@ function collectStatements(node: any): any[] {
     return stmts;
   }
 
-  // ✅ Fallback recursion
+  //  Fallback recursion
   if (node.children) {
     for (const arr of Object.values(node.children)) {
       if (Array.isArray(arr)) {
@@ -394,7 +394,7 @@ if (toks.some(t => t.image === "synchronized")) {
 if (node.name === "constructorDeclaration") {
   const ctorDecl = node.children?.constructorDeclarator?.[0];
 
-  // ✅ Always set constructor name to class name
+  //  Always set constructor name to class name
   const ctorName = className;
 
   const params = extractParams(ctorDecl);
@@ -434,7 +434,7 @@ function extractClasses(node: any): any[] {
       methods.push(...extractMethods(decl, className));
     });
 
-    // ✅ Attach extra info (extends, implements, fields…)
+    // Attach extra info (extends, implements, fields…)
     const extra = extractExtraInfo(node, "class");
 
     classes.push({
@@ -481,7 +481,7 @@ if (node.children?.superinterfaces?.[0]) {
 }
 
 
-// ✅ Generic type parameters for class
+// Generic type parameters for class
     if (node.children?.typeParameters?.[0]) {
       const toks: any[] = [];
       gatherTokens(node.children.typeParameters[0], toks);
@@ -509,7 +509,7 @@ if (node.children?.superinterfaces?.[0]) {
       gatherTokens(mh.children.typeParameters[0], toks);
       info.methodGenerics = tokensText(toks);
     }
-  // ✅ CLEAN throws extraction
+  // CLEAN throws extraction
   if (node.children?.throws_?.[0]) {
     const exList = node.children.throws_[0].children?.exceptionTypeList?.[0];
     if (exList?.children?.exceptionType) {
@@ -593,14 +593,14 @@ export async function parseJavaFile(filePath: string) {
 const hardcodedFile = path.join("samples", "Main.java");
 parseJavaFile(hardcodedFile)
   .then(r => console.log(JSON.stringify(r, null, 2)))
-  .catch(err => console.error("❌ Parse error:", err));
+  .catch(err => console.error(" Parse error:", err));
 
 
 
   export async function parseFolder(folderPath: string, outDir: string) {
   const javaFiles = await scanJavaFiles(folderPath);
   if (javaFiles.length === 0) {
-    console.log("⚠️ No .java files found in", folderPath);
+    console.log("No .java files found in", folderPath);
     return;
   }
 
@@ -612,9 +612,9 @@ parseJavaFile(hardcodedFile)
       const fileName = path.basename(file, ".java") + ".json";
       const outFile = path.join(outDir, fileName);
       await fs.writeFile(outFile, JSON.stringify(astJson, null, 2), "utf8");
-      console.log("✅ Parsed:", file, "→", outFile);
+      console.log("Parsed:", file, "→", outFile);
     } catch (err) {
-      console.error("❌ Failed parsing", file, ":", err);
+      console.error("Failed parsing", file, ":", err);
     }
   }
 }
