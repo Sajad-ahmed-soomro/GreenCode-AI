@@ -1,0 +1,1043 @@
+{
+  "fileName": "samples/ast/Main.json",
+  "classes": [
+    {
+      "className": "Base",
+      "methods": [
+        {
+          "name": "Base",
+          "cyclomaticComplexity": 1,
+          "nestingDepth": 0,
+          "functionSize": 0,
+          "cfg": {
+            "methodName": "Base",
+            "nodes": [
+              {
+                "id": "0d3e7c4e-6291-444e-8760-c6cff0867166",
+                "label": "Start",
+                "type": "start",
+                "next": [
+                  "f3040161-d928-42c9-b1ea-e66adabf761b"
+                ]
+              },
+              {
+                "id": "f3040161-d928-42c9-b1ea-e66adabf761b",
+                "label": "End",
+                "type": "end",
+                "next": []
+              }
+            ],
+            "edges": [
+              [
+                "0d3e7c4e-6291-444e-8760-c6cff0867166",
+                "f3040161-d928-42c9-b1ea-e66adabf761b"
+              ]
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "className": "Main",
+      "methods": [
+        {
+          "name": "Main",
+          "cyclomaticComplexity": 1,
+          "nestingDepth": 0,
+          "functionSize": 0,
+          "cfg": {
+            "methodName": "Main",
+            "nodes": [
+              {
+                "id": "25a203c3-97bc-45d0-b135-97987c995ba8",
+                "label": "Start",
+                "type": "start",
+                "next": [
+                  "14938d1f-f829-4d00-8b52-c8fad3a32dfa"
+                ]
+              },
+              {
+                "id": "05fc545d-7c35-4da4-96cb-e261310d2f9f",
+                "label": "End",
+                "type": "end",
+                "next": []
+              },
+              {
+                "id": "14938d1f-f829-4d00-8b52-c8fad3a32dfa",
+                "label": "this(100)",
+                "type": "statement",
+                "next": [
+                  "05fc545d-7c35-4da4-96cb-e261310d2f9f"
+                ]
+              }
+            ],
+            "edges": [
+              [
+                "25a203c3-97bc-45d0-b135-97987c995ba8",
+                "14938d1f-f829-4d00-8b52-c8fad3a32dfa"
+              ],
+              [
+                "14938d1f-f829-4d00-8b52-c8fad3a32dfa",
+                "05fc545d-7c35-4da4-96cb-e261310d2f9f"
+              ]
+            ]
+          }
+        },
+        {
+          "name": "Main",
+          "cyclomaticComplexity": 2,
+          "nestingDepth": 0,
+          "functionSize": 0,
+          "cfg": {
+            "methodName": "Main",
+            "nodes": [
+              {
+                "id": "c821abfd-a754-4df9-8d55-c909719e7d3f",
+                "label": "Start",
+                "type": "start",
+                "next": [
+                  "068d825b-1e62-4ad9-a83a-d1d54667a25c"
+                ]
+              },
+              {
+                "id": "32911ba9-d391-40a1-b737-b8b8518bd9a3",
+                "label": "End",
+                "type": "end",
+                "next": []
+              },
+              {
+                "id": "068d825b-1e62-4ad9-a83a-d1d54667a25c",
+                "label": "throw",
+                "type": "condition",
+                "next": [
+                  "3742b940-d7a0-4155-8081-9ec859751e9e",
+                  "8e7da4fb-ad95-4734-bfff-52dd589d813c"
+                ]
+              },
+              {
+                "id": "3742b940-d7a0-4155-8081-9ec859751e9e",
+                "label": "IfStatement",
+                "type": "condition",
+                "next": [
+                  "b47d74c4-ffe2-4990-bfea-cb9b4690e0db"
+                ]
+              },
+              {
+                "id": "b47d74c4-ffe2-4990-bfea-cb9b4690e0db",
+                "label": "Statement",
+                "type": "statement",
+                "next": []
+              },
+              {
+                "id": "8e7da4fb-ad95-4734-bfff-52dd589d813c",
+                "label": "super(\"base-value\")",
+                "type": "statement",
+                "next": [
+                  "32911ba9-d391-40a1-b737-b8b8518bd9a3"
+                ]
+              }
+            ],
+            "edges": [
+              [
+                "c821abfd-a754-4df9-8d55-c909719e7d3f",
+                "068d825b-1e62-4ad9-a83a-d1d54667a25c"
+              ],
+              [
+                "068d825b-1e62-4ad9-a83a-d1d54667a25c",
+                "3742b940-d7a0-4155-8081-9ec859751e9e"
+              ],
+              [
+                "3742b940-d7a0-4155-8081-9ec859751e9e",
+                "b47d74c4-ffe2-4990-bfea-cb9b4690e0db"
+              ],
+              [
+                "068d825b-1e62-4ad9-a83a-d1d54667a25c",
+                "8e7da4fb-ad95-4734-bfff-52dd589d813c"
+              ],
+              [
+                "8e7da4fb-ad95-4734-bfff-52dd589d813c",
+                "32911ba9-d391-40a1-b737-b8b8518bd9a3"
+              ]
+            ]
+          }
+        },
+        {
+          "name": "Main",
+          "cyclomaticComplexity": 1,
+          "nestingDepth": 0,
+          "functionSize": 0,
+          "cfg": {
+            "methodName": "Main",
+            "nodes": [
+              {
+                "id": "d054d26d-2d76-4991-aa5d-fb1c403bf8aa",
+                "label": "Start",
+                "type": "start",
+                "next": [
+                  "be9e584c-954a-4ad5-b213-0af45714997e"
+                ]
+              },
+              {
+                "id": "04c8e4be-c11f-4180-93a7-1d55578b73b4",
+                "label": "End",
+                "type": "end",
+                "next": []
+              },
+              {
+                "id": "be9e584c-954a-4ad5-b213-0af45714997e",
+                "label": "super(\"generic-base\")",
+                "type": "statement",
+                "next": [
+                  "04c8e4be-c11f-4180-93a7-1d55578b73b4"
+                ]
+              }
+            ],
+            "edges": [
+              [
+                "d054d26d-2d76-4991-aa5d-fb1c403bf8aa",
+                "be9e584c-954a-4ad5-b213-0af45714997e"
+              ],
+              [
+                "be9e584c-954a-4ad5-b213-0af45714997e",
+                "04c8e4be-c11f-4180-93a7-1d55578b73b4"
+              ]
+            ]
+          }
+        },
+        {
+          "name": "run",
+          "cyclomaticComplexity": 1,
+          "nestingDepth": 0,
+          "functionSize": 0,
+          "cfg": {
+            "methodName": "run",
+            "nodes": [
+              {
+                "id": "7bf7a716-b40a-4636-8dda-a385965cb96c",
+                "label": "Start",
+                "type": "start",
+                "next": [
+                  "cb5da3ab-6034-4320-8abd-319211ac58f9"
+                ]
+              },
+              {
+                "id": "cb5da3ab-6034-4320-8abd-319211ac58f9",
+                "label": "End",
+                "type": "end",
+                "next": []
+              }
+            ],
+            "edges": [
+              [
+                "7bf7a716-b40a-4636-8dda-a385965cb96c",
+                "cb5da3ab-6034-4320-8abd-319211ac58f9"
+              ]
+            ]
+          }
+        },
+        {
+          "name": "processItems",
+          "cyclomaticComplexity": 9,
+          "nestingDepth": 0,
+          "functionSize": 0,
+          "cfg": {
+            "methodName": "processItems",
+            "nodes": [
+              {
+                "id": "a15436e1-9f7a-4d2a-ad30-0d8adf59da89",
+                "label": "Start",
+                "type": "start",
+                "next": [
+                  "4dbf0122-888c-49c4-8073-69e2dbef6f3a"
+                ]
+              },
+              {
+                "id": "943c8c3b-72e0-49f9-8498-26dee930588b",
+                "label": "End",
+                "type": "end",
+                "next": []
+              },
+              {
+                "id": "4dbf0122-888c-49c4-8073-69e2dbef6f3a",
+                "label": "for",
+                "type": "statement",
+                "next": [
+                  "79eb1f9a-8cdd-4eb1-a96c-b2d5a2df6859"
+                ]
+              },
+              {
+                "id": "79eb1f9a-8cdd-4eb1-a96c-b2d5a2df6859",
+                "label": "forEach",
+                "type": "statement",
+                "next": [
+                  "24f23742-fc0f-4558-b2ca-46922317e569"
+                ]
+              },
+              {
+                "id": "24f23742-fc0f-4558-b2ca-46922317e569",
+                "label": "while",
+                "type": "statement",
+                "next": [
+                  "45703a18-7a3d-4fd6-8cf1-c9b6a404c054"
+                ]
+              },
+              {
+                "id": "45703a18-7a3d-4fd6-8cf1-c9b6a404c054",
+                "label": "doWhile",
+                "type": "statement",
+                "next": [
+                  "a1d43c66-4df6-4d6f-aaf1-fc59eb96f9a0"
+                ]
+              },
+              {
+                "id": "a1d43c66-4df6-4d6f-aaf1-fc59eb96f9a0",
+                "label": "continue",
+                "type": "condition",
+                "next": [
+                  "2dc7bddc-f276-4b68-8fac-0ad857773259"
+                ]
+              },
+              {
+                "id": "2dc7bddc-f276-4b68-8fac-0ad857773259",
+                "label": "break",
+                "type": "condition",
+                "next": [
+                  "24def5f7-6866-42c5-9f96-77b6736316f6"
+                ]
+              },
+              {
+                "id": "24def5f7-6866-42c5-9f96-77b6736316f6",
+                "label": "throw",
+                "type": "condition",
+                "next": [
+                  "09118724-7d0a-4f56-bcde-2054621724e4"
+                ]
+              },
+              {
+                "id": "09118724-7d0a-4f56-bcde-2054621724e4",
+                "label": "switch",
+                "type": "condition",
+                "next": [
+                  "91bd3eb6-744e-47d3-86d7-d1c2b70ba8b3"
+                ]
+              },
+              {
+                "id": "91bd3eb6-744e-47d3-86d7-d1c2b70ba8b3",
+                "label": "case",
+                "type": "condition",
+                "next": [
+                  "850d8834-2405-48e5-8c4a-907d63abe314"
+                ]
+              },
+              {
+                "id": "850d8834-2405-48e5-8c4a-907d63abe314",
+                "label": "default",
+                "type": "condition",
+                "next": [
+                  "78879761-23a8-4c4d-bca2-07088c0b48d2"
+                ]
+              },
+              {
+                "id": "78879761-23a8-4c4d-bca2-07088c0b48d2",
+                "label": "return",
+                "type": "condition",
+                "next": [
+                  "37c2ae8f-2b03-4559-a1bb-4ce6db1bfae5"
+                ]
+              },
+              {
+                "id": "37c2ae8f-2b03-4559-a1bb-4ce6db1bfae5",
+                "label": "synchronized",
+                "type": "condition",
+                "next": [
+                  "34af577f-f3d8-4c5a-8d38-2d558a62e28c",
+                  "63f782d4-bd33-4073-bed0-aad18072f0ae",
+                  "97dac4c4-d2c2-4c4c-87d2-ec3c785c46ad"
+                ]
+              },
+              {
+                "id": "34af577f-f3d8-4c5a-8d38-2d558a62e28c",
+                "label": "IfStatement",
+                "type": "condition",
+                "next": [
+                  "8257b307-0975-4ea2-885f-0c403baca59b",
+                  "57a10c85-fca7-4c5b-a837-a59b43b12bba"
+                ]
+              },
+              {
+                "id": "8257b307-0975-4ea2-885f-0c403baca59b",
+                "label": "Statement",
+                "type": "statement",
+                "next": []
+              },
+              {
+                "id": "57a10c85-fca7-4c5b-a837-a59b43b12bba",
+                "label": "IfStatement",
+                "type": "condition",
+                "next": [
+                  "c48abec9-faf9-4f04-b427-128098cdd700",
+                  "478a3e38-043d-47e6-b76c-99c537089487"
+                ]
+              },
+              {
+                "id": "c48abec9-faf9-4f04-b427-128098cdd700",
+                "label": "Statement",
+                "type": "statement",
+                "next": []
+              },
+              {
+                "id": "478a3e38-043d-47e6-b76c-99c537089487",
+                "label": "Statement",
+                "type": "statement",
+                "next": []
+              },
+              {
+                "id": "63f782d4-bd33-4073-bed0-aad18072f0ae",
+                "label": "IfStatement",
+                "type": "condition",
+                "next": [
+                  "62475212-d0df-4d1e-8fa5-b42c820b62c5"
+                ]
+              },
+              {
+                "id": "62475212-d0df-4d1e-8fa5-b42c820b62c5",
+                "label": "Statement",
+                "type": "statement",
+                "next": []
+              },
+              {
+                "id": "97dac4c4-d2c2-4c4c-87d2-ec3c785c46ad",
+                "label": "return",
+                "type": "statement",
+                "next": [
+                  "943c8c3b-72e0-49f9-8498-26dee930588b"
+                ]
+              }
+            ],
+            "edges": [
+              [
+                "a15436e1-9f7a-4d2a-ad30-0d8adf59da89",
+                "4dbf0122-888c-49c4-8073-69e2dbef6f3a"
+              ],
+              [
+                "4dbf0122-888c-49c4-8073-69e2dbef6f3a",
+                "79eb1f9a-8cdd-4eb1-a96c-b2d5a2df6859"
+              ],
+              [
+                "79eb1f9a-8cdd-4eb1-a96c-b2d5a2df6859",
+                "24f23742-fc0f-4558-b2ca-46922317e569"
+              ],
+              [
+                "24f23742-fc0f-4558-b2ca-46922317e569",
+                "45703a18-7a3d-4fd6-8cf1-c9b6a404c054"
+              ],
+              [
+                "45703a18-7a3d-4fd6-8cf1-c9b6a404c054",
+                "a1d43c66-4df6-4d6f-aaf1-fc59eb96f9a0"
+              ],
+              [
+                "a1d43c66-4df6-4d6f-aaf1-fc59eb96f9a0",
+                "2dc7bddc-f276-4b68-8fac-0ad857773259"
+              ],
+              [
+                "2dc7bddc-f276-4b68-8fac-0ad857773259",
+                "24def5f7-6866-42c5-9f96-77b6736316f6"
+              ],
+              [
+                "24def5f7-6866-42c5-9f96-77b6736316f6",
+                "09118724-7d0a-4f56-bcde-2054621724e4"
+              ],
+              [
+                "09118724-7d0a-4f56-bcde-2054621724e4",
+                "91bd3eb6-744e-47d3-86d7-d1c2b70ba8b3"
+              ],
+              [
+                "91bd3eb6-744e-47d3-86d7-d1c2b70ba8b3",
+                "850d8834-2405-48e5-8c4a-907d63abe314"
+              ],
+              [
+                "850d8834-2405-48e5-8c4a-907d63abe314",
+                "78879761-23a8-4c4d-bca2-07088c0b48d2"
+              ],
+              [
+                "78879761-23a8-4c4d-bca2-07088c0b48d2",
+                "37c2ae8f-2b03-4559-a1bb-4ce6db1bfae5"
+              ],
+              [
+                "37c2ae8f-2b03-4559-a1bb-4ce6db1bfae5",
+                "34af577f-f3d8-4c5a-8d38-2d558a62e28c"
+              ],
+              [
+                "34af577f-f3d8-4c5a-8d38-2d558a62e28c",
+                "8257b307-0975-4ea2-885f-0c403baca59b"
+              ],
+              [
+                "34af577f-f3d8-4c5a-8d38-2d558a62e28c",
+                "57a10c85-fca7-4c5b-a837-a59b43b12bba"
+              ],
+              [
+                "57a10c85-fca7-4c5b-a837-a59b43b12bba",
+                "c48abec9-faf9-4f04-b427-128098cdd700"
+              ],
+              [
+                "57a10c85-fca7-4c5b-a837-a59b43b12bba",
+                "478a3e38-043d-47e6-b76c-99c537089487"
+              ],
+              [
+                "37c2ae8f-2b03-4559-a1bb-4ce6db1bfae5",
+                "63f782d4-bd33-4073-bed0-aad18072f0ae"
+              ],
+              [
+                "63f782d4-bd33-4073-bed0-aad18072f0ae",
+                "62475212-d0df-4d1e-8fa5-b42c820b62c5"
+              ],
+              [
+                "37c2ae8f-2b03-4559-a1bb-4ce6db1bfae5",
+                "97dac4c4-d2c2-4c4c-87d2-ec3c785c46ad"
+              ],
+              [
+                "97dac4c4-d2c2-4c4c-87d2-ec3c785c46ad",
+                "943c8c3b-72e0-49f9-8498-26dee930588b"
+              ]
+            ]
+          }
+        },
+        {
+          "name": "identity",
+          "cyclomaticComplexity": 2,
+          "nestingDepth": 0,
+          "functionSize": 0,
+          "cfg": {
+            "methodName": "identity",
+            "nodes": [
+              {
+                "id": "439104c4-e642-4f32-ba7d-442c4981c8d3",
+                "label": "Start",
+                "type": "start",
+                "next": [
+                  "c3db189a-dc95-4db0-89d7-c4ffc8df4301"
+                ]
+              },
+              {
+                "id": "d3180118-d269-42b0-877a-8c2835491132",
+                "label": "End",
+                "type": "end",
+                "next": []
+              },
+              {
+                "id": "c3db189a-dc95-4db0-89d7-c4ffc8df4301",
+                "label": "return",
+                "type": "condition",
+                "next": [
+                  "f5b59756-9861-40e5-a970-1876ff395271"
+                ]
+              },
+              {
+                "id": "f5b59756-9861-40e5-a970-1876ff395271",
+                "label": "return",
+                "type": "statement",
+                "next": [
+                  "d3180118-d269-42b0-877a-8c2835491132"
+                ]
+              }
+            ],
+            "edges": [
+              [
+                "439104c4-e642-4f32-ba7d-442c4981c8d3",
+                "c3db189a-dc95-4db0-89d7-c4ffc8df4301"
+              ],
+              [
+                "c3db189a-dc95-4db0-89d7-c4ffc8df4301",
+                "f5b59756-9861-40e5-a970-1876ff395271"
+              ],
+              [
+                "f5b59756-9861-40e5-a970-1876ff395271",
+                "d3180118-d269-42b0-877a-8c2835491132"
+              ]
+            ]
+          }
+        },
+        {
+          "name": "doubleValue",
+          "cyclomaticComplexity": 2,
+          "nestingDepth": 0,
+          "functionSize": 0,
+          "cfg": {
+            "methodName": "doubleValue",
+            "nodes": [
+              {
+                "id": "160e18af-eb6a-4229-abbe-6612fecfc4be",
+                "label": "Start",
+                "type": "start",
+                "next": [
+                  "11d150dc-30f9-408f-b356-4018bd70b716"
+                ]
+              },
+              {
+                "id": "836cc595-a8e7-407e-ad9a-4d0315bf11c8",
+                "label": "End",
+                "type": "end",
+                "next": []
+              },
+              {
+                "id": "11d150dc-30f9-408f-b356-4018bd70b716",
+                "label": "return",
+                "type": "condition",
+                "next": [
+                  "2e4c5f0c-cd8c-4461-851b-26b0f9ec7133"
+                ]
+              },
+              {
+                "id": "2e4c5f0c-cd8c-4461-851b-26b0f9ec7133",
+                "label": "return",
+                "type": "statement",
+                "next": [
+                  "836cc595-a8e7-407e-ad9a-4d0315bf11c8"
+                ]
+              }
+            ],
+            "edges": [
+              [
+                "160e18af-eb6a-4229-abbe-6612fecfc4be",
+                "11d150dc-30f9-408f-b356-4018bd70b716"
+              ],
+              [
+                "11d150dc-30f9-408f-b356-4018bd70b716",
+                "2e4c5f0c-cd8c-4461-851b-26b0f9ec7133"
+              ],
+              [
+                "2e4c5f0c-cd8c-4461-851b-26b0f9ec7133",
+                "836cc595-a8e7-407e-ad9a-4d0315bf11c8"
+              ]
+            ]
+          }
+        },
+        {
+          "name": "calculate",
+          "cyclomaticComplexity": 6,
+          "nestingDepth": 0,
+          "functionSize": 0,
+          "cfg": {
+            "methodName": "calculate",
+            "nodes": [
+              {
+                "id": "d7fe6b99-220c-45ac-9bdc-0ae3a9c5c8b9",
+                "label": "Start",
+                "type": "start",
+                "next": [
+                  "3f79c4cd-0f78-458b-b65d-b23dcef69b91"
+                ]
+              },
+              {
+                "id": "cbd0a591-ff82-43a0-9dde-05aaf697d789",
+                "label": "End",
+                "type": "end",
+                "next": []
+              },
+              {
+                "id": "3f79c4cd-0f78-458b-b65d-b23dcef69b91",
+                "label": "try",
+                "type": "condition",
+                "next": [
+                  "3a1c81d0-5bc1-4f5f-a1cf-a05621d8998c"
+                ]
+              },
+              {
+                "id": "3a1c81d0-5bc1-4f5f-a1cf-a05621d8998c",
+                "label": "throw",
+                "type": "condition",
+                "next": [
+                  "069348b2-dddb-4155-9b02-1aee1b1e7cec"
+                ]
+              },
+              {
+                "id": "069348b2-dddb-4155-9b02-1aee1b1e7cec",
+                "label": "return",
+                "type": "condition",
+                "next": [
+                  "bced0b3c-7b06-482e-b50f-3bbbcd96bcdf"
+                ]
+              },
+              {
+                "id": "bced0b3c-7b06-482e-b50f-3bbbcd96bcdf",
+                "label": "catch",
+                "type": "condition",
+                "next": [
+                  "1b31753b-5b6b-43f3-b867-76b4c55f640b"
+                ]
+              },
+              {
+                "id": "1b31753b-5b6b-43f3-b867-76b4c55f640b",
+                "label": "finally",
+                "type": "condition",
+                "next": [
+                  "99ef6ddf-c066-43e1-926a-002c120dee8b",
+                  "99d29e49-6718-4b31-b3e0-4eb202d28216"
+                ]
+              },
+              {
+                "id": "99ef6ddf-c066-43e1-926a-002c120dee8b",
+                "label": "IfStatement",
+                "type": "condition",
+                "next": [
+                  "76868968-5fea-4de8-a0ea-c87710dcb9f4"
+                ]
+              },
+              {
+                "id": "76868968-5fea-4de8-a0ea-c87710dcb9f4",
+                "label": "Statement",
+                "type": "statement",
+                "next": []
+              },
+              {
+                "id": "99d29e49-6718-4b31-b3e0-4eb202d28216",
+                "label": "return",
+                "type": "statement",
+                "next": [
+                  "cbd0a591-ff82-43a0-9dde-05aaf697d789"
+                ]
+              }
+            ],
+            "edges": [
+              [
+                "d7fe6b99-220c-45ac-9bdc-0ae3a9c5c8b9",
+                "3f79c4cd-0f78-458b-b65d-b23dcef69b91"
+              ],
+              [
+                "3f79c4cd-0f78-458b-b65d-b23dcef69b91",
+                "3a1c81d0-5bc1-4f5f-a1cf-a05621d8998c"
+              ],
+              [
+                "3a1c81d0-5bc1-4f5f-a1cf-a05621d8998c",
+                "069348b2-dddb-4155-9b02-1aee1b1e7cec"
+              ],
+              [
+                "069348b2-dddb-4155-9b02-1aee1b1e7cec",
+                "bced0b3c-7b06-482e-b50f-3bbbcd96bcdf"
+              ],
+              [
+                "bced0b3c-7b06-482e-b50f-3bbbcd96bcdf",
+                "1b31753b-5b6b-43f3-b867-76b4c55f640b"
+              ],
+              [
+                "1b31753b-5b6b-43f3-b867-76b4c55f640b",
+                "99ef6ddf-c066-43e1-926a-002c120dee8b"
+              ],
+              [
+                "99ef6ddf-c066-43e1-926a-002c120dee8b",
+                "76868968-5fea-4de8-a0ea-c87710dcb9f4"
+              ],
+              [
+                "1b31753b-5b6b-43f3-b867-76b4c55f640b",
+                "99d29e49-6718-4b31-b3e0-4eb202d28216"
+              ],
+              [
+                "99d29e49-6718-4b31-b3e0-4eb202d28216",
+                "cbd0a591-ff82-43a0-9dde-05aaf697d789"
+              ]
+            ]
+          }
+        },
+        {
+          "name": "syncTest",
+          "cyclomaticComplexity": 2,
+          "nestingDepth": 0,
+          "functionSize": 0,
+          "cfg": {
+            "methodName": "syncTest",
+            "nodes": [
+              {
+                "id": "2fb71416-a773-4ffa-9cc1-8652d9e95cdc",
+                "label": "Start",
+                "type": "start",
+                "next": [
+                  "5a3885e2-a52f-496f-8fb4-855812cdcb21"
+                ]
+              },
+              {
+                "id": "f2f85eff-cdac-46c0-9fa6-bce371919fc8",
+                "label": "End",
+                "type": "end",
+                "next": []
+              },
+              {
+                "id": "5a3885e2-a52f-496f-8fb4-855812cdcb21",
+                "label": "synchronized",
+                "type": "condition",
+                "next": [
+                  "f2f85eff-cdac-46c0-9fa6-bce371919fc8"
+                ]
+              }
+            ],
+            "edges": [
+              [
+                "2fb71416-a773-4ffa-9cc1-8652d9e95cdc",
+                "5a3885e2-a52f-496f-8fb4-855812cdcb21"
+              ],
+              [
+                "5a3885e2-a52f-496f-8fb4-855812cdcb21",
+                "f2f85eff-cdac-46c0-9fa6-bce371919fc8"
+              ]
+            ]
+          }
+        },
+        {
+          "name": "breakContinueTest",
+          "cyclomaticComplexity": 3,
+          "nestingDepth": 0,
+          "functionSize": 0,
+          "cfg": {
+            "methodName": "breakContinueTest",
+            "nodes": [
+              {
+                "id": "b97208bd-27e5-4388-b230-776adbe49fa0",
+                "label": "Start",
+                "type": "start",
+                "next": [
+                  "2d2b1184-69b1-47b5-b40e-bd5ae094869c"
+                ]
+              },
+              {
+                "id": "16064d61-6429-49e1-913c-3b058f688b5c",
+                "label": "End",
+                "type": "end",
+                "next": []
+              },
+              {
+                "id": "2d2b1184-69b1-47b5-b40e-bd5ae094869c",
+                "label": "for",
+                "type": "statement",
+                "next": [
+                  "43c11ffc-75da-4cea-a372-b3f8e8003d7e"
+                ]
+              },
+              {
+                "id": "43c11ffc-75da-4cea-a372-b3f8e8003d7e",
+                "label": "break",
+                "type": "condition",
+                "next": [
+                  "23efad09-ea86-4a7a-88d5-d07665d6abf5"
+                ]
+              },
+              {
+                "id": "23efad09-ea86-4a7a-88d5-d07665d6abf5",
+                "label": "continue",
+                "type": "condition",
+                "next": [
+                  "14decc5d-87c0-4e76-a157-64fa621a5f42",
+                  "16064d61-6429-49e1-913c-3b058f688b5c"
+                ]
+              },
+              {
+                "id": "14decc5d-87c0-4e76-a157-64fa621a5f42",
+                "label": "IfStatement",
+                "type": "condition",
+                "next": [
+                  "533470c6-26d9-499f-a1a5-95a899e1f72d",
+                  "dcc9176e-229f-43ec-a340-0534bcfe1ea9"
+                ]
+              },
+              {
+                "id": "533470c6-26d9-499f-a1a5-95a899e1f72d",
+                "label": "Statement",
+                "type": "statement",
+                "next": []
+              },
+              {
+                "id": "dcc9176e-229f-43ec-a340-0534bcfe1ea9",
+                "label": "IfStatement",
+                "type": "condition",
+                "next": [
+                  "45474393-5211-468b-b71f-7d820d1bdeae"
+                ]
+              },
+              {
+                "id": "45474393-5211-468b-b71f-7d820d1bdeae",
+                "label": "Statement",
+                "type": "statement",
+                "next": []
+              }
+            ],
+            "edges": [
+              [
+                "b97208bd-27e5-4388-b230-776adbe49fa0",
+                "2d2b1184-69b1-47b5-b40e-bd5ae094869c"
+              ],
+              [
+                "2d2b1184-69b1-47b5-b40e-bd5ae094869c",
+                "43c11ffc-75da-4cea-a372-b3f8e8003d7e"
+              ],
+              [
+                "43c11ffc-75da-4cea-a372-b3f8e8003d7e",
+                "23efad09-ea86-4a7a-88d5-d07665d6abf5"
+              ],
+              [
+                "23efad09-ea86-4a7a-88d5-d07665d6abf5",
+                "14decc5d-87c0-4e76-a157-64fa621a5f42"
+              ],
+              [
+                "14decc5d-87c0-4e76-a157-64fa621a5f42",
+                "533470c6-26d9-499f-a1a5-95a899e1f72d"
+              ],
+              [
+                "14decc5d-87c0-4e76-a157-64fa621a5f42",
+                "dcc9176e-229f-43ec-a340-0534bcfe1ea9"
+              ],
+              [
+                "dcc9176e-229f-43ec-a340-0534bcfe1ea9",
+                "45474393-5211-468b-b71f-7d820d1bdeae"
+              ],
+              [
+                "23efad09-ea86-4a7a-88d5-d07665d6abf5",
+                "16064d61-6429-49e1-913c-3b058f688b5c"
+              ]
+            ]
+          }
+        },
+        {
+          "name": "nestedIf",
+          "cyclomaticComplexity": 1,
+          "nestingDepth": 0,
+          "functionSize": 0,
+          "cfg": {
+            "methodName": "nestedIf",
+            "nodes": [
+              {
+                "id": "a11112d9-8d4c-45e0-9793-48aa4b10640b",
+                "label": "Start",
+                "type": "start",
+                "next": [
+                  "f94ebaa6-5f48-4330-b6e0-90a27c5877ec",
+                  "8ccd9ce6-1f31-46fb-bee0-87fefc82688e"
+                ]
+              },
+              {
+                "id": "8ccd9ce6-1f31-46fb-bee0-87fefc82688e",
+                "label": "End",
+                "type": "end",
+                "next": []
+              },
+              {
+                "id": "f94ebaa6-5f48-4330-b6e0-90a27c5877ec",
+                "label": "IfStatement",
+                "type": "condition",
+                "next": [
+                  "faaa570f-8098-4162-92f1-71cbe4c026eb",
+                  "f9b9affb-6c2a-467d-a904-b66ba2a7f214"
+                ]
+              },
+              {
+                "id": "faaa570f-8098-4162-92f1-71cbe4c026eb",
+                "label": "IfStatement",
+                "type": "statement",
+                "next": []
+              },
+              {
+                "id": "f9b9affb-6c2a-467d-a904-b66ba2a7f214",
+                "label": "IfStatement",
+                "type": "condition",
+                "next": [
+                  "c6cd4f6b-7147-4de1-b509-9b5516872aa8",
+                  "03ec924d-5a1a-4ac0-a30a-e6ed9999ced2"
+                ]
+              },
+              {
+                "id": "c6cd4f6b-7147-4de1-b509-9b5516872aa8",
+                "label": "Statement",
+                "type": "statement",
+                "next": []
+              },
+              {
+                "id": "03ec924d-5a1a-4ac0-a30a-e6ed9999ced2",
+                "label": "Statement",
+                "type": "statement",
+                "next": []
+              }
+            ],
+            "edges": [
+              [
+                "a11112d9-8d4c-45e0-9793-48aa4b10640b",
+                "f94ebaa6-5f48-4330-b6e0-90a27c5877ec"
+              ],
+              [
+                "f94ebaa6-5f48-4330-b6e0-90a27c5877ec",
+                "faaa570f-8098-4162-92f1-71cbe4c026eb"
+              ],
+              [
+                "f94ebaa6-5f48-4330-b6e0-90a27c5877ec",
+                "f9b9affb-6c2a-467d-a904-b66ba2a7f214"
+              ],
+              [
+                "f9b9affb-6c2a-467d-a904-b66ba2a7f214",
+                "c6cd4f6b-7147-4de1-b509-9b5516872aa8"
+              ],
+              [
+                "f9b9affb-6c2a-467d-a904-b66ba2a7f214",
+                "03ec924d-5a1a-4ac0-a30a-e6ed9999ced2"
+              ],
+              [
+                "a11112d9-8d4c-45e0-9793-48aa4b10640b",
+                "8ccd9ce6-1f31-46fb-bee0-87fefc82688e"
+              ]
+            ]
+          }
+        },
+        {
+          "name": "main",
+          "cyclomaticComplexity": 3,
+          "nestingDepth": 0,
+          "functionSize": 0,
+          "cfg": {
+            "methodName": "main",
+            "nodes": [
+              {
+                "id": "b6132bc2-ae7a-4df4-9250-bc301474220d",
+                "label": "Start",
+                "type": "start",
+                "next": [
+                  "34030a1e-74fc-45cd-975f-8085ffcfeda0"
+                ]
+              },
+              {
+                "id": "37f55227-d4c6-40a2-ae65-4feaeed6251d",
+                "label": "End",
+                "type": "end",
+                "next": []
+              },
+              {
+                "id": "34030a1e-74fc-45cd-975f-8085ffcfeda0",
+                "label": "try",
+                "type": "condition",
+                "next": [
+                  "e0eb71dc-7e04-48c5-a1db-88807fae7a53"
+                ]
+              },
+              {
+                "id": "e0eb71dc-7e04-48c5-a1db-88807fae7a53",
+                "label": "catch",
+                "type": "condition",
+                "next": [
+                  "37f55227-d4c6-40a2-ae65-4feaeed6251d"
+                ]
+              }
+            ],
+            "edges": [
+              [
+                "b6132bc2-ae7a-4df4-9250-bc301474220d",
+                "34030a1e-74fc-45cd-975f-8085ffcfeda0"
+              ],
+              [
+                "34030a1e-74fc-45cd-975f-8085ffcfeda0",
+                "e0eb71dc-7e04-48c5-a1db-88807fae7a53"
+              ],
+              [
+                "e0eb71dc-7e04-48c5-a1db-88807fae7a53",
+                "37f55227-d4c6-40a2-ae65-4feaeed6251d"
+              ]
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

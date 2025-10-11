@@ -1,0 +1,77 @@
+{
+  "fileName": "samples/ast/User.json",
+  "classes": [
+    {
+      "className": "User",
+      "methods": [
+        {
+          "name": "run",
+          "cyclomaticComplexity": 1,
+          "nestingDepth": 0,
+          "functionSize": 0,
+          "cfg": {
+            "methodName": "run",
+            "nodes": [
+              {
+                "id": "1ea8787f-2f96-4fcc-9296-900d94378157",
+                "label": "Start",
+                "type": "start",
+                "next": [
+                  "7357d24f-07ab-4868-8a97-6c6f9eeb7b75"
+                ]
+              },
+              {
+                "id": "3601d744-6d0f-40e1-ae93-9104f77fe9cf",
+                "label": "End",
+                "type": "end",
+                "next": []
+              },
+              {
+                "id": "7357d24f-07ab-4868-8a97-6c6f9eeb7b75",
+                "label": "for",
+                "type": "statement",
+                "next": [
+                  "bda86cbc-9c01-4be9-a6ff-975bef7891b0"
+                ]
+              },
+              {
+                "id": "bda86cbc-9c01-4be9-a6ff-975bef7891b0",
+                "label": "while",
+                "type": "statement",
+                "next": [
+                  "982c2689-75da-48b1-aa06-8b890328fa74"
+                ]
+              },
+              {
+                "id": "982c2689-75da-48b1-aa06-8b890328fa74",
+                "label": "doWhile",
+                "type": "statement",
+                "next": [
+                  "3601d744-6d0f-40e1-ae93-9104f77fe9cf"
+                ]
+              }
+            ],
+            "edges": [
+              [
+                "1ea8787f-2f96-4fcc-9296-900d94378157",
+                "7357d24f-07ab-4868-8a97-6c6f9eeb7b75"
+              ],
+              [
+                "7357d24f-07ab-4868-8a97-6c6f9eeb7b75",
+                "bda86cbc-9c01-4be9-a6ff-975bef7891b0"
+              ],
+              [
+                "bda86cbc-9c01-4be9-a6ff-975bef7891b0",
+                "982c2689-75da-48b1-aa06-8b890328fa74"
+              ],
+              [
+                "982c2689-75da-48b1-aa06-8b890328fa74",
+                "3601d744-6d0f-40e1-ae93-9104f77fe9cf"
+              ]
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

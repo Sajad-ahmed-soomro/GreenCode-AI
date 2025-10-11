@@ -14,10 +14,12 @@
   "license": "ISC",
   "description": "Static Analyzer module for GreenCode-AI",
   "dependencies": {
-    "java-parser": "^3.0.1"
+    "java-parser": "^3.0.1",
+    "uuid": "^13.0.0"
   },
   "devDependencies": {
-    "typescript": "^5.9.3",
-    "ts-node": "^10.9.2"
+    "@types/uuid": "^10.0.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
   }
 }
