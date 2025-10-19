@@ -1,0 +1,492 @@
+{
+  "file": "Main.json",
+  "totalClasses": 2,
+  "totalMethods": 9,
+  "realLOC": 129,
+  "realComments": 319,
+  "averageScore": 78.7,
+  "maintainabilityLevel": "Medium",
+  "results": [
+    {
+      "className": "Main",
+      "methodName": "run",
+      "methodScore": 85,
+      "maintainabilityLevel": "High",
+      "metrics": [
+        {
+          "metric": "Function Length",
+          "value": 129,
+          "status": "High",
+          "penalty": 0.15,
+          "message": "run has 129 lines of code (High)."
+        },
+        {
+          "metric": "Nesting Depth",
+          "value": 0,
+          "status": "Low",
+          "penalty": 0,
+          "message": "run has nesting depth 0 (Low)."
+        },
+        {
+          "metric": "Cyclomatic Complexity",
+          "value": 0,
+          "status": "Low",
+          "penalty": 0,
+          "message": "run has 0 decision points (Low)."
+        },
+        {
+          "metric": "Parameter Count",
+          "value": 0,
+          "status": "Low",
+          "penalty": 0,
+          "message": "run has 0 parameters (Low)."
+        },
+        {
+          "metric": "Comment Ratio",
+          "value": "247.3%",
+          "status": "Low",
+          "penalty": 0,
+          "message": "run comment ratio = 247.3% (Low)."
+        },
+        {
+          "metric": "Naming Clarity",
+          "value": "Good",
+          "status": "Low",
+          "penalty": 0,
+          "message": "run naming is clear."
+        }
+      ],
+      "suggestions": [
+        "💡 Function is too long. Split into smaller helper methods."
+      ]
+    },
+    {
+      "className": "Main",
+      "methodName": "processItems",
+      "methodScore": 62,
+      "maintainabilityLevel": "Medium",
+      "metrics": [
+        {
+          "metric": "Function Length",
+          "value": 129,
+          "status": "High",
+          "penalty": 0.15,
+          "message": "processItems has 129 lines of code (High)."
+        },
+        {
+          "metric": "Nesting Depth",
+          "value": 3,
+          "status": "Medium",
+          "penalty": 0.08,
+          "message": "processItems has nesting depth 3 (Medium)."
+        },
+        {
+          "metric": "Cyclomatic Complexity",
+          "value": 12,
+          "status": "High",
+          "penalty": 0.15,
+          "message": "processItems has 12 decision points (High)."
+        },
+        {
+          "metric": "Parameter Count",
+          "value": 2,
+          "status": "Low",
+          "penalty": 0,
+          "message": "processItems has 2 parameters (Low)."
+        },
+        {
+          "metric": "Comment Ratio",
+          "value": "247.3%",
+          "status": "Low",
+          "penalty": 0,
+          "message": "processItems comment ratio = 247.3% (Low)."
+        },
+        {
+          "metric": "Naming Clarity",
+          "value": "Good",
+          "status": "Low",
+          "penalty": 0,
+          "message": "processItems naming is clear."
+        }
+      ],
+      "suggestions": [
+        "💡 Function is too long. Split into smaller helper methods.",
+        "⚙️ High logical complexity. Try breaking down conditions or loops."
+      ]
+    },
+    {
+      "className": "Main",
+      "methodName": "identity",
+      "methodScore": 85,
+      "maintainabilityLevel": "High",
+      "metrics": [
+        {
+          "metric": "Function Length",
+          "value": 129,
+          "status": "High",
+          "penalty": 0.15,
+          "message": "identity has 129 lines of code (High)."
+        },
+        {
+          "metric": "Nesting Depth",
+          "value": 0,
+          "status": "Low",
+          "penalty": 0,
+          "message": "identity has nesting depth 0 (Low)."
+        },
+        {
+          "metric": "Cyclomatic Complexity",
+          "value": 1,
+          "status": "Low",
+          "penalty": 0,
+          "message": "identity has 1 decision points (Low)."
+        },
+        {
+          "metric": "Parameter Count",
+          "value": 1,
+          "status": "Low",
+          "penalty": 0,
+          "message": "identity has 1 parameters (Low)."
+        },
+        {
+          "metric": "Comment Ratio",
+          "value": "247.3%",
+          "status": "Low",
+          "penalty": 0,
+          "message": "identity comment ratio = 247.3% (Low)."
+        },
+        {
+          "metric": "Naming Clarity",
+          "value": "Good",
+          "status": "Low",
+          "penalty": 0,
+          "message": "identity naming is clear."
+        }
+      ],
+      "suggestions": [
+        "💡 Function is too long. Split into smaller helper methods."
+      ]
+    },
+    {
+      "className": "Main",
+      "methodName": "doubleValue",
+      "methodScore": 85,
+      "maintainabilityLevel": "High",
+      "metrics": [
+        {
+          "metric": "Function Length",
+          "value": 129,
+          "status": "High",
+          "penalty": 0.15,
+          "message": "doubleValue has 129 lines of code (High)."
+        },
+        {
+          "metric": "Nesting Depth",
+          "value": 0,
+          "status": "Low",
+          "penalty": 0,
+          "message": "doubleValue has nesting depth 0 (Low)."
+        },
+        {
+          "metric": "Cyclomatic Complexity",
+          "value": 1,
+          "status": "Low",
+          "penalty": 0,
+          "message": "doubleValue has 1 decision points (Low)."
+        },
+        {
+          "metric": "Parameter Count",
+          "value": 1,
+          "status": "Low",
+          "penalty": 0,
+          "message": "doubleValue has 1 parameters (Low)."
+        },
+        {
+          "metric": "Comment Ratio",
+          "value": "247.3%",
+          "status": "Low",
+          "penalty": 0,
+          "message": "doubleValue comment ratio = 247.3% (Low)."
+        },
+        {
+          "metric": "Naming Clarity",
+          "value": "Good",
+          "status": "Low",
+          "penalty": 0,
+          "message": "doubleValue naming is clear."
+        }
+      ],
+      "suggestions": [
+        "💡 Function is too long. Split into smaller helper methods."
+      ]
+    },
+    {
+      "className": "Main",
+      "methodName": "calculate",
+      "methodScore": 72,
+      "maintainabilityLevel": "Medium",
+      "metrics": [
+        {
+          "metric": "Function Length",
+          "value": 129,
+          "status": "High",
+          "penalty": 0.15,
+          "message": "calculate has 129 lines of code (High)."
+        },
+        {
+          "metric": "Nesting Depth",
+          "value": 2,
+          "status": "Medium",
+          "penalty": 0.08,
+          "message": "calculate has nesting depth 2 (Medium)."
+        },
+        {
+          "metric": "Cyclomatic Complexity",
+          "value": 5,
+          "status": "Low",
+          "penalty": 0,
+          "message": "calculate has 5 decision points (Low)."
+        },
+        {
+          "metric": "Parameter Count",
+          "value": 2,
+          "status": "Low",
+          "penalty": 0,
+          "message": "calculate has 2 parameters (Low)."
+        },
+        {
+          "metric": "Comment Ratio",
+          "value": "247.3%",
+          "status": "Low",
+          "penalty": 0,
+          "message": "calculate comment ratio = 247.3% (Low)."
+        },
+        {
+          "metric": "Naming Clarity",
+          "value": "a, b",
+          "status": "Medium",
+          "penalty": 0.05,
+          "message": "calculate has unclear identifiers: a, b."
+        }
+      ],
+      "suggestions": [
+        "💡 Function is too long. Split into smaller helper methods.",
+        "🔤 Some variable names are unclear. Use more descriptive names."
+      ]
+    },
+    {
+      "className": "Main",
+      "methodName": "syncTest",
+      "methodScore": 85,
+      "maintainabilityLevel": "High",
+      "metrics": [
+        {
+          "metric": "Function Length",
+          "value": 129,
+          "status": "High",
+          "penalty": 0.15,
+          "message": "syncTest has 129 lines of code (High)."
+        },
+        {
+          "metric": "Nesting Depth",
+          "value": 0,
+          "status": "Low",
+          "penalty": 0,
+          "message": "syncTest has nesting depth 0 (Low)."
+        },
+        {
+          "metric": "Cyclomatic Complexity",
+          "value": 1,
+          "status": "Low",
+          "penalty": 0,
+          "message": "syncTest has 1 decision points (Low)."
+        },
+        {
+          "metric": "Parameter Count",
+          "value": 0,
+          "status": "Low",
+          "penalty": 0,
+          "message": "syncTest has 0 parameters (Low)."
+        },
+        {
+          "metric": "Comment Ratio",
+          "value": "247.3%",
+          "status": "Low",
+          "penalty": 0,
+          "message": "syncTest comment ratio = 247.3% (Low)."
+        },
+        {
+          "metric": "Naming Clarity",
+          "value": "Good",
+          "status": "Low",
+          "penalty": 0,
+          "message": "syncTest naming is clear."
+        }
+      ],
+      "suggestions": [
+        "💡 Function is too long. Split into smaller helper methods."
+      ]
+    },
+    {
+      "className": "Main",
+      "methodName": "breakContinueTest",
+      "methodScore": 77,
+      "maintainabilityLevel": "Medium",
+      "metrics": [
+        {
+          "metric": "Function Length",
+          "value": 129,
+          "status": "High",
+          "penalty": 0.15,
+          "message": "breakContinueTest has 129 lines of code (High)."
+        },
+        {
+          "metric": "Nesting Depth",
+          "value": 3,
+          "status": "Medium",
+          "penalty": 0.08,
+          "message": "breakContinueTest has nesting depth 3 (Medium)."
+        },
+        {
+          "metric": "Cyclomatic Complexity",
+          "value": 3,
+          "status": "Low",
+          "penalty": 0,
+          "message": "breakContinueTest has 3 decision points (Low)."
+        },
+        {
+          "metric": "Parameter Count",
+          "value": 1,
+          "status": "Low",
+          "penalty": 0,
+          "message": "breakContinueTest has 1 parameters (Low)."
+        },
+        {
+          "metric": "Comment Ratio",
+          "value": "247.3%",
+          "status": "Low",
+          "penalty": 0,
+          "message": "breakContinueTest comment ratio = 247.3% (Low)."
+        },
+        {
+          "metric": "Naming Clarity",
+          "value": "Good",
+          "status": "Low",
+          "penalty": 0,
+          "message": "breakContinueTest naming is clear."
+        }
+      ],
+      "suggestions": [
+        "💡 Function is too long. Split into smaller helper methods."
+      ]
+    },
+    {
+      "className": "Main",
+      "methodName": "nestedIf",
+      "methodScore": 72,
+      "maintainabilityLevel": "Medium",
+      "metrics": [
+        {
+          "metric": "Function Length",
+          "value": 129,
+          "status": "High",
+          "penalty": 0.15,
+          "message": "nestedIf has 129 lines of code (High)."
+        },
+        {
+          "metric": "Nesting Depth",
+          "value": 3,
+          "status": "Medium",
+          "penalty": 0.08,
+          "message": "nestedIf has nesting depth 3 (Medium)."
+        },
+        {
+          "metric": "Cyclomatic Complexity",
+          "value": 0,
+          "status": "Low",
+          "penalty": 0,
+          "message": "nestedIf has 0 decision points (Low)."
+        },
+        {
+          "metric": "Parameter Count",
+          "value": 1,
+          "status": "Low",
+          "penalty": 0,
+          "message": "nestedIf has 1 parameters (Low)."
+        },
+        {
+          "metric": "Comment Ratio",
+          "value": "247.3%",
+          "status": "Low",
+          "penalty": 0,
+          "message": "nestedIf comment ratio = 247.3% (Low)."
+        },
+        {
+          "metric": "Naming Clarity",
+          "value": "x",
+          "status": "Medium",
+          "penalty": 0.05,
+          "message": "nestedIf has unclear identifiers: x."
+        }
+      ],
+      "suggestions": [
+        "💡 Function is too long. Split into smaller helper methods.",
+        "🔤 Some variable names are unclear. Use more descriptive names."
+      ]
+    },
+    {
+      "className": "Main",
+      "methodName": "main",
+      "methodScore": 85,
+      "maintainabilityLevel": "High",
+      "metrics": [
+        {
+          "metric": "Function Length",
+          "value": 129,
+          "status": "High",
+          "penalty": 0.15,
+          "message": "main has 129 lines of code (High)."
+        },
+        {
+          "metric": "Nesting Depth",
+          "value": 0,
+          "status": "Low",
+          "penalty": 0,
+          "message": "main has nesting depth 0 (Low)."
+        },
+        {
+          "metric": "Cyclomatic Complexity",
+          "value": 2,
+          "status": "Low",
+          "penalty": 0,
+          "message": "main has 2 decision points (Low)."
+        },
+        {
+          "metric": "Parameter Count",
+          "value": 1,
+          "status": "Low",
+          "penalty": 0,
+          "message": "main has 1 parameters (Low)."
+        },
+        {
+          "metric": "Comment Ratio",
+          "value": "247.3%",
+          "status": "Low",
+          "penalty": 0,
+          "message": "main comment ratio = 247.3% (Low)."
+        },
+        {
+          "metric": "Naming Clarity",
+          "value": "Good",
+          "status": "Low",
+          "penalty": 0,
+          "message": "main naming is clear."
+        }
+      ],
+      "suggestions": [
+        "💡 Function is too long. Split into smaller helper methods."
+      ]
+    }
+  ],
+  "message": "✅ File Main.json analyzed successfully."
+}

@@ -1,0 +1,29 @@
+{
+  "analyzedFiles": [
+    {
+      "file": "Calculator.json",
+      "avgScore": 78.7,
+      "level": "Medium",
+      "totalMethods": 3,
+      "analyzedAt": "2025-10-19T10:53:33.155Z"
+    },
+    {
+      "file": "Main.json",
+      "avgScore": 78.7,
+      "level": "Medium",
+      "totalMethods": 9,
+      "analyzedAt": "2025-10-19T10:53:33.156Z"
+    },
+    {
+      "file": "User.json",
+      "avgScore": 63.8,
+      "level": "Medium",
+      "totalMethods": 4,
+      "analyzedAt": "2025-10-19T10:53:33.156Z"
+    }
+  ],
+  "overallAvg": 73.7,
+  "overallLevel": "Medium",
+  "totalFiles": 3,
+  "updatedAt": "2025-10-19T10:53:33.156Z"
+}
