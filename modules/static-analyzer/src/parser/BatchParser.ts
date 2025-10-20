@@ -14,7 +14,7 @@ export async function parseFolder(folderPath: string, outDir: string) {
   // 1. Scan folder
   const javaFiles = await scanJavaFiles(folderPath);
   if (javaFiles.length === 0) {
-    console.log("⚠️ No .java files found in", folderPath);
+    console.log("No .java files found in", folderPath);
     return;
   }
 
@@ -29,9 +29,9 @@ export async function parseFolder(folderPath: string, outDir: string) {
       const outFile = path.join(outDir, fileName);
 
       await fs.writeFile(outFile, JSON.stringify(astJson, null, 2), "utf8");
-      console.log("✅ Parsed:", file, "→", outFile);
+      console.log(" Parsed:", file, "→", outFile);
     } catch (err) {
-      console.error("❌ Failed parsing", file, ":", err);
+      console.error(" Failed parsing", file, ":", err);
     }
   }
 }
@@ -42,6 +42,6 @@ if (import.meta.url === pathToFileURL(process.argv[1]).href) {
   const outDir = process.argv[3] || path.join("samples", "ast");
 
   parseFolder(folder, outDir).catch(err =>
-    console.error("❌ Batch parse error:", err)
+    console.error(" Batch parse error:", err)
   );
 }

@@ -1,0 +1,24 @@
+{
+  "categories": {
+    "style": {
+      "QA001": { "desc": "Unused imports or variables", "severity": "low" },
+      "QA002": { "desc": "Missing semicolons or inconsistent braces", "severity": "low" },
+      "QA003": { "desc": "Missing default case in switch", "severity": "medium" },
+      "QA004": { "desc": "Multiple classes in one file", "severity": "low" },
+      "QA005": { "desc": "Line exceeds 120 characters", "severity": "low" }
+    },
+    "documentation": {
+      "QD001": { "desc": "Function or class missing doc comment", "severity": "low" },
+      "QD002": { "desc": "Low comment ratio (<10%)", "severity": "medium" },
+      "QD004": { "desc": "Duplicate code block detected", "severity": "medium" }
+    },
+    "security": {
+      "QS001": { "desc": "Use of eval() or dynamic execution", "severity": "high" },
+      "QS002": { "desc": "Hardcoded credentials", "severity": "critical" },
+      "QS003": { "desc": "Possible SQL injection", "severity": "high" },
+      "QS004": { "desc": "Unsanitized input detected", "severity": "high" },
+      "QS005": { "desc": "Use of deprecated API", "severity": "medium" },
+      "QS008": { "desc": "Direct system command execution", "severity": "high" }
+    }
+  }
+}

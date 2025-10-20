@@ -1,0 +1,17 @@
+{
+  "summary": {
+    "total": 1,
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 1
+  },
+  "details": [
+    {
+      "ruleId": "QA001",
+      "description": "Duplicate imports found",
+      "severity": "low",
+      "location": "Main.java"
+    }
+  ]
+}

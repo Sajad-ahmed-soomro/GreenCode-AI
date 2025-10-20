@@ -1,27 +1,29 @@
 import fs from "fs";
 import path from "path";
+import { RuleEngine } from "../rules/RuleEngine.js";
+import { ReportGenerator } from "../report/ReportGenerator.js";
+import { ReportFormatter } from "../report/ReportFormatter.js";
 
 export async function analyzeFile(filePath: string) {
   const content = fs.readFileSync(filePath, "utf8");
 
-  // Simulated analysis result (replace with real logic)
-  const result = {
-    file: filePath,
-    lines: content.split("\n").length,
-    chars: content.length,
-    timestamp: new Date().toISOString(),
-  };
+  // 1️ Run rule engine on the code
+  const engine = new RuleEngine();
+  const violations = engine.analyzeCode(content, path.basename(filePath));
 
-  // Save results to output/analysis.json
+  // 2️ Generate summarized report
+  const report = ReportGenerator.generate(violations);
+
+  // 3️Prepare output directory
   const outputDir = path.join(process.cwd(), "output");
-  const outputFile = path.join(outputDir, `${path.basename(filePath)}.analysis.json`);
-
   if (!fs.existsSync(outputDir)) {
-    fs.mkdirSync(outputDir);
+    fs.mkdirSync(outputDir, { recursive: true });
   }
 
-  fs.writeFileSync(outputFile, JSON.stringify(result, null, 2), "utf8");
-  console.log(` Analysis result saved to: ${outputFile}`);
+  // 4️ Save report to JSON file
+  const outputFile = path.join(outputDir, `${path.basename(filePath)}.report.json`);
+  ReportFormatter.toJSON(report, outputFile);
 
-  return result;
+  console.log(`✅ Report generated for: ${filePath}`);
+  return report;
 }

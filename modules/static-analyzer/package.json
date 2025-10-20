@@ -7,7 +7,7 @@
     "build": "tsc",
     "start": "node dist/cli.js",
     "dev": "ts-node src/cli.ts",
-    "batch": "node dist/core/BatchRunner.js"
+    "batch": "node dist/parser/BatchParser.js"
   },
   "keywords": [],
   "author": "",

@@ -16,8 +16,8 @@ async function run() {
 
   if (stat.isDirectory()) {
     const astOut = path.join(fullPath, "ast");
-    await parseFolder(fullPath, astOut); // ✅ generate ASTs first
-    console.log("✅ Parsing complete, now analyzing files...\n");
+    await parseFolder(fullPath, astOut); //  generate ASTs first
+    console.log(" Parsing complete, now analyzing files...\n");
 
     const files = fs
       .readdirSync(fullPath)
