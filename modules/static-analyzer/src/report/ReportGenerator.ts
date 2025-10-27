@@ -2,13 +2,20 @@
 import { RuleViolation } from "../rules/RuleEngine.js";
 
 export class ReportGenerator {
-  static generate(violations: RuleViolation[]) {
+  static generate(violations?: RuleViolation[]) {
+    // ✅ Safety check — ensures we always have a valid array
+    if (!Array.isArray(violations)) {
+      console.error(" ReportGenerator.generate() received invalid data:", violations);
+      violations = [];
+    }
+
     const grouped = violations.reduce((acc: any, v) => {
       if (!acc[v.severity]) acc[v.severity] = [];
       acc[v.severity].push(v);
       return acc;
     }, {});
-    return {
+
+    const report = {
       summary: {
         total: violations.length,
         critical: grouped["critical"]?.length || 0,
@@ -18,5 +25,8 @@ export class ReportGenerator {
       },
       details: violations,
     };
+
+    console.log("✅ Generated report summary:", report.summary);
+    return report;
   }
 }

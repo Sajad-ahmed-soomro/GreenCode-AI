@@ -21,11 +21,11 @@ export function loadAllASTFiles(): any[] {
       const json = JSON.parse(content);
       asts.push({ fileName: file, data: json });
     } catch (err) {
-      console.error(`❌ Failed to parse ${file}:`, err);
+      console.error(` Failed to parse ${file}:`, err);
     }
   }
 
-  console.log(`✅ Loaded ${asts.length} AST files`);
+  console.log(` Loaded ${asts.length} AST files`);
   return asts;
 }
 
@@ -36,11 +36,11 @@ export function saveReport(fileName: string, data: any) {
 
   const outPath = path.join(outDir, fileName.replace(".json", "_report.json"));
   fs.writeFileSync(outPath, JSON.stringify(data, null, 2));
-  console.log(`📄 Report saved → ${outPath}`);
+  console.log(` Report saved → ${outPath}`);
 }
 
 /** 
- * 🔍 Reads the corresponding Java source file 
+ *  Reads the corresponding Java source file 
  * and counts real Lines of Code (LOC) and comment lines 
  */
 export function getRealLOCAndComments(fileName: string): { loc: number; comments: number } {
@@ -49,7 +49,7 @@ export function getRealLOCAndComments(fileName: string): { loc: number; comments
   const javaFilePath = path.join(JAVA_FOLDER, javaFileName);
 
   if (!fs.existsSync(javaFilePath)) {
-    console.warn(`⚠️ Java source not found for ${fileName}`);
+    console.warn(` Java source not found for ${fileName}`);
     return { loc: 0, comments: 0 };
   }
 

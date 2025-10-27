@@ -9,4 +9,5 @@ export interface CFG {
   methodName: string;
   nodes: CFGNode[];
   edges: [string, string][]; // pairs of node IDs
+   
 }

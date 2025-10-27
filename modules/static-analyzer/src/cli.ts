@@ -2,6 +2,7 @@ import { parseFolder } from "./parser/ASTParser.js";
 import { analyzeFile } from "./analyzer/index.js";
 import fs from "fs";
 import path from "path";
+export { analyzeFile } from "./analyzer/index.js";
 
 const inputPath = process.argv[2];
 if (!inputPath) {

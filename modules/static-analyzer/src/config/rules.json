@@ -5,7 +5,10 @@
       "QA002": { "desc": "Missing semicolons or inconsistent braces", "severity": "low" },
       "QA003": { "desc": "Missing default case in switch", "severity": "medium" },
       "QA004": { "desc": "Multiple classes in one file", "severity": "low" },
-      "QA005": { "desc": "Line exceeds 120 characters", "severity": "low" }
+      "QA005": { "desc": "Line exceeds 120 characters", "severity": "low" },
+      "QA006": { "desc": "High cyclomatic complexity", "severity": "medium" },
+      "QA007": { "desc": "Large function size", "severity": "low" },
+      "QA008": { "desc": "Deep nesting detected", "severity": "low" }
     },
     "documentation": {
       "QD001": { "desc": "Function or class missing doc comment", "severity": "low" },

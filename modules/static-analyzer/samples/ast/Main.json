@@ -3,361 +3,8 @@
   "classes": [
     {
       "type": "Class",
-      "name": "Base",
-      "methods": [
-        {
-          "name": "Base",
-          "params": [
-            {
-              "type": "T",
-              "name": "value"
-            }
-          ],
-          "loops": [],
-          "conditionals": [],
-          "modifiers": [
-            "public"
-          ]
-        }
-      ],
-      "generics": "<T>",
-      "fields": [
-        "protected T value;"
-      ]
-    },
-    {
-      "type": "Class",
       "name": "Main",
       "methods": [
-        {
-          "name": "Main",
-          "params": [],
-          "loops": [],
-          "conditionals": [],
-          "modifiers": [
-            "public"
-          ],
-          "constructorChaining": [
-            {
-              "type": "this",
-              "args": [
-                "100"
-              ]
-            }
-          ]
-        },
-        {
-          "name": "Main",
-          "params": [
-            {
-              "type": "int",
-              "name": "c"
-            }
-          ],
-          "loops": [],
-          "conditionals": [
-            "throw"
-          ],
-          "conditionalsTree": [
-            {
-              "type": "IfStatement",
-              "thenBlock": [
-                {
-                  "type": "Statement"
-                }
-              ],
-              "elseBlock": null
-            }
-          ],
-          "modifiers": [
-            "public"
-          ],
-          "constructorChaining": [
-            {
-              "type": "super",
-              "args": [
-                "\"base-value\""
-              ]
-            }
-          ]
-        },
-        {
-          "name": "Main",
-          "params": [
-            {
-              "type": "E",
-              "name": "element"
-            }
-          ],
-          "loops": [],
-          "conditionals": [],
-          "modifiers": [
-            "public"
-          ],
-          "constructorChaining": [
-            {
-              "type": "super",
-              "args": [
-                "\"generic-base\""
-              ]
-            }
-          ]
-        },
-        {
-          "name": "run",
-          "params": [],
-          "loops": [],
-          "conditionals": [],
-          "returnType": "void",
-          "modifiers": [
-            "@Override",
-            "public"
-          ]
-        },
-        {
-          "name": "processItems",
-          "params": [
-            {
-              "type": "List<String>",
-              "name": "list"
-            },
-            {
-              "type": "String...",
-              "name": "extras"
-            }
-          ],
-          "loops": [
-            "for",
-            "forEach",
-            "while",
-            "doWhile"
-          ],
-          "conditionals": [
-            "continue",
-            "break",
-            "throw",
-            "switch",
-            "case",
-            "default",
-            "return",
-            "synchronized"
-          ],
-          "conditionalsTree": [
-            {
-              "type": "IfStatement",
-              "thenBlock": [
-                {
-                  "type": "Statement"
-                }
-              ],
-              "elseBlock": [
-                {
-                  "type": "IfStatement",
-                  "thenBlock": [
-                    {
-                      "type": "Statement"
-                    }
-                  ],
-                  "elseBlock": [
-                    {
-                      "type": "Statement"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "IfStatement",
-              "thenBlock": [
-                {
-                  "type": "Statement"
-                }
-              ],
-              "elseBlock": null
-            }
-          ],
-          "returnType": "String",
-          "modifiers": [
-            "@Deprecated",
-            "public",
-            "synchronized"
-          ]
-        },
-        {
-          "name": "identity",
-          "params": [
-            {
-              "type": "T",
-              "name": "input"
-            }
-          ],
-          "loops": [],
-          "conditionals": [
-            "return"
-          ],
-          "methodGenerics": "<T>",
-          "returnType": "T",
-          "modifiers": [
-            "public"
-          ]
-        },
-        {
-          "name": "doubleValue",
-          "params": [
-            {
-              "type": "N",
-              "name": "number"
-            }
-          ],
-          "loops": [],
-          "conditionals": [
-            "return"
-          ],
-          "methodGenerics": "<N extends Number>",
-          "returnType": "N",
-          "modifiers": [
-            "public"
-          ]
-        },
-        {
-          "name": "calculate",
-          "params": [
-            {
-              "type": "int",
-              "name": "a"
-            },
-            {
-              "type": "int",
-              "name": "b"
-            }
-          ],
-          "loops": [],
-          "conditionals": [
-            "try",
-            "throw",
-            "return",
-            "catch",
-            "finally"
-          ],
-          "conditionalsTree": [
-            {
-              "type": "IfStatement",
-              "thenBlock": [
-                {
-                  "type": "Statement"
-                }
-              ],
-              "elseBlock": null
-            }
-          ],
-          "returnType": "int",
-          "modifiers": [
-            "public"
-          ]
-        },
-        {
-          "name": "syncTest",
-          "params": [],
-          "loops": [],
-          "conditionals": [
-            "synchronized"
-          ],
-          "returnType": "void",
-          "modifiers": [
-            "public"
-          ]
-        },
-        {
-          "name": "breakContinueTest",
-          "params": [
-            {
-              "type": "int",
-              "name": "n"
-            }
-          ],
-          "loops": [
-            "for"
-          ],
-          "conditionals": [
-            "break",
-            "continue"
-          ],
-          "conditionalsTree": [
-            {
-              "type": "IfStatement",
-              "thenBlock": [
-                {
-                  "type": "Statement"
-                }
-              ],
-              "elseBlock": [
-                {
-                  "type": "IfStatement",
-                  "thenBlock": [
-                    {
-                      "type": "Statement"
-                    }
-                  ],
-                  "elseBlock": null
-                }
-              ]
-            }
-          ],
-          "returnType": "void",
-          "modifiers": [
-            "public"
-          ]
-        },
-        {
-          "name": "nestedIf",
-          "params": [
-            {
-              "type": "int",
-              "name": "x"
-            }
-          ],
-          "loops": [],
-          "conditionals": [],
-          "conditionalsTree": [
-            {
-              "type": "IfStatement",
-              "thenBlock": [
-                {
-                  "type": "IfStatement",
-                  "thenBlock": [
-                    {
-                      "type": "Statement"
-                    }
-                  ],
-                  "elseBlock": [
-                    {
-                      "type": "Statement"
-                    }
-                  ]
-                }
-              ],
-              "elseBlock": [
-                {
-                  "type": "IfStatement",
-                  "thenBlock": [
-                    {
-                      "type": "Statement"
-                    }
-                  ],
-                  "elseBlock": [
-                    {
-                      "type": "Statement"
-                    }
-                  ]
-                }
-              ]
-            }
-          ],
-          "returnType": "void",
-          "modifiers": [
-            "public"
-          ]
-        },
         {
           "name": "main",
           "params": [
@@ -366,10 +13,69 @@
               "name": "args"
             }
           ],
-          "loops": [],
+          "loops": [
+            "for",
+            "forEach"
+          ],
           "conditionals": [
             "try",
             "catch"
+          ],
+          "conditionalsTree": [
+            {
+              "type": "IfStatement",
+              "thenBlock": [
+                {
+                  "type": "Statement"
+                },
+                {
+                  "type": "Statement"
+                },
+                {
+                  "type": "IfStatement",
+                  "thenBlock": [
+                    {
+                      "type": "Statement"
+                    }
+                  ],
+                  "elseBlock": null
+                },
+                {
+                  "type": "IfStatement",
+                  "thenBlock": [
+                    {
+                      "type": "IfStatement",
+                      "thenBlock": [
+                        {
+                          "type": "Statement"
+                        }
+                      ],
+                      "elseBlock": [
+                        {
+                          "type": "IfStatement",
+                          "thenBlock": [
+                            {
+                              "type": "Statement"
+                            }
+                          ],
+                          "elseBlock": [
+                            {
+                              "type": "Statement"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "elseBlock": [
+                    {
+                      "type": "Statement"
+                    }
+                  ]
+                }
+              ],
+              "elseBlock": null
+            }
           ],
           "returnType": "void",
           "modifiers": [
@@ -378,14 +84,7 @@
           ]
         }
       ],
-      "generics": "<K, V>",
-      "fields": [
-        "private int counter = 0;",
-        "protected String name = \"default\";",
-        "public static final double PI = 3.14159;",
-        "List<String> items;",
-        "Map<String, Integer> cache = new HashMap<>();"
-      ]
+      "fields": []
     }
   ]
 }

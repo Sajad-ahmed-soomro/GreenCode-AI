@@ -1,16 +1,19 @@
-export interface MethodMetrics{
-    methodName:String,
-    cyclomaticComplexity:Number,
-    nestingDepth:Number,
-    functionSize:Number
+import { CFG } from "./CFGType.js";
+
+export interface MethodMetrics {
+  name: string; // was methodName → changed to `name` (matches MetricsAnalyzer + RuleEngine)
+  cyclomaticComplexity: number;
+  nestingDepth: number;
+  functionSize: number;
+  cfg?: CFG;
 }
 
-export interface ClassMetrics{
-    className:String,
-    methods:MethodMetrics[]
-
+export interface ClassMetrics {
+  className: string;
+  methods: MethodMetrics[];
 }
-export interface FileMetrics{
-    fileName:String,
-    classes:ClassMetrics[]
+
+export interface FileMetrics {
+  fileName: string;
+  classes: ClassMetrics[];
 }

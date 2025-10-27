@@ -589,11 +589,15 @@ export async function parseJavaFile(filePath: string) {
   return { file: filePath, classes };
 }
 
+// Quick local test
+// const hardcodedFile = path.join("samples", "Main.java");
+// parseJavaFile(hardcodedFile)
+//   .then(_ => console.log("parsed",r))
+//   .catch(err => console.error(" Parse error:", err));
 
 
 
-
-  export async function parseFolder(folderPath: string, outDir: string) {
+export async function parseFolder(folderPath: string, outDir: string) {
   const javaFiles = await scanJavaFiles(folderPath);
   if (javaFiles.length === 0) {
     console.log("No .java files found in", folderPath);
@@ -608,7 +612,8 @@ export async function parseJavaFile(filePath: string) {
       const fileName = path.basename(file, ".java") + ".json";
       const outFile = path.join(outDir, fileName);
       await fs.writeFile(outFile, JSON.stringify(astJson, null, 2), "utf8");
-      console.log("Parsed:", file, "→", outFile);
+      // console.log("Parsed:", file, "→", outFile);
+      
     } catch (err) {
       console.error("Failed parsing", file, ":", err);
     }
