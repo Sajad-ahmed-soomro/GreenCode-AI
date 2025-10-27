@@ -1,22 +1,120 @@
 {
-  "file": "/home/sajad-ahmed/Documents/Semesters/Seventh-Semester/fyp/greencode-ai/modules/static-analyzer/samples/model/User.java",
+  "file": "samples\\model\\User.java",
   "classes": [
     {
       "type": "Class",
-      "name": "User",
+      "name": "NestedIfTest",
       "methods": [
         {
-          "name": "run",
-          "params": [],
-          "loops": [
-            "for",
-            "while",
-            "doWhile"
+          "name": "checkScore",
+          "params": [
+            {
+              "type": "int",
+              "name": "score"
+            }
           ],
+          "loops": [],
           "conditionals": [],
+          "conditionalsTree": [
+            {
+              "type": "IfStatement",
+              "thenBlock": [
+                {
+                  "type": "Statement"
+                },
+                {
+                  "type": "IfStatement",
+                  "thenBlock": [
+                    {
+                      "type": "Statement"
+                    },
+                    {
+                      "type": "IfStatement",
+                      "thenBlock": [
+                        {
+                          "type": "Statement"
+                        }
+                      ],
+                      "elseBlock": [
+                        {
+                          "type": "Statement"
+                        }
+                      ]
+                    }
+                  ],
+                  "elseBlock": [
+                    {
+                      "type": "Statement"
+                    }
+                  ]
+                }
+              ],
+              "elseBlock": [
+                {
+                  "type": "IfStatement",
+                  "thenBlock": [
+                    {
+                      "type": "IfStatement",
+                      "thenBlock": [
+                        {
+                          "type": "Statement"
+                        }
+                      ],
+                      "elseBlock": [
+                        {
+                          "type": "Statement"
+                        }
+                      ]
+                    }
+                  ],
+                  "elseBlock": [
+                    {
+                      "type": "IfStatement",
+                      "thenBlock": [
+                        {
+                          "type": "Statement"
+                        }
+                      ],
+                      "elseBlock": [
+                        {
+                          "type": "IfStatement",
+                          "thenBlock": [
+                            {
+                              "type": "Statement"
+                            }
+                          ],
+                          "elseBlock": [
+                            {
+                              "type": "Statement"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
           "returnType": "void",
           "modifiers": [
             "public"
+          ]
+        },
+        {
+          "name": "main",
+          "params": [
+            {
+              "type": "String []",
+              "name": "args"
+            }
+          ],
+          "loops": [],
+          "conditionals": [],
+          "returnType": "void",
+          "modifiers": [
+            "public",
+            "static"
           ]
         }
       ],

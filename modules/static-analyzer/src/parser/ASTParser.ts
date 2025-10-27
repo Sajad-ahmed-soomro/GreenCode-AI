@@ -589,11 +589,7 @@ export async function parseJavaFile(filePath: string) {
   return { file: filePath, classes };
 }
 
-// Quick local test
-const hardcodedFile = path.join("samples", "Main.java");
-parseJavaFile(hardcodedFile)
-  .then(r => console.log(JSON.stringify(r, null, 2)))
-  .catch(err => console.error(" Parse error:", err));
+
 
 
 
