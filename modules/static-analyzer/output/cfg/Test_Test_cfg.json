@@ -1,0 +1,49 @@
+{
+  "methodName": "Test",
+  "nodes": [
+    {
+      "id": "ca2b21d0-733d-4db9-a381-bc86055e220b",
+      "label": "Start (Test)",
+      "type": "start",
+      "next": [
+        "0b411f16-583f-4d15-bb80-cfb74bfa8c5c"
+      ]
+    },
+    {
+      "id": "1210b120-e777-49b7-bf5c-564fd5eeeb60",
+      "label": "End (Test)",
+      "type": "end",
+      "next": []
+    },
+    {
+      "id": "0b411f16-583f-4d15-bb80-cfb74bfa8c5c",
+      "label": "Test.badExample → Start",
+      "type": "start",
+      "next": [
+        "fdfb5913-c4be-44f9-9894-7bffc43a7984"
+      ]
+    },
+    {
+      "id": "fdfb5913-c4be-44f9-9894-7bffc43a7984",
+      "label": "Test.badExample → End",
+      "type": "end",
+      "next": [
+        "1210b120-e777-49b7-bf5c-564fd5eeeb60"
+      ]
+    }
+  ],
+  "edges": [
+    [
+      "0b411f16-583f-4d15-bb80-cfb74bfa8c5c",
+      "fdfb5913-c4be-44f9-9894-7bffc43a7984"
+    ],
+    [
+      "ca2b21d0-733d-4db9-a381-bc86055e220b",
+      "0b411f16-583f-4d15-bb80-cfb74bfa8c5c"
+    ],
+    [
+      "fdfb5913-c4be-44f9-9894-7bffc43a7984",
+      "1210b120-e777-49b7-bf5c-564fd5eeeb60"
+    ]
+  ]
+}

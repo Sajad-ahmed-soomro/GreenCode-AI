@@ -1,0 +1,241 @@
+{
+  "methodName": "Calculator",
+  "nodes": [
+    {
+      "id": "e8176471-457e-4762-8fc1-c76313fd7927",
+      "label": "Start (Calculator)",
+      "type": "start",
+      "next": [
+        "170641ef-bc6a-4be3-827c-6e6c6c235fb3"
+      ]
+    },
+    {
+      "id": "7ee4bb98-b4e3-4a2f-a11c-22afb87953a4",
+      "label": "End (Calculator)",
+      "type": "end",
+      "next": []
+    },
+    {
+      "id": "170641ef-bc6a-4be3-827c-6e6c6c235fb3",
+      "label": "Calculator.Calculator → Start",
+      "type": "start",
+      "next": [
+        "faaa1944-d8f4-41b2-8974-1b214a05b2a5"
+      ]
+    },
+    {
+      "id": "faaa1944-d8f4-41b2-8974-1b214a05b2a5",
+      "label": "Calculator.Calculator → End",
+      "type": "end",
+      "next": [
+        "032f301c-220e-474d-924c-992ab09ad114"
+      ]
+    },
+    {
+      "id": "032f301c-220e-474d-924c-992ab09ad114",
+      "label": "Calculator.Calculator → Start",
+      "type": "start",
+      "next": [
+        "78d2684b-7f8c-4189-81a6-c6933cb30a39"
+      ]
+    },
+    {
+      "id": "78d2684b-7f8c-4189-81a6-c6933cb30a39",
+      "label": "Calculator.Calculator → End",
+      "type": "end",
+      "next": [
+        "f718196b-984d-4ffe-93d6-ec110f8731d5"
+      ]
+    },
+    {
+      "id": "f718196b-984d-4ffe-93d6-ec110f8731d5",
+      "label": "Calculator.add → Start",
+      "type": "start",
+      "next": [
+        "040a4b23-b3ee-4de0-ae86-bfe549e66d68"
+      ]
+    },
+    {
+      "id": "b1f78782-7d39-4ad8-bc89-56b53872ef07",
+      "label": "Calculator.add → End",
+      "type": "end",
+      "next": [
+        "be45e3cc-c634-4085-897e-41dd276b9ed8"
+      ]
+    },
+    {
+      "id": "040a4b23-b3ee-4de0-ae86-bfe549e66d68",
+      "label": "Calculator.add → return",
+      "type": "condition",
+      "next": [
+        "b1f78782-7d39-4ad8-bc89-56b53872ef07"
+      ]
+    },
+    {
+      "id": "be45e3cc-c634-4085-897e-41dd276b9ed8",
+      "label": "Calculator.sumArray → Start",
+      "type": "start",
+      "next": [
+        "b83ed08b-d33a-4bd0-ba0b-283981055e9a"
+      ]
+    },
+    {
+      "id": "f28b8f31-bfa1-47a9-a79f-7db25a09bbf1",
+      "label": "Calculator.sumArray → End",
+      "type": "end",
+      "next": [
+        "ec452bd7-efd3-4ba7-81ee-8366475874f9"
+      ]
+    },
+    {
+      "id": "b83ed08b-d33a-4bd0-ba0b-283981055e9a",
+      "label": "Calculator.sumArray → for",
+      "type": "statement",
+      "next": [
+        "81398f04-369f-4dbf-929f-e98cc2043ab6"
+      ]
+    },
+    {
+      "id": "81398f04-369f-4dbf-929f-e98cc2043ab6",
+      "label": "Calculator.sumArray → forEach",
+      "type": "statement",
+      "next": [
+        "504497ba-71ac-4aba-83e3-8faf7b438920"
+      ]
+    },
+    {
+      "id": "504497ba-71ac-4aba-83e3-8faf7b438920",
+      "label": "Calculator.sumArray → return",
+      "type": "condition",
+      "next": [
+        "f28b8f31-bfa1-47a9-a79f-7db25a09bbf1"
+      ]
+    },
+    {
+      "id": "ec452bd7-efd3-4ba7-81ee-8366475874f9",
+      "label": "Calculator.checkValue → Start",
+      "type": "start",
+      "next": [
+        "54faf46b-40d4-4123-8f10-1454e941f66c"
+      ]
+    },
+    {
+      "id": "cec260f7-99cf-41f5-a0e4-20512067de54",
+      "label": "Calculator.checkValue → End",
+      "type": "end",
+      "next": [
+        "7ee4bb98-b4e3-4a2f-a11c-22afb87953a4"
+      ]
+    },
+    {
+      "id": "54faf46b-40d4-4123-8f10-1454e941f66c",
+      "label": "Calculator.checkValue → switch",
+      "type": "condition",
+      "next": [
+        "2f6897f6-dc7a-4523-adbb-32bdddafec65"
+      ]
+    },
+    {
+      "id": "2f6897f6-dc7a-4523-adbb-32bdddafec65",
+      "label": "Calculator.checkValue → case",
+      "type": "condition",
+      "next": [
+        "a6de8333-856d-4469-a319-6c6b3f9c7a0d"
+      ]
+    },
+    {
+      "id": "a6de8333-856d-4469-a319-6c6b3f9c7a0d",
+      "label": "Calculator.checkValue → default",
+      "type": "condition",
+      "next": [
+        "15f8c542-49d8-49aa-8fc4-963c39a2985d"
+      ]
+    },
+    {
+      "id": "15f8c542-49d8-49aa-8fc4-963c39a2985d",
+      "label": "Calculator.checkValue → break",
+      "type": "condition",
+      "next": [
+        "cec260f7-99cf-41f5-a0e4-20512067de54"
+      ]
+    }
+  ],
+  "edges": [
+    [
+      "170641ef-bc6a-4be3-827c-6e6c6c235fb3",
+      "faaa1944-d8f4-41b2-8974-1b214a05b2a5"
+    ],
+    [
+      "e8176471-457e-4762-8fc1-c76313fd7927",
+      "170641ef-bc6a-4be3-827c-6e6c6c235fb3"
+    ],
+    [
+      "032f301c-220e-474d-924c-992ab09ad114",
+      "78d2684b-7f8c-4189-81a6-c6933cb30a39"
+    ],
+    [
+      "faaa1944-d8f4-41b2-8974-1b214a05b2a5",
+      "032f301c-220e-474d-924c-992ab09ad114"
+    ],
+    [
+      "f718196b-984d-4ffe-93d6-ec110f8731d5",
+      "040a4b23-b3ee-4de0-ae86-bfe549e66d68"
+    ],
+    [
+      "040a4b23-b3ee-4de0-ae86-bfe549e66d68",
+      "b1f78782-7d39-4ad8-bc89-56b53872ef07"
+    ],
+    [
+      "78d2684b-7f8c-4189-81a6-c6933cb30a39",
+      "f718196b-984d-4ffe-93d6-ec110f8731d5"
+    ],
+    [
+      "be45e3cc-c634-4085-897e-41dd276b9ed8",
+      "b83ed08b-d33a-4bd0-ba0b-283981055e9a"
+    ],
+    [
+      "b83ed08b-d33a-4bd0-ba0b-283981055e9a",
+      "81398f04-369f-4dbf-929f-e98cc2043ab6"
+    ],
+    [
+      "81398f04-369f-4dbf-929f-e98cc2043ab6",
+      "504497ba-71ac-4aba-83e3-8faf7b438920"
+    ],
+    [
+      "504497ba-71ac-4aba-83e3-8faf7b438920",
+      "f28b8f31-bfa1-47a9-a79f-7db25a09bbf1"
+    ],
+    [
+      "b1f78782-7d39-4ad8-bc89-56b53872ef07",
+      "be45e3cc-c634-4085-897e-41dd276b9ed8"
+    ],
+    [
+      "ec452bd7-efd3-4ba7-81ee-8366475874f9",
+      "54faf46b-40d4-4123-8f10-1454e941f66c"
+    ],
+    [
+      "54faf46b-40d4-4123-8f10-1454e941f66c",
+      "2f6897f6-dc7a-4523-adbb-32bdddafec65"
+    ],
+    [
+      "2f6897f6-dc7a-4523-adbb-32bdddafec65",
+      "a6de8333-856d-4469-a319-6c6b3f9c7a0d"
+    ],
+    [
+      "a6de8333-856d-4469-a319-6c6b3f9c7a0d",
+      "15f8c542-49d8-49aa-8fc4-963c39a2985d"
+    ],
+    [
+      "15f8c542-49d8-49aa-8fc4-963c39a2985d",
+      "cec260f7-99cf-41f5-a0e4-20512067de54"
+    ],
+    [
+      "f28b8f31-bfa1-47a9-a79f-7db25a09bbf1",
+      "ec452bd7-efd3-4ba7-81ee-8366475874f9"
+    ],
+    [
+      "cec260f7-99cf-41f5-a0e4-20512067de54",
+      "7ee4bb98-b4e3-4a2f-a11c-22afb87953a4"
+    ]
+  ]
+}

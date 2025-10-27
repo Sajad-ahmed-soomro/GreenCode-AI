@@ -11,6 +11,7 @@ export interface MethodMetrics {
 export interface ClassMetrics {
   className: string;
   methods: MethodMetrics[];
+  cfg?: CFG; 
 }
 
 export interface FileMetrics {

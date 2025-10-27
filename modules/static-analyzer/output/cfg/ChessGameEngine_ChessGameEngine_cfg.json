@@ -1,0 +1,1035 @@
+{
+  "methodName": "ChessGameEngine",
+  "nodes": [
+    {
+      "id": "0f08319d-f95b-4d6a-9975-6f97460c1b3b",
+      "label": "Start (ChessGameEngine)",
+      "type": "start",
+      "next": [
+        "7f1a199e-4f0e-4414-bde9-040111dc21e0"
+      ]
+    },
+    {
+      "id": "ffe011a3-afb3-436d-a69b-535c47618189",
+      "label": "End (ChessGameEngine)",
+      "type": "end",
+      "next": []
+    },
+    {
+      "id": "7f1a199e-4f0e-4414-bde9-040111dc21e0",
+      "label": "ChessGameEngine.ChessGameEngine → Start",
+      "type": "start",
+      "next": [
+        "0bb598f7-62db-4a95-ae2e-94849198d405"
+      ]
+    },
+    {
+      "id": "0bb598f7-62db-4a95-ae2e-94849198d405",
+      "label": "ChessGameEngine.ChessGameEngine → End",
+      "type": "end",
+      "next": [
+        "4da1bbea-b68a-402a-8db4-dae161cbc41e"
+      ]
+    },
+    {
+      "id": "4da1bbea-b68a-402a-8db4-dae161cbc41e",
+      "label": "ChessGameEngine.initializeBoard → Start",
+      "type": "start",
+      "next": [
+        "3a6f315c-1d0e-4912-a685-8541d035e69c"
+      ]
+    },
+    {
+      "id": "58c48f94-1328-46a2-8af1-61f68abaaf1d",
+      "label": "ChessGameEngine.initializeBoard → End",
+      "type": "end",
+      "next": [
+        "2b0459ad-b817-440e-b333-3e991d59f5fb"
+      ]
+    },
+    {
+      "id": "3a6f315c-1d0e-4912-a685-8541d035e69c",
+      "label": "ChessGameEngine.initializeBoard → for",
+      "type": "statement",
+      "next": [
+        "58c48f94-1328-46a2-8af1-61f68abaaf1d"
+      ]
+    },
+    {
+      "id": "2b0459ad-b817-440e-b333-3e991d59f5fb",
+      "label": "ChessGameEngine.makeMove → Start",
+      "type": "start",
+      "next": [
+        "785141bc-1c33-4fc3-904d-e2c0ce4d4b61"
+      ]
+    },
+    {
+      "id": "2b72c779-cef5-4748-be30-4ecbafdeffdc",
+      "label": "ChessGameEngine.makeMove → End",
+      "type": "end",
+      "next": [
+        "8f706b90-b11f-4b7a-a1df-9d8ca8def93a"
+      ]
+    },
+    {
+      "id": "785141bc-1c33-4fc3-904d-e2c0ce4d4b61",
+      "label": "ChessGameEngine.makeMove → return",
+      "type": "condition",
+      "next": [
+        "cd09f202-ad4f-4935-863b-d7a4157ea11f"
+      ]
+    },
+    {
+      "id": "cd09f202-ad4f-4935-863b-d7a4157ea11f",
+      "label": "ChessGameEngine.makeMove → IfStatement",
+      "type": "condition",
+      "next": [
+        "fe55e6b7-8c58-436b-876b-ea2589e3a821",
+        "9db2d1cd-22a7-467d-998e-9dfb17d61931"
+      ]
+    },
+    {
+      "id": "fe55e6b7-8c58-436b-876b-ea2589e3a821",
+      "label": "ChessGameEngine.makeMove → Statement",
+      "type": "statement",
+      "next": []
+    },
+    {
+      "id": "9db2d1cd-22a7-467d-998e-9dfb17d61931",
+      "label": "ChessGameEngine.makeMove → IfStatement",
+      "type": "condition",
+      "next": [
+        "1f96244f-09b6-4c14-8212-ce269cc0c0de",
+        "2b72c779-cef5-4748-be30-4ecbafdeffdc"
+      ]
+    },
+    {
+      "id": "1f96244f-09b6-4c14-8212-ce269cc0c0de",
+      "label": "ChessGameEngine.makeMove → Statement",
+      "type": "statement",
+      "next": [
+        "b3e8e99e-3ad3-43e4-a510-6e7c21b7b8e0"
+      ]
+    },
+    {
+      "id": "b3e8e99e-3ad3-43e4-a510-6e7c21b7b8e0",
+      "label": "ChessGameEngine.makeMove → Statement",
+      "type": "statement",
+      "next": [
+        "9a67a687-ee86-410a-9246-103046006450"
+      ]
+    },
+    {
+      "id": "9a67a687-ee86-410a-9246-103046006450",
+      "label": "ChessGameEngine.makeMove → Statement",
+      "type": "statement",
+      "next": []
+    },
+    {
+      "id": "8f706b90-b11f-4b7a-a1df-9d8ca8def93a",
+      "label": "ChessGameEngine.isValidMove → Start",
+      "type": "start",
+      "next": [
+        "d4ad47d5-dd0c-45bb-8869-1d2a90909b66"
+      ]
+    },
+    {
+      "id": "218df627-6511-4806-b7ea-1d64cbae91ee",
+      "label": "ChessGameEngine.isValidMove → End",
+      "type": "end",
+      "next": [
+        "4f9dd684-13db-4450-ab64-810ee5428c73"
+      ]
+    },
+    {
+      "id": "d4ad47d5-dd0c-45bb-8869-1d2a90909b66",
+      "label": "ChessGameEngine.isValidMove → return",
+      "type": "condition",
+      "next": [
+        "85338b41-b2ce-41ef-81e5-876fe923a3aa"
+      ]
+    },
+    {
+      "id": "85338b41-b2ce-41ef-81e5-876fe923a3aa",
+      "label": "ChessGameEngine.isValidMove → IfStatement",
+      "type": "condition",
+      "next": [
+        "2cc8f482-1901-48cc-a8fe-d45f785504cd",
+        "ad89f6c2-fc17-413d-af26-74e9496eed91"
+      ]
+    },
+    {
+      "id": "2cc8f482-1901-48cc-a8fe-d45f785504cd",
+      "label": "ChessGameEngine.isValidMove → Statement",
+      "type": "statement",
+      "next": []
+    },
+    {
+      "id": "ad89f6c2-fc17-413d-af26-74e9496eed91",
+      "label": "ChessGameEngine.isValidMove → IfStatement",
+      "type": "condition",
+      "next": [
+        "df89ddf4-fa16-4501-8b23-f562fb5e4a40",
+        "218df627-6511-4806-b7ea-1d64cbae91ee"
+      ]
+    },
+    {
+      "id": "df89ddf4-fa16-4501-8b23-f562fb5e4a40",
+      "label": "ChessGameEngine.isValidMove → Statement",
+      "type": "statement",
+      "next": []
+    },
+    {
+      "id": "4f9dd684-13db-4450-ab64-810ee5428c73",
+      "label": "ChessGameEngine.validatePieceMove → Start",
+      "type": "start",
+      "next": [
+        "ac53ccb3-9e3a-40bc-ad54-492ff5f5489a"
+      ]
+    },
+    {
+      "id": "fd693641-b5ea-4f7e-93a8-d9893515ec3e",
+      "label": "ChessGameEngine.validatePieceMove → End",
+      "type": "end",
+      "next": [
+        "8bc43af5-a941-452f-b480-94ef11f8c5a8"
+      ]
+    },
+    {
+      "id": "ac53ccb3-9e3a-40bc-ad54-492ff5f5489a",
+      "label": "ChessGameEngine.validatePieceMove → switch",
+      "type": "condition",
+      "next": [
+        "88d74867-5d34-4777-8204-cbcc117edcc8"
+      ]
+    },
+    {
+      "id": "88d74867-5d34-4777-8204-cbcc117edcc8",
+      "label": "ChessGameEngine.validatePieceMove → case",
+      "type": "condition",
+      "next": [
+        "0e470dd4-dacc-4959-9c4f-3f7697119cb2"
+      ]
+    },
+    {
+      "id": "0e470dd4-dacc-4959-9c4f-3f7697119cb2",
+      "label": "ChessGameEngine.validatePieceMove → default",
+      "type": "condition",
+      "next": [
+        "02df33a3-6cb7-4645-87a2-6519f9e83b9a"
+      ]
+    },
+    {
+      "id": "02df33a3-6cb7-4645-87a2-6519f9e83b9a",
+      "label": "ChessGameEngine.validatePieceMove → return",
+      "type": "condition",
+      "next": [
+        "fd693641-b5ea-4f7e-93a8-d9893515ec3e"
+      ]
+    },
+    {
+      "id": "8bc43af5-a941-452f-b480-94ef11f8c5a8",
+      "label": "ChessGameEngine.handleSpecialMoves → Start",
+      "type": "start",
+      "next": [
+        "758aae28-4f6b-43cd-9ed5-e4b24cd3b90d"
+      ]
+    },
+    {
+      "id": "4d8a7e84-9b83-476f-ba88-2a17720dbce6",
+      "label": "ChessGameEngine.handleSpecialMoves → End",
+      "type": "end",
+      "next": [
+        "e50df1e2-b2c3-4096-a261-c7e735eb3b62"
+      ]
+    },
+    {
+      "id": "758aae28-4f6b-43cd-9ed5-e4b24cd3b90d",
+      "label": "ChessGameEngine.handleSpecialMoves → IfStatement",
+      "type": "condition",
+      "next": [
+        "7df78f45-6269-4985-8865-1f81c2540dbe",
+        "e4bbd232-e15d-48c2-ba7a-378421128c5c"
+      ]
+    },
+    {
+      "id": "7df78f45-6269-4985-8865-1f81c2540dbe",
+      "label": "ChessGameEngine.handleSpecialMoves → Statement",
+      "type": "statement",
+      "next": []
+    },
+    {
+      "id": "e4bbd232-e15d-48c2-ba7a-378421128c5c",
+      "label": "ChessGameEngine.handleSpecialMoves → IfStatement",
+      "type": "condition",
+      "next": [
+        "136dca35-26ef-43a0-b916-ec904e89ea00",
+        "0397c0a4-70fb-4d4e-91c6-81b7846ebc14"
+      ]
+    },
+    {
+      "id": "136dca35-26ef-43a0-b916-ec904e89ea00",
+      "label": "ChessGameEngine.handleSpecialMoves → Statement",
+      "type": "statement",
+      "next": []
+    },
+    {
+      "id": "0397c0a4-70fb-4d4e-91c6-81b7846ebc14",
+      "label": "ChessGameEngine.handleSpecialMoves → IfStatement",
+      "type": "condition",
+      "next": [
+        "d20cb194-96c9-4471-8c26-2be5bfd40d2d",
+        "4d8a7e84-9b83-476f-ba88-2a17720dbce6"
+      ]
+    },
+    {
+      "id": "d20cb194-96c9-4471-8c26-2be5bfd40d2d",
+      "label": "ChessGameEngine.handleSpecialMoves → Statement",
+      "type": "statement",
+      "next": []
+    },
+    {
+      "id": "e50df1e2-b2c3-4096-a261-c7e735eb3b62",
+      "label": "ChessGameEngine.isInCheck → Start",
+      "type": "start",
+      "next": [
+        "fbc9d8eb-4760-4ecc-92f1-10b8ff8b6adf"
+      ]
+    },
+    {
+      "id": "03b44f58-f454-4e25-94ea-ef6b6a44ba4c",
+      "label": "ChessGameEngine.isInCheck → End",
+      "type": "end",
+      "next": [
+        "725dd78f-f2b6-4d3b-b6f7-e2dd3a98558b"
+      ]
+    },
+    {
+      "id": "fbc9d8eb-4760-4ecc-92f1-10b8ff8b6adf",
+      "label": "ChessGameEngine.isInCheck → for",
+      "type": "statement",
+      "next": [
+        "a60fc65c-bd7d-42c0-a22a-18b5bdf8fe95"
+      ]
+    },
+    {
+      "id": "a60fc65c-bd7d-42c0-a22a-18b5bdf8fe95",
+      "label": "ChessGameEngine.isInCheck → return",
+      "type": "condition",
+      "next": [
+        "8ec1769e-c72e-4881-aafd-b4287d1f20e2"
+      ]
+    },
+    {
+      "id": "8ec1769e-c72e-4881-aafd-b4287d1f20e2",
+      "label": "ChessGameEngine.isInCheck → IfStatement",
+      "type": "condition",
+      "next": [
+        "e0caf751-411a-41d1-b635-9ac3871edf9e",
+        "e49573ab-bbca-4c94-8da6-c3114c55375a"
+      ]
+    },
+    {
+      "id": "e0caf751-411a-41d1-b635-9ac3871edf9e",
+      "label": "ChessGameEngine.isInCheck → Statement",
+      "type": "statement",
+      "next": []
+    },
+    {
+      "id": "e49573ab-bbca-4c94-8da6-c3114c55375a",
+      "label": "ChessGameEngine.isInCheck → IfStatement",
+      "type": "condition",
+      "next": [
+        "d5ba699c-c66c-4b94-a2c9-6fde116b74e4",
+        "03b44f58-f454-4e25-94ea-ef6b6a44ba4c"
+      ]
+    },
+    {
+      "id": "d5ba699c-c66c-4b94-a2c9-6fde116b74e4",
+      "label": "ChessGameEngine.isInCheck → IfStatement",
+      "type": "statement",
+      "next": []
+    },
+    {
+      "id": "725dd78f-f2b6-4d3b-b6f7-e2dd3a98558b",
+      "label": "ChessGameEngine.isValidPosition → Start",
+      "type": "start",
+      "next": [
+        "e73f25e0-33b5-4c98-9ca6-7dea0a7253e4"
+      ]
+    },
+    {
+      "id": "69955322-ecb4-4f75-adca-a299a040038e",
+      "label": "ChessGameEngine.isValidPosition → End",
+      "type": "end",
+      "next": [
+        "d2f84c73-ebe3-46d3-a34f-0313e3eebe15"
+      ]
+    },
+    {
+      "id": "e73f25e0-33b5-4c98-9ca6-7dea0a7253e4",
+      "label": "ChessGameEngine.isValidPosition → return",
+      "type": "condition",
+      "next": [
+        "69955322-ecb4-4f75-adca-a299a040038e"
+      ]
+    },
+    {
+      "id": "d2f84c73-ebe3-46d3-a34f-0313e3eebe15",
+      "label": "ChessGameEngine.isWhitePiece → Start",
+      "type": "start",
+      "next": [
+        "ba576b48-f206-45b1-a811-28a7b53371b2"
+      ]
+    },
+    {
+      "id": "c7a0d6c8-3cec-44c3-bda7-f59227a71949",
+      "label": "ChessGameEngine.isWhitePiece → End",
+      "type": "end",
+      "next": [
+        "40aeebe5-d5e8-4cd2-a88d-808628807c39"
+      ]
+    },
+    {
+      "id": "ba576b48-f206-45b1-a811-28a7b53371b2",
+      "label": "ChessGameEngine.isWhitePiece → return",
+      "type": "condition",
+      "next": [
+        "c7a0d6c8-3cec-44c3-bda7-f59227a71949"
+      ]
+    },
+    {
+      "id": "40aeebe5-d5e8-4cd2-a88d-808628807c39",
+      "label": "ChessGameEngine.validatePawnMove → Start",
+      "type": "start",
+      "next": [
+        "c27726d8-d2d6-46b9-ab0a-8366815fc828"
+      ]
+    },
+    {
+      "id": "b997ce02-7edc-4126-be51-3a9ba9a8eeb8",
+      "label": "ChessGameEngine.validatePawnMove → End",
+      "type": "end",
+      "next": [
+        "8a08f07f-4445-4b55-8a60-58e3e3ae70ca"
+      ]
+    },
+    {
+      "id": "c27726d8-d2d6-46b9-ab0a-8366815fc828",
+      "label": "ChessGameEngine.validatePawnMove → return",
+      "type": "condition",
+      "next": [
+        "b997ce02-7edc-4126-be51-3a9ba9a8eeb8"
+      ]
+    },
+    {
+      "id": "8a08f07f-4445-4b55-8a60-58e3e3ae70ca",
+      "label": "ChessGameEngine.validateRookMove → Start",
+      "type": "start",
+      "next": [
+        "8e1d35c2-8e89-4b62-be9f-80dc81e2646a"
+      ]
+    },
+    {
+      "id": "28740844-704b-4261-b4ed-82e621801e98",
+      "label": "ChessGameEngine.validateRookMove → End",
+      "type": "end",
+      "next": [
+        "d5bb7e1c-72c9-4fb3-b5c7-4b9958ee7bb3"
+      ]
+    },
+    {
+      "id": "8e1d35c2-8e89-4b62-be9f-80dc81e2646a",
+      "label": "ChessGameEngine.validateRookMove → return",
+      "type": "condition",
+      "next": [
+        "28740844-704b-4261-b4ed-82e621801e98"
+      ]
+    },
+    {
+      "id": "d5bb7e1c-72c9-4fb3-b5c7-4b9958ee7bb3",
+      "label": "ChessGameEngine.validateKnightMove → Start",
+      "type": "start",
+      "next": [
+        "b456a901-90be-437a-9e3c-383d9b465910"
+      ]
+    },
+    {
+      "id": "28fc476d-4454-4834-a4eb-bf4c05366dd2",
+      "label": "ChessGameEngine.validateKnightMove → End",
+      "type": "end",
+      "next": [
+        "449adc46-2bd0-4b30-85dd-b85e15f3bbc1"
+      ]
+    },
+    {
+      "id": "b456a901-90be-437a-9e3c-383d9b465910",
+      "label": "ChessGameEngine.validateKnightMove → return",
+      "type": "condition",
+      "next": [
+        "28fc476d-4454-4834-a4eb-bf4c05366dd2"
+      ]
+    },
+    {
+      "id": "449adc46-2bd0-4b30-85dd-b85e15f3bbc1",
+      "label": "ChessGameEngine.validateBishopMove → Start",
+      "type": "start",
+      "next": [
+        "4f2ea43a-ab7e-4c8e-8efa-5eb235116b09"
+      ]
+    },
+    {
+      "id": "cf09c55c-6304-49b4-85f0-600d4469265f",
+      "label": "ChessGameEngine.validateBishopMove → End",
+      "type": "end",
+      "next": [
+        "2b1573fa-3869-49ce-90f7-727c6e8da2d5"
+      ]
+    },
+    {
+      "id": "4f2ea43a-ab7e-4c8e-8efa-5eb235116b09",
+      "label": "ChessGameEngine.validateBishopMove → return",
+      "type": "condition",
+      "next": [
+        "cf09c55c-6304-49b4-85f0-600d4469265f"
+      ]
+    },
+    {
+      "id": "2b1573fa-3869-49ce-90f7-727c6e8da2d5",
+      "label": "ChessGameEngine.validateQueenMove → Start",
+      "type": "start",
+      "next": [
+        "683c2d12-78eb-448a-882c-3e146a6835bc"
+      ]
+    },
+    {
+      "id": "1b0d5553-3752-4cf1-8f98-f72e1704479b",
+      "label": "ChessGameEngine.validateQueenMove → End",
+      "type": "end",
+      "next": [
+        "d2b7ef75-126b-4289-9982-7c08e9f0a5a4"
+      ]
+    },
+    {
+      "id": "683c2d12-78eb-448a-882c-3e146a6835bc",
+      "label": "ChessGameEngine.validateQueenMove → return",
+      "type": "condition",
+      "next": [
+        "1b0d5553-3752-4cf1-8f98-f72e1704479b"
+      ]
+    },
+    {
+      "id": "d2b7ef75-126b-4289-9982-7c08e9f0a5a4",
+      "label": "ChessGameEngine.validateKingMove → Start",
+      "type": "start",
+      "next": [
+        "56fd3a43-7f25-456b-af46-3214832d7fb0"
+      ]
+    },
+    {
+      "id": "e8b8e7a9-50d1-4454-8519-016ee53ab546",
+      "label": "ChessGameEngine.validateKingMove → End",
+      "type": "end",
+      "next": [
+        "0281966a-63bd-4200-82d5-d4b85425d815"
+      ]
+    },
+    {
+      "id": "56fd3a43-7f25-456b-af46-3214832d7fb0",
+      "label": "ChessGameEngine.validateKingMove → return",
+      "type": "condition",
+      "next": [
+        "e8b8e7a9-50d1-4454-8519-016ee53ab546"
+      ]
+    },
+    {
+      "id": "0281966a-63bd-4200-82d5-d4b85425d815",
+      "label": "ChessGameEngine.handleCastling → Start",
+      "type": "start",
+      "next": [
+        "448e581f-c493-4dd7-9cc7-62147943b211"
+      ]
+    },
+    {
+      "id": "448e581f-c493-4dd7-9cc7-62147943b211",
+      "label": "ChessGameEngine.handleCastling → End",
+      "type": "end",
+      "next": [
+        "5676f3f2-6852-493a-bfc1-72d4b6add4b4"
+      ]
+    },
+    {
+      "id": "5676f3f2-6852-493a-bfc1-72d4b6add4b4",
+      "label": "ChessGameEngine.handlePromotion → Start",
+      "type": "start",
+      "next": [
+        "5361e0c3-3657-466a-bf25-24e81a73ded4"
+      ]
+    },
+    {
+      "id": "5361e0c3-3657-466a-bf25-24e81a73ded4",
+      "label": "ChessGameEngine.handlePromotion → End",
+      "type": "end",
+      "next": [
+        "a5db2cf8-e6e3-42e0-b3e0-e37e18841eaf"
+      ]
+    },
+    {
+      "id": "a5db2cf8-e6e3-42e0-b3e0-e37e18841eaf",
+      "label": "ChessGameEngine.handleEnPassant → Start",
+      "type": "start",
+      "next": [
+        "b23774b6-a112-4297-b751-50f14835f89d"
+      ]
+    },
+    {
+      "id": "b23774b6-a112-4297-b751-50f14835f89d",
+      "label": "ChessGameEngine.handleEnPassant → End",
+      "type": "end",
+      "next": [
+        "8814793a-e8eb-410e-bf19-8446d92d738d"
+      ]
+    },
+    {
+      "id": "8814793a-e8eb-410e-bf19-8446d92d738d",
+      "label": "ChessGameEngine.findKing → Start",
+      "type": "start",
+      "next": [
+        "702644d0-8f91-429f-ae96-9e0c072c5bc8"
+      ]
+    },
+    {
+      "id": "04060009-6ad5-46cd-899c-cc35dd8dac5d",
+      "label": "ChessGameEngine.findKing → End",
+      "type": "end",
+      "next": [
+        "d69ee7a5-5609-4677-be8d-5a7eec5c5e59"
+      ]
+    },
+    {
+      "id": "702644d0-8f91-429f-ae96-9e0c072c5bc8",
+      "label": "ChessGameEngine.findKing → for",
+      "type": "statement",
+      "next": [
+        "8f4f90c3-e185-4219-b814-212a52994385"
+      ]
+    },
+    {
+      "id": "8f4f90c3-e185-4219-b814-212a52994385",
+      "label": "ChessGameEngine.findKing → return",
+      "type": "condition",
+      "next": [
+        "933e759b-909c-4ca3-ad67-5bca54a1e693"
+      ]
+    },
+    {
+      "id": "933e759b-909c-4ca3-ad67-5bca54a1e693",
+      "label": "ChessGameEngine.findKing → IfStatement",
+      "type": "condition",
+      "next": [
+        "e8f5df43-1432-47c3-bbfc-9b6b5c3db4e2",
+        "04060009-6ad5-46cd-899c-cc35dd8dac5d"
+      ]
+    },
+    {
+      "id": "e8f5df43-1432-47c3-bbfc-9b6b5c3db4e2",
+      "label": "ChessGameEngine.findKing → Statement",
+      "type": "statement",
+      "next": []
+    },
+    {
+      "id": "d69ee7a5-5609-4677-be8d-5a7eec5c5e59",
+      "label": "ChessGameEngine.getBoard → Start",
+      "type": "start",
+      "next": [
+        "70bb3704-7b1d-43ab-b90c-9aada8b2caa1"
+      ]
+    },
+    {
+      "id": "255cd06d-0fa2-474d-a5a1-7a6927a09fd7",
+      "label": "ChessGameEngine.getBoard → End",
+      "type": "end",
+      "next": [
+        "247924da-d3cd-4069-af41-eec0afa9aa31"
+      ]
+    },
+    {
+      "id": "70bb3704-7b1d-43ab-b90c-9aada8b2caa1",
+      "label": "ChessGameEngine.getBoard → return",
+      "type": "condition",
+      "next": [
+        "255cd06d-0fa2-474d-a5a1-7a6927a09fd7"
+      ]
+    },
+    {
+      "id": "247924da-d3cd-4069-af41-eec0afa9aa31",
+      "label": "ChessGameEngine.isWhiteTurn → Start",
+      "type": "start",
+      "next": [
+        "434aaa88-f95c-4f82-aa59-642357a81605"
+      ]
+    },
+    {
+      "id": "ac788db3-632f-4146-ae44-a31ee298b147",
+      "label": "ChessGameEngine.isWhiteTurn → End",
+      "type": "end",
+      "next": [
+        "ffe011a3-afb3-436d-a69b-535c47618189"
+      ]
+    },
+    {
+      "id": "434aaa88-f95c-4f82-aa59-642357a81605",
+      "label": "ChessGameEngine.isWhiteTurn → return",
+      "type": "condition",
+      "next": [
+        "ac788db3-632f-4146-ae44-a31ee298b147"
+      ]
+    }
+  ],
+  "edges": [
+    [
+      "7f1a199e-4f0e-4414-bde9-040111dc21e0",
+      "0bb598f7-62db-4a95-ae2e-94849198d405"
+    ],
+    [
+      "0f08319d-f95b-4d6a-9975-6f97460c1b3b",
+      "7f1a199e-4f0e-4414-bde9-040111dc21e0"
+    ],
+    [
+      "4da1bbea-b68a-402a-8db4-dae161cbc41e",
+      "3a6f315c-1d0e-4912-a685-8541d035e69c"
+    ],
+    [
+      "3a6f315c-1d0e-4912-a685-8541d035e69c",
+      "58c48f94-1328-46a2-8af1-61f68abaaf1d"
+    ],
+    [
+      "0bb598f7-62db-4a95-ae2e-94849198d405",
+      "4da1bbea-b68a-402a-8db4-dae161cbc41e"
+    ],
+    [
+      "2b0459ad-b817-440e-b333-3e991d59f5fb",
+      "785141bc-1c33-4fc3-904d-e2c0ce4d4b61"
+    ],
+    [
+      "785141bc-1c33-4fc3-904d-e2c0ce4d4b61",
+      "cd09f202-ad4f-4935-863b-d7a4157ea11f"
+    ],
+    [
+      "cd09f202-ad4f-4935-863b-d7a4157ea11f",
+      "fe55e6b7-8c58-436b-876b-ea2589e3a821"
+    ],
+    [
+      "cd09f202-ad4f-4935-863b-d7a4157ea11f",
+      "9db2d1cd-22a7-467d-998e-9dfb17d61931"
+    ],
+    [
+      "9db2d1cd-22a7-467d-998e-9dfb17d61931",
+      "1f96244f-09b6-4c14-8212-ce269cc0c0de"
+    ],
+    [
+      "1f96244f-09b6-4c14-8212-ce269cc0c0de",
+      "b3e8e99e-3ad3-43e4-a510-6e7c21b7b8e0"
+    ],
+    [
+      "b3e8e99e-3ad3-43e4-a510-6e7c21b7b8e0",
+      "9a67a687-ee86-410a-9246-103046006450"
+    ],
+    [
+      "9db2d1cd-22a7-467d-998e-9dfb17d61931",
+      "2b72c779-cef5-4748-be30-4ecbafdeffdc"
+    ],
+    [
+      "58c48f94-1328-46a2-8af1-61f68abaaf1d",
+      "2b0459ad-b817-440e-b333-3e991d59f5fb"
+    ],
+    [
+      "8f706b90-b11f-4b7a-a1df-9d8ca8def93a",
+      "d4ad47d5-dd0c-45bb-8869-1d2a90909b66"
+    ],
+    [
+      "d4ad47d5-dd0c-45bb-8869-1d2a90909b66",
+      "85338b41-b2ce-41ef-81e5-876fe923a3aa"
+    ],
+    [
+      "85338b41-b2ce-41ef-81e5-876fe923a3aa",
+      "2cc8f482-1901-48cc-a8fe-d45f785504cd"
+    ],
+    [
+      "85338b41-b2ce-41ef-81e5-876fe923a3aa",
+      "ad89f6c2-fc17-413d-af26-74e9496eed91"
+    ],
+    [
+      "ad89f6c2-fc17-413d-af26-74e9496eed91",
+      "df89ddf4-fa16-4501-8b23-f562fb5e4a40"
+    ],
+    [
+      "ad89f6c2-fc17-413d-af26-74e9496eed91",
+      "218df627-6511-4806-b7ea-1d64cbae91ee"
+    ],
+    [
+      "2b72c779-cef5-4748-be30-4ecbafdeffdc",
+      "8f706b90-b11f-4b7a-a1df-9d8ca8def93a"
+    ],
+    [
+      "4f9dd684-13db-4450-ab64-810ee5428c73",
+      "ac53ccb3-9e3a-40bc-ad54-492ff5f5489a"
+    ],
+    [
+      "ac53ccb3-9e3a-40bc-ad54-492ff5f5489a",
+      "88d74867-5d34-4777-8204-cbcc117edcc8"
+    ],
+    [
+      "88d74867-5d34-4777-8204-cbcc117edcc8",
+      "0e470dd4-dacc-4959-9c4f-3f7697119cb2"
+    ],
+    [
+      "0e470dd4-dacc-4959-9c4f-3f7697119cb2",
+      "02df33a3-6cb7-4645-87a2-6519f9e83b9a"
+    ],
+    [
+      "02df33a3-6cb7-4645-87a2-6519f9e83b9a",
+      "fd693641-b5ea-4f7e-93a8-d9893515ec3e"
+    ],
+    [
+      "218df627-6511-4806-b7ea-1d64cbae91ee",
+      "4f9dd684-13db-4450-ab64-810ee5428c73"
+    ],
+    [
+      "8bc43af5-a941-452f-b480-94ef11f8c5a8",
+      "758aae28-4f6b-43cd-9ed5-e4b24cd3b90d"
+    ],
+    [
+      "758aae28-4f6b-43cd-9ed5-e4b24cd3b90d",
+      "7df78f45-6269-4985-8865-1f81c2540dbe"
+    ],
+    [
+      "758aae28-4f6b-43cd-9ed5-e4b24cd3b90d",
+      "e4bbd232-e15d-48c2-ba7a-378421128c5c"
+    ],
+    [
+      "e4bbd232-e15d-48c2-ba7a-378421128c5c",
+      "136dca35-26ef-43a0-b916-ec904e89ea00"
+    ],
+    [
+      "e4bbd232-e15d-48c2-ba7a-378421128c5c",
+      "0397c0a4-70fb-4d4e-91c6-81b7846ebc14"
+    ],
+    [
+      "0397c0a4-70fb-4d4e-91c6-81b7846ebc14",
+      "d20cb194-96c9-4471-8c26-2be5bfd40d2d"
+    ],
+    [
+      "0397c0a4-70fb-4d4e-91c6-81b7846ebc14",
+      "4d8a7e84-9b83-476f-ba88-2a17720dbce6"
+    ],
+    [
+      "fd693641-b5ea-4f7e-93a8-d9893515ec3e",
+      "8bc43af5-a941-452f-b480-94ef11f8c5a8"
+    ],
+    [
+      "e50df1e2-b2c3-4096-a261-c7e735eb3b62",
+      "fbc9d8eb-4760-4ecc-92f1-10b8ff8b6adf"
+    ],
+    [
+      "fbc9d8eb-4760-4ecc-92f1-10b8ff8b6adf",
+      "a60fc65c-bd7d-42c0-a22a-18b5bdf8fe95"
+    ],
+    [
+      "a60fc65c-bd7d-42c0-a22a-18b5bdf8fe95",
+      "8ec1769e-c72e-4881-aafd-b4287d1f20e2"
+    ],
+    [
+      "8ec1769e-c72e-4881-aafd-b4287d1f20e2",
+      "e0caf751-411a-41d1-b635-9ac3871edf9e"
+    ],
+    [
+      "8ec1769e-c72e-4881-aafd-b4287d1f20e2",
+      "e49573ab-bbca-4c94-8da6-c3114c55375a"
+    ],
+    [
+      "e49573ab-bbca-4c94-8da6-c3114c55375a",
+      "d5ba699c-c66c-4b94-a2c9-6fde116b74e4"
+    ],
+    [
+      "e49573ab-bbca-4c94-8da6-c3114c55375a",
+      "03b44f58-f454-4e25-94ea-ef6b6a44ba4c"
+    ],
+    [
+      "4d8a7e84-9b83-476f-ba88-2a17720dbce6",
+      "e50df1e2-b2c3-4096-a261-c7e735eb3b62"
+    ],
+    [
+      "725dd78f-f2b6-4d3b-b6f7-e2dd3a98558b",
+      "e73f25e0-33b5-4c98-9ca6-7dea0a7253e4"
+    ],
+    [
+      "e73f25e0-33b5-4c98-9ca6-7dea0a7253e4",
+      "69955322-ecb4-4f75-adca-a299a040038e"
+    ],
+    [
+      "03b44f58-f454-4e25-94ea-ef6b6a44ba4c",
+      "725dd78f-f2b6-4d3b-b6f7-e2dd3a98558b"
+    ],
+    [
+      "d2f84c73-ebe3-46d3-a34f-0313e3eebe15",
+      "ba576b48-f206-45b1-a811-28a7b53371b2"
+    ],
+    [
+      "ba576b48-f206-45b1-a811-28a7b53371b2",
+      "c7a0d6c8-3cec-44c3-bda7-f59227a71949"
+    ],
+    [
+      "69955322-ecb4-4f75-adca-a299a040038e",
+      "d2f84c73-ebe3-46d3-a34f-0313e3eebe15"
+    ],
+    [
+      "40aeebe5-d5e8-4cd2-a88d-808628807c39",
+      "c27726d8-d2d6-46b9-ab0a-8366815fc828"
+    ],
+    [
+      "c27726d8-d2d6-46b9-ab0a-8366815fc828",
+      "b997ce02-7edc-4126-be51-3a9ba9a8eeb8"
+    ],
+    [
+      "c7a0d6c8-3cec-44c3-bda7-f59227a71949",
+      "40aeebe5-d5e8-4cd2-a88d-808628807c39"
+    ],
+    [
+      "8a08f07f-4445-4b55-8a60-58e3e3ae70ca",
+      "8e1d35c2-8e89-4b62-be9f-80dc81e2646a"
+    ],
+    [
+      "8e1d35c2-8e89-4b62-be9f-80dc81e2646a",
+      "28740844-704b-4261-b4ed-82e621801e98"
+    ],
+    [
+      "b997ce02-7edc-4126-be51-3a9ba9a8eeb8",
+      "8a08f07f-4445-4b55-8a60-58e3e3ae70ca"
+    ],
+    [
+      "d5bb7e1c-72c9-4fb3-b5c7-4b9958ee7bb3",
+      "b456a901-90be-437a-9e3c-383d9b465910"
+    ],
+    [
+      "b456a901-90be-437a-9e3c-383d9b465910",
+      "28fc476d-4454-4834-a4eb-bf4c05366dd2"
+    ],
+    [
+      "28740844-704b-4261-b4ed-82e621801e98",
+      "d5bb7e1c-72c9-4fb3-b5c7-4b9958ee7bb3"
+    ],
+    [
+      "449adc46-2bd0-4b30-85dd-b85e15f3bbc1",
+      "4f2ea43a-ab7e-4c8e-8efa-5eb235116b09"
+    ],
+    [
+      "4f2ea43a-ab7e-4c8e-8efa-5eb235116b09",
+      "cf09c55c-6304-49b4-85f0-600d4469265f"
+    ],
+    [
+      "28fc476d-4454-4834-a4eb-bf4c05366dd2",
+      "449adc46-2bd0-4b30-85dd-b85e15f3bbc1"
+    ],
+    [
+      "2b1573fa-3869-49ce-90f7-727c6e8da2d5",
+      "683c2d12-78eb-448a-882c-3e146a6835bc"
+    ],
+    [
+      "683c2d12-78eb-448a-882c-3e146a6835bc",
+      "1b0d5553-3752-4cf1-8f98-f72e1704479b"
+    ],
+    [
+      "cf09c55c-6304-49b4-85f0-600d4469265f",
+      "2b1573fa-3869-49ce-90f7-727c6e8da2d5"
+    ],
+    [
+      "d2b7ef75-126b-4289-9982-7c08e9f0a5a4",
+      "56fd3a43-7f25-456b-af46-3214832d7fb0"
+    ],
+    [
+      "56fd3a43-7f25-456b-af46-3214832d7fb0",
+      "e8b8e7a9-50d1-4454-8519-016ee53ab546"
+    ],
+    [
+      "1b0d5553-3752-4cf1-8f98-f72e1704479b",
+      "d2b7ef75-126b-4289-9982-7c08e9f0a5a4"
+    ],
+    [
+      "0281966a-63bd-4200-82d5-d4b85425d815",
+      "448e581f-c493-4dd7-9cc7-62147943b211"
+    ],
+    [
+      "e8b8e7a9-50d1-4454-8519-016ee53ab546",
+      "0281966a-63bd-4200-82d5-d4b85425d815"
+    ],
+    [
+      "5676f3f2-6852-493a-bfc1-72d4b6add4b4",
+      "5361e0c3-3657-466a-bf25-24e81a73ded4"
+    ],
+    [
+      "448e581f-c493-4dd7-9cc7-62147943b211",
+      "5676f3f2-6852-493a-bfc1-72d4b6add4b4"
+    ],
+    [
+      "a5db2cf8-e6e3-42e0-b3e0-e37e18841eaf",
+      "b23774b6-a112-4297-b751-50f14835f89d"
+    ],
+    [
+      "5361e0c3-3657-466a-bf25-24e81a73ded4",
+      "a5db2cf8-e6e3-42e0-b3e0-e37e18841eaf"
+    ],
+    [
+      "8814793a-e8eb-410e-bf19-8446d92d738d",
+      "702644d0-8f91-429f-ae96-9e0c072c5bc8"
+    ],
+    [
+      "702644d0-8f91-429f-ae96-9e0c072c5bc8",
+      "8f4f90c3-e185-4219-b814-212a52994385"
+    ],
+    [
+      "8f4f90c3-e185-4219-b814-212a52994385",
+      "933e759b-909c-4ca3-ad67-5bca54a1e693"
+    ],
+    [
+      "933e759b-909c-4ca3-ad67-5bca54a1e693",
+      "e8f5df43-1432-47c3-bbfc-9b6b5c3db4e2"
+    ],
+    [
+      "933e759b-909c-4ca3-ad67-5bca54a1e693",
+      "04060009-6ad5-46cd-899c-cc35dd8dac5d"
+    ],
+    [
+      "b23774b6-a112-4297-b751-50f14835f89d",
+      "8814793a-e8eb-410e-bf19-8446d92d738d"
+    ],
+    [
+      "d69ee7a5-5609-4677-be8d-5a7eec5c5e59",
+      "70bb3704-7b1d-43ab-b90c-9aada8b2caa1"
+    ],
+    [
+      "70bb3704-7b1d-43ab-b90c-9aada8b2caa1",
+      "255cd06d-0fa2-474d-a5a1-7a6927a09fd7"
+    ],
+    [
+      "04060009-6ad5-46cd-899c-cc35dd8dac5d",
+      "d69ee7a5-5609-4677-be8d-5a7eec5c5e59"
+    ],
+    [
+      "247924da-d3cd-4069-af41-eec0afa9aa31",
+      "434aaa88-f95c-4f82-aa59-642357a81605"
+    ],
+    [
+      "434aaa88-f95c-4f82-aa59-642357a81605",
+      "ac788db3-632f-4146-ae44-a31ee298b147"
+    ],
+    [
+      "255cd06d-0fa2-474d-a5a1-7a6927a09fd7",
+      "247924da-d3cd-4069-af41-eec0afa9aa31"
+    ],
+    [
+      "ac788db3-632f-4146-ae44-a31ee298b147",
+      "ffe011a3-afb3-436d-a69b-535c47618189"
+    ]
+  ]
+}

@@ -1,0 +1,486 @@
+{
+  "methodName": "SpecialMoves",
+  "nodes": [
+    {
+      "id": "07317014-acf7-4f4e-ad14-efa0f4ea6cd0",
+      "label": "Start (SpecialMoves)",
+      "type": "start",
+      "next": [
+        "eb8a0123-0421-4bec-b8c0-b066d820e598"
+      ]
+    },
+    {
+      "id": "8b0935e3-df56-45b6-bfde-2f2531770f70",
+      "label": "End (SpecialMoves)",
+      "type": "end",
+      "next": []
+    },
+    {
+      "id": "eb8a0123-0421-4bec-b8c0-b066d820e598",
+      "label": "SpecialMoves.handleCastling → Start",
+      "type": "start",
+      "next": [
+        "fce02e77-e6e4-4b20-98a1-b76fa254cf86"
+      ]
+    },
+    {
+      "id": "fce02e77-e6e4-4b20-98a1-b76fa254cf86",
+      "label": "SpecialMoves.handleCastling → End",
+      "type": "end",
+      "next": [
+        "e371cf1d-4e23-462c-b394-be50a8bae1c9"
+      ]
+    },
+    {
+      "id": "e371cf1d-4e23-462c-b394-be50a8bae1c9",
+      "label": "SpecialMoves.handlePromotion → Start",
+      "type": "start",
+      "next": [
+        "036d4436-0750-4a94-b219-e78290b3232f"
+      ]
+    },
+    {
+      "id": "036d4436-0750-4a94-b219-e78290b3232f",
+      "label": "SpecialMoves.handlePromotion → End",
+      "type": "end",
+      "next": [
+        "c7f95dac-2d66-49a9-b868-119e8e81c037"
+      ]
+    },
+    {
+      "id": "c7f95dac-2d66-49a9-b868-119e8e81c037",
+      "label": "SpecialMoves.handleEnPassant → Start",
+      "type": "start",
+      "next": [
+        "ee4e9211-0dbe-484f-826a-9895a767235d"
+      ]
+    },
+    {
+      "id": "ee4e9211-0dbe-484f-826a-9895a767235d",
+      "label": "SpecialMoves.handleEnPassant → End",
+      "type": "end",
+      "next": [
+        "786084d3-7415-4ddd-8993-bfbed44d251d"
+      ]
+    },
+    {
+      "id": "786084d3-7415-4ddd-8993-bfbed44d251d",
+      "label": "SpecialMoves.isCheckmate → Start",
+      "type": "start",
+      "next": [
+        "2a2a8585-8fc4-4772-99a4-32f17c6cef02"
+      ]
+    },
+    {
+      "id": "1e9d5815-19f4-4ffb-9beb-92c39db1f8a8",
+      "label": "SpecialMoves.isCheckmate → End",
+      "type": "end",
+      "next": [
+        "116e5d6f-fc78-4983-891c-a2f2eb65cb8b"
+      ]
+    },
+    {
+      "id": "2a2a8585-8fc4-4772-99a4-32f17c6cef02",
+      "label": "SpecialMoves.isCheckmate → for",
+      "type": "statement",
+      "next": [
+        "730eed8b-a8a4-400d-afa6-6e6084ffe928"
+      ]
+    },
+    {
+      "id": "730eed8b-a8a4-400d-afa6-6e6084ffe928",
+      "label": "SpecialMoves.isCheckmate → return",
+      "type": "condition",
+      "next": [
+        "ff611a95-537f-4e61-9780-6c8094e3d86b"
+      ]
+    },
+    {
+      "id": "ff611a95-537f-4e61-9780-6c8094e3d86b",
+      "label": "SpecialMoves.isCheckmate → continue",
+      "type": "condition",
+      "next": [
+        "7c4e44ed-a52e-40ff-b2b7-2c90c4f42469"
+      ]
+    },
+    {
+      "id": "7c4e44ed-a52e-40ff-b2b7-2c90c4f42469",
+      "label": "SpecialMoves.isCheckmate → IfStatement",
+      "type": "condition",
+      "next": [
+        "d469e8a9-b256-41f8-95c5-396416c4d7fd",
+        "a0110d71-cc11-46d9-b8b3-ba4ee984cccd"
+      ]
+    },
+    {
+      "id": "d469e8a9-b256-41f8-95c5-396416c4d7fd",
+      "label": "SpecialMoves.isCheckmate → Statement",
+      "type": "statement",
+      "next": []
+    },
+    {
+      "id": "a0110d71-cc11-46d9-b8b3-ba4ee984cccd",
+      "label": "SpecialMoves.isCheckmate → IfStatement",
+      "type": "condition",
+      "next": [
+        "414418ed-d6fe-4d1a-9621-e91aaea37b94",
+        "ca7e6163-de96-4507-b261-e7f1420c69e5"
+      ]
+    },
+    {
+      "id": "414418ed-d6fe-4d1a-9621-e91aaea37b94",
+      "label": "SpecialMoves.isCheckmate → Statement",
+      "type": "statement",
+      "next": []
+    },
+    {
+      "id": "ca7e6163-de96-4507-b261-e7f1420c69e5",
+      "label": "SpecialMoves.isCheckmate → IfStatement",
+      "type": "condition",
+      "next": [
+        "f4134ab3-0676-4d98-a623-97d63a722eca",
+        "eaf19cfd-920f-471c-a6d3-a5bbdd8a3732"
+      ]
+    },
+    {
+      "id": "f4134ab3-0676-4d98-a623-97d63a722eca",
+      "label": "SpecialMoves.isCheckmate → Statement",
+      "type": "statement",
+      "next": []
+    },
+    {
+      "id": "eaf19cfd-920f-471c-a6d3-a5bbdd8a3732",
+      "label": "SpecialMoves.isCheckmate → IfStatement",
+      "type": "condition",
+      "next": [
+        "536e29ed-ebb8-4fe7-8697-8aa01a142d1a",
+        "1e9d5815-19f4-4ffb-9beb-92c39db1f8a8"
+      ]
+    },
+    {
+      "id": "536e29ed-ebb8-4fe7-8697-8aa01a142d1a",
+      "label": "SpecialMoves.isCheckmate → Statement",
+      "type": "statement",
+      "next": []
+    },
+    {
+      "id": "116e5d6f-fc78-4983-891c-a2f2eb65cb8b",
+      "label": "SpecialMoves.isInCheck → Start",
+      "type": "start",
+      "next": [
+        "cfd9e681-5f8b-45b5-8479-92f1284e0ec1"
+      ]
+    },
+    {
+      "id": "739d1cb1-9eea-4ac4-92e7-4ea7527c7cc8",
+      "label": "SpecialMoves.isInCheck → End",
+      "type": "end",
+      "next": [
+        "33185b93-8a77-4f5e-816f-cc0208568f90"
+      ]
+    },
+    {
+      "id": "cfd9e681-5f8b-45b5-8479-92f1284e0ec1",
+      "label": "SpecialMoves.isInCheck → for",
+      "type": "statement",
+      "next": [
+        "b615324d-83a7-4623-9b7f-225ed633d27f"
+      ]
+    },
+    {
+      "id": "b615324d-83a7-4623-9b7f-225ed633d27f",
+      "label": "SpecialMoves.isInCheck → return",
+      "type": "condition",
+      "next": [
+        "ce12949e-1d35-4ecf-9ccf-0392baf13b39"
+      ]
+    },
+    {
+      "id": "ce12949e-1d35-4ecf-9ccf-0392baf13b39",
+      "label": "SpecialMoves.isInCheck → IfStatement",
+      "type": "condition",
+      "next": [
+        "c66b1eda-6fca-4293-9779-591f55cf068a",
+        "f42f396e-6ca3-4777-8bad-1f8a7f8eead3"
+      ]
+    },
+    {
+      "id": "c66b1eda-6fca-4293-9779-591f55cf068a",
+      "label": "SpecialMoves.isInCheck → Statement",
+      "type": "statement",
+      "next": []
+    },
+    {
+      "id": "f42f396e-6ca3-4777-8bad-1f8a7f8eead3",
+      "label": "SpecialMoves.isInCheck → IfStatement",
+      "type": "condition",
+      "next": [
+        "c763b960-052d-4401-a21e-26b56ea8ca33",
+        "739d1cb1-9eea-4ac4-92e7-4ea7527c7cc8"
+      ]
+    },
+    {
+      "id": "c763b960-052d-4401-a21e-26b56ea8ca33",
+      "label": "SpecialMoves.isInCheck → IfStatement",
+      "type": "statement",
+      "next": []
+    },
+    {
+      "id": "33185b93-8a77-4f5e-816f-cc0208568f90",
+      "label": "SpecialMoves.isValidMove → Start",
+      "type": "start",
+      "next": [
+        "e9709dda-cc0a-439a-875e-019f2dc0f6ff"
+      ]
+    },
+    {
+      "id": "0cbd3831-d6f7-4e75-baf3-11565ceca047",
+      "label": "SpecialMoves.isValidMove → End",
+      "type": "end",
+      "next": [
+        "80f45966-51fc-4bc7-907c-238efcd4b196"
+      ]
+    },
+    {
+      "id": "e9709dda-cc0a-439a-875e-019f2dc0f6ff",
+      "label": "SpecialMoves.isValidMove → switch",
+      "type": "condition",
+      "next": [
+        "93cd3636-2afb-4855-8761-aeb444218735"
+      ]
+    },
+    {
+      "id": "93cd3636-2afb-4855-8761-aeb444218735",
+      "label": "SpecialMoves.isValidMove → case",
+      "type": "condition",
+      "next": [
+        "4d2736b0-2111-4b63-a3f0-08ee0a7a421c"
+      ]
+    },
+    {
+      "id": "4d2736b0-2111-4b63-a3f0-08ee0a7a421c",
+      "label": "SpecialMoves.isValidMove → default",
+      "type": "condition",
+      "next": [
+        "13dd270e-6f58-459f-9d33-0f75bbfa4e17"
+      ]
+    },
+    {
+      "id": "13dd270e-6f58-459f-9d33-0f75bbfa4e17",
+      "label": "SpecialMoves.isValidMove → return",
+      "type": "condition",
+      "next": [
+        "0cbd3831-d6f7-4e75-baf3-11565ceca047"
+      ]
+    },
+    {
+      "id": "80f45966-51fc-4bc7-907c-238efcd4b196",
+      "label": "SpecialMoves.findKing → Start",
+      "type": "start",
+      "next": [
+        "ca1a15ae-8e19-4bd9-aa56-1e58a88de78f"
+      ]
+    },
+    {
+      "id": "ecdb0084-d69b-4fa3-b7e4-7359d4f7abfd",
+      "label": "SpecialMoves.findKing → End",
+      "type": "end",
+      "next": [
+        "8b0935e3-df56-45b6-bfde-2f2531770f70"
+      ]
+    },
+    {
+      "id": "ca1a15ae-8e19-4bd9-aa56-1e58a88de78f",
+      "label": "SpecialMoves.findKing → for",
+      "type": "statement",
+      "next": [
+        "72d3993d-290f-47a7-8faf-6c5925a03919"
+      ]
+    },
+    {
+      "id": "72d3993d-290f-47a7-8faf-6c5925a03919",
+      "label": "SpecialMoves.findKing → return",
+      "type": "condition",
+      "next": [
+        "418949e8-e788-4d40-8880-8833a26c8681"
+      ]
+    },
+    {
+      "id": "418949e8-e788-4d40-8880-8833a26c8681",
+      "label": "SpecialMoves.findKing → IfStatement",
+      "type": "condition",
+      "next": [
+        "fb269dc8-8f41-4317-a024-a64f072f385f",
+        "ecdb0084-d69b-4fa3-b7e4-7359d4f7abfd"
+      ]
+    },
+    {
+      "id": "fb269dc8-8f41-4317-a024-a64f072f385f",
+      "label": "SpecialMoves.findKing → Statement",
+      "type": "statement",
+      "next": []
+    }
+  ],
+  "edges": [
+    [
+      "eb8a0123-0421-4bec-b8c0-b066d820e598",
+      "fce02e77-e6e4-4b20-98a1-b76fa254cf86"
+    ],
+    [
+      "07317014-acf7-4f4e-ad14-efa0f4ea6cd0",
+      "eb8a0123-0421-4bec-b8c0-b066d820e598"
+    ],
+    [
+      "e371cf1d-4e23-462c-b394-be50a8bae1c9",
+      "036d4436-0750-4a94-b219-e78290b3232f"
+    ],
+    [
+      "fce02e77-e6e4-4b20-98a1-b76fa254cf86",
+      "e371cf1d-4e23-462c-b394-be50a8bae1c9"
+    ],
+    [
+      "c7f95dac-2d66-49a9-b868-119e8e81c037",
+      "ee4e9211-0dbe-484f-826a-9895a767235d"
+    ],
+    [
+      "036d4436-0750-4a94-b219-e78290b3232f",
+      "c7f95dac-2d66-49a9-b868-119e8e81c037"
+    ],
+    [
+      "786084d3-7415-4ddd-8993-bfbed44d251d",
+      "2a2a8585-8fc4-4772-99a4-32f17c6cef02"
+    ],
+    [
+      "2a2a8585-8fc4-4772-99a4-32f17c6cef02",
+      "730eed8b-a8a4-400d-afa6-6e6084ffe928"
+    ],
+    [
+      "730eed8b-a8a4-400d-afa6-6e6084ffe928",
+      "ff611a95-537f-4e61-9780-6c8094e3d86b"
+    ],
+    [
+      "ff611a95-537f-4e61-9780-6c8094e3d86b",
+      "7c4e44ed-a52e-40ff-b2b7-2c90c4f42469"
+    ],
+    [
+      "7c4e44ed-a52e-40ff-b2b7-2c90c4f42469",
+      "d469e8a9-b256-41f8-95c5-396416c4d7fd"
+    ],
+    [
+      "7c4e44ed-a52e-40ff-b2b7-2c90c4f42469",
+      "a0110d71-cc11-46d9-b8b3-ba4ee984cccd"
+    ],
+    [
+      "a0110d71-cc11-46d9-b8b3-ba4ee984cccd",
+      "414418ed-d6fe-4d1a-9621-e91aaea37b94"
+    ],
+    [
+      "a0110d71-cc11-46d9-b8b3-ba4ee984cccd",
+      "ca7e6163-de96-4507-b261-e7f1420c69e5"
+    ],
+    [
+      "ca7e6163-de96-4507-b261-e7f1420c69e5",
+      "f4134ab3-0676-4d98-a623-97d63a722eca"
+    ],
+    [
+      "ca7e6163-de96-4507-b261-e7f1420c69e5",
+      "eaf19cfd-920f-471c-a6d3-a5bbdd8a3732"
+    ],
+    [
+      "eaf19cfd-920f-471c-a6d3-a5bbdd8a3732",
+      "536e29ed-ebb8-4fe7-8697-8aa01a142d1a"
+    ],
+    [
+      "eaf19cfd-920f-471c-a6d3-a5bbdd8a3732",
+      "1e9d5815-19f4-4ffb-9beb-92c39db1f8a8"
+    ],
+    [
+      "ee4e9211-0dbe-484f-826a-9895a767235d",
+      "786084d3-7415-4ddd-8993-bfbed44d251d"
+    ],
+    [
+      "116e5d6f-fc78-4983-891c-a2f2eb65cb8b",
+      "cfd9e681-5f8b-45b5-8479-92f1284e0ec1"
+    ],
+    [
+      "cfd9e681-5f8b-45b5-8479-92f1284e0ec1",
+      "b615324d-83a7-4623-9b7f-225ed633d27f"
+    ],
+    [
+      "b615324d-83a7-4623-9b7f-225ed633d27f",
+      "ce12949e-1d35-4ecf-9ccf-0392baf13b39"
+    ],
+    [
+      "ce12949e-1d35-4ecf-9ccf-0392baf13b39",
+      "c66b1eda-6fca-4293-9779-591f55cf068a"
+    ],
+    [
+      "ce12949e-1d35-4ecf-9ccf-0392baf13b39",
+      "f42f396e-6ca3-4777-8bad-1f8a7f8eead3"
+    ],
+    [
+      "f42f396e-6ca3-4777-8bad-1f8a7f8eead3",
+      "c763b960-052d-4401-a21e-26b56ea8ca33"
+    ],
+    [
+      "f42f396e-6ca3-4777-8bad-1f8a7f8eead3",
+      "739d1cb1-9eea-4ac4-92e7-4ea7527c7cc8"
+    ],
+    [
+      "1e9d5815-19f4-4ffb-9beb-92c39db1f8a8",
+      "116e5d6f-fc78-4983-891c-a2f2eb65cb8b"
+    ],
+    [
+      "33185b93-8a77-4f5e-816f-cc0208568f90",
+      "e9709dda-cc0a-439a-875e-019f2dc0f6ff"
+    ],
+    [
+      "e9709dda-cc0a-439a-875e-019f2dc0f6ff",
+      "93cd3636-2afb-4855-8761-aeb444218735"
+    ],
+    [
+      "93cd3636-2afb-4855-8761-aeb444218735",
+      "4d2736b0-2111-4b63-a3f0-08ee0a7a421c"
+    ],
+    [
+      "4d2736b0-2111-4b63-a3f0-08ee0a7a421c",
+      "13dd270e-6f58-459f-9d33-0f75bbfa4e17"
+    ],
+    [
+      "13dd270e-6f58-459f-9d33-0f75bbfa4e17",
+      "0cbd3831-d6f7-4e75-baf3-11565ceca047"
+    ],
+    [
+      "739d1cb1-9eea-4ac4-92e7-4ea7527c7cc8",
+      "33185b93-8a77-4f5e-816f-cc0208568f90"
+    ],
+    [
+      "80f45966-51fc-4bc7-907c-238efcd4b196",
+      "ca1a15ae-8e19-4bd9-aa56-1e58a88de78f"
+    ],
+    [
+      "ca1a15ae-8e19-4bd9-aa56-1e58a88de78f",
+      "72d3993d-290f-47a7-8faf-6c5925a03919"
+    ],
+    [
+      "72d3993d-290f-47a7-8faf-6c5925a03919",
+      "418949e8-e788-4d40-8880-8833a26c8681"
+    ],
+    [
+      "418949e8-e788-4d40-8880-8833a26c8681",
+      "fb269dc8-8f41-4317-a024-a64f072f385f"
+    ],
+    [
+      "418949e8-e788-4d40-8880-8833a26c8681",
+      "ecdb0084-d69b-4fa3-b7e4-7359d4f7abfd"
+    ],
+    [
+      "0cbd3831-d6f7-4e75-baf3-11565ceca047",
+      "80f45966-51fc-4bc7-907c-238efcd4b196"
+    ],
+    [
+      "ecdb0084-d69b-4fa3-b7e4-7359d4f7abfd",
+      "8b0935e3-df56-45b6-bfde-2f2531770f70"
+    ]
+  ]
+}

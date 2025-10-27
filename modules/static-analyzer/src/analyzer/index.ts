@@ -6,15 +6,14 @@ import figlet from "figlet";
 import gradient from "gradient-string";
 import Table from "cli-table3";
 
-import { analyzeAST } from "../analysis/metrics/MetricsAnalyzer.js";
+import { analyzeAST, resetAnalysisTracking } from "../analysis/metrics/MetricsAnalyzer.js";
 import { RuleEngine } from "../rules/RuleEngine.js";
 import { ReportGenerator } from "../report/ReportGenerator.js";
 import { ReportFormatter } from "../report/ReportFormatter.js";
 
 export async function analyzeFile(targetPath: string) {
   console.clear();
-
-  // 🌿 Fancy Banner
+  resetAnalysisTracking();
   console.log(
     gradient.pastel.multiline(
       figlet.textSync("GreenCode AI", { horizontalLayout: "fitted" })
@@ -25,7 +24,6 @@ export async function analyzeFile(targetPath: string) {
   const stats = fs.statSync(targetPath);
   const filesToAnalyze: string[] = [];
 
-  // If user passed a directory, analyze all .json files inside
   if (stats.isDirectory()) {
     const allFiles = fs.readdirSync(targetPath);
     allFiles.forEach((file) => {
@@ -42,81 +40,96 @@ export async function analyzeFile(targetPath: string) {
     return;
   }
 
-  const overallSummary = {
-    total: 0,
-    critical: 0,
-    high: 0,
-    medium: 0,
-    low: 0,
-  };
-
+  // Create output directories
   const outputDir = path.join(process.cwd(), "output");
-  if (!fs.existsSync(outputDir)) fs.mkdirSync(outputDir, { recursive: true });
+  const reportDir = path.join(outputDir, "report");
+  const cfgDir = path.join(outputDir, "cfg");
 
+  [outputDir, reportDir, cfgDir].forEach((dir) => {
+    if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
+  });
+
+  const overallSummary = { total: 0, critical: 0, high: 0, medium: 0, low: 0 };
   const engine = new RuleEngine();
 
   for (const filePath of filesToAnalyze) {
     const fileName = path.basename(filePath);
-    console.log(chalk.bold(`\nAnalyzing: ${fileName}\n`));
+    console.log(chalk.bold(`\n📄 Analyzing: ${fileName}\n`));
 
-    // 🔹 Step 1: Read file
-    const spinner = ora(`Reading ${fileName}...`).start();
-    const content = fs.readFileSync(filePath, "utf8");
-    spinner.succeed("File loaded");
-
-    // 🔹 Step 2: Parse AST
-    const astSpinner = ora("Parsing AST JSON...").start();
+    // Step 1: Read and parse file
+    const fileSpinner = ora(`Reading ${fileName}...`).start();
     let astJson;
     try {
+      const content = fs.readFileSync(filePath, "utf8");
       astJson = JSON.parse(content);
-      astSpinner.succeed("AST parsed");
+      fileSpinner.succeed("File loaded and parsed ✅");
     } catch (error) {
-      astSpinner.fail(`Failed to parse ${fileName}: ${error}`);
+      fileSpinner.fail(`Failed to read/parse ${fileName}: ${error}`);
       continue;
     }
 
-    // 🔹 Step 3: Determine if this is AST or CFG/Metrics
-    const analysisSpinner = ora("Analyzing file...").start();
+    // Step 2: Check if metrics already exist (skip re-analysis)
     let fileMetrics;
-    let astForAnalysis = astJson;
+    const isMetricsFile = astJson.fileName && astJson.classes?.[0]?.cfg;
 
-    // Check if this is a metrics/CFG file or an AST file
-    if (astJson.fileName && astJson.classes && astJson.classes[0]?.methods?.[0]?.cfg) {
-      // This is a CFG/metrics file
+    if (isMetricsFile) {
+      console.log(chalk.yellow("⚠️  This appears to be a metrics file, not an AST. Skipping CFG generation."));
       fileMetrics = astJson;
-      analysisSpinner.succeed(
-        `Metrics loaded: ${fileMetrics.classes.length} class(es), ` +
-        `${fileMetrics.classes.reduce((sum: any, c: any) => sum + c.methods.length, 0)} method(s)`
-      );
-    } else if (astJson.file && astJson.classes) {
-      // This is an AST file - calculate metrics
-      fileMetrics = analyzeAST(astJson, fileName);
-      analysisSpinner.succeed(
-        `Metrics calculated: ${fileMetrics.classes.length} class(es), ` +
-        `${fileMetrics.classes.reduce((sum, c) => sum + c.methods.length, 0)} method(s)`
-      );
     } else {
-      analysisSpinner.warn("Unknown file format - analyzing as raw AST");
+      const analysisSpinner = ora("Generating metrics and CFGs...").start();
+      try {
+        fileMetrics = analyzeAST(astJson, fileName);
+        analysisSpinner.succeed("Metrics & CFGs generated ✅");
+
+        // ✅ Save ONE CFG per class
+        let totalCFGsSaved = 0;
+        fileMetrics.classes.forEach((cls) => {
+          if (cls.cfg) {
+            const className = cls.className || "AnonymousClass";
+            const cfgFileName = `${path.parse(fileName).name}_${className}_cfg.json`;
+            const cfgFilePath = path.join(cfgDir, cfgFileName);
+
+            fs.writeFileSync(cfgFilePath, JSON.stringify(cls.cfg, null, 2), "utf-8");
+            totalCFGsSaved++;
+          }
+        });
+
+        console.log(chalk.dim(`   💾 Saved ${totalCFGsSaved} class-level CFG(s) → ${cfgDir}`));
+      } catch (error) {
+        analysisSpinner.fail(`Failed to analyze ${fileName}: ${error}`);
+        continue;
+      }
     }
 
-    // 🔹 Step 4: Run Rule Engine (pass both AST and metrics)
+    // Step 3: Run Rule Engine
     const ruleSpinner = ora("Running rule engine...").start();
-    const violations = engine.analyzeCode(astForAnalysis, fileName, fileMetrics) || [];
-    ruleSpinner.succeed(`Found ${violations.length} issue(s)`);
+    let violations = [];
+    try {
+      violations = engine.analyzeCode(astJson, fileName, fileMetrics) || [];
+      ruleSpinner.succeed(`Rule engine completed: ${violations.length} issue(s) ✅`);
+    } catch (error) {
+      ruleSpinner.fail(`Rule engine failed: ${error}`);
+      continue;
+    }
 
-    // 🔹 Step 5: Generate & Save Report
-    const report = ReportGenerator.generate(violations);
-    const outputFile = path.join(outputDir, `${fileName}.report.json`);
-    ReportFormatter.toJSON(report, outputFile);
+    // Step 4: Generate and save report
+    try {
+      const report = ReportGenerator.generate(violations);
+      const reportFile = path.join(reportDir, `${fileName}.report.json`);
+      ReportFormatter.toJSON(report, reportFile);
 
-    // 🔹 Update totals
-    overallSummary.total += report.summary.total;
-    overallSummary.critical += report.summary.critical;
-    overallSummary.high += report.summary.high;
-    overallSummary.medium += report.summary.medium;
-    overallSummary.low += report.summary.low;
+      overallSummary.total += report.summary.total;
+      overallSummary.critical += report.summary.critical;
+      overallSummary.high += report.summary.high;
+      overallSummary.medium += report.summary.medium;
+      overallSummary.low += report.summary.low;
 
-    // 🔹 Step 6: Display table for this file
+      console.log(chalk.dim(`   📄 Report saved → ${reportFile}`));
+    } catch (error) {
+      console.log(chalk.red(`Failed to save report for ${fileName}: ${error}`));
+    }
+
+    // Step 5: Display violations table
     if (violations.length > 0) {
       const table = new Table({
         head: [
@@ -152,22 +165,16 @@ export async function analyzeFile(targetPath: string) {
     } else {
       console.log(chalk.green("✅ No issues found — looks clean!"));
     }
-
-    console.log(chalk.dim(`Report saved → ${outputFile}\n`));
   }
 
-  // 🔹 Final overall summary
+  // ✅ Final summary section restored
   console.log(chalk.bold("\n─────────────────────────────────────────────"));
   console.log(chalk.bold("📊 Overall Analysis Summary"));
   console.log(chalk.bold("─────────────────────────────────────────────"));
-  console.log(
-    `Total: ${chalk.white(overallSummary.total)}   ` +
-      `${chalk.red("Critical: " + overallSummary.critical)}   ` +
-      `${chalk.yellow("High: " + overallSummary.high)}   ` +
-      `${chalk.magenta("Medium: " + overallSummary.medium)}   ` +
-      `${chalk.blue("Low: " + overallSummary.low)}`
-  );
-
-  console.log(chalk.bold("\n✨ Analysis complete! Reports saved in → ") + chalk.cyan(outputDir));
-  console.log(chalk.dim("─────────────────────────────────────────────\n"));
+  console.log(chalk.dim(`   Total Issues: ${overallSummary.total}`));
+  console.log(chalk.red(`   Critical: ${overallSummary.critical}`));
+  console.log(chalk.yellow(`   High: ${overallSummary.high}`));
+  console.log(chalk.magenta(`   Medium: ${overallSummary.medium}`));
+  console.log(chalk.blue(`   Low: ${overallSummary.low}\n`));
+  console.log(chalk.green("🎉 Analysis complete! Reports available in /output/report\n"));
 }

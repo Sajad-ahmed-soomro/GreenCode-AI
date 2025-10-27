@@ -1,74 +1,110 @@
-// src/analysis/metrics/MetricsAnalyzer.ts
+import chalk from "chalk";
 import { calculateCyclomaticComplexity } from "./CyclomaticComplexity.js";
 import { calculateNestingDepth } from "./NestingDepth.js";
 import { calculateFunctionSize } from "./FunctionSize.js";
-import { buildCFG } from "../cfg/CFGBuilder.js";
+import {  buildClassCFG } from "../cfg/CFGBuilder.js";
 import { FileMetrics, ClassMetrics, MethodMetrics } from "../../types/MethodMetrics.js";
 
-/* ---------------- Helper: traverse AST tree ---------------- */
-function traverse(node: any, callback: (node: any) => void) {
-  if (!node || typeof node !== "object") return;
-  callback(node);
-
-  if (node.children) {
-    for (const key of Object.keys(node.children)) {
-      const child = node.children[key];
-      if (Array.isArray(child)) {
-        child.forEach(c => traverse(c, callback));
-      } else if (typeof child === "object") {
-        traverse(child, callback);
-      }
-    }
-  }
+/* ---------------- Helper AST types ---------------- */
+interface MethodNode {
+  name?: string;
+  loops?: string[];
+  conditionals?: string[];
+  constructorChaining?: string[];
+  conditionalsTree?: any[];
 }
 
-/* ---------------- Helper: extract all methods ---------------- */
-function extractMethods(ast: any): any[] {
-  const methods: any[] = [];
-  traverse(ast, (node: any) => {
-    if (
-      node.name === "methodDeclaration" ||
-      node.name === "constructorDeclaration"
-    ) {
-      methods.push(node);
-    }
-  });
-  return methods;
+interface ClassNode {
+  name?: string;
+  methods?: MethodNode[];
 }
 
-/* ---------------- Main Analyzer ---------------- */
-export function analyzeAST(astJson: any, filePath: string): FileMetrics {
+interface ASTFile {
+  file: string;
+  classes?: ClassNode[];
+}
+
+// Track processed methods globally to prevent duplicates across multiple calls
+const processedMethods = new Set<string>();
+
+/* ---------------- Main Analyzer (Typed + Safe + Deduplicated) ---------------- */
+export function analyzeAST(astJson: ASTFile, filePath: string): FileMetrics {
   const classes: ClassMetrics[] = [];
 
-  // Support both { classes: [...] } and plain AST roots
-  for (const cls of astJson.classes || [astJson]) {
-    const methods = extractMethods(cls);
+  if (!astJson.classes || astJson.classes.length === 0) {
+    console.log(chalk.yellow(`⚠️  No classes found in ${filePath}`));
+    return { fileName: filePath, classes: [] };
+  }
 
-    const methodMetrics: MethodMetrics[] = methods.map((method: any) => {
-      const bodyNode =
-        method.body ||
-        method.block ||
-        method.children?.block ||
-        method.children?.body ||
-        method.children?.methodBody ||
-        method; // fallback
+  console.log(chalk.dim(`\n[CFG] Starting analysis for ${astJson.classes.length} class(es)...`));
 
-      const cfg = buildCFG(method);
+  for (const cls of astJson.classes) {
+    const className: string = cls.name || "AnonymousClass";
+    const methods: MethodNode[] = cls.methods || [];
+
+    console.log(chalk.dim(`[CFG] Class: ${className} → ${methods.length} method(s)`));
+
+    // 🧠 Generate Class-Level CFG (merged CFG of all methods)
+    const classCFG = buildClassCFG({
+      name: className,
+      methods: methods.map((m) => ({
+        name: m.name,
+        loops: m.loops || [],
+        conditionals: m.conditionals || [],
+        constructorChaining: m.constructorChaining || [],
+        conditionalsTree: m.conditionalsTree || [],
+      })),
+    });
+
+    console.log(
+      chalk.green(
+        `   [CFG ✓] ${className} (merged) → ${classCFG?.nodes?.length ?? 0} nodes, ${
+          classCFG?.edges?.length ?? 0
+        } edges`
+      )
+    );
+
+    // Compute metrics for each method (unchanged)
+    const methodMetrics: MethodMetrics[] = methods.map((method: MethodNode): MethodMetrics => {
+      const methodName: string = method.name || "anonymous";
+      const uniqueKey = `${filePath}::${className}::${methodName}`;
+
+      if (processedMethods.has(uniqueKey)) {
+        console.log(chalk.gray(`   [SKIP] ${methodName} (already processed)`));
+        return {
+          name: methodName,
+          cyclomaticComplexity: 0,
+          nestingDepth: 0,
+          functionSize: 0,
+        };
+      }
+
+      processedMethods.add(uniqueKey);
+
+      const complexity = calculateCyclomaticComplexity(method);
+      const depth = calculateNestingDepth(method);
+      const size = calculateFunctionSize(method);
 
       return {
-        name: method.name || "anonymous",
-        cyclomaticComplexity: calculateCyclomaticComplexity(method),
-        nestingDepth: calculateNestingDepth(bodyNode),
-        functionSize: calculateFunctionSize(bodyNode),
-        cfg,
+        name: methodName,
+        cyclomaticComplexity: complexity,
+        nestingDepth: depth,
+        functionSize: size,
       };
     });
 
+    // Push results per class
     classes.push({
-      className: cls.name || "AnonymousClass",
+      className,
       methods: methodMetrics,
+      cfg: classCFG, // ✅ attach merged CFG
     });
   }
 
   return { fileName: filePath, classes };
+}
+
+/* ---------------- Utility ---------------- */
+export function resetAnalysisTracking() {
+  processedMethods.clear();
 }
