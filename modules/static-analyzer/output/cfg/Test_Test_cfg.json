@@ -2,48 +2,62 @@
   "methodName": "Test",
   "nodes": [
     {
-      "id": "ca2b21d0-733d-4db9-a381-bc86055e220b",
+      "id": "c6dff16d-f376-4b7f-bb7e-3452a374569e",
       "label": "Start (Test)",
       "type": "start",
       "next": [
-        "0b411f16-583f-4d15-bb80-cfb74bfa8c5c"
+        "6ea7812c-7d8b-4816-8140-cac2148c2c75"
       ]
     },
     {
-      "id": "1210b120-e777-49b7-bf5c-564fd5eeeb60",
+      "id": "a6a77f36-6bf9-4d42-8551-f50b63b14d0a",
       "label": "End (Test)",
       "type": "end",
       "next": []
     },
     {
-      "id": "0b411f16-583f-4d15-bb80-cfb74bfa8c5c",
+      "id": "6ea7812c-7d8b-4816-8140-cac2148c2c75",
       "label": "Test.badExample → Start",
       "type": "start",
       "next": [
-        "fdfb5913-c4be-44f9-9894-7bffc43a7984"
+        "0a1a026e-e6ed-43ce-8a9c-4f3a3871e3b6"
       ]
     },
     {
-      "id": "fdfb5913-c4be-44f9-9894-7bffc43a7984",
+      "id": "0a1a026e-e6ed-43ce-8a9c-4f3a3871e3b6",
       "label": "Test.badExample → End",
       "type": "end",
       "next": [
-        "1210b120-e777-49b7-bf5c-564fd5eeeb60"
+        "a6a77f36-6bf9-4d42-8551-f50b63b14d0a"
       ]
     }
   ],
   "edges": [
     [
-      "0b411f16-583f-4d15-bb80-cfb74bfa8c5c",
-      "fdfb5913-c4be-44f9-9894-7bffc43a7984"
+      "6ea7812c-7d8b-4816-8140-cac2148c2c75",
+      "0a1a026e-e6ed-43ce-8a9c-4f3a3871e3b6"
     ],
     [
-      "ca2b21d0-733d-4db9-a381-bc86055e220b",
-      "0b411f16-583f-4d15-bb80-cfb74bfa8c5c"
+      "c6dff16d-f376-4b7f-bb7e-3452a374569e",
+      "6ea7812c-7d8b-4816-8140-cac2148c2c75"
     ],
     [
-      "fdfb5913-c4be-44f9-9894-7bffc43a7984",
-      "1210b120-e777-49b7-bf5c-564fd5eeeb60"
+      "0a1a026e-e6ed-43ce-8a9c-4f3a3871e3b6",
+      "a6a77f36-6bf9-4d42-8551-f50b63b14d0a"
     ]
-  ]
+  ],
+  "metrics": {
+    "totalCyclomaticComplexity": 1,
+    "maxNestingDepth": 0,
+    "totalFunctionSize": 0,
+    "totalMethods": 1,
+    "methods": [
+      {
+        "name": "badExample",
+        "cyclomaticComplexity": 1,
+        "nestingDepth": 0,
+        "functionSize": 0
+      }
+    ]
+  }
 }

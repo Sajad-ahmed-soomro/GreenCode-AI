@@ -2,240 +2,278 @@
   "methodName": "Calculator",
   "nodes": [
     {
-      "id": "e8176471-457e-4762-8fc1-c76313fd7927",
+      "id": "90d87105-f528-4155-89da-dc63e64b500a",
       "label": "Start (Calculator)",
       "type": "start",
       "next": [
-        "170641ef-bc6a-4be3-827c-6e6c6c235fb3"
+        "7733e93d-4602-48d1-9697-ebc792f8162b"
       ]
     },
     {
-      "id": "7ee4bb98-b4e3-4a2f-a11c-22afb87953a4",
+      "id": "e65d7ea0-e706-445c-b4b8-880dba68ff7b",
       "label": "End (Calculator)",
       "type": "end",
       "next": []
     },
     {
-      "id": "170641ef-bc6a-4be3-827c-6e6c6c235fb3",
+      "id": "7733e93d-4602-48d1-9697-ebc792f8162b",
       "label": "Calculator.Calculator → Start",
       "type": "start",
       "next": [
-        "faaa1944-d8f4-41b2-8974-1b214a05b2a5"
+        "1cdca05d-a265-40c5-9c61-f133f8437a8a"
       ]
     },
     {
-      "id": "faaa1944-d8f4-41b2-8974-1b214a05b2a5",
+      "id": "1cdca05d-a265-40c5-9c61-f133f8437a8a",
       "label": "Calculator.Calculator → End",
       "type": "end",
       "next": [
-        "032f301c-220e-474d-924c-992ab09ad114"
+        "502bbd91-078b-49ce-a695-ffe9ba8b42c6"
       ]
     },
     {
-      "id": "032f301c-220e-474d-924c-992ab09ad114",
+      "id": "502bbd91-078b-49ce-a695-ffe9ba8b42c6",
       "label": "Calculator.Calculator → Start",
       "type": "start",
       "next": [
-        "78d2684b-7f8c-4189-81a6-c6933cb30a39"
+        "98e531ad-6d64-46b0-911d-ebd424307558"
       ]
     },
     {
-      "id": "78d2684b-7f8c-4189-81a6-c6933cb30a39",
+      "id": "98e531ad-6d64-46b0-911d-ebd424307558",
       "label": "Calculator.Calculator → End",
       "type": "end",
       "next": [
-        "f718196b-984d-4ffe-93d6-ec110f8731d5"
+        "fd7be952-9834-4aa2-a069-a19662cb9212"
       ]
     },
     {
-      "id": "f718196b-984d-4ffe-93d6-ec110f8731d5",
+      "id": "fd7be952-9834-4aa2-a069-a19662cb9212",
       "label": "Calculator.add → Start",
       "type": "start",
       "next": [
-        "040a4b23-b3ee-4de0-ae86-bfe549e66d68"
+        "227d5949-a182-4faa-96e1-9b1a68109d8b"
       ]
     },
     {
-      "id": "b1f78782-7d39-4ad8-bc89-56b53872ef07",
+      "id": "42120de8-dfa2-4ec6-846d-872f9e402061",
       "label": "Calculator.add → End",
       "type": "end",
       "next": [
-        "be45e3cc-c634-4085-897e-41dd276b9ed8"
+        "43b024e5-0955-41a7-a622-e2ef959b95a0"
       ]
     },
     {
-      "id": "040a4b23-b3ee-4de0-ae86-bfe549e66d68",
+      "id": "227d5949-a182-4faa-96e1-9b1a68109d8b",
       "label": "Calculator.add → return",
       "type": "condition",
       "next": [
-        "b1f78782-7d39-4ad8-bc89-56b53872ef07"
+        "42120de8-dfa2-4ec6-846d-872f9e402061"
       ]
     },
     {
-      "id": "be45e3cc-c634-4085-897e-41dd276b9ed8",
+      "id": "43b024e5-0955-41a7-a622-e2ef959b95a0",
       "label": "Calculator.sumArray → Start",
       "type": "start",
       "next": [
-        "b83ed08b-d33a-4bd0-ba0b-283981055e9a"
+        "8237a664-ebf9-4df1-84d6-264e4440a53d"
       ]
     },
     {
-      "id": "f28b8f31-bfa1-47a9-a79f-7db25a09bbf1",
+      "id": "b0287d56-b839-4642-965b-74a91c2f18e1",
       "label": "Calculator.sumArray → End",
       "type": "end",
       "next": [
-        "ec452bd7-efd3-4ba7-81ee-8366475874f9"
+        "2b629715-11eb-4316-a848-4079fe6b0554"
       ]
     },
     {
-      "id": "b83ed08b-d33a-4bd0-ba0b-283981055e9a",
+      "id": "8237a664-ebf9-4df1-84d6-264e4440a53d",
       "label": "Calculator.sumArray → for",
       "type": "statement",
       "next": [
-        "81398f04-369f-4dbf-929f-e98cc2043ab6"
+        "e481e859-5917-47b8-82ba-b52b6953e5da"
       ]
     },
     {
-      "id": "81398f04-369f-4dbf-929f-e98cc2043ab6",
+      "id": "e481e859-5917-47b8-82ba-b52b6953e5da",
       "label": "Calculator.sumArray → forEach",
       "type": "statement",
       "next": [
-        "504497ba-71ac-4aba-83e3-8faf7b438920"
+        "a1319abb-0505-49e3-b8a7-fbbdd0422901"
       ]
     },
     {
-      "id": "504497ba-71ac-4aba-83e3-8faf7b438920",
+      "id": "a1319abb-0505-49e3-b8a7-fbbdd0422901",
       "label": "Calculator.sumArray → return",
       "type": "condition",
       "next": [
-        "f28b8f31-bfa1-47a9-a79f-7db25a09bbf1"
+        "b0287d56-b839-4642-965b-74a91c2f18e1"
       ]
     },
     {
-      "id": "ec452bd7-efd3-4ba7-81ee-8366475874f9",
+      "id": "2b629715-11eb-4316-a848-4079fe6b0554",
       "label": "Calculator.checkValue → Start",
       "type": "start",
       "next": [
-        "54faf46b-40d4-4123-8f10-1454e941f66c"
+        "dde863a2-9051-4791-950c-fbaacf6855ab"
       ]
     },
     {
-      "id": "cec260f7-99cf-41f5-a0e4-20512067de54",
+      "id": "144b8a6b-a16e-4c37-89fd-5e240b3cbdba",
       "label": "Calculator.checkValue → End",
       "type": "end",
       "next": [
-        "7ee4bb98-b4e3-4a2f-a11c-22afb87953a4"
+        "e65d7ea0-e706-445c-b4b8-880dba68ff7b"
       ]
     },
     {
-      "id": "54faf46b-40d4-4123-8f10-1454e941f66c",
+      "id": "dde863a2-9051-4791-950c-fbaacf6855ab",
       "label": "Calculator.checkValue → switch",
       "type": "condition",
       "next": [
-        "2f6897f6-dc7a-4523-adbb-32bdddafec65"
+        "1d5c1c0c-1cf7-4347-8583-38a1b727548e"
       ]
     },
     {
-      "id": "2f6897f6-dc7a-4523-adbb-32bdddafec65",
+      "id": "1d5c1c0c-1cf7-4347-8583-38a1b727548e",
       "label": "Calculator.checkValue → case",
       "type": "condition",
       "next": [
-        "a6de8333-856d-4469-a319-6c6b3f9c7a0d"
+        "e442dbdf-5341-425a-b231-e333d5bcd8c9"
       ]
     },
     {
-      "id": "a6de8333-856d-4469-a319-6c6b3f9c7a0d",
+      "id": "e442dbdf-5341-425a-b231-e333d5bcd8c9",
       "label": "Calculator.checkValue → default",
       "type": "condition",
       "next": [
-        "15f8c542-49d8-49aa-8fc4-963c39a2985d"
+        "3afdff53-99de-48bd-abd0-5dfe013d8eb5"
       ]
     },
     {
-      "id": "15f8c542-49d8-49aa-8fc4-963c39a2985d",
+      "id": "3afdff53-99de-48bd-abd0-5dfe013d8eb5",
       "label": "Calculator.checkValue → break",
       "type": "condition",
       "next": [
-        "cec260f7-99cf-41f5-a0e4-20512067de54"
+        "144b8a6b-a16e-4c37-89fd-5e240b3cbdba"
       ]
     }
   ],
   "edges": [
     [
-      "170641ef-bc6a-4be3-827c-6e6c6c235fb3",
-      "faaa1944-d8f4-41b2-8974-1b214a05b2a5"
+      "7733e93d-4602-48d1-9697-ebc792f8162b",
+      "1cdca05d-a265-40c5-9c61-f133f8437a8a"
     ],
     [
-      "e8176471-457e-4762-8fc1-c76313fd7927",
-      "170641ef-bc6a-4be3-827c-6e6c6c235fb3"
+      "90d87105-f528-4155-89da-dc63e64b500a",
+      "7733e93d-4602-48d1-9697-ebc792f8162b"
     ],
     [
-      "032f301c-220e-474d-924c-992ab09ad114",
-      "78d2684b-7f8c-4189-81a6-c6933cb30a39"
+      "502bbd91-078b-49ce-a695-ffe9ba8b42c6",
+      "98e531ad-6d64-46b0-911d-ebd424307558"
     ],
     [
-      "faaa1944-d8f4-41b2-8974-1b214a05b2a5",
-      "032f301c-220e-474d-924c-992ab09ad114"
+      "1cdca05d-a265-40c5-9c61-f133f8437a8a",
+      "502bbd91-078b-49ce-a695-ffe9ba8b42c6"
     ],
     [
-      "f718196b-984d-4ffe-93d6-ec110f8731d5",
-      "040a4b23-b3ee-4de0-ae86-bfe549e66d68"
+      "fd7be952-9834-4aa2-a069-a19662cb9212",
+      "227d5949-a182-4faa-96e1-9b1a68109d8b"
     ],
     [
-      "040a4b23-b3ee-4de0-ae86-bfe549e66d68",
-      "b1f78782-7d39-4ad8-bc89-56b53872ef07"
+      "227d5949-a182-4faa-96e1-9b1a68109d8b",
+      "42120de8-dfa2-4ec6-846d-872f9e402061"
     ],
     [
-      "78d2684b-7f8c-4189-81a6-c6933cb30a39",
-      "f718196b-984d-4ffe-93d6-ec110f8731d5"
+      "98e531ad-6d64-46b0-911d-ebd424307558",
+      "fd7be952-9834-4aa2-a069-a19662cb9212"
     ],
     [
-      "be45e3cc-c634-4085-897e-41dd276b9ed8",
-      "b83ed08b-d33a-4bd0-ba0b-283981055e9a"
+      "43b024e5-0955-41a7-a622-e2ef959b95a0",
+      "8237a664-ebf9-4df1-84d6-264e4440a53d"
     ],
     [
-      "b83ed08b-d33a-4bd0-ba0b-283981055e9a",
-      "81398f04-369f-4dbf-929f-e98cc2043ab6"
+      "8237a664-ebf9-4df1-84d6-264e4440a53d",
+      "e481e859-5917-47b8-82ba-b52b6953e5da"
     ],
     [
-      "81398f04-369f-4dbf-929f-e98cc2043ab6",
-      "504497ba-71ac-4aba-83e3-8faf7b438920"
+      "e481e859-5917-47b8-82ba-b52b6953e5da",
+      "a1319abb-0505-49e3-b8a7-fbbdd0422901"
     ],
     [
-      "504497ba-71ac-4aba-83e3-8faf7b438920",
-      "f28b8f31-bfa1-47a9-a79f-7db25a09bbf1"
+      "a1319abb-0505-49e3-b8a7-fbbdd0422901",
+      "b0287d56-b839-4642-965b-74a91c2f18e1"
     ],
     [
-      "b1f78782-7d39-4ad8-bc89-56b53872ef07",
-      "be45e3cc-c634-4085-897e-41dd276b9ed8"
+      "42120de8-dfa2-4ec6-846d-872f9e402061",
+      "43b024e5-0955-41a7-a622-e2ef959b95a0"
     ],
     [
-      "ec452bd7-efd3-4ba7-81ee-8366475874f9",
-      "54faf46b-40d4-4123-8f10-1454e941f66c"
+      "2b629715-11eb-4316-a848-4079fe6b0554",
+      "dde863a2-9051-4791-950c-fbaacf6855ab"
     ],
     [
-      "54faf46b-40d4-4123-8f10-1454e941f66c",
-      "2f6897f6-dc7a-4523-adbb-32bdddafec65"
+      "dde863a2-9051-4791-950c-fbaacf6855ab",
+      "1d5c1c0c-1cf7-4347-8583-38a1b727548e"
     ],
     [
-      "2f6897f6-dc7a-4523-adbb-32bdddafec65",
-      "a6de8333-856d-4469-a319-6c6b3f9c7a0d"
+      "1d5c1c0c-1cf7-4347-8583-38a1b727548e",
+      "e442dbdf-5341-425a-b231-e333d5bcd8c9"
     ],
     [
-      "a6de8333-856d-4469-a319-6c6b3f9c7a0d",
-      "15f8c542-49d8-49aa-8fc4-963c39a2985d"
+      "e442dbdf-5341-425a-b231-e333d5bcd8c9",
+      "3afdff53-99de-48bd-abd0-5dfe013d8eb5"
     ],
     [
-      "15f8c542-49d8-49aa-8fc4-963c39a2985d",
-      "cec260f7-99cf-41f5-a0e4-20512067de54"
+      "3afdff53-99de-48bd-abd0-5dfe013d8eb5",
+      "144b8a6b-a16e-4c37-89fd-5e240b3cbdba"
     ],
     [
-      "f28b8f31-bfa1-47a9-a79f-7db25a09bbf1",
-      "ec452bd7-efd3-4ba7-81ee-8366475874f9"
+      "b0287d56-b839-4642-965b-74a91c2f18e1",
+      "2b629715-11eb-4316-a848-4079fe6b0554"
     ],
     [
-      "cec260f7-99cf-41f5-a0e4-20512067de54",
-      "7ee4bb98-b4e3-4a2f-a11c-22afb87953a4"
+      "144b8a6b-a16e-4c37-89fd-5e240b3cbdba",
+      "e65d7ea0-e706-445c-b4b8-880dba68ff7b"
     ]
-  ]
+  ],
+  "metrics": {
+    "totalCyclomaticComplexity": 10,
+    "maxNestingDepth": 0,
+    "totalFunctionSize": 0,
+    "totalMethods": 5,
+    "methods": [
+      {
+        "name": "Calculator",
+        "cyclomaticComplexity": 1,
+        "nestingDepth": 0,
+        "functionSize": 0
+      },
+      {
+        "name": "Calculator",
+        "cyclomaticComplexity": 0,
+        "nestingDepth": 0,
+        "functionSize": 0
+      },
+      {
+        "name": "add",
+        "cyclomaticComplexity": 2,
+        "nestingDepth": 0,
+        "functionSize": 0
+      },
+      {
+        "name": "sumArray",
+        "cyclomaticComplexity": 2,
+        "nestingDepth": 0,
+        "functionSize": 0
+      },
+      {
+        "name": "checkValue",
+        "cyclomaticComplexity": 5,
+        "nestingDepth": 0,
+        "functionSize": 0
+      }
+    ]
+  }
 }

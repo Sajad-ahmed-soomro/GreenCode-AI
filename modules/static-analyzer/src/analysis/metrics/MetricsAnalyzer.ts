@@ -2,7 +2,7 @@ import chalk from "chalk";
 import { calculateCyclomaticComplexity } from "./CyclomaticComplexity.js";
 import { calculateNestingDepth } from "./NestingDepth.js";
 import { calculateFunctionSize } from "./FunctionSize.js";
-import {  buildClassCFG } from "../cfg/CFGBuilder.js";
+import { buildClassCFG } from "../cfg/CFGBuilder.js";
 import { FileMetrics, ClassMetrics, MethodMetrics } from "../../types/MethodMetrics.js";
 
 /* ---------------- Helper AST types ---------------- */
@@ -27,7 +27,7 @@ interface ASTFile {
 // Track processed methods globally to prevent duplicates across multiple calls
 const processedMethods = new Set<string>();
 
-/* ---------------- Main Analyzer (Typed + Safe + Deduplicated) ---------------- */
+/* ---------------- Main Analyzer ---------------- */
 export function analyzeAST(astJson: ASTFile, filePath: string): FileMetrics {
   const classes: ClassMetrics[] = [];
 
@@ -39,12 +39,12 @@ export function analyzeAST(astJson: ASTFile, filePath: string): FileMetrics {
   console.log(chalk.dim(`\n[CFG] Starting analysis for ${astJson.classes.length} class(es)...`));
 
   for (const cls of astJson.classes) {
-    const className: string = cls.name || "AnonymousClass";
+    const className = cls.name || "AnonymousClass";
     const methods: MethodNode[] = cls.methods || [];
 
     console.log(chalk.dim(`[CFG] Class: ${className} → ${methods.length} method(s)`));
 
-    // 🧠 Generate Class-Level CFG (merged CFG of all methods)
+    /* ---------------- 1️⃣ Build class-level CFG ---------------- */
     const classCFG = buildClassCFG({
       name: className,
       methods: methods.map((m) => ({
@@ -64,19 +64,14 @@ export function analyzeAST(astJson: ASTFile, filePath: string): FileMetrics {
       )
     );
 
-    // Compute metrics for each method (unchanged)
+    /* ---------------- 2️⃣ Compute method-level metrics ---------------- */
     const methodMetrics: MethodMetrics[] = methods.map((method: MethodNode): MethodMetrics => {
-      const methodName: string = method.name || "anonymous";
+      const methodName = method.name || "anonymous";
       const uniqueKey = `${filePath}::${className}::${methodName}`;
 
       if (processedMethods.has(uniqueKey)) {
         console.log(chalk.gray(`   [SKIP] ${methodName} (already processed)`));
-        return {
-          name: methodName,
-          cyclomaticComplexity: 0,
-          nestingDepth: 0,
-          functionSize: 0,
-        };
+        return { name: methodName, cyclomaticComplexity: 0, nestingDepth: 0, functionSize: 0 };
       }
 
       processedMethods.add(uniqueKey);
@@ -93,11 +88,31 @@ export function analyzeAST(astJson: ASTFile, filePath: string): FileMetrics {
       };
     });
 
-    // Push results per class
+    /* ---------------- 3️⃣ Compute class-level summary ---------------- */
+    const classMetricsSummary = {
+      totalCyclomaticComplexity: methodMetrics.reduce(
+        (a, m) => a + (m.cyclomaticComplexity || 0),
+        0
+      ),
+      maxNestingDepth: Math.max(...methodMetrics.map((m) => m.nestingDepth || 0), 0),
+      totalFunctionSize: methodMetrics.reduce((a, m) => a + (m.functionSize || 0), 0),
+      totalMethods: methodMetrics.length,
+    };
+
+    /* ---------------- 4️⃣ Attach metrics directly into the CFG ---------------- */
+    const enrichedCFG = {
+      ...classCFG,
+      metrics: {
+        ...classMetricsSummary,
+        methods: methodMetrics, // 👈 embed per-method metrics inside CFG for easy visualization
+      },
+    };
+
+    /* ---------------- 5️⃣ Push final result ---------------- */
     classes.push({
       className,
       methods: methodMetrics,
-      cfg: classCFG, // ✅ attach merged CFG
+      cfg: enrichedCFG, // ✅ attach enriched CFG with metrics inside
     });
   }
 
