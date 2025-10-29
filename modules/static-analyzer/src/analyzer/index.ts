@@ -14,6 +14,7 @@ import { ReportFormatter } from "../report/ReportFormatter.js";
 export async function analyzeFile(targetPath: string) {
   console.clear();
   resetAnalysisTracking();
+
   console.log(
     gradient.pastel.multiline(
       figlet.textSync("GreenCode AI", { horizontalLayout: "fitted" })
@@ -40,12 +41,12 @@ export async function analyzeFile(targetPath: string) {
     return;
   }
 
-  // Create output directories
+  // Output directories
   const outputDir = path.join(process.cwd(), "output");
   const reportDir = path.join(outputDir, "report");
-  const cfgDir = path.join(outputDir, "cfg");
-
-  [outputDir, reportDir, cfgDir].forEach((dir) => {
+  const cfgDir = path.join(outputDir, "cfg");     
+  const metricsDir = path.join(outputDir, "metrics"); 
+  [outputDir, reportDir, cfgDir, metricsDir].forEach((dir) => {
     if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
   });
 
@@ -56,52 +57,34 @@ export async function analyzeFile(targetPath: string) {
     const fileName = path.basename(filePath);
     console.log(chalk.bold(`\n📄 Analyzing: ${fileName}\n`));
 
-    // Step 1: Read and parse file
-    const fileSpinner = ora(`Reading ${fileName}...`).start();
     let astJson;
     try {
       const content = fs.readFileSync(filePath, "utf8");
       astJson = JSON.parse(content);
-      fileSpinner.succeed("File loaded and parsed ✅");
     } catch (error) {
-      fileSpinner.fail(`Failed to read/parse ${fileName}: ${error}`);
+      console.log(chalk.red(`Failed to read/parse ${fileName}: ${error}`));
       continue;
     }
 
-    // Step 2: Check if metrics already exist (skip re-analysis)
+    const isMetricsFile = astJson.fileName && astJson.classes?.[0]?.methods?.[0]?.cyclomaticComplexity !== undefined;
     let fileMetrics;
-    const isMetricsFile = astJson.fileName && astJson.classes?.[0]?.cfg;
 
     if (isMetricsFile) {
-      console.log(chalk.yellow("⚠️  This appears to be a metrics file, not an AST. Skipping CFG generation."));
+      console.log(chalk.yellow("⚠️  This appears to be a metrics file, skipping CFG generation."));
       fileMetrics = astJson;
     } else {
-      const analysisSpinner = ora("Generating metrics and CFGs...").start();
+      const analysisSpinner = ora("Generating metrics & CFGs...").start();
       try {
-        fileMetrics = analyzeAST(astJson, fileName);
+        // Analyze AST and save metrics + CFG per method
+        fileMetrics = analyzeAST(astJson, fileName, metricsDir, cfgDir);
         analysisSpinner.succeed("Metrics & CFGs generated ✅");
-
-        // ✅ Save ONE CFG per class
-        let totalCFGsSaved = 0;
-        fileMetrics.classes.forEach((cls) => {
-          if (cls.cfg) {
-            const className = cls.className || "AnonymousClass";
-            const cfgFileName = `${path.parse(fileName).name}_${className}_cfg.json`;
-            const cfgFilePath = path.join(cfgDir, cfgFileName);
-
-            fs.writeFileSync(cfgFilePath, JSON.stringify(cls.cfg, null, 2), "utf-8");
-            totalCFGsSaved++;
-          }
-        });
-
-        console.log(chalk.dim(`   💾 Saved ${totalCFGsSaved} class-level CFG(s) → ${cfgDir}`));
       } catch (error) {
         analysisSpinner.fail(`Failed to analyze ${fileName}: ${error}`);
         continue;
       }
     }
 
-    // Step 3: Run Rule Engine
+    // Run Rule Engine
     const ruleSpinner = ora("Running rule engine...").start();
     let violations = [];
     try {
@@ -112,7 +95,7 @@ export async function analyzeFile(targetPath: string) {
       continue;
     }
 
-    // Step 4: Generate and save report
+    // Generate report
     try {
       const report = ReportGenerator.generate(violations);
       const reportFile = path.join(reportDir, `${fileName}.report.json`);
@@ -129,15 +112,10 @@ export async function analyzeFile(targetPath: string) {
       console.log(chalk.red(`Failed to save report for ${fileName}: ${error}`));
     }
 
-    // Step 5: Display violations table
+    // Display violations table
     if (violations.length > 0) {
       const table = new Table({
-        head: [
-          chalk.gray("Severity"),
-          chalk.gray("Rule ID"),
-          chalk.gray("Description"),
-          chalk.gray("Location"),
-        ],
+        head: ["Severity", "Rule ID", "Description", "Location"].map(h => chalk.gray(h)),
         colWidths: [12, 20, 50, 25],
         style: { compact: true },
         wordWrap: true,
@@ -153,12 +131,7 @@ export async function analyzeFile(targetPath: string) {
             ? chalk.yellow
             : chalk.blue;
 
-        table.push([
-          color(v.severity.toUpperCase()),
-          v.ruleId,
-          v.description,
-          chalk.gray(v.location),
-        ]);
+        table.push([color(v.severity.toUpperCase()), v.ruleId, v.description, chalk.gray(v.location)]);
       });
 
       console.log(table.toString());
@@ -167,7 +140,7 @@ export async function analyzeFile(targetPath: string) {
     }
   }
 
-  // ✅ Final summary section restored
+  // Final summary
   console.log(chalk.bold("\n─────────────────────────────────────────────"));
   console.log(chalk.bold("📊 Overall Analysis Summary"));
   console.log(chalk.bold("─────────────────────────────────────────────"));

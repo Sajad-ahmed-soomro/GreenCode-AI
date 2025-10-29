@@ -1,0 +1,25 @@
+{
+  "methodName": "badExample",
+  "nodes": [
+    {
+      "id": "0574edf4-678e-4155-8f58-65c447d5d060",
+      "label": "Start",
+      "type": "start",
+      "next": [
+        "31f23c3a-bb8e-4394-aa81-6b37abc5bc80"
+      ]
+    },
+    {
+      "id": "31f23c3a-bb8e-4394-aa81-6b37abc5bc80",
+      "label": "End",
+      "type": "end",
+      "next": []
+    }
+  ],
+  "edges": [
+    [
+      "0574edf4-678e-4155-8f58-65c447d5d060",
+      "31f23c3a-bb8e-4394-aa81-6b37abc5bc80"
+    ]
+  ]
+}

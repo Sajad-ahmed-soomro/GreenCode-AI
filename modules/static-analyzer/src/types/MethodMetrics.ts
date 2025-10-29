@@ -1,17 +1,21 @@
-import { CFG } from "./CFGType.js";
 
 export interface MethodMetrics {
-  name: string; // was methodName → changed to `name` (matches MetricsAnalyzer + RuleEngine)
+  name: string;
   cyclomaticComplexity: number;
   nestingDepth: number;
   functionSize: number;
-  cfg?: CFG;
+  
 }
 
 export interface ClassMetrics {
   className: string;
   methods: MethodMetrics[];
-  cfg?: CFG; 
+  summary?: {
+    totalCyclomaticComplexity: number;
+    maxNestingDepth: number;
+    totalFunctionSize: number;
+    totalMethods: number;
+  };
 }
 
 export interface FileMetrics {
