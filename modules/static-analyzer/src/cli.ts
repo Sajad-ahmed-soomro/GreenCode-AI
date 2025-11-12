@@ -2,9 +2,12 @@ import { parseFolder } from "./parser/ASTParser.js";
 import { analyzeFile } from "./analyzer/index.js";
 import fs from "fs";
 import path from "path";
+
 export { analyzeFile } from "./analyzer/index.js";
 
 const inputPath = process.argv[2];
+const customOutputDir = process.argv[3]; // ✅ NEW: output dir from gateway
+
 if (!inputPath) {
   console.error("❌ Please provide a file or directory path");
   process.exit(1);
@@ -35,11 +38,11 @@ async function run() {
       .map((f) => path.join(astOut, f));
 
     for (const file of astFiles) {
-      await analyzeFile(file);
+      await analyzeFile(file, customOutputDir); // ✅ pass gateway output dir
     }
 
   } else {
-    await analyzeFile(fullPath);
+    await analyzeFile(fullPath, customOutputDir);
   }
 }
 

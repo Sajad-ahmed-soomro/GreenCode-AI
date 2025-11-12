@@ -1,4 +1,4 @@
-import { MetricResult } from "./metricsHelper";
+import { MetricResult } from "./metricsHelper.js";
 
 export function generateSuggestions(metrics: MetricResult[]): string[] {
   const suggestions: string[] = [];

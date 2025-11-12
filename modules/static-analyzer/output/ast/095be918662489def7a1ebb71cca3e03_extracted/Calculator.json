@@ -1,0 +1,98 @@
+{
+  "file": "/Users/sajad-ahmed/Documents/fyp/GreenCode-AI/modules/gateway/uploads/095be918662489def7a1ebb71cca3e03_extracted/samples/Calculator.java",
+  "classes": [
+    {
+      "type": "Class",
+      "name": "Calculator",
+      "methods": [
+        {
+          "name": "Calculator",
+          "params": [],
+          "loops": [],
+          "conditionals": [],
+          "modifiers": [
+            "public"
+          ]
+        },
+        {
+          "name": "Calculator",
+          "params": [
+            {
+              "type": "int",
+              "name": "initial"
+            }
+          ],
+          "loops": [],
+          "conditionals": [],
+          "modifiers": [
+            "public"
+          ]
+        },
+        {
+          "name": "add",
+          "params": [
+            {
+              "type": "int",
+              "name": "a"
+            },
+            {
+              "type": "int",
+              "name": "b"
+            }
+          ],
+          "loops": [],
+          "conditionals": [
+            "return"
+          ],
+          "returnType": "int",
+          "modifiers": [
+            "public"
+          ]
+        },
+        {
+          "name": "sumArray",
+          "params": [
+            {
+              "type": "int...",
+              "name": "values"
+            }
+          ],
+          "loops": [
+            "for",
+            "forEach"
+          ],
+          "conditionals": [
+            "return"
+          ],
+          "returnType": "int",
+          "modifiers": [
+            "public"
+          ]
+        },
+        {
+          "name": "checkValue",
+          "params": [
+            {
+              "type": "int",
+              "name": "x"
+            }
+          ],
+          "loops": [],
+          "conditionals": [
+            "switch",
+            "case",
+            "default",
+            "break"
+          ],
+          "returnType": "void",
+          "modifiers": [
+            "public"
+          ]
+        }
+      ],
+      "fields": [
+        "private int result;"
+      ]
+    }
+  ]
+}

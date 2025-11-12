@@ -1,0 +1,536 @@
+{
+  "methodName": "SpecialMoves",
+  "nodes": [
+    {
+      "id": "28532f30-1468-4f54-963d-5dcb4084cc0b",
+      "label": "Start (SpecialMoves)",
+      "type": "start",
+      "next": [
+        "a8f625f6-1b61-45f4-b462-b2004b28c020"
+      ]
+    },
+    {
+      "id": "a272c1b8-7e33-4a42-8dfe-5b84b506e3b8",
+      "label": "End (SpecialMoves)",
+      "type": "end",
+      "next": []
+    },
+    {
+      "id": "a8f625f6-1b61-45f4-b462-b2004b28c020",
+      "label": "SpecialMoves.handleCastling → Start",
+      "type": "start",
+      "next": [
+        "81c3076d-08b1-499d-8060-17f52f6592d5"
+      ]
+    },
+    {
+      "id": "81c3076d-08b1-499d-8060-17f52f6592d5",
+      "label": "SpecialMoves.handleCastling → End",
+      "type": "end",
+      "next": [
+        "2f9a11cf-1cb4-4dba-8302-9402d9486315"
+      ]
+    },
+    {
+      "id": "2f9a11cf-1cb4-4dba-8302-9402d9486315",
+      "label": "SpecialMoves.handlePromotion → Start",
+      "type": "start",
+      "next": [
+        "3a944419-a2d2-4668-9f41-cdfa32737308"
+      ]
+    },
+    {
+      "id": "3a944419-a2d2-4668-9f41-cdfa32737308",
+      "label": "SpecialMoves.handlePromotion → End",
+      "type": "end",
+      "next": [
+        "6d670f7b-c253-4cd7-97dc-1caaf8d232c7"
+      ]
+    },
+    {
+      "id": "6d670f7b-c253-4cd7-97dc-1caaf8d232c7",
+      "label": "SpecialMoves.handleEnPassant → Start",
+      "type": "start",
+      "next": [
+        "78b1fa6a-4d9c-4811-881b-c056d9330957"
+      ]
+    },
+    {
+      "id": "78b1fa6a-4d9c-4811-881b-c056d9330957",
+      "label": "SpecialMoves.handleEnPassant → End",
+      "type": "end",
+      "next": [
+        "4ec81ad2-6a70-456a-86cb-3538da728d5d"
+      ]
+    },
+    {
+      "id": "4ec81ad2-6a70-456a-86cb-3538da728d5d",
+      "label": "SpecialMoves.isCheckmate → Start",
+      "type": "start",
+      "next": [
+        "a5cfc403-007b-42a2-bc8e-841142263f24"
+      ]
+    },
+    {
+      "id": "031ee607-ae75-4d1b-8018-828986990fe0",
+      "label": "SpecialMoves.isCheckmate → End",
+      "type": "end",
+      "next": [
+        "5829ce55-e892-4016-87a1-d5df47fd0572"
+      ]
+    },
+    {
+      "id": "a5cfc403-007b-42a2-bc8e-841142263f24",
+      "label": "SpecialMoves.isCheckmate → for",
+      "type": "statement",
+      "next": [
+        "ef4a6073-3e05-4afd-8a22-58bb94becea4"
+      ]
+    },
+    {
+      "id": "ef4a6073-3e05-4afd-8a22-58bb94becea4",
+      "label": "SpecialMoves.isCheckmate → return",
+      "type": "condition",
+      "next": [
+        "480d8d80-3f3d-417f-a92b-5ac4e8781056"
+      ]
+    },
+    {
+      "id": "480d8d80-3f3d-417f-a92b-5ac4e8781056",
+      "label": "SpecialMoves.isCheckmate → continue",
+      "type": "condition",
+      "next": [
+        "ac8bf946-b4e2-4a99-9a8c-17c5b38f7e4f"
+      ]
+    },
+    {
+      "id": "ac8bf946-b4e2-4a99-9a8c-17c5b38f7e4f",
+      "label": "SpecialMoves.isCheckmate → IfStatement",
+      "type": "condition",
+      "next": [
+        "290bdb9a-c5bb-4d09-8092-937c47976164",
+        "1c88fd7d-0be8-4791-86de-57c7aa2109fe"
+      ]
+    },
+    {
+      "id": "290bdb9a-c5bb-4d09-8092-937c47976164",
+      "label": "SpecialMoves.isCheckmate → Statement",
+      "type": "statement",
+      "next": []
+    },
+    {
+      "id": "1c88fd7d-0be8-4791-86de-57c7aa2109fe",
+      "label": "SpecialMoves.isCheckmate → IfStatement",
+      "type": "condition",
+      "next": [
+        "83e4920d-0808-4ac0-83f0-f979e289638a",
+        "f31a525d-3692-4377-b612-ba6c718b615a"
+      ]
+    },
+    {
+      "id": "83e4920d-0808-4ac0-83f0-f979e289638a",
+      "label": "SpecialMoves.isCheckmate → Statement",
+      "type": "statement",
+      "next": []
+    },
+    {
+      "id": "f31a525d-3692-4377-b612-ba6c718b615a",
+      "label": "SpecialMoves.isCheckmate → IfStatement",
+      "type": "condition",
+      "next": [
+        "a1fa58b7-dafb-43d0-89fb-0c16c1da1853",
+        "43db06a6-6dc0-4208-9e99-5ba25da8a076"
+      ]
+    },
+    {
+      "id": "a1fa58b7-dafb-43d0-89fb-0c16c1da1853",
+      "label": "SpecialMoves.isCheckmate → Statement",
+      "type": "statement",
+      "next": []
+    },
+    {
+      "id": "43db06a6-6dc0-4208-9e99-5ba25da8a076",
+      "label": "SpecialMoves.isCheckmate → IfStatement",
+      "type": "condition",
+      "next": [
+        "02a6d767-ae54-4771-8b6a-8a2435cb08ee",
+        "031ee607-ae75-4d1b-8018-828986990fe0"
+      ]
+    },
+    {
+      "id": "02a6d767-ae54-4771-8b6a-8a2435cb08ee",
+      "label": "SpecialMoves.isCheckmate → Statement",
+      "type": "statement",
+      "next": []
+    },
+    {
+      "id": "5829ce55-e892-4016-87a1-d5df47fd0572",
+      "label": "SpecialMoves.isInCheck → Start",
+      "type": "start",
+      "next": [
+        "5f4e3634-f516-499f-8b68-0a25ee8c9615"
+      ]
+    },
+    {
+      "id": "7a25f429-a958-448b-96bd-e7362e2fad5f",
+      "label": "SpecialMoves.isInCheck → End",
+      "type": "end",
+      "next": [
+        "e014c738-6f6a-4eee-be1e-d3687f071e68"
+      ]
+    },
+    {
+      "id": "5f4e3634-f516-499f-8b68-0a25ee8c9615",
+      "label": "SpecialMoves.isInCheck → for",
+      "type": "statement",
+      "next": [
+        "14217c24-aac4-4f77-8940-2134f7a85384"
+      ]
+    },
+    {
+      "id": "14217c24-aac4-4f77-8940-2134f7a85384",
+      "label": "SpecialMoves.isInCheck → return",
+      "type": "condition",
+      "next": [
+        "02d1a21c-6b82-4ef1-a13f-ca6c8500d165"
+      ]
+    },
+    {
+      "id": "02d1a21c-6b82-4ef1-a13f-ca6c8500d165",
+      "label": "SpecialMoves.isInCheck → IfStatement",
+      "type": "condition",
+      "next": [
+        "3b0ee655-525e-4654-b424-596645834671",
+        "b5db6dc1-8c17-427f-b94a-7a0530acd664"
+      ]
+    },
+    {
+      "id": "3b0ee655-525e-4654-b424-596645834671",
+      "label": "SpecialMoves.isInCheck → Statement",
+      "type": "statement",
+      "next": []
+    },
+    {
+      "id": "b5db6dc1-8c17-427f-b94a-7a0530acd664",
+      "label": "SpecialMoves.isInCheck → IfStatement",
+      "type": "condition",
+      "next": [
+        "02ce01cd-2b39-433b-a198-b642ee153bce",
+        "7a25f429-a958-448b-96bd-e7362e2fad5f"
+      ]
+    },
+    {
+      "id": "02ce01cd-2b39-433b-a198-b642ee153bce",
+      "label": "SpecialMoves.isInCheck → IfStatement",
+      "type": "statement",
+      "next": []
+    },
+    {
+      "id": "e014c738-6f6a-4eee-be1e-d3687f071e68",
+      "label": "SpecialMoves.isValidMove → Start",
+      "type": "start",
+      "next": [
+        "349b5488-ac21-4426-88f5-546f2ae74e47"
+      ]
+    },
+    {
+      "id": "e8ab87f6-52f0-409a-9717-8e6a249fbec5",
+      "label": "SpecialMoves.isValidMove → End",
+      "type": "end",
+      "next": [
+        "8cd36cf2-b553-4b6c-8e87-e220a919aa95"
+      ]
+    },
+    {
+      "id": "349b5488-ac21-4426-88f5-546f2ae74e47",
+      "label": "SpecialMoves.isValidMove → switch",
+      "type": "condition",
+      "next": [
+        "d376f8a4-49f3-4d55-9f54-f212a3f09400"
+      ]
+    },
+    {
+      "id": "d376f8a4-49f3-4d55-9f54-f212a3f09400",
+      "label": "SpecialMoves.isValidMove → case",
+      "type": "condition",
+      "next": [
+        "3eae8ce5-7971-4891-89c0-53900d47734e"
+      ]
+    },
+    {
+      "id": "3eae8ce5-7971-4891-89c0-53900d47734e",
+      "label": "SpecialMoves.isValidMove → default",
+      "type": "condition",
+      "next": [
+        "71689265-a41f-4d7b-af27-c6ab0e126887"
+      ]
+    },
+    {
+      "id": "71689265-a41f-4d7b-af27-c6ab0e126887",
+      "label": "SpecialMoves.isValidMove → return",
+      "type": "condition",
+      "next": [
+        "e8ab87f6-52f0-409a-9717-8e6a249fbec5"
+      ]
+    },
+    {
+      "id": "8cd36cf2-b553-4b6c-8e87-e220a919aa95",
+      "label": "SpecialMoves.findKing → Start",
+      "type": "start",
+      "next": [
+        "9cbd587f-f3fb-462b-bb79-71bdc41e41c3"
+      ]
+    },
+    {
+      "id": "686c178d-2413-403f-948b-2b6a74c9bb84",
+      "label": "SpecialMoves.findKing → End",
+      "type": "end",
+      "next": [
+        "a272c1b8-7e33-4a42-8dfe-5b84b506e3b8"
+      ]
+    },
+    {
+      "id": "9cbd587f-f3fb-462b-bb79-71bdc41e41c3",
+      "label": "SpecialMoves.findKing → for",
+      "type": "statement",
+      "next": [
+        "ad3ce893-e5e3-485d-8904-896ca5e3342b"
+      ]
+    },
+    {
+      "id": "ad3ce893-e5e3-485d-8904-896ca5e3342b",
+      "label": "SpecialMoves.findKing → return",
+      "type": "condition",
+      "next": [
+        "a2572727-6998-482e-b3b2-5e40a764b014"
+      ]
+    },
+    {
+      "id": "a2572727-6998-482e-b3b2-5e40a764b014",
+      "label": "SpecialMoves.findKing → IfStatement",
+      "type": "condition",
+      "next": [
+        "b0dcb924-fc2e-4195-8269-4821e7655e4b",
+        "686c178d-2413-403f-948b-2b6a74c9bb84"
+      ]
+    },
+    {
+      "id": "b0dcb924-fc2e-4195-8269-4821e7655e4b",
+      "label": "SpecialMoves.findKing → Statement",
+      "type": "statement",
+      "next": []
+    }
+  ],
+  "edges": [
+    [
+      "a8f625f6-1b61-45f4-b462-b2004b28c020",
+      "81c3076d-08b1-499d-8060-17f52f6592d5"
+    ],
+    [
+      "28532f30-1468-4f54-963d-5dcb4084cc0b",
+      "a8f625f6-1b61-45f4-b462-b2004b28c020"
+    ],
+    [
+      "2f9a11cf-1cb4-4dba-8302-9402d9486315",
+      "3a944419-a2d2-4668-9f41-cdfa32737308"
+    ],
+    [
+      "81c3076d-08b1-499d-8060-17f52f6592d5",
+      "2f9a11cf-1cb4-4dba-8302-9402d9486315"
+    ],
+    [
+      "6d670f7b-c253-4cd7-97dc-1caaf8d232c7",
+      "78b1fa6a-4d9c-4811-881b-c056d9330957"
+    ],
+    [
+      "3a944419-a2d2-4668-9f41-cdfa32737308",
+      "6d670f7b-c253-4cd7-97dc-1caaf8d232c7"
+    ],
+    [
+      "4ec81ad2-6a70-456a-86cb-3538da728d5d",
+      "a5cfc403-007b-42a2-bc8e-841142263f24"
+    ],
+    [
+      "a5cfc403-007b-42a2-bc8e-841142263f24",
+      "ef4a6073-3e05-4afd-8a22-58bb94becea4"
+    ],
+    [
+      "ef4a6073-3e05-4afd-8a22-58bb94becea4",
+      "480d8d80-3f3d-417f-a92b-5ac4e8781056"
+    ],
+    [
+      "480d8d80-3f3d-417f-a92b-5ac4e8781056",
+      "ac8bf946-b4e2-4a99-9a8c-17c5b38f7e4f"
+    ],
+    [
+      "ac8bf946-b4e2-4a99-9a8c-17c5b38f7e4f",
+      "290bdb9a-c5bb-4d09-8092-937c47976164"
+    ],
+    [
+      "ac8bf946-b4e2-4a99-9a8c-17c5b38f7e4f",
+      "1c88fd7d-0be8-4791-86de-57c7aa2109fe"
+    ],
+    [
+      "1c88fd7d-0be8-4791-86de-57c7aa2109fe",
+      "83e4920d-0808-4ac0-83f0-f979e289638a"
+    ],
+    [
+      "1c88fd7d-0be8-4791-86de-57c7aa2109fe",
+      "f31a525d-3692-4377-b612-ba6c718b615a"
+    ],
+    [
+      "f31a525d-3692-4377-b612-ba6c718b615a",
+      "a1fa58b7-dafb-43d0-89fb-0c16c1da1853"
+    ],
+    [
+      "f31a525d-3692-4377-b612-ba6c718b615a",
+      "43db06a6-6dc0-4208-9e99-5ba25da8a076"
+    ],
+    [
+      "43db06a6-6dc0-4208-9e99-5ba25da8a076",
+      "02a6d767-ae54-4771-8b6a-8a2435cb08ee"
+    ],
+    [
+      "43db06a6-6dc0-4208-9e99-5ba25da8a076",
+      "031ee607-ae75-4d1b-8018-828986990fe0"
+    ],
+    [
+      "78b1fa6a-4d9c-4811-881b-c056d9330957",
+      "4ec81ad2-6a70-456a-86cb-3538da728d5d"
+    ],
+    [
+      "5829ce55-e892-4016-87a1-d5df47fd0572",
+      "5f4e3634-f516-499f-8b68-0a25ee8c9615"
+    ],
+    [
+      "5f4e3634-f516-499f-8b68-0a25ee8c9615",
+      "14217c24-aac4-4f77-8940-2134f7a85384"
+    ],
+    [
+      "14217c24-aac4-4f77-8940-2134f7a85384",
+      "02d1a21c-6b82-4ef1-a13f-ca6c8500d165"
+    ],
+    [
+      "02d1a21c-6b82-4ef1-a13f-ca6c8500d165",
+      "3b0ee655-525e-4654-b424-596645834671"
+    ],
+    [
+      "02d1a21c-6b82-4ef1-a13f-ca6c8500d165",
+      "b5db6dc1-8c17-427f-b94a-7a0530acd664"
+    ],
+    [
+      "b5db6dc1-8c17-427f-b94a-7a0530acd664",
+      "02ce01cd-2b39-433b-a198-b642ee153bce"
+    ],
+    [
+      "b5db6dc1-8c17-427f-b94a-7a0530acd664",
+      "7a25f429-a958-448b-96bd-e7362e2fad5f"
+    ],
+    [
+      "031ee607-ae75-4d1b-8018-828986990fe0",
+      "5829ce55-e892-4016-87a1-d5df47fd0572"
+    ],
+    [
+      "e014c738-6f6a-4eee-be1e-d3687f071e68",
+      "349b5488-ac21-4426-88f5-546f2ae74e47"
+    ],
+    [
+      "349b5488-ac21-4426-88f5-546f2ae74e47",
+      "d376f8a4-49f3-4d55-9f54-f212a3f09400"
+    ],
+    [
+      "d376f8a4-49f3-4d55-9f54-f212a3f09400",
+      "3eae8ce5-7971-4891-89c0-53900d47734e"
+    ],
+    [
+      "3eae8ce5-7971-4891-89c0-53900d47734e",
+      "71689265-a41f-4d7b-af27-c6ab0e126887"
+    ],
+    [
+      "71689265-a41f-4d7b-af27-c6ab0e126887",
+      "e8ab87f6-52f0-409a-9717-8e6a249fbec5"
+    ],
+    [
+      "7a25f429-a958-448b-96bd-e7362e2fad5f",
+      "e014c738-6f6a-4eee-be1e-d3687f071e68"
+    ],
+    [
+      "8cd36cf2-b553-4b6c-8e87-e220a919aa95",
+      "9cbd587f-f3fb-462b-bb79-71bdc41e41c3"
+    ],
+    [
+      "9cbd587f-f3fb-462b-bb79-71bdc41e41c3",
+      "ad3ce893-e5e3-485d-8904-896ca5e3342b"
+    ],
+    [
+      "ad3ce893-e5e3-485d-8904-896ca5e3342b",
+      "a2572727-6998-482e-b3b2-5e40a764b014"
+    ],
+    [
+      "a2572727-6998-482e-b3b2-5e40a764b014",
+      "b0dcb924-fc2e-4195-8269-4821e7655e4b"
+    ],
+    [
+      "a2572727-6998-482e-b3b2-5e40a764b014",
+      "686c178d-2413-403f-948b-2b6a74c9bb84"
+    ],
+    [
+      "e8ab87f6-52f0-409a-9717-8e6a249fbec5",
+      "8cd36cf2-b553-4b6c-8e87-e220a919aa95"
+    ],
+    [
+      "686c178d-2413-403f-948b-2b6a74c9bb84",
+      "a272c1b8-7e33-4a42-8dfe-5b84b506e3b8"
+    ]
+  ],
+  "metrics": {
+    "totalCyclomaticComplexity": 15,
+    "maxNestingDepth": 0,
+    "totalFunctionSize": 0,
+    "totalMethods": 7,
+    "methods": [
+      {
+        "name": "handleCastling",
+        "cyclomaticComplexity": 1,
+        "nestingDepth": 0,
+        "functionSize": 0
+      },
+      {
+        "name": "handlePromotion",
+        "cyclomaticComplexity": 1,
+        "nestingDepth": 0,
+        "functionSize": 0
+      },
+      {
+        "name": "handleEnPassant",
+        "cyclomaticComplexity": 1,
+        "nestingDepth": 0,
+        "functionSize": 0
+      },
+      {
+        "name": "isCheckmate",
+        "cyclomaticComplexity": 3,
+        "nestingDepth": 0,
+        "functionSize": 0
+      },
+      {
+        "name": "isInCheck",
+        "cyclomaticComplexity": 2,
+        "nestingDepth": 0,
+        "functionSize": 0
+      },
+      {
+        "name": "isValidMove",
+        "cyclomaticComplexity": 5,
+        "nestingDepth": 0,
+        "functionSize": 0
+      },
+      {
+        "name": "findKing",
+        "cyclomaticComplexity": 2,
+        "nestingDepth": 0,
+        "functionSize": 0
+      }
+    ]
+  }
+}

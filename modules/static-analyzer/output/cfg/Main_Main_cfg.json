@@ -1,0 +1,170 @@
+{
+  "methodName": "Main",
+  "nodes": [
+    {
+      "id": "36a27bbe-57b7-4cac-be24-bf0fd2014589",
+      "label": "Start (Main)",
+      "type": "start",
+      "next": [
+        "e0e8d01f-e8b4-48cf-a148-91d057ce504c"
+      ]
+    },
+    {
+      "id": "7e15cac1-cb2a-4089-9e8d-76d401491951",
+      "label": "End (Main)",
+      "type": "end",
+      "next": []
+    },
+    {
+      "id": "e0e8d01f-e8b4-48cf-a148-91d057ce504c",
+      "label": "Main.main → Start",
+      "type": "start",
+      "next": [
+        "70753c4a-09c9-49e7-b24a-27025d477327"
+      ]
+    },
+    {
+      "id": "7492e695-84b9-42dc-bb01-5519edd704a8",
+      "label": "Main.main → End",
+      "type": "end",
+      "next": [
+        "7e15cac1-cb2a-4089-9e8d-76d401491951"
+      ]
+    },
+    {
+      "id": "70753c4a-09c9-49e7-b24a-27025d477327",
+      "label": "Main.main → for",
+      "type": "statement",
+      "next": [
+        "4b393586-8c49-4b78-9ce9-291becaf1fd4"
+      ]
+    },
+    {
+      "id": "4b393586-8c49-4b78-9ce9-291becaf1fd4",
+      "label": "Main.main → forEach",
+      "type": "statement",
+      "next": [
+        "79221661-7fb4-4f6a-9cc9-e6330f4e0bab"
+      ]
+    },
+    {
+      "id": "79221661-7fb4-4f6a-9cc9-e6330f4e0bab",
+      "label": "Main.main → try",
+      "type": "condition",
+      "next": [
+        "97fe99da-e27a-450a-9526-e8635cf5be53"
+      ]
+    },
+    {
+      "id": "97fe99da-e27a-450a-9526-e8635cf5be53",
+      "label": "Main.main → catch",
+      "type": "condition",
+      "next": [
+        "3670b6ec-9c6a-4439-8ed6-b82be452045f"
+      ]
+    },
+    {
+      "id": "3670b6ec-9c6a-4439-8ed6-b82be452045f",
+      "label": "Main.main → IfStatement",
+      "type": "condition",
+      "next": [
+        "c63ce044-dcca-4020-95d7-d6263625c7f0",
+        "7492e695-84b9-42dc-bb01-5519edd704a8"
+      ]
+    },
+    {
+      "id": "c63ce044-dcca-4020-95d7-d6263625c7f0",
+      "label": "Main.main → Statement",
+      "type": "statement",
+      "next": [
+        "852d246f-0de5-4688-99f1-0cae0b3efb63"
+      ]
+    },
+    {
+      "id": "852d246f-0de5-4688-99f1-0cae0b3efb63",
+      "label": "Main.main → Statement",
+      "type": "statement",
+      "next": [
+        "b6ecd48b-e0d4-4a5a-b687-b653cc626275"
+      ]
+    },
+    {
+      "id": "b6ecd48b-e0d4-4a5a-b687-b653cc626275",
+      "label": "Main.main → IfStatement",
+      "type": "statement",
+      "next": [
+        "cc33da8f-95d6-4d3d-a223-50deb8fbbb1a"
+      ]
+    },
+    {
+      "id": "cc33da8f-95d6-4d3d-a223-50deb8fbbb1a",
+      "label": "Main.main → IfStatement",
+      "type": "statement",
+      "next": []
+    }
+  ],
+  "edges": [
+    [
+      "e0e8d01f-e8b4-48cf-a148-91d057ce504c",
+      "70753c4a-09c9-49e7-b24a-27025d477327"
+    ],
+    [
+      "70753c4a-09c9-49e7-b24a-27025d477327",
+      "4b393586-8c49-4b78-9ce9-291becaf1fd4"
+    ],
+    [
+      "4b393586-8c49-4b78-9ce9-291becaf1fd4",
+      "79221661-7fb4-4f6a-9cc9-e6330f4e0bab"
+    ],
+    [
+      "79221661-7fb4-4f6a-9cc9-e6330f4e0bab",
+      "97fe99da-e27a-450a-9526-e8635cf5be53"
+    ],
+    [
+      "97fe99da-e27a-450a-9526-e8635cf5be53",
+      "3670b6ec-9c6a-4439-8ed6-b82be452045f"
+    ],
+    [
+      "3670b6ec-9c6a-4439-8ed6-b82be452045f",
+      "c63ce044-dcca-4020-95d7-d6263625c7f0"
+    ],
+    [
+      "c63ce044-dcca-4020-95d7-d6263625c7f0",
+      "852d246f-0de5-4688-99f1-0cae0b3efb63"
+    ],
+    [
+      "852d246f-0de5-4688-99f1-0cae0b3efb63",
+      "b6ecd48b-e0d4-4a5a-b687-b653cc626275"
+    ],
+    [
+      "b6ecd48b-e0d4-4a5a-b687-b653cc626275",
+      "cc33da8f-95d6-4d3d-a223-50deb8fbbb1a"
+    ],
+    [
+      "3670b6ec-9c6a-4439-8ed6-b82be452045f",
+      "7492e695-84b9-42dc-bb01-5519edd704a8"
+    ],
+    [
+      "36a27bbe-57b7-4cac-be24-bf0fd2014589",
+      "e0e8d01f-e8b4-48cf-a148-91d057ce504c"
+    ],
+    [
+      "7492e695-84b9-42dc-bb01-5519edd704a8",
+      "7e15cac1-cb2a-4089-9e8d-76d401491951"
+    ]
+  ],
+  "metrics": {
+    "totalCyclomaticComplexity": 3,
+    "maxNestingDepth": 0,
+    "totalFunctionSize": 0,
+    "totalMethods": 1,
+    "methods": [
+      {
+        "name": "main",
+        "cyclomaticComplexity": 3,
+        "nestingDepth": 0,
+        "functionSize": 0
+      }
+    ]
+  }
+}

@@ -3,11 +3,11 @@
 // --------------------------------------------------------
 
 
-import { loadAllASTFiles, saveReport, getRealLOCAndComments } from "./utils/fileUtils";
-import { evaluateAllMetrics } from "./metrics/metricsHelper";
-import { computeMethodScore, computeAverageScore } from "./metrics/scoreHelper";
-import { generateSuggestions } from "./metrics/suggestionHelper";
-import { generateGlobalSummary } from "./summary/globalSummary";
+import { loadAllASTFiles, saveReport, getRealLOCAndComments } from "./utils/fileUtils.js";
+import { evaluateAllMetrics } from "./metrics/metricsHelper.js";
+import { computeMethodScore, computeAverageScore } from "./metrics/scoreHelper.js";
+import { generateSuggestions } from "./metrics/suggestionHelper.js";
+import { generateGlobalSummary } from "./summary/globalSummary.js";
 
 function main(): void {
   const astFiles = loadAllASTFiles();

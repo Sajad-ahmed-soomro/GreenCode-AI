@@ -1,0 +1,90 @@
+{
+  "file": "/Users/sajad-ahmed/Documents/fyp/GreenCode-AI/modules/gateway/uploads/2096d26e760338dcab712050cb243ac6_extracted/samples/Main.java",
+  "classes": [
+    {
+      "type": "Class",
+      "name": "Main",
+      "methods": [
+        {
+          "name": "main",
+          "params": [
+            {
+              "type": "String []",
+              "name": "args"
+            }
+          ],
+          "loops": [
+            "for",
+            "forEach"
+          ],
+          "conditionals": [
+            "try",
+            "catch"
+          ],
+          "conditionalsTree": [
+            {
+              "type": "IfStatement",
+              "thenBlock": [
+                {
+                  "type": "Statement"
+                },
+                {
+                  "type": "Statement"
+                },
+                {
+                  "type": "IfStatement",
+                  "thenBlock": [
+                    {
+                      "type": "Statement"
+                    }
+                  ],
+                  "elseBlock": null
+                },
+                {
+                  "type": "IfStatement",
+                  "thenBlock": [
+                    {
+                      "type": "IfStatement",
+                      "thenBlock": [
+                        {
+                          "type": "Statement"
+                        }
+                      ],
+                      "elseBlock": [
+                        {
+                          "type": "IfStatement",
+                          "thenBlock": [
+                            {
+                              "type": "Statement"
+                            }
+                          ],
+                          "elseBlock": [
+                            {
+                              "type": "Statement"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "elseBlock": [
+                    {
+                      "type": "Statement"
+                    }
+                  ]
+                }
+              ],
+              "elseBlock": null
+            }
+          ],
+          "returnType": "void",
+          "modifiers": [
+            "public",
+            "static"
+          ]
+        }
+      ],
+      "fields": []
+    }
+  ]
+}

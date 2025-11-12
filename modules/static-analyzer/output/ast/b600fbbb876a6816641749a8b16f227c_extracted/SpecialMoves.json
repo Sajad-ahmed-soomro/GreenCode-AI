@@ -1,0 +1,281 @@
+{
+  "file": "/Users/sajad-ahmed/Documents/fyp/GreenCode-AI/modules/gateway/uploads/b600fbbb876a6816641749a8b16f227c_extracted/samples/SpecialMoves.java",
+  "classes": [
+    {
+      "type": "Class",
+      "name": "SpecialMoves",
+      "methods": [
+        {
+          "name": "handleCastling",
+          "params": [
+            {
+              "type": "char [ [] ]",
+              "name": "board"
+            },
+            {
+              "type": "int",
+              "name": "startRow"
+            },
+            {
+              "type": "int",
+              "name": "startCol"
+            },
+            {
+              "type": "int",
+              "name": "endRow"
+            },
+            {
+              "type": "int",
+              "name": "endCol"
+            }
+          ],
+          "loops": [],
+          "conditionals": [],
+          "returnType": "void",
+          "modifiers": [
+            "public",
+            "static"
+          ]
+        },
+        {
+          "name": "handlePromotion",
+          "params": [
+            {
+              "type": "char [ [] ]",
+              "name": "board"
+            },
+            {
+              "type": "int",
+              "name": "endRow"
+            },
+            {
+              "type": "int",
+              "name": "endCol"
+            }
+          ],
+          "loops": [],
+          "conditionals": [],
+          "returnType": "void",
+          "modifiers": [
+            "public",
+            "static"
+          ]
+        },
+        {
+          "name": "handleEnPassant",
+          "params": [
+            {
+              "type": "char [ [] ]",
+              "name": "board"
+            },
+            {
+              "type": "int",
+              "name": "startRow"
+            },
+            {
+              "type": "int",
+              "name": "endRow"
+            },
+            {
+              "type": "int",
+              "name": "endCol"
+            }
+          ],
+          "loops": [],
+          "conditionals": [],
+          "returnType": "void",
+          "modifiers": [
+            "public",
+            "static"
+          ]
+        },
+        {
+          "name": "isCheckmate",
+          "params": [
+            {
+              "type": "char [ [] ]",
+              "name": "board"
+            },
+            {
+              "type": "boolean",
+              "name": "isWhiteKing"
+            }
+          ],
+          "loops": [
+            "for"
+          ],
+          "conditionals": [
+            "return",
+            "continue"
+          ],
+          "conditionalsTree": [
+            {
+              "type": "IfStatement",
+              "thenBlock": [
+                {
+                  "type": "Statement"
+                }
+              ],
+              "elseBlock": null
+            },
+            {
+              "type": "IfStatement",
+              "thenBlock": [
+                {
+                  "type": "Statement"
+                }
+              ],
+              "elseBlock": null
+            },
+            {
+              "type": "IfStatement",
+              "thenBlock": [
+                {
+                  "type": "Statement"
+                }
+              ],
+              "elseBlock": null
+            },
+            {
+              "type": "IfStatement",
+              "thenBlock": [
+                {
+                  "type": "Statement"
+                }
+              ],
+              "elseBlock": null
+            }
+          ],
+          "returnType": "boolean",
+          "modifiers": [
+            "public",
+            "static"
+          ]
+        },
+        {
+          "name": "isInCheck",
+          "params": [
+            {
+              "type": "char [ [] ]",
+              "name": "board"
+            },
+            {
+              "type": "boolean",
+              "name": "isWhiteKing"
+            }
+          ],
+          "loops": [
+            "for"
+          ],
+          "conditionals": [
+            "return"
+          ],
+          "conditionalsTree": [
+            {
+              "type": "IfStatement",
+              "thenBlock": [
+                {
+                  "type": "Statement"
+                }
+              ],
+              "elseBlock": null
+            },
+            {
+              "type": "IfStatement",
+              "thenBlock": [
+                {
+                  "type": "IfStatement",
+                  "thenBlock": [
+                    {
+                      "type": "Statement"
+                    }
+                  ],
+                  "elseBlock": null
+                }
+              ],
+              "elseBlock": null
+            }
+          ],
+          "returnType": "boolean",
+          "modifiers": [
+            "public",
+            "static"
+          ]
+        },
+        {
+          "name": "isValidMove",
+          "params": [
+            {
+              "type": "char [ [] ]",
+              "name": "board"
+            },
+            {
+              "type": "int",
+              "name": "startRow"
+            },
+            {
+              "type": "int",
+              "name": "startCol"
+            },
+            {
+              "type": "int",
+              "name": "endRow"
+            },
+            {
+              "type": "int",
+              "name": "endCol"
+            }
+          ],
+          "loops": [],
+          "conditionals": [
+            "switch",
+            "case",
+            "default",
+            "return"
+          ],
+          "returnType": "boolean",
+          "modifiers": [
+            "private",
+            "static"
+          ]
+        },
+        {
+          "name": "findKing",
+          "params": [
+            {
+              "type": "char [ [] ]",
+              "name": "board"
+            },
+            {
+              "type": "boolean",
+              "name": "isWhiteKing"
+            }
+          ],
+          "loops": [
+            "for"
+          ],
+          "conditionals": [
+            "return"
+          ],
+          "conditionalsTree": [
+            {
+              "type": "IfStatement",
+              "thenBlock": [
+                {
+                  "type": "Statement"
+                }
+              ],
+              "elseBlock": null
+            }
+          ],
+          "returnType": "int []",
+          "modifiers": [
+            "private",
+            "static"
+          ]
+        }
+      ],
+      "fields": []
+    }
+  ]
+}

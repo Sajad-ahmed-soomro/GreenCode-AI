@@ -1,17 +1,35 @@
 import fs from "fs";
 import path from "path";
+import { fileURLToPath } from "url";
 
-/** Path to the AST folder */
-export const AST_FOLDER =
-  "D:/FYP/New_FYP/GreenCode-AI/modules/static-analyzer/samples/ast";
+// 🧩 Recreate __dirname and __filename for ESM
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
-/** Base path where the actual .java source files are stored */
-export const JAVA_FOLDER =
-  "D:/FYP/New_FYP/GreenCode-AI/modules/static-analyzer/samples";
+const OUTPUT_DIR = path.join(__dirname, "../../output");
 
-/** Load all AST JSON files */
+/** 🧩 Path to the AST folder */
+export const AST_FOLDER = path.join(
+  __dirname,
+  "../../../output/uploads/ast"
+);
+
+/** 📁 Base path where the actual .java source files are stored */
+export const JAVA_FOLDER = path.join(
+  __dirname,
+  "../../../output/uploads"
+);
+
+/** 📦 Load all AST JSON files */
 export function loadAllASTFiles(): any[] {
-  const files = fs.readdirSync(AST_FOLDER).filter(f => f.endsWith(".json"));
+  if (!fs.existsSync(AST_FOLDER)) {
+    console.error(`❌ AST folder not found: ${AST_FOLDER}`);
+    return [];
+  }
+
+  const files = fs
+    .readdirSync(AST_FOLDER)
+    .filter((f) => f.endsWith(".json"));
   const asts: any[] = [];
 
   for (const file of files) {
@@ -21,13 +39,13 @@ export function loadAllASTFiles(): any[] {
       const json = JSON.parse(content);
       asts.push({ fileName: file, data: json });
     } catch (err) {
-      console.error(` Failed to parse ${file}:`, err);
+      console.error(`⚠️ Failed to parse ${file}:`, err);
     }
   }
 
-  console.log(` Loaded ${asts.length} AST files`);
   return asts;
 }
+
 
 /** Save output JSON for each analyzed file */
 export function saveReport(fileName: string, data: any) {

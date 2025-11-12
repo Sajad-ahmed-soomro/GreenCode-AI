@@ -1,0 +1,279 @@
+{
+  "methodName": "Calculator",
+  "nodes": [
+    {
+      "id": "a0aa5d03-9e8e-47a3-876d-48eb6593abf5",
+      "label": "Start (Calculator)",
+      "type": "start",
+      "next": [
+        "e8c3bb4d-a878-40fd-a8f3-56c454052822"
+      ]
+    },
+    {
+      "id": "7f013854-1c05-47d7-a012-f212c91dc0c6",
+      "label": "End (Calculator)",
+      "type": "end",
+      "next": []
+    },
+    {
+      "id": "e8c3bb4d-a878-40fd-a8f3-56c454052822",
+      "label": "Calculator.Calculator → Start",
+      "type": "start",
+      "next": [
+        "248f08e4-0a6d-45f9-aea4-597f3cfd2898"
+      ]
+    },
+    {
+      "id": "248f08e4-0a6d-45f9-aea4-597f3cfd2898",
+      "label": "Calculator.Calculator → End",
+      "type": "end",
+      "next": [
+        "6093f555-4836-4b55-af9a-d5bf6ba3fa3a"
+      ]
+    },
+    {
+      "id": "6093f555-4836-4b55-af9a-d5bf6ba3fa3a",
+      "label": "Calculator.Calculator → Start",
+      "type": "start",
+      "next": [
+        "e45e77b9-10a8-419e-8b3a-d83aac564e9c"
+      ]
+    },
+    {
+      "id": "e45e77b9-10a8-419e-8b3a-d83aac564e9c",
+      "label": "Calculator.Calculator → End",
+      "type": "end",
+      "next": [
+        "4efe1dff-aabd-4605-85bd-4feb25d98e7e"
+      ]
+    },
+    {
+      "id": "4efe1dff-aabd-4605-85bd-4feb25d98e7e",
+      "label": "Calculator.add → Start",
+      "type": "start",
+      "next": [
+        "a5fdb2bd-c038-48b0-9481-b502dd82dfbf"
+      ]
+    },
+    {
+      "id": "31d38fab-d7bc-47d6-a29b-e7f510257450",
+      "label": "Calculator.add → End",
+      "type": "end",
+      "next": [
+        "c1e7d6c0-6301-4121-9483-f000eeaa32a5"
+      ]
+    },
+    {
+      "id": "a5fdb2bd-c038-48b0-9481-b502dd82dfbf",
+      "label": "Calculator.add → return",
+      "type": "condition",
+      "next": [
+        "31d38fab-d7bc-47d6-a29b-e7f510257450"
+      ]
+    },
+    {
+      "id": "c1e7d6c0-6301-4121-9483-f000eeaa32a5",
+      "label": "Calculator.sumArray → Start",
+      "type": "start",
+      "next": [
+        "5f660d4d-9a65-4020-bc61-5d5b42d4cc5a"
+      ]
+    },
+    {
+      "id": "49e3364e-3448-4aa1-a26d-93a1fa6cee6e",
+      "label": "Calculator.sumArray → End",
+      "type": "end",
+      "next": [
+        "34d3e847-97da-4cca-911e-fe2f53ce89d7"
+      ]
+    },
+    {
+      "id": "5f660d4d-9a65-4020-bc61-5d5b42d4cc5a",
+      "label": "Calculator.sumArray → for",
+      "type": "statement",
+      "next": [
+        "e0c34cee-56c9-4a80-ae37-7d35b628a74c"
+      ]
+    },
+    {
+      "id": "e0c34cee-56c9-4a80-ae37-7d35b628a74c",
+      "label": "Calculator.sumArray → forEach",
+      "type": "statement",
+      "next": [
+        "30f1f12a-8f10-437a-8b11-bccc84935270"
+      ]
+    },
+    {
+      "id": "30f1f12a-8f10-437a-8b11-bccc84935270",
+      "label": "Calculator.sumArray → return",
+      "type": "condition",
+      "next": [
+        "49e3364e-3448-4aa1-a26d-93a1fa6cee6e"
+      ]
+    },
+    {
+      "id": "34d3e847-97da-4cca-911e-fe2f53ce89d7",
+      "label": "Calculator.checkValue → Start",
+      "type": "start",
+      "next": [
+        "4606e38e-28b2-4481-a804-01cd18a890a0"
+      ]
+    },
+    {
+      "id": "99d648ad-2964-4b5c-bcb6-17d0c978d54b",
+      "label": "Calculator.checkValue → End",
+      "type": "end",
+      "next": [
+        "7f013854-1c05-47d7-a012-f212c91dc0c6"
+      ]
+    },
+    {
+      "id": "4606e38e-28b2-4481-a804-01cd18a890a0",
+      "label": "Calculator.checkValue → switch",
+      "type": "condition",
+      "next": [
+        "be4a2c05-20f6-42f5-b43c-29e0748eb866"
+      ]
+    },
+    {
+      "id": "be4a2c05-20f6-42f5-b43c-29e0748eb866",
+      "label": "Calculator.checkValue → case",
+      "type": "condition",
+      "next": [
+        "45454947-b26f-476a-b376-f89335f1fca7"
+      ]
+    },
+    {
+      "id": "45454947-b26f-476a-b376-f89335f1fca7",
+      "label": "Calculator.checkValue → default",
+      "type": "condition",
+      "next": [
+        "7aae9680-a8bf-4931-b3a3-6492a32ebbf9"
+      ]
+    },
+    {
+      "id": "7aae9680-a8bf-4931-b3a3-6492a32ebbf9",
+      "label": "Calculator.checkValue → break",
+      "type": "condition",
+      "next": [
+        "99d648ad-2964-4b5c-bcb6-17d0c978d54b"
+      ]
+    }
+  ],
+  "edges": [
+    [
+      "e8c3bb4d-a878-40fd-a8f3-56c454052822",
+      "248f08e4-0a6d-45f9-aea4-597f3cfd2898"
+    ],
+    [
+      "a0aa5d03-9e8e-47a3-876d-48eb6593abf5",
+      "e8c3bb4d-a878-40fd-a8f3-56c454052822"
+    ],
+    [
+      "6093f555-4836-4b55-af9a-d5bf6ba3fa3a",
+      "e45e77b9-10a8-419e-8b3a-d83aac564e9c"
+    ],
+    [
+      "248f08e4-0a6d-45f9-aea4-597f3cfd2898",
+      "6093f555-4836-4b55-af9a-d5bf6ba3fa3a"
+    ],
+    [
+      "4efe1dff-aabd-4605-85bd-4feb25d98e7e",
+      "a5fdb2bd-c038-48b0-9481-b502dd82dfbf"
+    ],
+    [
+      "a5fdb2bd-c038-48b0-9481-b502dd82dfbf",
+      "31d38fab-d7bc-47d6-a29b-e7f510257450"
+    ],
+    [
+      "e45e77b9-10a8-419e-8b3a-d83aac564e9c",
+      "4efe1dff-aabd-4605-85bd-4feb25d98e7e"
+    ],
+    [
+      "c1e7d6c0-6301-4121-9483-f000eeaa32a5",
+      "5f660d4d-9a65-4020-bc61-5d5b42d4cc5a"
+    ],
+    [
+      "5f660d4d-9a65-4020-bc61-5d5b42d4cc5a",
+      "e0c34cee-56c9-4a80-ae37-7d35b628a74c"
+    ],
+    [
+      "e0c34cee-56c9-4a80-ae37-7d35b628a74c",
+      "30f1f12a-8f10-437a-8b11-bccc84935270"
+    ],
+    [
+      "30f1f12a-8f10-437a-8b11-bccc84935270",
+      "49e3364e-3448-4aa1-a26d-93a1fa6cee6e"
+    ],
+    [
+      "31d38fab-d7bc-47d6-a29b-e7f510257450",
+      "c1e7d6c0-6301-4121-9483-f000eeaa32a5"
+    ],
+    [
+      "34d3e847-97da-4cca-911e-fe2f53ce89d7",
+      "4606e38e-28b2-4481-a804-01cd18a890a0"
+    ],
+    [
+      "4606e38e-28b2-4481-a804-01cd18a890a0",
+      "be4a2c05-20f6-42f5-b43c-29e0748eb866"
+    ],
+    [
+      "be4a2c05-20f6-42f5-b43c-29e0748eb866",
+      "45454947-b26f-476a-b376-f89335f1fca7"
+    ],
+    [
+      "45454947-b26f-476a-b376-f89335f1fca7",
+      "7aae9680-a8bf-4931-b3a3-6492a32ebbf9"
+    ],
+    [
+      "7aae9680-a8bf-4931-b3a3-6492a32ebbf9",
+      "99d648ad-2964-4b5c-bcb6-17d0c978d54b"
+    ],
+    [
+      "49e3364e-3448-4aa1-a26d-93a1fa6cee6e",
+      "34d3e847-97da-4cca-911e-fe2f53ce89d7"
+    ],
+    [
+      "99d648ad-2964-4b5c-bcb6-17d0c978d54b",
+      "7f013854-1c05-47d7-a012-f212c91dc0c6"
+    ]
+  ],
+  "metrics": {
+    "totalCyclomaticComplexity": 10,
+    "maxNestingDepth": 0,
+    "totalFunctionSize": 0,
+    "totalMethods": 5,
+    "methods": [
+      {
+        "name": "Calculator",
+        "cyclomaticComplexity": 1,
+        "nestingDepth": 0,
+        "functionSize": 0
+      },
+      {
+        "name": "Calculator",
+        "cyclomaticComplexity": 0,
+        "nestingDepth": 0,
+        "functionSize": 0
+      },
+      {
+        "name": "add",
+        "cyclomaticComplexity": 2,
+        "nestingDepth": 0,
+        "functionSize": 0
+      },
+      {
+        "name": "sumArray",
+        "cyclomaticComplexity": 2,
+        "nestingDepth": 0,
+        "functionSize": 0
+      },
+      {
+        "name": "checkValue",
+        "cyclomaticComplexity": 5,
+        "nestingDepth": 0,
+        "functionSize": 0
+      }
+    ]
+  }
+}

@@ -1,4 +1,4 @@
-import { MetricResult } from "./metricsHelper";
+import { MetricResult } from "./metricsHelper.js";
 
 // Compute score for one method
 export function computeMethodScore(metrics: MetricResult[]): { score: number; level: string } {
