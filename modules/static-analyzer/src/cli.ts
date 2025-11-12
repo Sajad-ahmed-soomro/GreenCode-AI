@@ -3,47 +3,50 @@ import { analyzeFile } from "./analyzer/index.js";
 import fs from "fs";
 import path from "path";
 
-export { analyzeFile } from "./analyzer/index.js";
-
 const inputPath = process.argv[2];
-const customOutputDir = process.argv[3]; // ✅ NEW: output dir from gateway
+const scanOutputDir = process.argv[3]; // gateway/output/<scanId>
 
-if (!inputPath) {
-  console.error("❌ Please provide a file or directory path");
+if (!inputPath || !scanOutputDir) {
+  console.error("❌ Usage: node cli.js <projectPath> <scanOutputDir>");
   process.exit(1);
 }
 
 const fullPath = path.resolve(process.cwd(), inputPath);
-const outputBase = path.resolve(process.cwd(), "output/ast");
 
 async function run() {
-  const stat = fs.statSync(fullPath);
+  try {
+    const stat = fs.statSync(fullPath);
+    await fs.promises.mkdir(scanOutputDir, { recursive: true });
 
-  if (stat.isDirectory()) {
-    //  Generate output path as "output/ast/<folderName>"
-    const folderName = path.basename(fullPath);
-    const astOut = path.join(outputBase, folderName);
-
-    // Ensure output folder exists
+    const astOut = path.join(scanOutputDir, "ast");
     await fs.promises.mkdir(astOut, { recursive: true });
 
-    console.log(`📁 Generating ASTs into: ${astOut}`);
-    await parseFolder(fullPath, astOut);
+    if (stat.isDirectory()) {
+      console.log(`📁 Generating ASTs into: ${astOut}`);
+      await parseFolder(fullPath, astOut);
 
-    console.log("✅ Parsing complete, now analyzing files...\n");
+      const astFiles = fs
+        .readdirSync(astOut)
+        .filter(f => f.endsWith(".json"))
+        .map(f => path.join(astOut, f));
 
-    const astFiles = fs
-      .readdirSync(astOut)
-      .filter((f) => f.endsWith(".json"))
-      .map((f) => path.join(astOut, f));
+      if (astFiles.length === 0) {
+        console.error("❌ No AST files were generated. Check your parser!");
+        process.exit(1);
+      }
 
-    for (const file of astFiles) {
-      await analyzeFile(file, customOutputDir); // ✅ pass gateway output dir
+      for (const file of astFiles) {
+        await analyzeFile(file, scanOutputDir); // CFGs + reports → scanOutputDir
+      }
+    } else {
+      await analyzeFile(fullPath, scanOutputDir);
     }
 
-  } else {
-    await analyzeFile(fullPath, customOutputDir);
+    console.log("✅ Analysis complete!");
+  } catch (err) {
+    console.error("❌ CLI failed:", err);
+    process.exit(1);
   }
 }
 
-run().catch(console.error);
+run();

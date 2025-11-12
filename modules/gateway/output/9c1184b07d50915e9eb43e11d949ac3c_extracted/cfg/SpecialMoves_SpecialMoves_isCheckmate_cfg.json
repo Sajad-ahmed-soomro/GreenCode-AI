@@ -1,0 +1,25 @@
+{
+  "methodName": "isCheckmate",
+  "nodes": [
+    {
+      "id": "f4b823fa-443d-4b77-82a7-04f0a4cd3cb7",
+      "label": "Start",
+      "type": "start",
+      "next": [
+        "71dd078b-ddcc-4f61-a431-235542597f65"
+      ]
+    },
+    {
+      "id": "71dd078b-ddcc-4f61-a431-235542597f65",
+      "label": "End",
+      "type": "end",
+      "next": []
+    }
+  ],
+  "edges": [
+    [
+      "f4b823fa-443d-4b77-82a7-04f0a4cd3cb7",
+      "71dd078b-ddcc-4f61-a431-235542597f65"
+    ]
+  ]
+}

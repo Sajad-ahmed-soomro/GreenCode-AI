@@ -1,0 +1,22 @@
+{
+  "file": "/Users/sajad-ahmed/Documents/fyp/GreenCode-AI/modules/gateway/uploads/9c1184b07d50915e9eb43e11d949ac3c_extracted/samples/Test.java",
+  "classes": [
+    {
+      "type": "Class",
+      "name": "Test",
+      "methods": [
+        {
+          "name": "badExample",
+          "params": [],
+          "loops": [],
+          "conditionals": [],
+          "returnType": "void",
+          "modifiers": [
+            "public"
+          ]
+        }
+      ],
+      "fields": []
+    }
+  ]
+}

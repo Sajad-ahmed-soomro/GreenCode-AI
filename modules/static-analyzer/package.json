@@ -3,12 +3,12 @@
   "version": "1.0.0",
   "type": "module",
   "main": "dist/cli.js",
-  "scripts": {
-    "build": "tsc",
-    "start": "node dist/cli.js",
-    "dev": "ts-node src/cli.ts",
-    "batch": "node dist/parser/BatchParser.js"
-  },
+ "scripts": {
+  "build": "tsc",
+  "start": "node dist/cli.js",
+  "dev": "ts-node src/cli.ts",
+  "batch": "node dist/parser/BatchParser.js"
+},
   "keywords": [],
   "author": "",
   "license": "ISC",

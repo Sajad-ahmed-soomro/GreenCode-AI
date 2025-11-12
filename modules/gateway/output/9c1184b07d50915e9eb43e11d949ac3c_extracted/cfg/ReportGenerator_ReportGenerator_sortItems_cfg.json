@@ -1,0 +1,25 @@
+{
+  "methodName": "sortItems",
+  "nodes": [
+    {
+      "id": "ce1d5685-dfa7-4af0-aba6-f9f7e679a98b",
+      "label": "Start",
+      "type": "start",
+      "next": [
+        "03130427-7b31-4044-ab51-5b687a6dc1b2"
+      ]
+    },
+    {
+      "id": "03130427-7b31-4044-ab51-5b687a6dc1b2",
+      "label": "End",
+      "type": "end",
+      "next": []
+    }
+  ],
+  "edges": [
+    [
+      "ce1d5685-dfa7-4af0-aba6-f9f7e679a98b",
+      "03130427-7b31-4044-ab51-5b687a6dc1b2"
+    ]
+  ]
+}

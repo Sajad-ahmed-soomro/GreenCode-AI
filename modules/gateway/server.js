@@ -4,6 +4,7 @@ import multer from "multer";
 import path from "path";
 import fs from "fs";
 import AdmZip from "adm-zip";
+import { spawn } from "child_process";
 import { fileURLToPath } from "url";
 
 const __filename = fileURLToPath(import.meta.url);
@@ -21,8 +22,6 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// POST /scan → upload project and return results from latest output folder
-// POST /scan → upload project and return results from latest output folder
 app.post("/scan", upload.single("project"), async (req, res) => {
   if (!req.file) return res.status(400).json({ error: "No file uploaded" });
 
@@ -39,62 +38,63 @@ app.post("/scan", upload.single("project"), async (req, res) => {
   }
 
   try {
-    // Find the folder that actually has report or cfg files
-    const outputFolders = fs.readdirSync(outputDir).filter(f =>
-      fs.statSync(path.join(outputDir, f)).isDirectory()
-    ).sort().reverse(); // newest first
+    const scanId = path.basename(projectPath);
+    const scanOutputDir = path.join(outputDir, scanId);
+    fs.mkdirSync(scanOutputDir, { recursive: true });
 
-    let latestFolder = null;
-    for (const folder of outputFolders) {
-      const rDir = path.join(outputDir, folder, "report");
-      const cDir = path.join(outputDir, folder, "cfg");
-      if ((fs.existsSync(rDir) && fs.readdirSync(rDir).length > 0) ||
-          (fs.existsSync(cDir) && fs.readdirSync(cDir).length > 0)) {
-        latestFolder = folder;
-        break;
+    const cliPath = path.join(__dirname, "../static-analyzer/dist/cli.js");
+
+    if (!fs.existsSync(cliPath)) {
+      return res.status(500).json({ status: "error", message: "Analyzer CLI not found. Compile static-analyzer first." });
+    }
+
+    console.log(`⚡ Running static-analyzer CLI on: ${projectPath}`);
+    const analyzer = spawn(
+      "node",
+      [cliPath, projectPath, scanOutputDir],
+      {
+        cwd: path.join(__dirname, "../static-analyzer"),
+        stdio: "inherit",
+        shell: true,
       }
-    }
-
-    if (!latestFolder) {
-      return res.status(500).json({ status: "error", message: "No analysis results found" });
-    }
-
-    console.log("Selected output folder:", latestFolder);
-
-    const reportDir = path.join(outputDir, latestFolder, "report");
-    const cfgDir = path.join(outputDir, latestFolder, "cfg");
-
-    const reports = fs.existsSync(reportDir)
-      ? fs.readdirSync(reportDir)
-          .filter(f => f.endsWith(".json"))
-          .map(f => JSON.parse(fs.readFileSync(path.join(reportDir, f), "utf8")))
-      : [];
-
-    const cfgs = fs.existsSync(cfgDir)
-      ? fs.readdirSync(cfgDir)
-          .filter(f => f.endsWith(".json"))
-          .map(f => JSON.parse(fs.readFileSync(path.join(cfgDir, f), "utf8")))
-      : [];
-
-    console.log("Reports found:", reports.length, "CFGs found:", cfgs.length);
-
-    // Aggregate frontend-friendly summary & findings
-    const summary = {
-      filesScanned: reports.length,
-      rulesViolated: reports.reduce((acc, r) => acc + (r.total || 0), 0),
-      codeSmells: reports.reduce((acc, r) => acc + (r.codeSmells || 0), 0),
-      hotspots: reports.reduce((acc, r) => acc + (r.hotspots || 0), 0),
-    };
-
-    const findings = reports.flatMap((r, idx) =>
-      (r.findings || []).map(f => ({ id: idx + 1, ...f }))
     );
 
-    // Clean up uploaded project files
-    fs.unlinkSync(req.file.path);
-    if (extractDir) fs.rmSync(extractDir, { recursive: true, force: true });
+    analyzer.on("close", (code) => {
+      if (code !== 0) {
+        console.error(`❌ Analyzer exited with code ${code}`);
+        return res.status(500).json({ status: "error", message: "Analyzer failed" });
+      }
 
-    res.json({ status: "done", reportFolder: latestFolder, summary, findings, reports, cfgs });
+      console.log(`✅ Analyzer finished for ${scanId}`);
+
+      // Read results from output folder
+      const reportDir = path.join(scanOutputDir, "report");
+      const cfgDir = path.join(scanOutputDir, "cfg");
+
+      const reports = fs.existsSync(reportDir)
+        ? fs.readdirSync(reportDir)
+            .filter(f => f.endsWith(".json"))
+            .map(f => JSON.parse(fs.readFileSync(path.join(reportDir, f), "utf8")))
+        : [];
+
+      const cfgs = fs.existsSync(cfgDir)
+        ? fs.readdirSync(cfgDir)
+            .filter(f => f.endsWith(".json"))
+            .map(f => JSON.parse(fs.readFileSync(path.join(cfgDir, f), "utf8")))
+        : [];
+
+      // Clean up uploaded files
+      fs.unlinkSync(req.file.path);
+      if (extractDir) fs.rmSync(extractDir, { recursive: true, force: true });
+
+      res.json({ status: "done", scanId, reports, cfgs });
+    });
+
+    analyzer.on("error", (err) => {
+      console.error("❌ Failed to start analyzer:", err.message);
+      res.status(500).json({ status: "error", message: err.message });
+    });
+
   } catch (err) {
     console.error(err);
     res.status(500).json({ status: "error", message: err.message });
