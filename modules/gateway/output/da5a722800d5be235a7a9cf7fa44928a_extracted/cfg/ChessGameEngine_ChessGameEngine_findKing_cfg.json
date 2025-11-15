@@ -1,0 +1,25 @@
+{
+  "methodName": "findKing",
+  "nodes": [
+    {
+      "id": "9bfe40f0-ddb3-4559-9be8-3c050dfdd7ed",
+      "label": "Start",
+      "type": "start",
+      "next": [
+        "3257c278-474b-4143-be7f-0f3335497b7e"
+      ]
+    },
+    {
+      "id": "3257c278-474b-4143-be7f-0f3335497b7e",
+      "label": "End",
+      "type": "end",
+      "next": []
+    }
+  ],
+  "edges": [
+    [
+      "9bfe40f0-ddb3-4559-9be8-3c050dfdd7ed",
+      "3257c278-474b-4143-be7f-0f3335497b7e"
+    ]
+  ]
+}

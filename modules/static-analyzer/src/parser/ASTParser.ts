@@ -3,9 +3,6 @@ import { promises as fs } from "fs";
 import * as path from "path";
 import { parse } from "java-parser";
 
-import { scanJavaFiles } from "../core/FileScanner.js";
-
-
 /* ---------------- helpers ---------------- */
 function gatherTokens(node: any, out: any[]): void {
   if (!node) return;
@@ -52,23 +49,23 @@ function tokensText(tokens: any[]): string {
   //  Varargs → int...
   txt = txt.replace(/\.\s*\.\s*\./g, "...");
 
-  // Remove spaces inside < >
+  //  Remove spaces inside < >
   txt = txt.replace(/<\s+/g, "<").replace(/\s+>/g, ">");
 
-  // Ensure single space after commas (keep commas)
+  //  Ensure single space after commas (keep commas)
   txt = txt.replace(/,\s*/g, ", ");
 
-  // Remove space before ; ( ) <>
+  //  Remove space before ; ( ) <>
   txt = txt.replace(/\s+([;()<>])/g, "$1");
 
-  // Remove space after ( or <
+  //  Remove space after ( or <
   txt = txt.replace(/([(<])\s+/g, "$1");
 
   //  Collapse spaces
   txt = txt.replace(/\s+/g, " ").trim();
 
-  // Fix generics safely
-txt = txt.replace(/<([^<>]+)>/g, (_: string, inner: string) => {
+  //  Fix generics safely
+txt = txt.replace(/<([^<>]+)>/g, (_m: string, inner: string) => {
   let fixed = inner.trim().replace(/\s+/g, " ");
 
   // Insert commas only between identifiers without a comma
@@ -82,7 +79,7 @@ fixed = fixed.replace(
   }
 );
 
-  // Strong cleanup for stray commas
+  // 🔴 Strong cleanup for stray commas
 fixed = fixed
   .replace(/<\s*,\s*/g, "<")   // no comma after <
   .replace(/,\s*>/g, ">")      // no comma before >
@@ -108,7 +105,7 @@ function extractIdentifierText(node: any): string {
 function extractParamTypeAndName(paramNode: any) {
 const core =
     paramNode.children?.variableParaRegularParameter?.[0] ||
-    paramNode.children?.variableArityParameter?.[0] || //  varargs case
+    paramNode.children?.variableArityParameter?.[0] || // varargs case
     paramNode;
  let typeNode = core.children?.unannType?.[0];
   let nameNode = core.children?.variableDeclaratorId?.[0];
@@ -135,7 +132,7 @@ const core =
     gatherTokens(core, toks);
     const ids = toks.filter(t => t.tokenType && t.tokenType.name === "Identifier");
     if (ids.length) {
-      //  The *last Identifier* in varargs subtree is always the parameter name
+      // The *last Identifier* in varargs subtree is always the parameter name
       nameText = ids[ids.length - 1].image;
     }
   }
@@ -153,13 +150,14 @@ function findLoopsAndConditionals(node: any, methodObj: any ,isNested = false): 
   // ---------- IF/ELSE Tree ----------
   if (["ifStatement", "ifThenStatement", "ifThenElseStatement"].includes(node.name)) {
     const ifTree = parseIfStatement(node);
+    addUnique(methodObj.conditionals, "if"); //  ADD THIS LINE
 
     if (ifTree && !isNested) {
       if (!methodObj.conditionalsTree) methodObj.conditionalsTree = [];
       methodObj.conditionalsTree.push(ifTree);
     }
 
-    //  Recurse inside then/else to catch nested ifs
+    // 🚀 Recurse inside then/else to catch nested ifs
     if (node.children?.statement) {
       node.children.statement.forEach((stmt: any) => {
         findLoopsAndConditionals(stmt, methodObj, true);
@@ -169,21 +167,7 @@ function findLoopsAndConditionals(node: any, methodObj: any ,isNested = false): 
     return; // stop here, already handled the if
   }
 
-  // ---------- Flat conditionals (for summary only) ----------
-  if (["ifStatement", "ifThenStatement"].includes(node.name)) {
-    addUnique(methodObj.conditionals, "if");
-  }
-  if (node.name === "ifThenElseStatement") {
-    addUnique(methodObj.conditionals, "if");
-    if (node.children?.statement?.[1]) {
-      const elseBranch = node.children.statement[1];
-      if (elseBranch.name?.includes("if")) {
-        addUnique(methodObj.conditionals, "else if");
-      } else {
-        addUnique(methodObj.conditionals, "else");
-      }
-    }
-  }
+  
   if (node.name === "switchStatement") {
     addUnique(methodObj.conditionals, "switch");
     // detect case/default
@@ -200,9 +184,14 @@ function findLoopsAndConditionals(node: any, methodObj: any ,isNested = false): 
   if (node.name === "whileStatement") {
     addUnique(methodObj.loops, "while");
   }
-  if (["forStatement", "forStatementNoShortIf"].includes(node.name)) {
-    addUnique(methodObj.loops, "for");
-  }
+ //  FIX: Check for enhancedForStatement FIRST, then basicForStatement
+if (node.name === "enhancedForStatement") {
+  addUnique(methodObj.loops, "forEach");
+}
+else if (node.name === "basicForStatement") {
+  addUnique(methodObj.loops, "for");
+}
+//  REMOVE the forStatement check - it's just a wrapper
   if (node.name === "doStatement") {
     addUnique(methodObj.loops, "doWhile");
   }
@@ -213,9 +202,7 @@ if (node.name === "thisExpression") {
   methodObj.conditionals.push("thisRef");
 }
 
-  if (node.name === "enhancedForStatement") {
-  methodObj.loops.push("forEach");   // NEW forEach loop
-}
+ 
   if (node.name === "tryStatement") {
     addUnique(methodObj.conditionals, "try");
   }
@@ -292,14 +279,14 @@ function collectStatements(node: any): any[] {
     return stmts;
   }
 
-  // Direct if/else/else-if
+  //  Direct if/else/else-if
   if (["ifStatement", "ifThenStatement", "ifThenElseStatement"].includes(node.name)) {
     const innerIf = parseIfStatement(node);
     if (innerIf) stmts.push(innerIf);
     return stmts;
   }
 
-  // Unwrap wrappers (block, blockStatements, statement)
+  //  Unwrap wrappers (block, blockStatements, statement)
   if (["block", "blockStatements", "statement"].includes(node.name)) {
     for (const arr of Object.values(node.children)) {
       if (Array.isArray(arr)) {
@@ -309,7 +296,7 @@ function collectStatements(node: any): any[] {
     return stmts;
   }
 
-  // Real leaf statements
+  //  Real leaf statements
   if (
     node.name === "expressionStatement" ||
     node.name === "statementExpression" ||
@@ -334,7 +321,227 @@ function collectStatements(node: any): any[] {
   return stmts;
 }
 
+/* ---------------- WORKING Loop Tree Builder ---------------- */
 
+interface LoopNode {
+  type: string;
+  nested: LoopNode[];
+  depth:number
+}
+
+/**
+ * FULLY FIXED: Handles all loop types and nested structures correctly
+ */
+function buildLoopTree(node: any, currentLoops: LoopNode[] = [], depth = 0): LoopNode[] {
+  if (!node) return currentLoops;
+
+  // If node array, process each
+  if (Array.isArray(node)) {
+    for (const n of node) buildLoopTree(n, currentLoops, depth);
+    return currentLoops;
+  }
+
+  // Detect loop type + body
+  let loopType: string | null = null;
+  let loopBody: any = null;
+
+  if (node.name === "whileStatement") {
+    loopType = "while";
+    loopBody = node.children?.statement?.[0];
+  } 
+  else if (node.name === "basicForStatement") {
+    loopType = "for";
+    loopBody = node.children?.statement?.[0];
+  } 
+  else if (node.name === "enhancedForStatement") {
+    loopType = "forEach";
+    loopBody = node.children?.statement?.[0];
+  }
+  else if (node.name === "doStatement") {
+    loopType = "doWhile";
+    loopBody = node.children?.statement?.[0];
+  }
+
+  // If this node is a loop
+  if (loopType && loopBody) {
+    const loopNode: LoopNode = {
+      type: loopType,
+      nested: [],
+      depth
+    };
+
+    // Find nested loops inside this loop body
+    // First check if body is wrapped in block/blockStatements
+    if (loopBody.name === "block" && loopBody.children?.blockStatements?.[0]) {
+      buildLoopTree(loopBody.children.blockStatements[0], loopNode.nested, depth + 1);
+    } else {
+      buildLoopTree(loopBody, loopNode.nested, depth + 1);
+    }
+
+    // Add to this level
+    currentLoops.push(loopNode);
+
+    // Stop—loop body already recursively processed
+    return currentLoops;
+  }
+
+  // Special handling for blockStatements - process statements directly
+  if (node.name === "blockStatements" && node.children?.blockStatement) {
+    for (const stmt of node.children.blockStatement) {
+      if (stmt.children?.statement?.[0]) {
+        buildLoopTree(stmt.children.statement[0], currentLoops, depth);
+      }
+    }
+    return currentLoops; // Don't recurse further - we handled it
+  }
+
+  // Recurse through normal nodes
+  if (node.children) {
+    for (const arr of Object.values(node.children)) {
+      if (Array.isArray(arr)) {
+        for (const child of arr) {
+          buildLoopTree(child, currentLoops, depth);
+        }
+      }
+    }
+  }
+
+  return currentLoops;
+}
+
+/**
+ * Calculate the maximum nesting depth in a loop tree
+ */
+function calculateMaxDepth(loopTree: LoopNode[]): number {
+  if (!loopTree || loopTree.length === 0) return 0;
+  
+  let maxDepth = 0;
+  
+  for (const loop of loopTree) {
+    // Current loop is at depth 1
+    let currentDepth = 1;
+    
+    // If there are nested loops, add their depth
+    if (loop.nested && loop.nested.length > 0) {
+      currentDepth += calculateMaxDepth(loop.nested);
+    }
+    
+    maxDepth = Math.max(maxDepth, currentDepth);
+  }
+  
+  return maxDepth;
+}
+
+/**
+ * Count total number of loops (including nested ones)
+ */
+function countTotalLoops(loopTree: LoopNode[]): number {
+  if (!loopTree || loopTree.length === 0) return 0;
+  
+  let count = loopTree.length;
+  
+  for (const loop of loopTree) {
+    if (loop.nested && loop.nested.length > 0) {
+      count += countTotalLoops(loop.nested);
+    }
+  }
+  
+  return count;
+}
+
+function extractLocalVariables(node: any, foundVars: Set<string> = new Set()): string[] {
+  const variables: string[] = [];
+  
+  if (!node) return variables;
+  
+  if (Array.isArray(node)) {
+    for (const n of node) {
+      variables.push(...extractLocalVariables(n, foundVars));
+    }
+    return variables;
+  }
+
+  // Detect local variable declaration
+  if (node.name === "localVariableDeclaration") {
+    const varDecl = extractVariableDeclaration(node);
+    if (varDecl && !foundVars.has(varDecl)) {
+      foundVars.add(varDecl);
+      variables.push(varDecl);
+    }
+  }
+
+  //  Detect enhanced for loop variable (for-each)
+  if (node.name === "enhancedForStatement") {
+    const forVarDecl = node.children?.localVariableDeclaration?.[0];
+    if (forVarDecl) {
+      const varDecl = extractVariableDeclaration(forVarDecl);
+      if (varDecl && !foundVars.has(varDecl)) {
+        foundVars.add(varDecl);
+        variables.push(varDecl);
+      }
+    }
+    // STOP recursing into the body - we already got the loop var
+    return variables;
+  }
+
+  // Detect basic for loop variable
+  if (node.name === "basicForStatement") {
+    const forInit = node.children?.forInit?.[0];
+    if (forInit?.children?.localVariableDeclaration?.[0]) {
+      const varDecl = extractVariableDeclaration(forInit.children.localVariableDeclaration[0]);
+      if (varDecl && !foundVars.has(varDecl)) {
+        foundVars.add(varDecl);
+        variables.push(varDecl);
+      }
+    }
+  }
+
+  // Recurse into children
+  if (node.children) {
+    for (const childArray of Object.values(node.children)) {
+      if (Array.isArray(childArray)) {
+        for (const child of childArray) {
+          variables.push(...extractLocalVariables(child, foundVars));
+        }
+      }
+    }
+  }
+
+  return variables;
+}
+
+/**
+ * Helper: Extracts type and name(s) from a localVariableDeclaration node
+ */
+function extractVariableDeclaration(node: any): string | null {
+  if (!node) return null;
+
+  // Get type
+  const typeNode = node.children?.localVariableType?.[0];
+  const typeTokens: any[] = [];
+  gatherTokens(typeNode, typeTokens);
+  const typeText = tokensText(typeTokens);
+
+  // Get variable names (can be multiple: int x = 1, y = 2;)
+  const varList = node.children?.variableDeclaratorList?.[0];
+  if (!varList) return null;
+
+  const declarators = varList.children?.variableDeclarator || [];
+  const names: string[] = [];
+
+  declarators.forEach((decl: any) => {
+    const varId = decl.children?.variableDeclaratorId?.[0];
+    if (varId) {
+      const name = extractIdentifierText(varId);
+      names.push(name);
+    }
+  });
+
+  if (names.length === 0) return null;
+
+  // Format: "int x, y" or "String name"
+  return `${typeText} ${names.join(", ")}`;
+}
 /* ---------------- shared param extraction ---------------- */
 function extractParams(decl: any): any[] {
   const params: any[] = [];
@@ -377,6 +584,21 @@ function extractMethods(node: any, className: string): any[] {
     
     if (node.children.methodBody?.[0]) {
       findLoopsAndConditionals(node.children.methodBody[0], methodObj);
+      
+        
+      const loopTree = buildLoopTree(node.children.methodBody[0], []);
+      
+      if (loopTree.length > 0) {
+        methodObj.loopsTree = loopTree;
+        // Calculate max nesting depth and total loop count
+        methodObj.loopNestingDepth = calculateMaxDepth(loopTree);
+        methodObj.totalLoopCount = countTotalLoops(loopTree);
+      }
+    }
+      //  ADD THESE 4 LINES
+    const localVars = extractLocalVariables(node.children.methodBody[0]);
+    if (localVars.length > 0) {
+      methodObj.localVariables = localVars;
     }
     // detect synchronized keyword in method modifiers
 const modifiers = node.children?.methodModifier || [];
@@ -402,6 +624,20 @@ if (node.name === "constructorDeclaration") {
   const ctorObj: any = { name: ctorName, params, loops: [], conditionals: [] };
   if (node.children.constructorBody?.[0]) {
     findLoopsAndConditionals(node.children.constructorBody[0], ctorObj);
+    //  ADD THIS ONE LINE
+       const loopTree = buildLoopTree(node.children.constructorBody[0], []);
+    if (loopTree.length > 0) {
+      ctorObj.loopsTree = loopTree;
+      // Calculate max nesting depth and total loop count
+      ctorObj.loopNestingDepth = calculateMaxDepth(loopTree);
+      ctorObj.totalLoopCount = countTotalLoops(loopTree);
+    }
+    
+    //  ADD THESE 4 LINES
+    const localVars = extractLocalVariables(node.children.constructorBody[0]);
+    if (localVars.length > 0) {
+      ctorObj.localVariables = localVars;
+    }
   }
       Object.assign(ctorObj, extractExtraInfo?.(node, "constructor") || {});
 
@@ -434,7 +670,7 @@ function extractClasses(node: any): any[] {
       methods.push(...extractMethods(decl, className));
     });
 
-    // Attach extra info (extends, implements, fields…)
+    //  Attach extra info (extends, implements, fields…)
     const extra = extractExtraInfo(node, "class");
 
     classes.push({
@@ -509,7 +745,7 @@ if (node.children?.superinterfaces?.[0]) {
       gatherTokens(mh.children.typeParameters[0], toks);
       info.methodGenerics = tokensText(toks);
     }
-  // CLEAN throws extraction
+  //  CLEAN throws extraction
   if (node.children?.throws_?.[0]) {
     const exList = node.children.throws_[0].children?.exceptionTypeList?.[0];
     if (exList?.children?.exceptionType) {
@@ -589,35 +825,52 @@ export async function parseJavaFile(filePath: string) {
   return { file: filePath, classes };
 }
 
-// Quick local test
-// const hardcodedFile = path.join("samples", "Main.java");
-// parseJavaFile(hardcodedFile)
-//   .then(_ => console.log("parsed",r))
-//   .catch(err => console.error(" Parse error:", err));
-
-
-
-export async function parseFolder(folderPath: string, outDir: string) {
-  const javaFiles = await scanJavaFiles(folderPath);
-  if (javaFiles.length === 0) {
-    console.log("No .java files found in", folderPath);
-    return;
-  }
-
-  await fs.mkdir(outDir, { recursive: true });
-
-  for (const file of javaFiles) {
-    try {
-      const astJson = await parseJavaFile(file);
-      const fileName = path.basename(file, ".java") + ".json";
-      const outFile = path.join(outDir, fileName);
-      await fs.writeFile(outFile, JSON.stringify(astJson, null, 2), "utf8");
-      // console.log("Parsed:", file, "→", outFile);
+export async function parseFolder(folderPath: string, outputPath: string) {
+  const results: any[] = [];
+  
+  async function scanDirectory(dirPath: string) {
+    const entries = await fs.readdir(dirPath, { withFileTypes: true });
+    
+    for (const entry of entries) {
+      const fullPath = path.join(dirPath, entry.name);
       
-    } catch (err) {
-      console.error("Failed parsing", file, ":", err);
+      if (entry.isDirectory()) {
+        await scanDirectory(fullPath);
+      } else if (entry.isFile() && entry.name.endsWith('.java')) {
+        try {
+          const result = await parseJavaFile(fullPath);
+          results.push(result);
+        } catch (error) {
+          console.error(`Error parsing ${fullPath}:`, error);
+        }
+      }
     }
   }
-}
-
   
+  await scanDirectory(folderPath);
+  
+  // Check if outputPath is a directory or file
+  try {
+    const stats = await fs.stat(outputPath);
+    if (stats.isDirectory()) {
+      // If it's a directory, write to ast.json inside it
+      outputPath = path.join(outputPath, 'ast.json');
+    }
+  } catch (error) {
+    // Path doesn't exist yet - check if it ends with .json
+    if (!outputPath.endsWith('.json')) {
+      // Create directory and write to ast.json inside
+      await fs.mkdir(outputPath, { recursive: true });
+      outputPath = path.join(outputPath, 'ast.json');
+    } else {
+      // It's a file path - ensure parent directory exists
+      const dirPath = path.dirname(outputPath);
+      await fs.mkdir(dirPath, { recursive: true });
+    }
+  }
+  
+  // Write results to output file
+  await fs.writeFile(outputPath, JSON.stringify(results, null, 2), 'utf8');
+  
+  return results;
+}

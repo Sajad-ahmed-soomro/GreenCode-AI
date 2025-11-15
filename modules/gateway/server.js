@@ -4,8 +4,10 @@ import multer from "multer";
 import path from "path";
 import fs from "fs";
 import AdmZip from "adm-zip";
-import { spawn } from "child_process";
 import { fileURLToPath } from "url";
+import runAnalysisPipeline from "./analyzer-runner.js"; // Main pipeline
+import { runEnergyAnalyzer } from "./analyzer-runner.js"; // Energy analyzer
+import energyRoutes from "./routes/energyRoutes.js"
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -22,84 +24,173 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+
+
+app.use('/api/energy', energyRoutes);
+
+// Health check
+app.get('/health', (req, res) => {
+  res.json({ status: 'ok', service: 'Energy Analyzer API' });
+});
+
+// Error handling middleware
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).json({
+    success: false,
+    error: 'Internal server error',
+    message: err.message
+  });
+});
+
+// Scan endpoint
 app.post("/scan", upload.single("project"), async (req, res) => {
   if (!req.file) return res.status(400).json({ error: "No file uploaded" });
+
+  console.log("\n" + "=".repeat(60));
+  console.log("📨 NEW SCAN REQUEST RECEIVED");
+  console.log("=".repeat(60));
+  console.log(`📄 File: ${req.file.originalname}`);
+  console.log(`📁 Temp path: ${req.file.path}`);
+  console.log(`📏 Size: ${req.file.size} bytes`);
+  console.log("=".repeat(60) + "\n");
 
   let projectPath = req.file.path;
   let extractDir = null;
 
-  // Extract zip if uploaded
-  if (req.file.originalname.endsWith(".zip")) {
-    extractDir = path.join(uploadDir, `${req.file.filename}_extracted`);
-    fs.mkdirSync(extractDir);
-    const zip = new AdmZip(projectPath);
-    zip.extractAllTo(extractDir, true);
-    projectPath = extractDir;
-  }
-
   try {
+    // Extract zip if uploaded
+    if (req.file.originalname.endsWith(".zip")) {
+      extractDir = path.join(uploadDir, `${req.file.filename}_extracted`);
+      fs.mkdirSync(extractDir, { recursive: true });
+      
+      const zip = new AdmZip(projectPath);
+      zip.extractAllTo(extractDir, true);
+      projectPath = extractDir;
+      console.log(`✅ Extracted to: ${extractDir}`);
+    }
+
     const scanId = path.basename(projectPath);
     const scanOutputDir = path.join(outputDir, scanId);
     fs.mkdirSync(scanOutputDir, { recursive: true });
 
-    const cliPath = path.join(__dirname, "../static-analyzer/dist/cli.js");
+    console.log(`🎯 Starting analysis pipeline for: ${scanId}`);
+    await runAnalysisPipeline(projectPath, scanOutputDir, res);
 
-    if (!fs.existsSync(cliPath)) {
-      return res.status(500).json({ status: "error", message: "Analyzer CLI not found. Compile static-analyzer first." });
+    // Cleanup temp files
+    try {
+      if (fs.existsSync(req.file.path)) fs.unlinkSync(req.file.path);
+      if (extractDir && fs.existsSync(extractDir)) fs.rmSync(extractDir, { recursive: true, force: true });
+    } catch (cleanupError) {
+      console.warn("⚠️  Cleanup warning:", cleanupError.message);
     }
 
-    console.log(`⚡ Running static-analyzer CLI on: ${projectPath}`);
-    const analyzer = spawn(
-      "node",
-      [cliPath, projectPath, scanOutputDir],
-      {
-        cwd: path.join(__dirname, "../static-analyzer"),
-        stdio: "inherit",
-        shell: true,
-      }
-    );
-
-    analyzer.on("close", (code) => {
-      if (code !== 0) {
-        console.error(`❌ Analyzer exited with code ${code}`);
-        return res.status(500).json({ status: "error", message: "Analyzer failed" });
-      }
-
-      console.log(`✅ Analyzer finished for ${scanId}`);
-
-      // Read results from output folder
-      const reportDir = path.join(scanOutputDir, "report");
-      const cfgDir = path.join(scanOutputDir, "cfg");
-
-      const reports = fs.existsSync(reportDir)
-        ? fs.readdirSync(reportDir)
-            .filter(f => f.endsWith(".json"))
-            .map(f => JSON.parse(fs.readFileSync(path.join(reportDir, f), "utf8")))
-        : [];
-
-      const cfgs = fs.existsSync(cfgDir)
-        ? fs.readdirSync(cfgDir)
-            .filter(f => f.endsWith(".json"))
-            .map(f => JSON.parse(fs.readFileSync(path.join(cfgDir, f), "utf8")))
-        : [];
-
-      // Clean up uploaded files
-      fs.unlinkSync(req.file.path);
-      if (extractDir) fs.rmSync(extractDir, { recursive: true, force: true });
-
-      res.json({ status: "done", scanId, reports, cfgs });
-    });
-
-    analyzer.on("error", (err) => {
-      console.error("❌ Failed to start analyzer:", err.message);
-      res.status(500).json({ status: "error", message: err.message });
-    });
-
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ status: "error", message: err.message });
+  } catch (error) {
+    console.error("❌ Pipeline error:", error);
+    if (!res.headersSent) res.status(500).json({ status: "error", message: "Analysis pipeline failed", error: error.message });
   }
 });
 
-const PORT = 5400;
-app.listen(PORT, () => console.log(`✅ Gateway running on port ${PORT}`));
+// Run energy analyzer separately
+app.post("/energy-analyzer", async (req, res) => {
+  try {
+    const { scanId } = req.body;
+    if (!scanId) return res.status(400).json({ status: "error", message: "scanId is required" });
+
+    const scanOutputDir = path.join(outputDir, scanId);
+    const astDir = path.join(scanOutputDir, "ast");
+    const cfgDir = path.join(scanOutputDir, "cfg");
+
+    if (!fs.existsSync(astDir) || !fs.existsSync(cfgDir)) {
+      return res.status(404).json({ status: "error", message: "AST or CFG directories not found. Run static analysis first." });
+    }
+
+    await new Promise((resolve) => {
+      runEnergyAnalyzer(astDir, cfgDir, scanOutputDir, scanId, [], (data) => {
+        res.json(data);
+        resolve();
+      });
+    });
+
+  } catch (error) {
+    console.error("❌ Energy analyzer error:", error);
+    res.status(500).json({ status: "error", message: "Energy analyzer failed", error: error.message });
+  }
+});
+
+// Get energy reports endpoint
+app.get("/scan/:scanId/energy", (req, res) => {
+  const scanId = req.params.scanId;
+  const scanOutputDir = path.join(outputDir, scanId);
+  const energyDir = path.join(scanOutputDir, "energy");
+
+  if (!fs.existsSync(scanOutputDir)) {
+    return res.status(404).json({ status: "error", message: "Scan not found" });
+  }
+
+  if (!fs.existsSync(energyDir)) {
+    return res.status(404).json({ status: "error", message: "Energy analysis not yet run for this scan" });
+  }
+
+  try {
+    const energyFiles = fs.readdirSync(energyDir)
+      .filter(f => f.endsWith(".json"));
+
+    const energyReports = energyFiles.map(f => {
+      const filePath = path.join(energyDir, f);
+      return {
+        file: f,
+        content: JSON.parse(fs.readFileSync(filePath, "utf8"))
+      };
+    });
+
+    const summaryReportPath = path.join(energyDir, "summary-energy-report.json");
+    const summaryReport = fs.existsSync(summaryReportPath)
+      ? JSON.parse(fs.readFileSync(summaryReportPath, "utf8"))
+      : null;
+
+    res.json({
+      status: "success",
+      scanId,
+      totalReports: energyReports.length,
+      reports: energyReports,
+      summary: summaryReport
+    });
+
+  } catch (error) {
+    console.error("❌ Error reading energy reports:", error);
+    res.status(500).json({
+      status: "error",
+      message: "Failed to read energy reports",
+      error: error.message
+    });
+  }
+});
+
+// Helper to get directory size
+function getDirectorySize(dir) {
+  let size = 0;
+  if (!fs.existsSync(dir)) return size;
+
+  const calculate = (dirPath) => {
+    fs.readdirSync(dirPath).forEach(item => {
+      const itemPath = path.join(dirPath, item);
+      const stat = fs.statSync(itemPath);
+      if (stat.isDirectory()) calculate(itemPath);
+      else size += stat.size;
+    });
+  };
+  calculate(dir);
+  return size;
+}
+
+const PORT = process.env.PORT || 5400;
+app.listen(PORT, () => {
+  console.log("\n" + "✨".repeat(60));
+  console.log("🚀 GREENCODE-AI GATEWAY STARTED SUCCESSFULLY");
+  console.log("✨".repeat(60));
+  console.log(`📍 Port: ${PORT}`);
+  console.log(`📁 Upload directory: ${uploadDir}`);
+  console.log(`📊 Output directory: ${outputDir}`);
+  console.log("✨".repeat(60) + "\n");
+});

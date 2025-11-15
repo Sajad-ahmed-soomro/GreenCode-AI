@@ -1,4 +1,4 @@
-import { parseFolder } from "./parser/ASTParser.js";
+import { parseFolder } from "./parser/BatchParser.js";
 import { analyzeFile } from "./analyzer/index.js";
 import fs from "fs";
 import path from "path";

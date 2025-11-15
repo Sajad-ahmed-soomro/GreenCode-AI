@@ -1,0 +1,25 @@
+{
+  "methodName": "main",
+  "nodes": [
+    {
+      "id": "9d91d338-67aa-4f0e-99f1-c3155910f7c6",
+      "label": "Start",
+      "type": "start",
+      "next": [
+        "7e5e8b8f-d129-4e13-b377-25edf82c0d03"
+      ]
+    },
+    {
+      "id": "7e5e8b8f-d129-4e13-b377-25edf82c0d03",
+      "label": "End",
+      "type": "end",
+      "next": []
+    }
+  ],
+  "edges": [
+    [
+      "9d91d338-67aa-4f0e-99f1-c3155910f7c6",
+      "7e5e8b8f-d129-4e13-b377-25edf82c0d03"
+    ]
+  ]
+}
