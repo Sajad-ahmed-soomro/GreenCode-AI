@@ -1,0 +1,17 @@
+{
+  "summary": {
+    "total": 1,
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 1
+  },
+  "details": [
+    {
+      "ruleId": "QD001",
+      "description": "Missing documentation for User.run()",
+      "severity": "low",
+      "location": "User.json > run"
+    }
+  ]
+}

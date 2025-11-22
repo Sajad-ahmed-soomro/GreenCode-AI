@@ -1,0 +1,50 @@
+{
+  "file": "D:\\FYP\\FYP_iteration2\\GreenCode-AI\\modules\\gateway\\uploads\\55efc2c0af8c6706daa9f0cf757de4f3_extracted\\model\\User.java",
+  "classes": [
+    {
+      "type": "Class",
+      "name": "User",
+      "methods": [
+        {
+          "name": "run",
+          "params": [],
+          "loops": [
+            "for",
+            "while",
+            "doWhile"
+          ],
+          "conditionals": [],
+          "loopsTree": [
+            {
+              "type": "for",
+              "nested": [
+                {
+                  "type": "while",
+                  "nested": [
+                    {
+                      "type": "doWhile",
+                      "nested": [],
+                      "depth": 2
+                    }
+                  ],
+                  "depth": 1
+                }
+              ],
+              "depth": 0
+            }
+          ],
+          "loopNestingDepth": 3,
+          "totalLoopCount": 3,
+          "localVariables": [
+            "int i"
+          ],
+          "returnType": "void",
+          "modifiers": [
+            "public"
+          ]
+        }
+      ],
+      "fields": []
+    }
+  ]
+}

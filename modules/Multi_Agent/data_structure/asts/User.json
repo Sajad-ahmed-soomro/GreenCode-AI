@@ -1,0 +1,26 @@
+{
+  "file": "samples\\model\\User.java",
+  "classes": [
+    {
+      "type": "Class",
+      "name": "User",
+      "methods": [
+        {
+          "name": "run",
+          "params": [],
+          "loops": [
+            "for",
+            "while",
+            "doWhile"
+          ],
+          "conditionals": [],
+          "returnType": "void",
+          "modifiers": [
+            "public"
+          ]
+        }
+      ],
+      "fields": []
+    }
+  ]
+}
