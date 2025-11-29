@@ -508,6 +508,14 @@ public class Main<K, V> extends Base<String> implements Runnable {
         obj.syncTest();
         obj.breakContinueTest(7);
         obj.nestedIf(15);
- 
+        for (int i = 0; i < list.size(); i++) {
+            for (int j = 0; j < list.size(); j++) {
+                if (list.get(j) == x) {
+                System.out.println(j);
+                }
+            }   
+        }
+
     }
+    
 }

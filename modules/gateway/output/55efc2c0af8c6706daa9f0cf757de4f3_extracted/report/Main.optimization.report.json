@@ -1,0 +1,30 @@
+{
+  "fileName": "Main.java",
+  "uploadId": "c7a5ce001d61759440b39145d27816c8_extracted",
+  "runId": "55efc2c0af8c6706daa9f0cf757de4f3_extracted",
+  "sourcePath": "D:\\Project\\GreenCode-AI\\modules\\gateway\\uploads\\c7a5ce001d61759440b39145d27816c8_extracted\\samples\\model\\Main.java",
+  "astPath": "D:\\Project\\GreenCode-AI\\modules\\gateway\\uploads\\c7a5ce001d61759440b39145d27816c8_extracted\\samples\\ast\\Main.json",
+  "agent": "optimization",
+  "results": [
+    {
+      "message": "Method 'Main.processItems' contains 4 loop constructs, which suggests deeply nested or repeated iterations. This can easily lead to O(n^k) behavior. Consider reducing loop depth, breaking the work into smaller passes, or using indexing/maps to avoid inner scans.",
+      "severity": "high",
+      "location": "D:\\Project\\GreenCode-AI\\modules\\gateway\\uploads\\c7a5ce001d61759440b39145d27816c8_extracted\\samples\\model\\Main.java"
+    },
+    {
+      "message": "Method 'Main.processItems' contains 4 loop constructs. This often indicates nested iterations used for linear search or manual deduplication. Consider replacing inner loops with HashSet/Map lookups or using better algorithms (for example, binary search on sorted data).",
+      "severity": "high",
+      "location": "D:\\Project\\GreenCode-AI\\modules\\gateway\\uploads\\c7a5ce001d61759440b39145d27816c8_extracted\\samples\\model\\Main.java"
+    },
+    {
+      "message": "Method 'Main.breakContinueTest' contains a loop. If the collection is large or this method is called frequently, ensure the loop body does not contain unnecessary heavy work.",
+      "severity": "low",
+      "location": "D:\\Project\\GreenCode-AI\\modules\\gateway\\uploads\\c7a5ce001d61759440b39145d27816c8_extracted\\samples\\model\\Main.java"
+    },
+    {
+      "message": "Method 'Main.breakContinueTest' contains a loop that likely performs a linear scan. If this runs over large collections or is called frequently, think about using more efficient data structures (for example, HashSet/Map) or algorithms.",
+      "severity": "low",
+      "location": "D:\\Project\\GreenCode-AI\\modules\\gateway\\uploads\\c7a5ce001d61759440b39145d27816c8_extracted\\samples\\model\\Main.java"
+    }
+  ]
+}
