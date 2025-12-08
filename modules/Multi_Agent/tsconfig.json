@@ -10,5 +10,5 @@
     "strict": false,
     "skipLibCheck": true
   },
-  "include": ["./**/*.ts"]
+  "include": ["./**/*.ts", "data_structure/tsconfig.json"]
 }

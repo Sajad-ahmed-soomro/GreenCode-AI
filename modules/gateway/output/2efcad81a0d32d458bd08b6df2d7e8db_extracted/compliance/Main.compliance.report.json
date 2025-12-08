@@ -1,0 +1,25 @@
+{
+  "agent": "ComplianceAgent",
+  "issues": [
+    {
+      "line": 1,
+      "type": "Dead Code",
+      "message": "Commented-out code detected."
+    },
+    {
+      "line": 3,
+      "type": "Dead Code",
+      "message": "Commented-out code detected."
+    }
+  ],
+  "suggestions": [
+    {
+      "line": 1,
+      "suggestion": "Remove commented-out code on line 1."
+    },
+    {
+      "line": 3,
+      "suggestion": "Remove commented-out code on line 3."
+    }
+  ]
+}

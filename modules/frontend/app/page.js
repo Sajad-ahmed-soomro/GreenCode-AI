@@ -13,6 +13,7 @@ export default function Home() {
       <div>
         <GreencodeScannerUI/>
         <EnergyAnalyzer/>
+        
       </div>
     );
 }

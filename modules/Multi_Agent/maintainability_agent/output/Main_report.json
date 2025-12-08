@@ -1,0 +1,66 @@
+{
+  "file": "Main.json",
+  "totalClasses": 1,
+  "totalMethods": 1,
+  "realLOC": 39,
+  "realComments": 2,
+  "averageScore": 67,
+  "maintainabilityLevel": "Medium",
+  "results": [
+    {
+      "className": "Main",
+      "methodName": "main",
+      "methodScore": 67,
+      "maintainabilityLevel": "Medium",
+      "metrics": [
+        {
+          "metric": "Function Length",
+          "value": 39,
+          "status": "Medium",
+          "penalty": 0.08,
+          "message": "main has 39 lines of code (Medium)."
+        },
+        {
+          "metric": "Nesting Depth",
+          "value": 5,
+          "status": "High",
+          "penalty": 0.15,
+          "message": "main has nesting depth 5 (High)."
+        },
+        {
+          "metric": "Cyclomatic Complexity",
+          "value": 5,
+          "status": "Low",
+          "penalty": 0,
+          "message": "main has 5 decision points (Low)."
+        },
+        {
+          "metric": "Parameter Count",
+          "value": 1,
+          "status": "Low",
+          "penalty": 0,
+          "message": "main has 1 parameters (Low)."
+        },
+        {
+          "metric": "Comment Ratio",
+          "value": "5.1%",
+          "status": "High",
+          "penalty": 0.1,
+          "message": "main comment ratio = 5.1% (High)."
+        },
+        {
+          "metric": "Naming Clarity",
+          "value": "Good",
+          "status": "Low",
+          "penalty": 0,
+          "message": "main naming is clear."
+        }
+      ],
+      "suggestions": [
+        "Deeply nested logic. Consider flattening with early returns or switch cases.",
+        " Low comment coverage. Add documentation or inline comments."
+      ]
+    }
+  ],
+  "message": " File Main.json analyzed successfully."
+}

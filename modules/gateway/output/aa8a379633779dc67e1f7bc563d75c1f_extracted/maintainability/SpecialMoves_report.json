@@ -1,0 +1,390 @@
+{
+  "file": "SpecialMoves.json",
+  "totalClasses": 1,
+  "totalMethods": 7,
+  "realLOC": 85,
+  "realComments": 13,
+  "averageScore": 69.4,
+  "maintainabilityLevel": "Medium",
+  "results": [
+    {
+      "className": "SpecialMoves",
+      "methodName": "handleCastling",
+      "methodScore": 70,
+      "maintainabilityLevel": "Medium",
+      "metrics": [
+        {
+          "metric": "Function Length",
+          "value": 85,
+          "status": "High",
+          "penalty": 0.15,
+          "message": "handleCastling has 85 lines of code (High)."
+        },
+        {
+          "metric": "Nesting Depth",
+          "value": 0,
+          "status": "Low",
+          "penalty": 0,
+          "message": "handleCastling has nesting depth 0 (Low)."
+        },
+        {
+          "metric": "Cyclomatic Complexity",
+          "value": 0,
+          "status": "Low",
+          "penalty": 0,
+          "message": "handleCastling has 0 decision points (Low)."
+        },
+        {
+          "metric": "Parameter Count",
+          "value": 5,
+          "status": "Medium",
+          "penalty": 0.05,
+          "message": "handleCastling has 5 parameters (Medium)."
+        },
+        {
+          "metric": "Comment Ratio",
+          "value": "15.3%",
+          "status": "High",
+          "penalty": 0.1,
+          "message": "handleCastling comment ratio = 15.3% (High)."
+        },
+        {
+          "metric": "Naming Clarity",
+          "value": "Good",
+          "status": "Low",
+          "penalty": 0,
+          "message": "handleCastling naming is clear."
+        }
+      ],
+      "suggestions": [
+        "Function is too long. Split into smaller helper methods.",
+        " Low comment coverage. Add documentation or inline comments."
+      ]
+    },
+    {
+      "className": "SpecialMoves",
+      "methodName": "handlePromotion",
+      "methodScore": 75,
+      "maintainabilityLevel": "Medium",
+      "metrics": [
+        {
+          "metric": "Function Length",
+          "value": 85,
+          "status": "High",
+          "penalty": 0.15,
+          "message": "handlePromotion has 85 lines of code (High)."
+        },
+        {
+          "metric": "Nesting Depth",
+          "value": 0,
+          "status": "Low",
+          "penalty": 0,
+          "message": "handlePromotion has nesting depth 0 (Low)."
+        },
+        {
+          "metric": "Cyclomatic Complexity",
+          "value": 0,
+          "status": "Low",
+          "penalty": 0,
+          "message": "handlePromotion has 0 decision points (Low)."
+        },
+        {
+          "metric": "Parameter Count",
+          "value": 3,
+          "status": "Low",
+          "penalty": 0,
+          "message": "handlePromotion has 3 parameters (Low)."
+        },
+        {
+          "metric": "Comment Ratio",
+          "value": "15.3%",
+          "status": "High",
+          "penalty": 0.1,
+          "message": "handlePromotion comment ratio = 15.3% (High)."
+        },
+        {
+          "metric": "Naming Clarity",
+          "value": "Good",
+          "status": "Low",
+          "penalty": 0,
+          "message": "handlePromotion naming is clear."
+        }
+      ],
+      "suggestions": [
+        "Function is too long. Split into smaller helper methods.",
+        " Low comment coverage. Add documentation or inline comments."
+      ]
+    },
+    {
+      "className": "SpecialMoves",
+      "methodName": "handleEnPassant",
+      "methodScore": 70,
+      "maintainabilityLevel": "Medium",
+      "metrics": [
+        {
+          "metric": "Function Length",
+          "value": 85,
+          "status": "High",
+          "penalty": 0.15,
+          "message": "handleEnPassant has 85 lines of code (High)."
+        },
+        {
+          "metric": "Nesting Depth",
+          "value": 0,
+          "status": "Low",
+          "penalty": 0,
+          "message": "handleEnPassant has nesting depth 0 (Low)."
+        },
+        {
+          "metric": "Cyclomatic Complexity",
+          "value": 0,
+          "status": "Low",
+          "penalty": 0,
+          "message": "handleEnPassant has 0 decision points (Low)."
+        },
+        {
+          "metric": "Parameter Count",
+          "value": 4,
+          "status": "Medium",
+          "penalty": 0.05,
+          "message": "handleEnPassant has 4 parameters (Medium)."
+        },
+        {
+          "metric": "Comment Ratio",
+          "value": "15.3%",
+          "status": "High",
+          "penalty": 0.1,
+          "message": "handleEnPassant comment ratio = 15.3% (High)."
+        },
+        {
+          "metric": "Naming Clarity",
+          "value": "Good",
+          "status": "Low",
+          "penalty": 0,
+          "message": "handleEnPassant naming is clear."
+        }
+      ],
+      "suggestions": [
+        "Function is too long. Split into smaller helper methods.",
+        " Low comment coverage. Add documentation or inline comments."
+      ]
+    },
+    {
+      "className": "SpecialMoves",
+      "methodName": "isCheckmate",
+      "methodScore": 67,
+      "maintainabilityLevel": "Medium",
+      "metrics": [
+        {
+          "metric": "Function Length",
+          "value": 85,
+          "status": "High",
+          "penalty": 0.15,
+          "message": "isCheckmate has 85 lines of code (High)."
+        },
+        {
+          "metric": "Nesting Depth",
+          "value": 2,
+          "status": "Medium",
+          "penalty": 0.08,
+          "message": "isCheckmate has nesting depth 2 (Medium)."
+        },
+        {
+          "metric": "Cyclomatic Complexity",
+          "value": 4,
+          "status": "Low",
+          "penalty": 0,
+          "message": "isCheckmate has 4 decision points (Low)."
+        },
+        {
+          "metric": "Parameter Count",
+          "value": 2,
+          "status": "Low",
+          "penalty": 0,
+          "message": "isCheckmate has 2 parameters (Low)."
+        },
+        {
+          "metric": "Comment Ratio",
+          "value": "15.3%",
+          "status": "High",
+          "penalty": 0.1,
+          "message": "isCheckmate comment ratio = 15.3% (High)."
+        },
+        {
+          "metric": "Naming Clarity",
+          "value": "Good",
+          "status": "Low",
+          "penalty": 0,
+          "message": "isCheckmate naming is clear."
+        }
+      ],
+      "suggestions": [
+        "Function is too long. Split into smaller helper methods.",
+        " Low comment coverage. Add documentation or inline comments."
+      ]
+    },
+    {
+      "className": "SpecialMoves",
+      "methodName": "isInCheck",
+      "methodScore": 67,
+      "maintainabilityLevel": "Medium",
+      "metrics": [
+        {
+          "metric": "Function Length",
+          "value": 85,
+          "status": "High",
+          "penalty": 0.15,
+          "message": "isInCheck has 85 lines of code (High)."
+        },
+        {
+          "metric": "Nesting Depth",
+          "value": 3,
+          "status": "Medium",
+          "penalty": 0.08,
+          "message": "isInCheck has nesting depth 3 (Medium)."
+        },
+        {
+          "metric": "Cyclomatic Complexity",
+          "value": 3,
+          "status": "Low",
+          "penalty": 0,
+          "message": "isInCheck has 3 decision points (Low)."
+        },
+        {
+          "metric": "Parameter Count",
+          "value": 2,
+          "status": "Low",
+          "penalty": 0,
+          "message": "isInCheck has 2 parameters (Low)."
+        },
+        {
+          "metric": "Comment Ratio",
+          "value": "15.3%",
+          "status": "High",
+          "penalty": 0.1,
+          "message": "isInCheck comment ratio = 15.3% (High)."
+        },
+        {
+          "metric": "Naming Clarity",
+          "value": "Good",
+          "status": "Low",
+          "penalty": 0,
+          "message": "isInCheck naming is clear."
+        }
+      ],
+      "suggestions": [
+        "Function is too long. Split into smaller helper methods.",
+        " Low comment coverage. Add documentation or inline comments."
+      ]
+    },
+    {
+      "className": "SpecialMoves",
+      "methodName": "isValidMove",
+      "methodScore": 70,
+      "maintainabilityLevel": "Medium",
+      "metrics": [
+        {
+          "metric": "Function Length",
+          "value": 85,
+          "status": "High",
+          "penalty": 0.15,
+          "message": "isValidMove has 85 lines of code (High)."
+        },
+        {
+          "metric": "Nesting Depth",
+          "value": 0,
+          "status": "Low",
+          "penalty": 0,
+          "message": "isValidMove has nesting depth 0 (Low)."
+        },
+        {
+          "metric": "Cyclomatic Complexity",
+          "value": 4,
+          "status": "Low",
+          "penalty": 0,
+          "message": "isValidMove has 4 decision points (Low)."
+        },
+        {
+          "metric": "Parameter Count",
+          "value": 5,
+          "status": "Medium",
+          "penalty": 0.05,
+          "message": "isValidMove has 5 parameters (Medium)."
+        },
+        {
+          "metric": "Comment Ratio",
+          "value": "15.3%",
+          "status": "High",
+          "penalty": 0.1,
+          "message": "isValidMove comment ratio = 15.3% (High)."
+        },
+        {
+          "metric": "Naming Clarity",
+          "value": "Good",
+          "status": "Low",
+          "penalty": 0,
+          "message": "isValidMove naming is clear."
+        }
+      ],
+      "suggestions": [
+        "Function is too long. Split into smaller helper methods.",
+        " Low comment coverage. Add documentation or inline comments."
+      ]
+    },
+    {
+      "className": "SpecialMoves",
+      "methodName": "findKing",
+      "methodScore": 67,
+      "maintainabilityLevel": "Medium",
+      "metrics": [
+        {
+          "metric": "Function Length",
+          "value": 85,
+          "status": "High",
+          "penalty": 0.15,
+          "message": "findKing has 85 lines of code (High)."
+        },
+        {
+          "metric": "Nesting Depth",
+          "value": 2,
+          "status": "Medium",
+          "penalty": 0.08,
+          "message": "findKing has nesting depth 2 (Medium)."
+        },
+        {
+          "metric": "Cyclomatic Complexity",
+          "value": 3,
+          "status": "Low",
+          "penalty": 0,
+          "message": "findKing has 3 decision points (Low)."
+        },
+        {
+          "metric": "Parameter Count",
+          "value": 2,
+          "status": "Low",
+          "penalty": 0,
+          "message": "findKing has 2 parameters (Low)."
+        },
+        {
+          "metric": "Comment Ratio",
+          "value": "15.3%",
+          "status": "High",
+          "penalty": 0.1,
+          "message": "findKing comment ratio = 15.3% (High)."
+        },
+        {
+          "metric": "Naming Clarity",
+          "value": "Good",
+          "status": "Low",
+          "penalty": 0,
+          "message": "findKing naming is clear."
+        }
+      ],
+      "suggestions": [
+        "Function is too long. Split into smaller helper methods.",
+        " Low comment coverage. Add documentation or inline comments."
+      ]
+    }
+  ],
+  "message": " File SpecialMoves.json analyzed successfully."
+}

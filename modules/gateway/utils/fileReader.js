@@ -27,3 +27,26 @@ export const getAllEnergyReportFiles = (baseDir = path.join(process.cwd(), 'outp
 
   return result;
 };
+
+
+export const getAllDataStructuresFiles = (baseDir = path.join(process.cwd(), 'output')) => {
+  const result = [];
+
+  if (!fs.existsSync(baseDir)) return result;
+
+  const folders = fs.readdirSync(baseDir);
+  folders.forEach(folder => {
+    const folderPath = path.join(baseDir, folder);
+    if (fs.statSync(folderPath).isDirectory()) {
+      const energyPath = path.join(folderPath, 'data-structure-results');
+      if (fs.existsSync(energyPath) && fs.statSync(energyPath).isDirectory()) {
+        const files = fs.readdirSync(energyPath)
+          .filter(f => f.endsWith('report.json'))
+          .map(f => path.join(energyPath, f));
+        result.push(...files);
+      }
+    }
+  });
+
+  return result;
+};

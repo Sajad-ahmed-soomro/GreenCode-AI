@@ -2,6 +2,8 @@
 import React, { useState, useEffect } from "react";
 import { Leaf, FileCode, Shield, Wrench, Zap, TrendingDown, CheckCircle, AlertCircle, AlertTriangle, Activity } from "lucide-react";
 import zipAndUpload from "../lib/zipAndUpload";
+import Link from "next/link";
+
 
 export default function GreencodeScannerUI() {
   const [files, setFiles] = useState([]);
@@ -16,7 +18,7 @@ export default function GreencodeScannerUI() {
   const [activeTab, setActiveTab] = useState("overview");
 
   useEffect(() => {
-    setApiBase(process.env.NEXT_PUBLIC_ANALYZER_URL || "http://localhost:5400");
+    setApiBase(process.env.API_BASE_URL || "http://localhost:5400");
   }, []);
 
   async function handleScan() {
@@ -162,20 +164,37 @@ export default function GreencodeScannerUI() {
     <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50">
       {/* Top Navigation */}
       <nav className="bg-white border-b border-gray-200 shadow-sm">
-        <div className="max-w-7xl mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <Leaf className="w-8 h-8 text-emerald-600" />
-              <div>
-                <h1 className="text-2xl font-bold bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
-                  Greencode Scanner
-                </h1>
-                <p className="text-sm text-gray-600">Sustainable Code Analysis Platform</p>
-              </div>
+      <div className="max-w-7xl mx-auto px-6 py-4">
+        <div className="flex items-center justify-between">
+          
+          {/* Left Side Branding */}
+          <div className="flex items-center gap-3">
+            <Leaf className="w-8 h-8 text-emerald-600" />
+            <div>
+              <h1 className="text-2xl font-bold bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
+                Greencode Scanner
+              </h1>
+              <p className="text-sm text-gray-600">Sustainable Code Analysis Platform</p>
             </div>
           </div>
+
+          {/* Right Side Navigation */}
+          <div className="flex items-center gap-6 text-gray-700 font-medium">
+
+            <Link href="/energy-analyzer" className="hover:text-emerald-600 flex items-center gap-1">
+              <Zap className="w-5 h-5 text-emerald-600" />
+              Energy Analyzer
+            </Link>
+
+            <Link href="/multi-agent-review" className="hover:text-emerald-600">
+              Multi-Agent Review
+            </Link>
+
+          </div>
         </div>
-      </nav>
+      </div>
+    </nav>
+
 
       <div className="max-w-7xl mx-auto p-6">
         {/* Main Grid */}

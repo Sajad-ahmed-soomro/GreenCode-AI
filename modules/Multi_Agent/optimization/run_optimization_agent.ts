@@ -14,23 +14,17 @@ interface OptimizationReport {
   results: any[];
 }
 
-function runOptimizationAgent(uploadId: string, runId: string): void {
-  // __dirname = modules/Multi_Agent/optimization
-  // gateway = modules/gateway
-  const gatewayRoot = path.join(__dirname, "..", "..", "gateway");
-
-  const uploadRoot = path.join(gatewayRoot, "uploads", uploadId);
-  const modelDir = path.join(uploadRoot, "samples", "model");
-  const astDir = path.join(uploadRoot, "samples", "ast");
-
-  const outputRoot = path.join(gatewayRoot, "output", runId);
-  const reportDir = path.join(outputRoot, "report");
-
+// in run_optimization_agent.ts
+export function runOptimizationAgent(
+  modelDir: string,
+  astDir: string,
+  reportDir: string
+): number {
   if (!fs.existsSync(modelDir) || !fs.existsSync(astDir)) {
-    console.error("Model or AST directory not found for upload:", uploadId);
+    console.error("Model or AST directory not found");
     console.error("Expected modelDir:", modelDir);
     console.error("Expected astDir:", astDir);
-    return;
+    return 0;
   }
 
   if (!fs.existsSync(reportDir)) {
@@ -40,7 +34,7 @@ function runOptimizationAgent(uploadId: string, runId: string): void {
   const files = fs.readdirSync(modelDir).filter((f) => f.endsWith(".java"));
   if (files.length === 0) {
     console.log("No Java files found in:", modelDir);
-    return;
+    return 0;
   }
 
   const agent = new OptimizationAgent();
@@ -56,16 +50,12 @@ function runOptimizationAgent(uploadId: string, runId: string): void {
       continue;
     }
 
-    // Load and parse the Java AST JSON
     const astRaw = fs.readFileSync(astPath, "utf8");
     const astJson: JavaFileAst = JSON.parse(astRaw);
-
     const results = agent.analyzeJavaAst(javaPath, astJson);
 
-    const report: OptimizationReport = {
+    const report = {
       fileName: file,
-      uploadId,
-      runId,
       sourcePath: javaPath,
       astPath,
       agent: "optimization",
@@ -83,17 +73,18 @@ function runOptimizationAgent(uploadId: string, runId: string): void {
   console.log(
     `\nOptimizationAgent completed. Total files analyzed: ${totalAnalyzed}`
   );
+  return totalAnalyzed;
 }
 
-if (require.main === module) {
-  const [, , uploadId, runId] = process.argv;
-  if (!uploadId || !runId) {
-    console.error(
-      "Usage: ts-node run_optimization_agent.ts <uploadId> <runId>"
-    );
-    process.exit(1);
-  }
-  runOptimizationAgent(uploadId, runId);
-}
+// if (require.main === module) {
+//   const [, , uploadId, runId] = process.argv;
+//   if (!uploadId || !runId) {
+//     console.error(
+//       "Usage: ts-node run_optimization_agent.ts <uploadId> <runId>"
+//     );
+//     process.exit(1);
+//   }
+//   runOptimizationAgent(uploadId, runId);
+// }
 
-export { runOptimizationAgent };
+// export { runOptimizationAgent };

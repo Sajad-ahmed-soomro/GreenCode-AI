@@ -1,42 +1,32 @@
-// --------------------------------------------------------
-//  Maintainability Agent – Final Version
-// --------------------------------------------------------
-
-
 import { loadAllASTFiles, saveReport, getRealLOCAndComments } from "./utils/fileUtils.js";
 import { evaluateAllMetrics } from "./metrics/metricsHelper.js";
 import { computeMethodScore, computeAverageScore } from "./metrics/scoreHelper.js";
 import { generateSuggestions } from "./metrics/suggestionHelper.js";
 import { generateGlobalSummary } from "./summary/globalSummary.js";
 
-function main(): void {
-  const astFiles = loadAllASTFiles();
+// NEW: exported function that runs the agent once
+export function runMaintainabilityAgent(astDir: string, javaDir: string,outDir:string): number {
+  // pass astDir from gateway
+  const astFiles = loadAllASTFiles(astDir);
+  let totalFiles = 0;
 
   for (const { fileName, data } of astFiles) {
     const classes = data.classes || [];
     const fileResults: any[] = [];
 
-    //  Fetch real LOC & comments count from original Java source
-    const { loc, comments } = getRealLOCAndComments(fileName);
+    // pass javaDir from gateway
+    const { loc, comments } = getRealLOCAndComments(fileName, javaDir);
 
-    //  Loop through each class & its methods
     for (const cls of classes) {
       const methods = cls.methods || [];
 
       for (const method of methods) {
-        // Skip malformed or constructor methods
         if (!method.name || method.name === cls.name) continue;
 
-        // Run all metric checks
         const metrics = evaluateAllMetrics(method, { loc, comments });
-
-        // Compute maintainability score for the method
         const { score: methodScore, level: methodLevel } = computeMethodScore(metrics);
-
-        // Generate human-readable improvement suggestions
         const suggestions = generateSuggestions(metrics);
 
-        // Store results
         fileResults.push({
           className: cls.name,
           methodName: method.name,
@@ -48,10 +38,8 @@ function main(): void {
       }
     }
 
-    //  Compute per-file average score
     const { avgScore, level } = computeAverageScore(fileResults);
 
-    // Build report object
     const report = {
       file: fileName,
       totalClasses: classes.length,
@@ -64,7 +52,6 @@ function main(): void {
       message: ` File ${fileName} analyzed successfully.`,
     };
 
-    //  Console Output Summary
     console.log(`\n ${fileName}`);
     console.log(`  → Classes: ${classes.length}`);
     console.log(`  → Methods: ${fileResults.length}`);
@@ -74,7 +61,6 @@ function main(): void {
       console.log(
         `   ${r.className}.${r.methodName} → Score ${r.methodScore} (${r.maintainabilityLevel})`
       );
-
       if (r.suggestions && r.suggestions.length > 0) {
         console.log(`      ${r.suggestions[0]}`);
       }
@@ -82,14 +68,16 @@ function main(): void {
 
     console.log(`   File Avg: ${avgScore} → Maintainability: ${level}`);
 
-    //  Save JSON report
-    saveReport(fileName, report);
+    saveReport(fileName, report,outDir);
+    totalFiles++;
   }
-// Generate global maintainability summary after all files are processed
-generateGlobalSummary();
 
+  generateGlobalSummary(outDir);
   console.log("\n All AST files analyzed successfully.\n");
+  return totalFiles;
 }
 
-//  Run the agent
-main();
+// Optional CLI entrypoint stays commented out
+// if (require.main === module) {
+//   runMaintainabilityAgent(...);
+// }

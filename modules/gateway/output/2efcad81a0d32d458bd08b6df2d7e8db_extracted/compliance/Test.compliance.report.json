@@ -1,0 +1,107 @@
+{
+  "agent": "ComplianceAgent",
+  "issues": [
+    {
+      "line": 1,
+      "type": "Naming Issue",
+      "name": "ChessGameEngine",
+      "message": "Function name should be in snake_case."
+    },
+    {
+      "line": 1,
+      "type": "Naming Issue",
+      "name": "ChessGameEngine",
+      "message": "Function name should be in snake_case."
+    },
+    {
+      "line": 14,
+      "type": "Naming Issue",
+      "name": "validateQueenMove",
+      "message": "Function name should be in snake_case."
+    },
+    {
+      "line": 25,
+      "type": "Naming Issue",
+      "name": "validateRookMove",
+      "message": "Function name should be in snake_case."
+    },
+    {
+      "line": 38,
+      "type": "Naming Issue",
+      "name": "validatePawnMove",
+      "message": "Function name should be in snake_case."
+    },
+    {
+      "line": 50,
+      "type": "Naming Issue",
+      "name": "createPieces",
+      "message": "Function name should be in snake_case."
+    },
+    {
+      "line": 1,
+      "type": "Naming Issue",
+      "name": "ChessGameEngine",
+      "message": "Function name should be in snake_case."
+    },
+    {
+      "line": 64,
+      "type": "Naming Issue",
+      "name": "printType",
+      "message": "Function name should be in snake_case."
+    },
+    {
+      "line": 51,
+      "type": "Naming Issue",
+      "name": "Piece",
+      "message": "Function name should be in snake_case."
+    },
+    {
+      "line": 64,
+      "type": "Naming Issue",
+      "name": "printType",
+      "message": "Function name should be in snake_case."
+    }
+  ],
+  "suggestions": [
+    {
+      "line": 1,
+      "suggestion": "Rename 'ChessGameEngine' to snake_case format."
+    },
+    {
+      "line": 1,
+      "suggestion": "Rename 'ChessGameEngine' to snake_case format."
+    },
+    {
+      "line": 14,
+      "suggestion": "Rename 'validateQueenMove' to snake_case format."
+    },
+    {
+      "line": 25,
+      "suggestion": "Rename 'validateRookMove' to snake_case format."
+    },
+    {
+      "line": 38,
+      "suggestion": "Rename 'validatePawnMove' to snake_case format."
+    },
+    {
+      "line": 50,
+      "suggestion": "Rename 'createPieces' to snake_case format."
+    },
+    {
+      "line": 1,
+      "suggestion": "Rename 'ChessGameEngine' to snake_case format."
+    },
+    {
+      "line": 64,
+      "suggestion": "Rename 'printType' to snake_case format."
+    },
+    {
+      "line": 51,
+      "suggestion": "Rename 'Piece' to snake_case format."
+    },
+    {
+      "line": 64,
+      "suggestion": "Rename 'printType' to snake_case format."
+    }
+  ]
+}

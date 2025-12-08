@@ -1,14 +1,23 @@
 import fs from "fs";
 import path from "path";
 
-/** Path to output folder */
-const OUTPUT_DIR = path.join(__dirname, "../../output");
+// Recreate __filename / __dirname for ESM (still useful for a default)
+// const __filename = fileURLToPath(import.meta.url);
+// const __dirname = path.dirname(__filename);
 
-/** Path to global summary file */
-const SUMMARY_FILE = path.join(OUTPUT_DIR, "overall_report.json");
+/**
+ * Generate/update maintainability summary for a given output directory.
+ * outputDir should be the folder where *_report.json files are written
+ * e.g. gateway/output/<scanId>_extracted/maintainability
+ */
+export function generateGlobalSummary(outputDir: string ): void {
+  const OUTPUT_DIR = outputDir;
+  const SUMMARY_FILE = path.join(OUTPUT_DIR, "maintainability_report.json");
 
-/** Load all file-level reports */
-export function generateGlobalSummary(): void {
+  if (!fs.existsSync(OUTPUT_DIR)) {
+    console.log("No output directory found. Run maintainability agent first.");
+    return;
+  }
   if (!fs.existsSync(OUTPUT_DIR)) {
     console.log("No output directory found. Run maintainability agent first.");
     return;
@@ -23,7 +32,7 @@ export function generateGlobalSummary(): void {
     return;
   }
 
-  //  Load existing summary (if present)
+  // Load existing summary (if present)
   let globalSummary: any = { analyzedFiles: [] };
   if (fs.existsSync(SUMMARY_FILE)) {
     try {
@@ -41,9 +50,8 @@ export function generateGlobalSummary(): void {
   // Process each new file report
   for (const filePath of files) {
     const data = JSON.parse(fs.readFileSync(filePath, "utf-8"));
-    if (!Array.isArray(data.results)) continue; // skip invalid files
+    if (!Array.isArray(data.results)) continue;
 
-    //  Compute file stats
     const avgScore = data.averageScore || 0;
     const level = data.maintainabilityLevel || "Unknown";
     const totalMethods = data.totalMethods || 0;
@@ -57,14 +65,11 @@ export function generateGlobalSummary(): void {
       analyzedAt: new Date().toISOString()
     };
 
-    //  Update if file exists, else append
     analyzedFiles.set(data.file, existing ? { ...existing, ...newEntry } : newEntry);
   }
 
-  // Convert map back to array
   const finalFiles = Array.from(analyzedFiles.values());
 
-  //  Compute overall average
   const overallAvg =
     finalFiles.reduce((sum, f) => sum + (f.avgScore || 0), 0) / finalFiles.length;
   const overallLevel =

@@ -1,4 +1,5 @@
 "use client"
+
 import React, { useState, useEffect, useMemo } from 'react';
 import LoadingState from '../../components/LoadingState';
 import ErrorState from '../../components/ErrorState';
@@ -6,7 +7,7 @@ import Navigation from '../../components/Navigation';
 import ClassSelector from '../../components/ClassSelector';
 import MainContent from '../../components/MainContent';
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_ANALYZER_URL || 'http://localhost:5400/api/energy';
+const API_BASE_URL = process.env.API_BASE_URL || 'http://localhost:5400';
 
 const EnergyAnalyzer = () => {
   const [data, setData] = useState(null);
@@ -20,6 +21,11 @@ const EnergyAnalyzer = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [statistics, setStatistics] = useState(null);
   const [topConsumers, setTopConsumers] = useState([]);
+  
+  useEffect(() => {
+  console.log('API Base URL:', process.env.NEXT_PUBLIC_ANALYZER_URL);
+  }, []);
+
 
   useEffect(() => {
     fetchAllReports();

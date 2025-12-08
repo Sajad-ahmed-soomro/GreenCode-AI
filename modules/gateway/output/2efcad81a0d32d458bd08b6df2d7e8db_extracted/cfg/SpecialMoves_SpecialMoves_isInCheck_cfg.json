@@ -1,0 +1,25 @@
+{
+  "methodName": "isInCheck",
+  "nodes": [
+    {
+      "id": "75b31763-ec67-4d97-b2fc-bfbabb839dff",
+      "label": "Start",
+      "type": "start",
+      "next": [
+        "e2d65776-ccda-4174-b9e6-40a3b3ea0806"
+      ]
+    },
+    {
+      "id": "e2d65776-ccda-4174-b9e6-40a3b3ea0806",
+      "label": "End",
+      "type": "end",
+      "next": []
+    }
+  ],
+  "edges": [
+    [
+      "75b31763-ec67-4d97-b2fc-bfbabb839dff",
+      "e2d65776-ccda-4174-b9e6-40a3b3ea0806"
+    ]
+  ]
+}

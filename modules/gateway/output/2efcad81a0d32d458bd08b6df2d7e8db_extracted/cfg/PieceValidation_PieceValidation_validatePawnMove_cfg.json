@@ -1,0 +1,25 @@
+{
+  "methodName": "validatePawnMove",
+  "nodes": [
+    {
+      "id": "ce1172ba-0ddc-41d5-a708-896df49f9714",
+      "label": "Start",
+      "type": "start",
+      "next": [
+        "6ec7127b-6b20-486e-8d15-49ff0ef34e75"
+      ]
+    },
+    {
+      "id": "6ec7127b-6b20-486e-8d15-49ff0ef34e75",
+      "label": "End",
+      "type": "end",
+      "next": []
+    }
+  ],
+  "edges": [
+    [
+      "ce1172ba-0ddc-41d5-a708-896df49f9714",
+      "6ec7127b-6b20-486e-8d15-49ff0ef34e75"
+    ]
+  ]
+}

@@ -1,39 +1,29 @@
 import fs from "fs";
 import path from "path";
-import { fileURLToPath } from "url";
 
-// 🧩 Recreate __dirname and __filename for ESM
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+// 🧩 Recreate __dirname and __filename for ESM (still used by saveReport)
+// const __filename = fileURLToPath(import.meta.url);
+// const __dirname = path.dirname(__filename);
 
-const OUTPUT_DIR = path.join(__dirname, "../../output");
+// ❌ remove AST_FOLDER / JAVA_FOLDER globals
+// export const AST_FOLDER = ...
+// export const JAVA_FOLDER = ...
 
-/** 🧩 Path to the AST folder */
-export const AST_FOLDER = path.join(
-  __dirname,
-  "../../../output/uploads/ast"
-);
-
-/** 📁 Base path where the actual .java source files are stored */
-export const JAVA_FOLDER = path.join(
-  __dirname,
-  "../../../output/uploads"
-);
-
-/** 📦 Load all AST JSON files */
-export function loadAllASTFiles(): any[] {
-  if (!fs.existsSync(AST_FOLDER)) {
-    console.error(`❌ AST folder not found: ${AST_FOLDER}`);
+/** 📦 Load all AST JSON files from a given directory */
+export function loadAllASTFiles(astDir: string): any[] {
+  if (!fs.existsSync(astDir)) {
+    console.error(`❌ AST folder not found: ${astDir}`);
     return [];
   }
 
   const files = fs
-    .readdirSync(AST_FOLDER)
+    .readdirSync(astDir)
     .filter((f) => f.endsWith(".json"));
+
   const asts: any[] = [];
 
   for (const file of files) {
-    const filePath = path.join(AST_FOLDER, file);
+    const filePath = path.join(astDir, file);
     const content = fs.readFileSync(filePath, "utf-8");
     try {
       const json = JSON.parse(content);
@@ -46,10 +36,8 @@ export function loadAllASTFiles(): any[] {
   return asts;
 }
 
-
 /** Save output JSON for each analyzed file */
-export function saveReport(fileName: string, data: any) {
-  const outDir = path.join(__dirname, "../../output");
+export function saveReport(fileName: string, data: any, outDir: string) {
   if (!fs.existsSync(outDir)) fs.mkdirSync(outDir, { recursive: true });
 
   const outPath = path.join(outDir, fileName.replace(".json", "_report.json"));
@@ -57,14 +45,17 @@ export function saveReport(fileName: string, data: any) {
   console.log(` Report saved → ${outPath}`);
 }
 
-/** 
- *  Reads the corresponding Java source file 
- * and counts real Lines of Code (LOC) and comment lines 
+
+/**
+ * Reads the corresponding Java source file and
+ * counts real LOC and comment lines, using a provided javaDir.
  */
-export function getRealLOCAndComments(fileName: string): { loc: number; comments: number } {
-  // Convert JSON filename (e.g., Calculator.json) → Calculator.java
+export function getRealLOCAndComments(
+  fileName: string,
+  javaDir: string
+): { loc: number; comments: number } {
   const javaFileName = fileName.replace(".json", ".java");
-  const javaFilePath = path.join(JAVA_FOLDER, javaFileName);
+  const javaFilePath = path.join(javaDir, javaFileName);
 
   if (!fs.existsSync(javaFilePath)) {
     console.warn(` Java source not found for ${fileName}`);

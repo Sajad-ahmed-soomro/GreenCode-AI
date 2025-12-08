@@ -1,0 +1,221 @@
+{
+  "agent": "ComplianceAgent",
+  "issues": [
+    {
+      "line": 2,
+      "type": "Naming Issue",
+      "name": "handleCastling",
+      "message": "Function name should be in snake_case."
+    },
+    {
+      "line": 15,
+      "type": "Naming Issue",
+      "name": "handlePromotion",
+      "message": "Function name should be in snake_case."
+    },
+    {
+      "line": 21,
+      "type": "Naming Issue",
+      "name": "handleEnPassant",
+      "message": "Function name should be in snake_case."
+    },
+    {
+      "line": 26,
+      "type": "Naming Issue",
+      "name": "isCheckmate",
+      "message": "Function name should be in snake_case."
+    },
+    {
+      "line": 28,
+      "type": "Naming Issue",
+      "name": "isInCheck",
+      "message": "Function name should be in snake_case."
+    },
+    {
+      "line": 44,
+      "type": "Naming Issue",
+      "name": "isValidMove",
+      "message": "Function name should be in snake_case."
+    },
+    {
+      "line": 73,
+      "type": "Naming Issue",
+      "name": "findKing",
+      "message": "Function name should be in snake_case."
+    },
+    {
+      "line": 5,
+      "type": "Formatting Issue",
+      "message": "Remove trailing spaces."
+    },
+    {
+      "line": 10,
+      "type": "Formatting Issue",
+      "message": "Remove trailing spaces."
+    },
+    {
+      "line": 14,
+      "type": "Formatting Issue",
+      "message": "Remove trailing spaces."
+    },
+    {
+      "line": 20,
+      "type": "Formatting Issue",
+      "message": "Remove trailing spaces."
+    },
+    {
+      "line": 25,
+      "type": "Formatting Issue",
+      "message": "Remove trailing spaces."
+    },
+    {
+      "line": 31,
+      "type": "Formatting Issue",
+      "message": "Remove trailing spaces."
+    },
+    {
+      "line": 39,
+      "type": "Formatting Issue",
+      "message": "Remove trailing spaces."
+    },
+    {
+      "line": 47,
+      "type": "Formatting Issue",
+      "message": "Remove trailing spaces."
+    },
+    {
+      "line": 52,
+      "type": "Formatting Issue",
+      "message": "Remove trailing spaces."
+    },
+    {
+      "line": 55,
+      "type": "Formatting Issue",
+      "message": "Remove trailing spaces."
+    },
+    {
+      "line": 59,
+      "type": "Formatting Issue",
+      "message": "Remove trailing spaces."
+    },
+    {
+      "line": 67,
+      "type": "Formatting Issue",
+      "message": "Remove trailing spaces."
+    },
+    {
+      "line": 70,
+      "type": "Formatting Issue",
+      "message": "Remove trailing spaces."
+    },
+    {
+      "line": 75,
+      "type": "Formatting Issue",
+      "message": "Remove trailing spaces."
+    },
+    {
+      "line": 89,
+      "type": "Formatting Issue",
+      "message": "Remove trailing spaces."
+    },
+    {
+      "line": 102,
+      "type": "Formatting Issue",
+      "message": "Remove trailing spaces."
+    }
+  ],
+  "suggestions": [
+    {
+      "line": 2,
+      "suggestion": "Rename 'handleCastling' to snake_case format."
+    },
+    {
+      "line": 15,
+      "suggestion": "Rename 'handlePromotion' to snake_case format."
+    },
+    {
+      "line": 21,
+      "suggestion": "Rename 'handleEnPassant' to snake_case format."
+    },
+    {
+      "line": 26,
+      "suggestion": "Rename 'isCheckmate' to snake_case format."
+    },
+    {
+      "line": 28,
+      "suggestion": "Rename 'isInCheck' to snake_case format."
+    },
+    {
+      "line": 44,
+      "suggestion": "Rename 'isValidMove' to snake_case format."
+    },
+    {
+      "line": 73,
+      "suggestion": "Rename 'findKing' to snake_case format."
+    },
+    {
+      "line": 5,
+      "suggestion": "Remove trailing spaces on line 5."
+    },
+    {
+      "line": 10,
+      "suggestion": "Remove trailing spaces on line 10."
+    },
+    {
+      "line": 14,
+      "suggestion": "Remove trailing spaces on line 14."
+    },
+    {
+      "line": 20,
+      "suggestion": "Remove trailing spaces on line 20."
+    },
+    {
+      "line": 25,
+      "suggestion": "Remove trailing spaces on line 25."
+    },
+    {
+      "line": 31,
+      "suggestion": "Remove trailing spaces on line 31."
+    },
+    {
+      "line": 39,
+      "suggestion": "Remove trailing spaces on line 39."
+    },
+    {
+      "line": 47,
+      "suggestion": "Remove trailing spaces on line 47."
+    },
+    {
+      "line": 52,
+      "suggestion": "Remove trailing spaces on line 52."
+    },
+    {
+      "line": 55,
+      "suggestion": "Remove trailing spaces on line 55."
+    },
+    {
+      "line": 59,
+      "suggestion": "Remove trailing spaces on line 59."
+    },
+    {
+      "line": 67,
+      "suggestion": "Remove trailing spaces on line 67."
+    },
+    {
+      "line": 70,
+      "suggestion": "Remove trailing spaces on line 70."
+    },
+    {
+      "line": 75,
+      "suggestion": "Remove trailing spaces on line 75."
+    },
+    {
+      "line": 89,
+      "suggestion": "Remove trailing spaces on line 89."
+    },
+    {
+      "line": 102,
+      "suggestion": "Remove trailing spaces on line 102."
+    }
+  ]
+}

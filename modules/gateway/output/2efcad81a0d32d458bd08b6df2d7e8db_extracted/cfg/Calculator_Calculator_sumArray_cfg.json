@@ -1,0 +1,25 @@
+{
+  "methodName": "sumArray",
+  "nodes": [
+    {
+      "id": "57ae4e6a-0be7-407b-8f8c-49d671097452",
+      "label": "Start",
+      "type": "start",
+      "next": [
+        "09952a02-44af-4be5-922b-964fa4078eaf"
+      ]
+    },
+    {
+      "id": "09952a02-44af-4be5-922b-964fa4078eaf",
+      "label": "End",
+      "type": "end",
+      "next": []
+    }
+  ],
+  "edges": [
+    [
+      "57ae4e6a-0be7-407b-8f8c-49d671097452",
+      "09952a02-44af-4be5-922b-964fa4078eaf"
+    ]
+  ]
+}

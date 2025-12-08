@@ -1,0 +1,25 @@
+{
+  "methodName": "generateReport",
+  "nodes": [
+    {
+      "id": "e86d730c-3176-4f09-b21e-96d2a458c09f",
+      "label": "Start",
+      "type": "start",
+      "next": [
+        "79c9271a-c8d4-462c-ad90-fe03d87d9a6e"
+      ]
+    },
+    {
+      "id": "79c9271a-c8d4-462c-ad90-fe03d87d9a6e",
+      "label": "End",
+      "type": "end",
+      "next": []
+    }
+  ],
+  "edges": [
+    [
+      "e86d730c-3176-4f09-b21e-96d2a458c09f",
+      "79c9271a-c8d4-462c-ad90-fe03d87d9a6e"
+    ]
+  ]
+}

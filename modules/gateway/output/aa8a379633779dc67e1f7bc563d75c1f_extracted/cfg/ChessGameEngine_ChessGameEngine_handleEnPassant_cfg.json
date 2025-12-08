@@ -1,0 +1,25 @@
+{
+  "methodName": "handleEnPassant",
+  "nodes": [
+    {
+      "id": "6e6ccbbd-e1e1-4755-8fdb-945732c4cd98",
+      "label": "Start",
+      "type": "start",
+      "next": [
+        "6dd8c540-31e6-4f2b-8c71-ca28ca725a63"
+      ]
+    },
+    {
+      "id": "6dd8c540-31e6-4f2b-8c71-ca28ca725a63",
+      "label": "End",
+      "type": "end",
+      "next": []
+    }
+  ],
+  "edges": [
+    [
+      "6e6ccbbd-e1e1-4755-8fdb-945732c4cd98",
+      "6dd8c540-31e6-4f2b-8c71-ca28ca725a63"
+    ]
+  ]
+}

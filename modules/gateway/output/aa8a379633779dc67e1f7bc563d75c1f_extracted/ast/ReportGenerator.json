@@ -1,0 +1,184 @@
+{
+  "file": "/Users/sajad-ahmed/Documents/semesters/Seventh-Semester/greencode-ai/GreenCode-AI/modules/gateway/uploads/aa8a379633779dc67e1f7bc563d75c1f_extracted/samples/ReportGenerator.java",
+  "classes": [
+    {
+      "type": "Class",
+      "name": "ReportGenerator",
+      "methods": [
+        {
+          "name": "addItem",
+          "params": [
+            {
+              "type": "String",
+              "name": "item"
+            }
+          ],
+          "loops": [],
+          "conditionals": [
+            "if"
+          ],
+          "conditionalsTree": [
+            {
+              "type": "IfStatement",
+              "thenBlock": [
+                {
+                  "type": "Statement"
+                }
+              ],
+              "elseBlock": [
+                {
+                  "type": "Statement"
+                }
+              ]
+            }
+          ],
+          "returnType": "void",
+          "modifiers": [
+            "public"
+          ]
+        },
+        {
+          "name": "generateReport",
+          "params": [],
+          "loops": [
+            "forEach",
+            "for"
+          ],
+          "conditionals": [],
+          "loopsTree": [
+            {
+              "type": "forEach",
+              "nested": [
+                {
+                  "type": "for",
+                  "nested": [],
+                  "depth": 1
+                }
+              ],
+              "depth": 0
+            }
+          ],
+          "loopNestingDepth": 2,
+          "totalLoopCount": 2,
+          "localVariables": [
+            "String key"
+          ],
+          "returnType": "void",
+          "modifiers": [
+            "public"
+          ]
+        },
+        {
+          "name": "sortItems",
+          "params": [],
+          "loops": [
+            "forEach"
+          ],
+          "conditionals": [
+            "if"
+          ],
+          "conditionalsTree": [
+            {
+              "type": "IfStatement",
+              "thenBlock": [
+                {
+                  "type": "IfStatement",
+                  "thenBlock": [
+                    {
+                      "type": "Statement"
+                    }
+                  ],
+                  "elseBlock": null
+                }
+              ],
+              "elseBlock": null
+            }
+          ],
+          "loopsTree": [
+            {
+              "type": "forEach",
+              "nested": [],
+              "depth": 0
+            }
+          ],
+          "loopNestingDepth": 1,
+          "totalLoopCount": 1,
+          "localVariables": [
+            "String i"
+          ],
+          "returnType": "void",
+          "modifiers": [
+            "private"
+          ]
+        },
+        {
+          "name": "printLongestItem",
+          "params": [],
+          "loops": [
+            "forEach"
+          ],
+          "conditionals": [
+            "if"
+          ],
+          "conditionalsTree": [
+            {
+              "type": "IfStatement",
+              "thenBlock": [
+                {
+                  "type": "Statement"
+                }
+              ],
+              "elseBlock": null
+            }
+          ],
+          "loopsTree": [
+            {
+              "type": "forEach",
+              "nested": [],
+              "depth": 0
+            }
+          ],
+          "loopNestingDepth": 1,
+          "totalLoopCount": 1,
+          "localVariables": [
+            "String longest",
+            "String i"
+          ],
+          "returnType": "void",
+          "modifiers": [
+            "private"
+          ]
+        },
+        {
+          "name": "printSummary",
+          "params": [],
+          "loops": [
+            "forEach"
+          ],
+          "conditionals": [],
+          "loopsTree": [
+            {
+              "type": "forEach",
+              "nested": [],
+              "depth": 0
+            }
+          ],
+          "loopNestingDepth": 1,
+          "totalLoopCount": 1,
+          "localVariables": [
+            "int total",
+            "String key"
+          ],
+          "returnType": "void",
+          "modifiers": [
+            "private"
+          ]
+        }
+      ],
+      "fields": [
+        "private List<String> items = new ArrayList<>();",
+        "private Map<String, Integer> counts = new HashMap<>();"
+      ]
+    }
+  ]
+}

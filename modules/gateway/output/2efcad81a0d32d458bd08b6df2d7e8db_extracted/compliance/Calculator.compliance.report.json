@@ -1,0 +1,47 @@
+{
+  "agent": "ComplianceAgent",
+  "issues": [
+    {
+      "line": 1,
+      "type": "Naming Issue",
+      "name": "Calculator",
+      "message": "Function name should be in snake_case."
+    },
+    {
+      "line": 1,
+      "type": "Naming Issue",
+      "name": "Calculator",
+      "message": "Function name should be in snake_case."
+    },
+    {
+      "line": 16,
+      "type": "Naming Issue",
+      "name": "sumArray",
+      "message": "Function name should be in snake_case."
+    },
+    {
+      "line": 24,
+      "type": "Naming Issue",
+      "name": "checkValue",
+      "message": "Function name should be in snake_case."
+    }
+  ],
+  "suggestions": [
+    {
+      "line": 1,
+      "suggestion": "Rename 'Calculator' to snake_case format."
+    },
+    {
+      "line": 1,
+      "suggestion": "Rename 'Calculator' to snake_case format."
+    },
+    {
+      "line": 16,
+      "suggestion": "Rename 'sumArray' to snake_case format."
+    },
+    {
+      "line": 24,
+      "suggestion": "Rename 'checkValue' to snake_case format."
+    }
+  ]
+}

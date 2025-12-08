@@ -1,0 +1,75 @@
+{
+  "agent": "ComplianceAgent",
+  "issues": [
+    {
+      "line": 8,
+      "type": "Naming Issue",
+      "name": "addUsr",
+      "message": "Function name should be in snake_case."
+    },
+    {
+      "line": 16,
+      "type": "Naming Issue",
+      "name": "chkUsr",
+      "message": "Function name should be in snake_case."
+    },
+    {
+      "line": 29,
+      "type": "Naming Issue",
+      "name": "resetAll",
+      "message": "Function name should be in snake_case."
+    },
+    {
+      "line": 35,
+      "type": "Naming Issue",
+      "name": "printUsers",
+      "message": "Function name should be in snake_case."
+    },
+    {
+      "line": 41,
+      "type": "Naming Issue",
+      "name": "addUsrTwice",
+      "message": "Function name should be in snake_case."
+    },
+    {
+      "line": 1,
+      "type": "Dead Code",
+      "message": "Commented-out code detected."
+    },
+    {
+      "line": 3,
+      "type": "Dead Code",
+      "message": "Commented-out code detected."
+    }
+  ],
+  "suggestions": [
+    {
+      "line": 8,
+      "suggestion": "Rename 'addUsr' to snake_case format."
+    },
+    {
+      "line": 16,
+      "suggestion": "Rename 'chkUsr' to snake_case format."
+    },
+    {
+      "line": 29,
+      "suggestion": "Rename 'resetAll' to snake_case format."
+    },
+    {
+      "line": 35,
+      "suggestion": "Rename 'printUsers' to snake_case format."
+    },
+    {
+      "line": 41,
+      "suggestion": "Rename 'addUsrTwice' to snake_case format."
+    },
+    {
+      "line": 1,
+      "suggestion": "Remove commented-out code on line 1."
+    },
+    {
+      "line": 3,
+      "suggestion": "Remove commented-out code on line 3."
+    }
+  ]
+}

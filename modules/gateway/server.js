@@ -8,6 +8,15 @@ import { fileURLToPath } from "url";
 import runAnalysisPipeline from "./analyzer-runner.js"; // Main pipeline
 import { runEnergyAnalyzer } from "./analyzer-runner.js"; // Energy analyzer
 import energyRoutes from "./routes/energyRoutes.js"
+import dataStructureRoutes from "./routes/dataStructureRoutes.js";
+import dataStructuresRoutes from './routes/dataStructuresRoutes.js';
+import complianceRoutes from './routes/complianceRoutes.js'; // Add this
+
+import maintainabilityRoutes from './routes/maintainabilityRoutes.js'; // Add this
+
+import optimizationRoutes from './routes/optimizationRoutes.js';
+
+
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -28,11 +37,22 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use('/api/energy', energyRoutes);
 
+app.use('/api/data-structure', dataStructuresRoutes);
+
+app.use('/api/compliance', complianceRoutes); 
+
+app.use('/api/maintainability', maintainabilityRoutes); // Add this route
+
+app.use('/api/optimization', optimizationRoutes);
 // Health check
 app.get('/health', (req, res) => {
   res.json({ status: 'ok', service: 'Energy Analyzer API' });
 });
 
+app.use(cors({
+  origin: 'http://localhost:3000', // Your Next.js frontend
+  credentials: true
+}));
 // Error handling middleware
 app.use((err, req, res, next) => {
   console.error(err.stack);
@@ -183,6 +203,8 @@ function getDirectorySize(dir) {
   calculate(dir);
   return size;
 }
+// data structures agent
+app.use("/data-structure", dataStructureRoutes);
 
 const PORT = process.env.PORT || 5400;
 app.listen(PORT, () => {

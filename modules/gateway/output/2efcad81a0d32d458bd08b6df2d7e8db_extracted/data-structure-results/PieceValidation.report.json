@@ -1,0 +1,45 @@
+{
+  "fileName": "PieceValidation.java",
+  "suggestions": [
+    {
+      "issueType": "ManualArraySearch",
+      "pattern": "Manual arr[i] search inside loop",
+      "recommendedDataStructure": "Use Set or Map depending on logic",
+      "why": "Manual scanning inside loop is slow (O(n)). Hashed lookup is O(1).",
+      "energyImpact": "Reduces unnecessary CPU usage and energy waste.",
+      "lineNumber": 11
+    },
+    {
+      "issueType": "ListAsDictionary",
+      "pattern": "Array used as dictionary with string key",
+      "recommendedDataStructure": "HashMap or TreeMap",
+      "why": "Arrays only support numeric indexing. Using them like maps is incorrect.",
+      "energyImpact": "Using maps gives consistent O(1) lookup.",
+      "lineNumber": 11
+    },
+    {
+      "issueType": "ListAsDictionary",
+      "pattern": "Array used as dictionary with string key",
+      "recommendedDataStructure": "HashMap or TreeMap",
+      "why": "Arrays only support numeric indexing. Using them like maps is incorrect.",
+      "energyImpact": "Using maps gives consistent O(1) lookup.",
+      "lineNumber": 27
+    },
+    {
+      "issueType": "ListAsDictionary",
+      "pattern": "Array used as dictionary with string key",
+      "recommendedDataStructure": "HashMap or TreeMap",
+      "why": "Arrays only support numeric indexing. Using them like maps is incorrect.",
+      "energyImpact": "Using maps gives consistent O(1) lookup.",
+      "lineNumber": 34
+    },
+    {
+      "issueType": "ListAsDictionary",
+      "pattern": "Array used as dictionary with string key",
+      "recommendedDataStructure": "HashMap or TreeMap",
+      "why": "Arrays only support numeric indexing. Using them like maps is incorrect.",
+      "energyImpact": "Using maps gives consistent O(1) lookup.",
+      "lineNumber": 41
+    }
+  ]
+}
