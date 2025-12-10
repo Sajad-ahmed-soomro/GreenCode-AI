@@ -298,7 +298,6 @@ export default function MaintainabilityAgentPage() {
         </div>
 
         {/* Method Analysis Section */}
-        {/* Method Analysis Section */}
         {analysisData?.results && analysisData.results.length > 0 ? (
           <div className="bg-white rounded-xl shadow-md p-6 border-2 border-slate-200 mb-8">
             <h2 className="text-xl font-bold text-slate-800 mb-6 flex items-center gap-2">
@@ -311,13 +310,6 @@ export default function MaintainabilityAgentPage() {
                 const scoreColors = getScoreColor(method.methodScore);
                 const severityColor = getSeverityColor(method.methodScore);
                 const isExpanded = selectedMethod === idx;
-                
-                // Filter out function length metrics from both display areas
-                const filteredMetrics = method.metrics ? 
-                  method.metrics.filter(metric => {
-                    const metricName = metric.metric.toLowerCase();
-                    return !metricName.includes('function') && !metricName.includes('length');
-                  }) : [];
                 
                 return (
                   <div
@@ -348,10 +340,10 @@ export default function MaintainabilityAgentPage() {
                         </div>
                       </div>
                       
-                      {/* Metrics Summary - Use filtered metrics */}
-                      {filteredMetrics.length > 0 && (
+                      {/* Metrics Summary */}
+                      {method.metrics && method.metrics.length > 0 && (
                         <div className="grid grid-cols-2 md:grid-cols-6 gap-2 mt-4">
-                          {filteredMetrics.slice(0, 6).map((metric, mIdx) => {
+                          {method.metrics.slice(0, 6).map((metric, mIdx) => {
                             const statusColor = getStatusColor(metric.status);
                             return (
                               <div key={mIdx} className={`${statusColor.bg} border ${statusColor.border} rounded p-2 text-center`}>
@@ -364,18 +356,18 @@ export default function MaintainabilityAgentPage() {
                       )}
                     </button>
                     
-                    {/* Expanded Details - Use filtered metrics */}
-                    {isExpanded && filteredMetrics.length > 0 && (
+                    {/* Expanded Details */}
+                    {isExpanded && method.metrics && method.metrics.length > 0 && (
                       <div className="border-t-2 border-slate-200 p-5 bg-slate-50">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                          {/* Metrics Details */}
+                          {/* Metrics Details - Removed the function length display */}
                           <div>
                             <h4 className="font-semibold text-slate-800 mb-4 flex items-center gap-2">
                               <BarChart className="w-4 h-4" />
                               Detailed Metrics
                             </h4>
                             <div className="space-y-3">
-                              {filteredMetrics.map((metric, mIdx) => {
+                              {method.metrics.map((metric, mIdx) => {
                                 const statusColor = getStatusColor(metric.status);
                                 return (
                                   <div key={mIdx} className={`${statusColor.bg} border ${statusColor.border} rounded-lg p-3`}>
@@ -416,9 +408,7 @@ export default function MaintainabilityAgentPage() {
               })}
             </div>
           </div>
-          
-      ) 
-        : analysisData?.suggestions && analysisData.suggestions.length > 0 ? (
+        ) : analysisData?.suggestions && analysisData.suggestions.length > 0 ? (
           <div className="bg-white rounded-xl shadow-md p-6 border-2 border-slate-200 mb-8">
             <h2 className="text-xl font-bold text-slate-800 mb-6 flex items-center gap-2">
               <Database className="w-6 h-6 text-purple-600" />

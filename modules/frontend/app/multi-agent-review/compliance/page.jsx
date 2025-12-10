@@ -491,7 +491,7 @@ const ComplianceAgentPage = () => {
                 <FileCheck className="w-10 h-10 text-white" />
               </div>
               <div>
-                <h1 className="text-4xl font-bold text-slate-800">Java Compliance Agent</h1>
+                <h1 className="text-4xl font-bold text-slate-800">Compliance Agent</h1>
                 <p className="text-slate-600 mt-1 flex items-center gap-2">
                   <span>Analyzing {files.length} Java file{files.length !== 1 ? 's' : ''}</span>
                   <span className={`px-2 py-1 rounded-full text-xs font-medium ${getBackendHealthColor()}`}>

@@ -5,7 +5,7 @@ import React, { useState, useEffect } from 'react';
 import { 
   Zap, ArrowLeft, AlertTriangle, TrendingUp, Cpu, Clock, 
   Gauge, Filter, FileCode, BarChart, ChevronDown, Database, 
-  Code, Battery, FileText
+  Code, FileText
 } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 
@@ -140,9 +140,6 @@ export default function OptimizationAgentPage() {
     // Calculate performance score
     const performanceScore = calculatePerformanceScore(totalIssues, totalCriticalIssues, totalFiles);
     
-    // Calculate estimated energy savings
-    const estimatedSavings = Math.min(95, (totalCriticalIssues * 70) + ((totalIssues - totalCriticalIssues) * 40));
-    
     return {
       totalFiles,
       totalIssues,
@@ -151,8 +148,7 @@ export default function OptimizationAgentPage() {
       severityBreakdown,
       issueTypes,
       mostCommonIssue,
-      performanceScore,
-      estimatedSavings
+      performanceScore
     };
   };
 
@@ -209,6 +205,7 @@ export default function OptimizationAgentPage() {
 
   const selectedFile = files.find(f => f.id === selectedFileId);
   const analysisData = selectedFile?.analysis;
+  
   if (isLoading) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-slate-50 to-yellow-50 flex items-center justify-center p-6">
@@ -314,15 +311,14 @@ export default function OptimizationAgentPage() {
               {analysisData?.summary && (
                 <span className="ml-2">
                   • {analysisData.summary.totalIssues} optimization opportunities
-                  • {analysisData.summary.energySavings || 0}% energy savings
                 </span>
               )}
             </p>
           </div>
         </div>
 
-        {/* Summary Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
+        {/* Summary Cards - Now 3 cards instead of 4 */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
           <div className="bg-white rounded-xl shadow-md p-6 border-2 border-yellow-200">
             <div className="flex items-center justify-between">
               <div>
@@ -349,19 +345,6 @@ export default function OptimizationAgentPage() {
             </div>
           </div>
           
-          <div className="bg-white rounded-xl shadow-md p-6 border-2 border-green-200">
-            <div className="flex items-center justify-between">
-              <div>
-                <p className="text-sm text-slate-600 mb-1">Energy Savings</p>
-                <p className="text-3xl font-bold text-green-600">
-                  {analysisData?.summary?.energySavings || aggregatedMetrics?.estimatedSavings || 0}%
-                </p>
-                <p className="text-xs text-slate-500 mt-1">Potential reduction</p>
-              </div>
-              <Battery className="w-12 h-12 text-green-500" />
-            </div>
-          </div>
-          
           <div className="bg-white rounded-xl shadow-md p-6 border-2 border-blue-200">
             <div className="flex items-center justify-between">
               <div>
@@ -376,13 +359,13 @@ export default function OptimizationAgentPage() {
           </div>
         </div>
 
-        {/* Project Aggregated Metrics */}
+        {/* Project Aggregated Metrics - Now 3 cards instead of 4 */}
         <div className="bg-white rounded-xl shadow-md p-6 border-2 border-slate-200 mb-8">
           <h2 className="text-xl font-bold text-slate-800 mb-4 flex items-center gap-2">
             <BarChart className="w-6 h-6 text-yellow-600" />
             Project-Wide Optimization Metrics
           </h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="bg-yellow-50 border-2 border-yellow-300 rounded-lg p-4">
               <p className="text-sm font-semibold text-yellow-800">Total Issues</p>
               <p className="text-2xl font-bold text-yellow-800">{aggregatedMetrics?.totalIssues || 0}</p>
@@ -392,11 +375,6 @@ export default function OptimizationAgentPage() {
               <p className="text-sm font-semibold text-red-800">Critical Issues</p>
               <p className="text-2xl font-bold text-red-800">{aggregatedMetrics?.totalCriticalIssues || 0}</p>
               <p className="text-xs text-red-600">Require immediate attention</p>
-            </div>
-            <div className="bg-green-50 border-2 border-green-300 rounded-lg p-4">
-              <p className="text-sm font-semibold text-green-800">Est. Savings</p>
-              <p className="text-2xl font-bold text-green-800">{aggregatedMetrics?.estimatedSavings || 0}%</p>
-              <p className="text-xs text-green-600">Potential energy savings</p>
             </div>
             <div className="bg-blue-50 border-2 border-blue-300 rounded-lg p-4">
               <p className="text-sm font-semibold text-blue-800">Avg. Issues/File</p>
@@ -493,7 +471,7 @@ export default function OptimizationAgentPage() {
                               Performance Impact
                             </h4>
                             <p className="text-slate-700 text-sm leading-relaxed">
-                              {issue.energyImpact || "This optimization opportunity could significantly improve performance and reduce energy consumption."}
+                              {issue.energyImpact || "This optimization opportunity could significantly improve performance."}
                             </p>
                           </div>
                           
@@ -522,22 +500,6 @@ export default function OptimizationAgentPage() {
                                 )}
                               </div>
                             )}
-                          </div>
-                          
-                          {/* Energy Impact */}
-                          <div className="bg-green-50 border-2 border-green-300 rounded-lg p-4">
-                            <h4 className="font-semibold text-green-900 mb-2 flex items-center gap-2">
-                              <TrendingUp className="w-4 h-4" />
-                              Expected Improvement
-                            </h4>
-                            <p className="text-green-800 text-sm">
-                              Implementing this optimization could reduce CPU cycles by 30-50% and 
-                              decrease energy consumption proportional to usage frequency.
-                            </p>
-                            <div className="flex items-center gap-2 mt-2">
-                              <Cpu className="w-4 h-4 text-green-600" />
-                              <span className="text-xs text-green-700">Reduces computational overhead</span>
-                            </div>
                           </div>
                         </div>
                       </div>
@@ -576,12 +538,12 @@ export default function OptimizationAgentPage() {
           <div className="mt-6 pt-6 border-t border-yellow-400">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm text-yellow-200">Potential Energy Savings</p>
-                <p className="text-lg font-bold">Up to {aggregatedMetrics?.estimatedSavings || 0}% CPU reduction</p>
+                <p className="text-sm text-yellow-200">Files Analyzed</p>
+                <p className="text-lg font-bold">{files.length} files optimized</p>
               </div>
               <div className="text-right">
-                <p className="text-sm text-yellow-200">Files Analyzed</p>
-                <p className="text-lg font-bold">{files.length} of {files.length}</p>
+                <p className="text-sm text-yellow-200">Performance Score</p>
+                <p className="text-lg font-bold">{aggregatedMetrics?.performanceScore || 0}/100</p>
               </div>
             </div>
           </div>

@@ -858,8 +858,8 @@ const MultiAgentReviewPage = () => {
                       <CheckCircle className="w-3 h-3" /> All Agents Synced
                     </span>
                   ) : (
-                    <span className="flex items-center gap-1 text-xs bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full">
-                      <AlertCircle className="w-3 h-3" /> Partial Sync
+                    <span className="flex items-center gap-1 text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full">
+                      <CheckCircle className="w-3 h-3" /> ALL Sync
                     </span>
                   )}
                 </div>
