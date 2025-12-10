@@ -1,0 +1,166 @@
+{
+  "file": "/Users/sajad-ahmed/Documents/semesters/Seventh-Semester/greencode-ai/GreenCode-AI/modules/gateway/uploads/59edbe7facdf455ebc0fcb4d83936008_extracted/samples/UserServices.java",
+  "classes": [
+    {
+      "type": "Class",
+      "name": "UserService",
+      "methods": [
+        {
+          "name": "addUsr",
+          "params": [
+            {
+              "type": "String",
+              "name": "name"
+            },
+            {
+              "type": "String",
+              "name": "pass"
+            }
+          ],
+          "loops": [],
+          "conditionals": [
+            "if"
+          ],
+          "conditionalsTree": [
+            {
+              "type": "IfStatement",
+              "thenBlock": [
+                {
+                  "type": "Statement"
+                }
+              ],
+              "elseBlock": [
+                {
+                  "type": "Statement"
+                }
+              ]
+            }
+          ],
+          "returnType": "void",
+          "modifiers": [
+            "public"
+          ]
+        },
+        {
+          "name": "chkUsr",
+          "params": [
+            {
+              "type": "String",
+              "name": "n"
+            },
+            {
+              "type": "String",
+              "name": "p"
+            }
+          ],
+          "loops": [],
+          "conditionals": [
+            "if",
+            "return"
+          ],
+          "conditionalsTree": [
+            {
+              "type": "IfStatement",
+              "thenBlock": [
+                {
+                  "type": "IfStatement",
+                  "thenBlock": [
+                    {
+                      "type": "Statement"
+                    }
+                  ],
+                  "elseBlock": [
+                    {
+                      "type": "IfStatement",
+                      "thenBlock": [
+                        {
+                          "type": "Statement"
+                        }
+                      ],
+                      "elseBlock": null
+                    }
+                  ]
+                }
+              ],
+              "elseBlock": null
+            }
+          ],
+          "returnType": "boolean",
+          "modifiers": [
+            "public"
+          ]
+        },
+        {
+          "name": "resetAll",
+          "params": [],
+          "loops": [
+            "forEach"
+          ],
+          "conditionals": [],
+          "loopsTree": [
+            {
+              "type": "forEach",
+              "nested": [],
+              "depth": 0
+            }
+          ],
+          "loopNestingDepth": 1,
+          "totalLoopCount": 1,
+          "localVariables": [
+            "String key"
+          ],
+          "returnType": "void",
+          "modifiers": [
+            "public"
+          ]
+        },
+        {
+          "name": "printUsers",
+          "params": [],
+          "loops": [
+            "forEach"
+          ],
+          "conditionals": [],
+          "loopsTree": [
+            {
+              "type": "forEach",
+              "nested": [],
+              "depth": 0
+            }
+          ],
+          "loopNestingDepth": 1,
+          "totalLoopCount": 1,
+          "localVariables": [
+            "Map Entry .<String, String> e"
+          ],
+          "returnType": "void",
+          "modifiers": [
+            "public"
+          ]
+        },
+        {
+          "name": "addUsrTwice",
+          "params": [
+            {
+              "type": "String",
+              "name": "name"
+            },
+            {
+              "type": "String",
+              "name": "pass"
+            }
+          ],
+          "loops": [],
+          "conditionals": [],
+          "returnType": "void",
+          "modifiers": [
+            "public"
+          ]
+        }
+      ],
+      "fields": [
+        "private Map<String, String> users = new HashMap<>();"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "fileName": "Calculator.java",
+  "sourcePath": "/Users/sajad-ahmed/Documents/semesters/Seventh-Semester/greencode-ai/GreenCode-AI/modules/gateway/uploads/59edbe7facdf455ebc0fcb4d83936008_extracted/samples/Calculator.java",
+  "astPath": "/Users/sajad-ahmed/Documents/semesters/Seventh-Semester/greencode-ai/GreenCode-AI/modules/gateway/output/59edbe7facdf455ebc0fcb4d83936008_extracted/ast/Calculator.json",
+  "agent": "optimization",
+  "results": [
+    {
+      "message": "Method 'Calculator.sumArray' contains a loop. If the collection is large or this method is called frequently, ensure the loop body does not contain unnecessary heavy work.",
+      "severity": "low",
+      "location": "/Users/sajad-ahmed/Documents/semesters/Seventh-Semester/greencode-ai/GreenCode-AI/modules/gateway/uploads/59edbe7facdf455ebc0fcb4d83936008_extracted/samples/Calculator.java"
+    },
+    {
+      "message": "Method 'Calculator.sumArray' contains a loop that likely performs a linear scan. If this runs over large collections or is called frequently, think about using more efficient data structures (for example, HashSet/Map) or algorithms.",
+      "severity": "low",
+      "location": "/Users/sajad-ahmed/Documents/semesters/Seventh-Semester/greencode-ai/GreenCode-AI/modules/gateway/uploads/59edbe7facdf455ebc0fcb4d83936008_extracted/samples/Calculator.java"
+    }
+  ]
+}

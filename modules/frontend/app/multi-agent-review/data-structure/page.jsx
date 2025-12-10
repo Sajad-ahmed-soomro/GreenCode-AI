@@ -8,7 +8,6 @@ import { CheckCircle,
 } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 
-import useAnalysisStore from '@/app/store/analysisStore';
 
 export default function DataStructureAgentPage() {
   const router = useRouter();

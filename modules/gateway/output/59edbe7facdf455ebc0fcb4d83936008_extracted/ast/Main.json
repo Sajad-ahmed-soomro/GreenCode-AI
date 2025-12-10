@@ -1,0 +1,121 @@
+{
+  "file": "/Users/sajad-ahmed/Documents/semesters/Seventh-Semester/greencode-ai/GreenCode-AI/modules/gateway/uploads/59edbe7facdf455ebc0fcb4d83936008_extracted/samples/Main.java",
+  "classes": [
+    {
+      "type": "Class",
+      "name": "Main",
+      "methods": [
+        {
+          "name": "main",
+          "params": [
+            {
+              "type": "String []",
+              "name": "args"
+            }
+          ],
+          "loops": [
+            "forEach",
+            "for"
+          ],
+          "conditionals": [
+            "try",
+            "catch",
+            "if"
+          ],
+          "conditionalsTree": [
+            {
+              "type": "IfStatement",
+              "thenBlock": [
+                {
+                  "type": "Statement"
+                },
+                {
+                  "type": "Statement"
+                },
+                {
+                  "type": "IfStatement",
+                  "thenBlock": [
+                    {
+                      "type": "Statement"
+                    }
+                  ],
+                  "elseBlock": null
+                },
+                {
+                  "type": "IfStatement",
+                  "thenBlock": [
+                    {
+                      "type": "IfStatement",
+                      "thenBlock": [
+                        {
+                          "type": "Statement"
+                        }
+                      ],
+                      "elseBlock": [
+                        {
+                          "type": "IfStatement",
+                          "thenBlock": [
+                            {
+                              "type": "Statement"
+                            }
+                          ],
+                          "elseBlock": [
+                            {
+                              "type": "Statement"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "elseBlock": [
+                    {
+                      "type": "Statement"
+                    }
+                  ]
+                }
+              ],
+              "elseBlock": null
+            }
+          ],
+          "loopsTree": [
+            {
+              "type": "forEach",
+              "nested": [],
+              "depth": 0
+            },
+            {
+              "type": "for",
+              "nested": [
+                {
+                  "type": "for",
+                  "nested": [],
+                  "depth": 1
+                }
+              ],
+              "depth": 0
+            }
+          ],
+          "loopNestingDepth": 2,
+          "totalLoopCount": 3,
+          "localVariables": [
+            "Scanner sc",
+            "String input",
+            "String [] parts",
+            "List<Integer> nums",
+            "String s",
+            "int max",
+            "int i",
+            "int j"
+          ],
+          "returnType": "void",
+          "modifiers": [
+            "public",
+            "static"
+          ]
+        }
+      ],
+      "fields": []
+    }
+  ]
+}
