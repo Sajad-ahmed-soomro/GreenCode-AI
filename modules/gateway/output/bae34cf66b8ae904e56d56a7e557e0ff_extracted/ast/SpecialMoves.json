@@ -1,0 +1,373 @@
+{
+  "file": "/Users/sajad-ahmed/Documents/semesters/Seventh-Semester/greencode-ai/GreenCode-AI/modules/gateway/uploads/bae34cf66b8ae904e56d56a7e557e0ff_extracted/samples/SpecialMoves.java",
+  "classes": [
+    {
+      "type": "Class",
+      "name": "SpecialMoves",
+      "methods": [
+        {
+          "name": "handleCastling",
+          "params": [
+            {
+              "type": "char [ [] ]",
+              "name": "board"
+            },
+            {
+              "type": "int",
+              "name": "startRow"
+            },
+            {
+              "type": "int",
+              "name": "startCol"
+            },
+            {
+              "type": "int",
+              "name": "endRow"
+            },
+            {
+              "type": "int",
+              "name": "endCol"
+            }
+          ],
+          "loops": [],
+          "conditionals": [],
+          "localVariables": [
+            "boolean isKingSide",
+            "int rookStartCol",
+            "int rookEndCol",
+            "char rook"
+          ],
+          "returnType": "void",
+          "modifiers": [
+            "public",
+            "static"
+          ]
+        },
+        {
+          "name": "handlePromotion",
+          "params": [
+            {
+              "type": "char [ [] ]",
+              "name": "board"
+            },
+            {
+              "type": "int",
+              "name": "endRow"
+            },
+            {
+              "type": "int",
+              "name": "endCol"
+            }
+          ],
+          "loops": [],
+          "conditionals": [],
+          "localVariables": [
+            "boolean isWhite"
+          ],
+          "returnType": "void",
+          "modifiers": [
+            "public",
+            "static"
+          ]
+        },
+        {
+          "name": "handleEnPassant",
+          "params": [
+            {
+              "type": "char [ [] ]",
+              "name": "board"
+            },
+            {
+              "type": "int",
+              "name": "startRow"
+            },
+            {
+              "type": "int",
+              "name": "endRow"
+            },
+            {
+              "type": "int",
+              "name": "endCol"
+            }
+          ],
+          "loops": [],
+          "conditionals": [],
+          "returnType": "void",
+          "modifiers": [
+            "public",
+            "static"
+          ]
+        },
+        {
+          "name": "isCheckmate",
+          "params": [
+            {
+              "type": "char [ [] ]",
+              "name": "board"
+            },
+            {
+              "type": "boolean",
+              "name": "isWhiteKing"
+            }
+          ],
+          "loops": [
+            "for"
+          ],
+          "conditionals": [
+            "if",
+            "return",
+            "continue"
+          ],
+          "conditionalsTree": [
+            {
+              "type": "IfStatement",
+              "thenBlock": [
+                {
+                  "type": "Statement"
+                }
+              ],
+              "elseBlock": null
+            },
+            {
+              "type": "IfStatement",
+              "thenBlock": [
+                {
+                  "type": "Statement"
+                }
+              ],
+              "elseBlock": null
+            },
+            {
+              "type": "IfStatement",
+              "thenBlock": [
+                {
+                  "type": "Statement"
+                }
+              ],
+              "elseBlock": null
+            },
+            {
+              "type": "IfStatement",
+              "thenBlock": [
+                {
+                  "type": "Statement"
+                }
+              ],
+              "elseBlock": null
+            }
+          ],
+          "loopsTree": [
+            {
+              "type": "for",
+              "nested": [
+                {
+                  "type": "for",
+                  "nested": [
+                    {
+                      "type": "for",
+                      "nested": [
+                        {
+                          "type": "for",
+                          "nested": [],
+                          "depth": 3
+                        }
+                      ],
+                      "depth": 2
+                    }
+                  ],
+                  "depth": 1
+                }
+              ],
+              "depth": 0
+            }
+          ],
+          "loopNestingDepth": 4,
+          "totalLoopCount": 4,
+          "localVariables": [
+            "int startRow",
+            "int startCol",
+            "char piece",
+            "int endRow",
+            "int endCol",
+            "char originalEndPiece",
+            "boolean stillInCheck"
+          ],
+          "returnType": "boolean",
+          "modifiers": [
+            "public",
+            "static"
+          ]
+        },
+        {
+          "name": "isInCheck",
+          "params": [
+            {
+              "type": "char [ [] ]",
+              "name": "board"
+            },
+            {
+              "type": "boolean",
+              "name": "isWhiteKing"
+            }
+          ],
+          "loops": [
+            "for"
+          ],
+          "conditionals": [
+            "if",
+            "return"
+          ],
+          "conditionalsTree": [
+            {
+              "type": "IfStatement",
+              "thenBlock": [
+                {
+                  "type": "Statement"
+                }
+              ],
+              "elseBlock": null
+            },
+            {
+              "type": "IfStatement",
+              "thenBlock": [
+                {
+                  "type": "IfStatement",
+                  "thenBlock": [
+                    {
+                      "type": "Statement"
+                    }
+                  ],
+                  "elseBlock": null
+                }
+              ],
+              "elseBlock": null
+            }
+          ],
+          "loopsTree": [
+            {
+              "type": "for",
+              "nested": [
+                {
+                  "type": "for",
+                  "nested": [],
+                  "depth": 1
+                }
+              ],
+              "depth": 0
+            }
+          ],
+          "loopNestingDepth": 2,
+          "totalLoopCount": 2,
+          "localVariables": [
+            "int [] kingPos",
+            "int row",
+            "int col",
+            "char piece"
+          ],
+          "returnType": "boolean",
+          "modifiers": [
+            "public",
+            "static"
+          ]
+        },
+        {
+          "name": "isValidMove",
+          "params": [
+            {
+              "type": "char [ [] ]",
+              "name": "board"
+            },
+            {
+              "type": "int",
+              "name": "startRow"
+            },
+            {
+              "type": "int",
+              "name": "startCol"
+            },
+            {
+              "type": "int",
+              "name": "endRow"
+            },
+            {
+              "type": "int",
+              "name": "endCol"
+            }
+          ],
+          "loops": [],
+          "conditionals": [
+            "switch",
+            "case",
+            "default",
+            "return"
+          ],
+          "localVariables": [
+            "char piece"
+          ],
+          "returnType": "boolean",
+          "modifiers": [
+            "private",
+            "static"
+          ]
+        },
+        {
+          "name": "findKing",
+          "params": [
+            {
+              "type": "char [ [] ]",
+              "name": "board"
+            },
+            {
+              "type": "boolean",
+              "name": "isWhiteKing"
+            }
+          ],
+          "loops": [
+            "for"
+          ],
+          "conditionals": [
+            "if",
+            "return"
+          ],
+          "conditionalsTree": [
+            {
+              "type": "IfStatement",
+              "thenBlock": [
+                {
+                  "type": "Statement"
+                }
+              ],
+              "elseBlock": null
+            }
+          ],
+          "loopsTree": [
+            {
+              "type": "for",
+              "nested": [
+                {
+                  "type": "for",
+                  "nested": [],
+                  "depth": 1
+                }
+              ],
+              "depth": 0
+            }
+          ],
+          "loopNestingDepth": 2,
+          "totalLoopCount": 2,
+          "localVariables": [
+            "char kingChar",
+            "int i",
+            "int j"
+          ],
+          "returnType": "int []",
+          "modifiers": [
+            "private",
+            "static"
+          ]
+        }
+      ],
+      "fields": []
+    }
+  ]
+}

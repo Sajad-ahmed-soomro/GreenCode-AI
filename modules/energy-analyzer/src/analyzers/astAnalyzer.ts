@@ -38,7 +38,7 @@ export type JavaASTFile = {
 export function analyzeJavaASTMethod(m: JavaASTMethod) {
   const loops = Array.isArray(m.loops) ? m.loops : [];
   
-  // ✅ USE THE NEW FIELDS FROM PARSER
+  //  USE THE NEW FIELDS FROM PARSER
   // If totalLoopCount exists, use it; otherwise fall back to loops.length
   const loopCount = typeof m.totalLoopCount === 'number' ? m.totalLoopCount : loops.length;
   

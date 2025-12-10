@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { Code2, ArrowLeft, AlertCircle, CheckCircle, TrendingUp, FileText, BarChart, MessageSquare, FileCode, Zap, Database, Code } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 
+
 export default function MaintainabilityAgentPage() {
   const router = useRouter();
   const [selectedFileId, setSelectedFileId] = useState(null);
@@ -137,7 +138,7 @@ export default function MaintainabilityAgentPage() {
       </div>
     );
   }
-
+  
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 p-6">
       <div className="max-w-7xl mx-auto">

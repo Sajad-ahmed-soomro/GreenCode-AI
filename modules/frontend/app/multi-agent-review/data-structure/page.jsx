@@ -8,6 +8,8 @@ import { CheckCircle,
 } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 
+import useAnalysisStore from '@/app/store/analysisStore';
+
 export default function DataStructureAgentPage() {
   const router = useRouter();
   const [selectedFileId, setSelectedFileId] = useState(null);
@@ -138,7 +140,7 @@ export default function DataStructureAgentPage() {
 
   const selectedFile = files.find(f => f.id === selectedFileId);
   const analysisData = selectedFile?.analysis;
-
+  
   if (isLoading) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 flex items-center justify-center p-6">

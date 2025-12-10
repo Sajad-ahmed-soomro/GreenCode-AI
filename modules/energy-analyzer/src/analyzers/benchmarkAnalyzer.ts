@@ -153,8 +153,8 @@ export function mergeStaticWithBenchmarks(
     benchmarkMap.set(key, benchmark);
   }
 
-  console.log(`📊 Static reports: ${staticReports.length}`);
-  console.log(`📊 Benchmark results: ${benchmarkResults.length}`);
+  console.log(` Static reports: ${staticReports.length}`);
+  console.log(` Benchmark results: ${benchmarkResults.length}`);
 
   for (const staticReport of staticReports) {
     const key = `${staticReport.className}.${staticReport.methodName}`.toLowerCase();

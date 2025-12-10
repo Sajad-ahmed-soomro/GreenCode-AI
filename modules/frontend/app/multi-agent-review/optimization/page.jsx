@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+
 import { 
   Zap, ArrowLeft, AlertTriangle, TrendingUp, Cpu, Clock, 
   Gauge, Filter, FileCode, BarChart, ChevronDown, Database, 
@@ -208,7 +209,6 @@ export default function OptimizationAgentPage() {
 
   const selectedFile = files.find(f => f.id === selectedFileId);
   const analysisData = selectedFile?.analysis;
-
   if (isLoading) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-slate-50 to-yellow-50 flex items-center justify-center p-6">
