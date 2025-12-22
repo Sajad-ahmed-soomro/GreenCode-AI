@@ -282,11 +282,11 @@ CI/CD Integration
 
 Dashboard Usage
 
-👥 Team
-Sajad Ahmed
+## 👥 Team
 
-Saif-Ur-Rehman
-Zahra Irfan
+**Sajad Ahmed**  
+**Saif-Ur-Rehman**  
+**Zahra Irfan**  
 
 📝 License
 This project is licensed under the MIT License - see the LICENSE file for details.
@@ -309,10 +309,6 @@ Related tools: SonarQube, DeepCode, CodeClimate
 
 <div align="center"> <p>Made with 💚 for sustainable software development</p> <p>Final Year Project • Software Engineering • Fast Nuces Islamabad • 2025</p> </div>
 
-![Build Status](https://img.shields.io/github/actions/workflow/status/Sajad-ahmed/greencode-ai/build.yml?branch=main)
-![Code Coverage](https://img.shields.io/codecov/c/github/Sajad-ahmed/greencode-ai)
-![License](https://img.shields.io/github/license/Sajad-ahmed/greencode-ai)
-![Downloads](https://img.shields.io/npm/dt/greencode-ai)
 
 ## 🎥 Demo
 
