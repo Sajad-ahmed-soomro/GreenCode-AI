@@ -1,4 +1,4 @@
-// src/analyzers/javaBenchmarkImporter.ts
+// src/analyzers/benchmarkAnalyzer.ts
 import fs from "fs";
 import path from "path";
 
@@ -79,13 +79,13 @@ export function loadJavaBenchmarkResults(benchmarkPath: string): JavaBenchmarkRe
 
 /**
  * Normalize benchmark time to energy score (0-1)
+ * Uses logarithmic scaling for better distribution
  */
 export function computeBenchmarkEnergyScore(
   medianMs: number,
   maxExpectedMs: number = 100
 ): number {
-  // Logarithmic scaling for better distribution
-  // 1ms = ~0.1, 10ms = ~0.3, 100ms = 1.0
+  // Logarithmic scaling: 1ms ≈ 0.1, 10ms ≈ 0.3, 100ms = 1.0
   const score = Math.log10(medianMs + 1) / Math.log10(maxExpectedMs + 1);
   return Math.max(0, Math.min(1, score));
 }
@@ -109,13 +109,13 @@ export type EnhancedMethodReport = {
   dbCalls: number;
   recursion: boolean;
   
-  // Static Scores
+  // Static Scores (preserved from original analysis)
   staticCpuScore: number;
   staticMemScore: number;
   staticIoScore: number;
   staticEnergyScore: number;
   
-  // Original scores (for compatibility)
+  // Backward compatibility scores
   cpuScore: number;
   memScore: number;
   ioScore: number;
@@ -134,7 +134,7 @@ export type EnhancedMethodReport = {
   
   // Combined Score
   combinedEnergyScore: number;
-  confidenceLevel: "high" | "medium" | "low"; // high = has benchmarks, low = static only
+  confidenceLevel: "high" | "medium" | "low";
 };
 
 /**
@@ -146,49 +146,56 @@ export function mergeStaticWithBenchmarks(
 ): EnhancedMethodReport[] {
   const enhancedReports: EnhancedMethodReport[] = [];
 
-  // Create benchmark lookup map
+  // Create benchmark lookup map (case-insensitive)
   const benchmarkMap = new Map<string, JavaBenchmarkResult>();
   for (const benchmark of benchmarkResults) {
     const key = `${benchmark.className}.${benchmark.methodName}`.toLowerCase();
     benchmarkMap.set(key, benchmark);
   }
 
-  console.log(` Static reports: ${staticReports.length}`);
-  console.log(` Benchmark results: ${benchmarkResults.length}`);
+  console.log(`📊 Merging Analysis:`);
+  console.log(`   Static reports: ${staticReports.length}`);
+  console.log(`   Benchmark results: ${benchmarkResults.length}`);
+  console.log();
+
+  let mergedCount = 0;
+  let staticOnlyCount = 0;
 
   for (const staticReport of staticReports) {
     const key = `${staticReport.className}.${staticReport.methodName}`.toLowerCase();
     const benchmark = benchmarkMap.get(key);
 
     const enhanced: EnhancedMethodReport = {
-        className: staticReport.className,
-        methodName: staticReport.methodName,
+      className: staticReport.className,
+      methodName: staticReport.methodName,
 
-        // Static analysis data
-        loopCount: staticReport.loopCount,
-        loops: staticReport.loops,
-        nestingDepth: staticReport.nestingDepth,
-        cyclomatic: staticReport.cyclomatic,
-        conditionalsCount: staticReport.conditionalsCount,
-        methodCalls: staticReport.methodCalls,
-        objectCreations: staticReport.objectCreations,
-        ioCalls: staticReport.ioCalls,
-        dbCalls: staticReport.dbCalls,
-        recursion: staticReport.recursion,
+      // Static analysis data
+      loopCount: staticReport.loopCount || 0,
+      loops: staticReport.loops || [],
+      nestingDepth: staticReport.nestingDepth || 1,
+      cyclomatic: staticReport.cyclomatic || 1,
+      conditionalsCount: staticReport.conditionalsCount || 0,
+      methodCalls: staticReport.methodCalls || 0,
+      objectCreations: staticReport.objectCreations || 0,
+      ioCalls: staticReport.ioCalls || 0,
+      dbCalls: staticReport.dbCalls || 0,
+      recursion: staticReport.recursion || false,
 
-        // Static scores
-        staticCpuScore: staticReport.cpuScore,
-        staticMemScore: staticReport.memScore,
-        staticIoScore: staticReport.ioScore,
-        staticEnergyScore: staticReport.energyScore,
+      // Preserve static scores
+      staticCpuScore: staticReport.cpuScore || 0,
+      staticMemScore: staticReport.memScore || 0,
+      staticIoScore: staticReport.ioScore || 0,
+      staticEnergyScore: staticReport.energyScore || 0,
 
-        // Default combined score to static only
-        combinedEnergyScore: staticReport.energyScore,
-        confidenceLevel: "low",
-        cpuScore: 0,
-        memScore: 0,
-        ioScore: 0,
-        energyScore: 0
+      // Default combined score to static only
+      combinedEnergyScore: staticReport.energyScore || 0,
+      confidenceLevel: "low",
+      
+      // Backward compatibility
+      cpuScore: staticReport.cpuScore || 0,
+      memScore: staticReport.memScore || 0,
+      ioScore: staticReport.ioScore || 0,
+      energyScore: staticReport.energyScore || 0
     };
 
     // Merge benchmark data if available
@@ -200,49 +207,103 @@ export function mergeStaticWithBenchmarks(
       enhanced.maxMs = benchmark.maxMs;
       enhanced.stdDev = benchmark.stdDev;
       enhanced.benchmarkRuns = benchmark.runs;
-      enhanced.benchmarkTool = benchmark.benchmarkTool;
+      enhanced.benchmarkTool = benchmark.benchmarkTool || "Unknown";
       
-      // Compute runtime energy score
+      // Compute runtime energy score from benchmark timing
       enhanced.runtimeEnergyScore = computeBenchmarkEnergyScore(benchmark.medianMs);
       
-      // Combined score: 60% static + 40% runtime
+      // Combined score: weighted average of static (60%) and runtime (40%)
       enhanced.combinedEnergyScore = 
-        0.6 * staticReport.energyScore + 
+        0.6 * enhanced.staticEnergyScore + 
         0.4 * enhanced.runtimeEnergyScore;
       
-      enhanced.confidenceLevel = "high";
+      // Update backward compatibility scores with combined values
+      enhanced.energyScore = enhanced.combinedEnergyScore;
       
-      console.log(`✅ Merged: ${enhanced.className}.${enhanced.methodName} - Runtime: ${benchmark.medianMs.toFixed(2)}ms`);
+      enhanced.confidenceLevel = "high";
+      mergedCount++;
+      
+      console.log(`   ✅ ${enhanced.className}.${enhanced.methodName}`);
+      console.log(`      Runtime: ${benchmark.medianMs.toFixed(2)}ms | Static: ${enhanced.staticEnergyScore.toFixed(3)} | Combined: ${enhanced.combinedEnergyScore.toFixed(3)}`);
     } else {
-      console.log(`⚠️  No benchmark for: ${enhanced.className}.${enhanced.methodName} (using static only)`);
+      staticOnlyCount++;
+      console.log(`   ⚠️  ${enhanced.className}.${enhanced.methodName} (static only)`);
     }
 
     enhancedReports.push(enhanced);
   }
 
+  console.log();
+  console.log(`📊 Merge Summary:`);
+  console.log(`   Merged with benchmarks: ${mergedCount}`);
+  console.log(`   Static only: ${staticOnlyCount}`);
+
   return enhancedReports;
 }
 
 /**
- * Save enhanced report to file
+ * Save enhanced report to file with comprehensive metadata
  */
 export function saveEnhancedReport(
   reports: EnhancedMethodReport[],
   outputPath: string,
   metadata?: any
 ) {
+  const highConfidence = reports.filter(r => r.confidenceLevel === "high");
+  const lowConfidence = reports.filter(r => r.confidenceLevel === "low");
+  
+  // Calculate statistics
+  const stats = {
+    energy: {
+      avgStatic: reports.reduce((sum, r) => sum + r.staticEnergyScore, 0) / reports.length,
+      avgRuntime: highConfidence.length > 0 
+        ? highConfidence.reduce((sum, r) => sum + (r.runtimeEnergyScore || 0), 0) / highConfidence.length 
+        : 0,
+      avgCombined: reports.reduce((sum, r) => sum + r.combinedEnergyScore, 0) / reports.length,
+    },
+    timing: highConfidence.length > 0 ? {
+      avgMedian: highConfidence.reduce((sum, r) => sum + (r.medianMs || 0), 0) / highConfidence.length,
+      maxMedian: Math.max(...highConfidence.map(r => r.medianMs || 0)),
+      minMedian: Math.min(...highConfidence.map(r => r.medianMs || 0)),
+    } : null,
+    distribution: {
+      high: reports.filter(r => r.combinedEnergyScore > 0.5).length,
+      medium: reports.filter(r => r.combinedEnergyScore >= 0.3 && r.combinedEnergyScore <= 0.5).length,
+      low: reports.filter(r => r.combinedEnergyScore < 0.3).length,
+    }
+  };
+
   const output = {
     generatedAt: new Date().toISOString(),
     totalMethods: reports.length,
-    methodsWithBenchmarks: reports.filter(r => r.confidenceLevel === "high").length,
-    methodsStaticOnly: reports.filter(r => r.confidenceLevel === "low").length,
+    methodsWithBenchmarks: highConfidence.length,
+    methodsStaticOnly: lowConfidence.length,
+    coveragePercentage: ((highConfidence.length / reports.length) * 100).toFixed(1) + "%",
+    statistics: stats,
     ...metadata,
-    reports
+    reports: reports.sort((a, b) => b.combinedEnergyScore - a.combinedEnergyScore)
   };
 
   fs.writeFileSync(outputPath, JSON.stringify(output, null, 2));
-  console.log(`\n💾 Enhanced report saved to: ${outputPath}`);
+  
+  console.log();
+  console.log(`💾 Enhanced Report Saved`);
+  console.log(`   Location: ${outputPath}`);
   console.log(`   Total methods: ${output.totalMethods}`);
-  console.log(`   With benchmarks: ${output.methodsWithBenchmarks}`);
+  console.log(`   With benchmarks: ${output.methodsWithBenchmarks} (${output.coveragePercentage})`);
   console.log(`   Static only: ${output.methodsStaticOnly}`);
+  console.log();
+  console.log(`📊 Energy Statistics:`);
+  console.log(`   Avg Static Energy: ${stats.energy.avgStatic.toFixed(3)}`);
+  if (stats.energy.avgRuntime > 0) {
+    console.log(`   Avg Runtime Energy: ${stats.energy.avgRuntime.toFixed(3)}`);
+  }
+  console.log(`   Avg Combined Energy: ${stats.energy.avgCombined.toFixed(3)}`);
+  
+  if (stats.timing) {
+    console.log();
+    console.log(`⏱️  Runtime Statistics:`);
+    console.log(`   Avg Execution Time: ${stats.timing.avgMedian.toFixed(2)}ms`);
+    console.log(`   Range: ${stats.timing.minMedian.toFixed(2)}ms - ${stats.timing.maxMedian.toFixed(2)}ms`);
+  }
 }

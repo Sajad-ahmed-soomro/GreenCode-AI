@@ -1,0 +1,278 @@
+{
+  "file": "UserServices.json",
+  "totalClasses": 1,
+  "totalMethods": 5,
+  "realLOC": 36,
+  "realComments": 2,
+  "averageScore": 77.4,
+  "maintainabilityLevel": "Medium",
+  "results": [
+    {
+      "className": "UserService",
+      "methodName": "addUsr",
+      "methodScore": 74,
+      "maintainabilityLevel": "Medium",
+      "metrics": [
+        {
+          "metric": "Function Length",
+          "value": 36,
+          "status": "Medium",
+          "penalty": 0.08,
+          "message": "addUsr has 36 lines of code (Medium)."
+        },
+        {
+          "metric": "Nesting Depth",
+          "value": 2,
+          "status": "Medium",
+          "penalty": 0.08,
+          "message": "addUsr has nesting depth 2 (Medium)."
+        },
+        {
+          "metric": "Cyclomatic Complexity",
+          "value": 1,
+          "status": "Low",
+          "penalty": 0,
+          "message": "addUsr has 1 decision points (Low)."
+        },
+        {
+          "metric": "Parameter Count",
+          "value": 2,
+          "status": "Low",
+          "penalty": 0,
+          "message": "addUsr has 2 parameters (Low)."
+        },
+        {
+          "metric": "Comment Ratio",
+          "value": "5.6%",
+          "status": "High",
+          "penalty": 0.1,
+          "message": "addUsr comment ratio = 5.6% (High)."
+        },
+        {
+          "metric": "Naming Clarity",
+          "value": "Good",
+          "status": "Low",
+          "penalty": 0,
+          "message": "addUsr naming is clear."
+        }
+      ],
+      "suggestions": [
+        " Low comment coverage. Add documentation or inline comments."
+      ]
+    },
+    {
+      "className": "UserService",
+      "methodName": "chkUsr",
+      "methodScore": 67,
+      "maintainabilityLevel": "Medium",
+      "metrics": [
+        {
+          "metric": "Function Length",
+          "value": 36,
+          "status": "Medium",
+          "penalty": 0.08,
+          "message": "chkUsr has 36 lines of code (Medium)."
+        },
+        {
+          "metric": "Nesting Depth",
+          "value": 4,
+          "status": "High",
+          "penalty": 0.15,
+          "message": "chkUsr has nesting depth 4 (High)."
+        },
+        {
+          "metric": "Cyclomatic Complexity",
+          "value": 2,
+          "status": "Low",
+          "penalty": 0,
+          "message": "chkUsr has 2 decision points (Low)."
+        },
+        {
+          "metric": "Parameter Count",
+          "value": 2,
+          "status": "Low",
+          "penalty": 0,
+          "message": "chkUsr has 2 parameters (Low)."
+        },
+        {
+          "metric": "Comment Ratio",
+          "value": "5.6%",
+          "status": "High",
+          "penalty": 0.1,
+          "message": "chkUsr comment ratio = 5.6% (High)."
+        },
+        {
+          "metric": "Naming Clarity",
+          "value": "Good",
+          "status": "Low",
+          "penalty": 0,
+          "message": "chkUsr naming is clear."
+        }
+      ],
+      "suggestions": [
+        "Deeply nested logic. Consider flattening with early returns or switch cases.",
+        " Low comment coverage. Add documentation or inline comments."
+      ]
+    },
+    {
+      "className": "UserService",
+      "methodName": "resetAll",
+      "methodScore": 82,
+      "maintainabilityLevel": "Medium",
+      "metrics": [
+        {
+          "metric": "Function Length",
+          "value": 36,
+          "status": "Medium",
+          "penalty": 0.08,
+          "message": "resetAll has 36 lines of code (Medium)."
+        },
+        {
+          "metric": "Nesting Depth",
+          "value": 0,
+          "status": "Low",
+          "penalty": 0,
+          "message": "resetAll has nesting depth 0 (Low)."
+        },
+        {
+          "metric": "Cyclomatic Complexity",
+          "value": 1,
+          "status": "Low",
+          "penalty": 0,
+          "message": "resetAll has 1 decision points (Low)."
+        },
+        {
+          "metric": "Parameter Count",
+          "value": 0,
+          "status": "Low",
+          "penalty": 0,
+          "message": "resetAll has 0 parameters (Low)."
+        },
+        {
+          "metric": "Comment Ratio",
+          "value": "5.6%",
+          "status": "High",
+          "penalty": 0.1,
+          "message": "resetAll comment ratio = 5.6% (High)."
+        },
+        {
+          "metric": "Naming Clarity",
+          "value": "Good",
+          "status": "Low",
+          "penalty": 0,
+          "message": "resetAll naming is clear."
+        }
+      ],
+      "suggestions": [
+        " Low comment coverage. Add documentation or inline comments."
+      ]
+    },
+    {
+      "className": "UserService",
+      "methodName": "printUsers",
+      "methodScore": 82,
+      "maintainabilityLevel": "Medium",
+      "metrics": [
+        {
+          "metric": "Function Length",
+          "value": 36,
+          "status": "Medium",
+          "penalty": 0.08,
+          "message": "printUsers has 36 lines of code (Medium)."
+        },
+        {
+          "metric": "Nesting Depth",
+          "value": 0,
+          "status": "Low",
+          "penalty": 0,
+          "message": "printUsers has nesting depth 0 (Low)."
+        },
+        {
+          "metric": "Cyclomatic Complexity",
+          "value": 1,
+          "status": "Low",
+          "penalty": 0,
+          "message": "printUsers has 1 decision points (Low)."
+        },
+        {
+          "metric": "Parameter Count",
+          "value": 0,
+          "status": "Low",
+          "penalty": 0,
+          "message": "printUsers has 0 parameters (Low)."
+        },
+        {
+          "metric": "Comment Ratio",
+          "value": "5.6%",
+          "status": "High",
+          "penalty": 0.1,
+          "message": "printUsers comment ratio = 5.6% (High)."
+        },
+        {
+          "metric": "Naming Clarity",
+          "value": "Good",
+          "status": "Low",
+          "penalty": 0,
+          "message": "printUsers naming is clear."
+        }
+      ],
+      "suggestions": [
+        " Low comment coverage. Add documentation or inline comments."
+      ]
+    },
+    {
+      "className": "UserService",
+      "methodName": "addUsrTwice",
+      "methodScore": 82,
+      "maintainabilityLevel": "Medium",
+      "metrics": [
+        {
+          "metric": "Function Length",
+          "value": 36,
+          "status": "Medium",
+          "penalty": 0.08,
+          "message": "addUsrTwice has 36 lines of code (Medium)."
+        },
+        {
+          "metric": "Nesting Depth",
+          "value": 0,
+          "status": "Low",
+          "penalty": 0,
+          "message": "addUsrTwice has nesting depth 0 (Low)."
+        },
+        {
+          "metric": "Cyclomatic Complexity",
+          "value": 0,
+          "status": "Low",
+          "penalty": 0,
+          "message": "addUsrTwice has 0 decision points (Low)."
+        },
+        {
+          "metric": "Parameter Count",
+          "value": 2,
+          "status": "Low",
+          "penalty": 0,
+          "message": "addUsrTwice has 2 parameters (Low)."
+        },
+        {
+          "metric": "Comment Ratio",
+          "value": "5.6%",
+          "status": "High",
+          "penalty": 0.1,
+          "message": "addUsrTwice comment ratio = 5.6% (High)."
+        },
+        {
+          "metric": "Naming Clarity",
+          "value": "Good",
+          "status": "Low",
+          "penalty": 0,
+          "message": "addUsrTwice naming is clear."
+        }
+      ],
+      "suggestions": [
+        " Low comment coverage. Add documentation or inline comments."
+      ]
+    }
+  ],
+  "message": " File UserServices.json analyzed successfully."
+}

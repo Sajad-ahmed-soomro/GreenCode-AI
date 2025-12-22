@@ -1,0 +1,64 @@
+{
+  "analyzedFiles": [
+    {
+      "file": "Calculator.json",
+      "avgScore": 78.7,
+      "level": "Medium",
+      "totalMethods": 3,
+      "analyzedAt": "2025-12-22T15:33:01.504Z"
+    },
+    {
+      "file": "ChessGameEngine.json",
+      "avgScore": 70.3,
+      "level": "Medium",
+      "totalMethods": 20,
+      "analyzedAt": "2025-12-22T15:33:01.504Z"
+    },
+    {
+      "file": "Main.json",
+      "avgScore": 67,
+      "level": "Medium",
+      "totalMethods": 1,
+      "analyzedAt": "2025-12-22T15:33:01.504Z"
+    },
+    {
+      "file": "PieceValidation.json",
+      "avgScore": 63.6,
+      "level": "Medium",
+      "totalMethods": 7,
+      "analyzedAt": "2025-12-22T15:33:01.504Z"
+    },
+    {
+      "file": "ReportGenerator.json",
+      "avgScore": 77.2,
+      "level": "Medium",
+      "totalMethods": 5,
+      "analyzedAt": "2025-12-22T15:33:01.504Z"
+    },
+    {
+      "file": "SpecialMoves.json",
+      "avgScore": 69.4,
+      "level": "Medium",
+      "totalMethods": 7,
+      "analyzedAt": "2025-12-22T15:33:01.504Z"
+    },
+    {
+      "file": "Test.json",
+      "avgScore": 75.5,
+      "level": "Medium",
+      "totalMethods": 6,
+      "analyzedAt": "2025-12-22T15:33:01.504Z"
+    },
+    {
+      "file": "UserServices.json",
+      "avgScore": 77.4,
+      "level": "Medium",
+      "totalMethods": 5,
+      "analyzedAt": "2025-12-22T15:33:01.504Z"
+    }
+  ],
+  "overallAvg": 72.4,
+  "overallLevel": "Medium",
+  "totalFiles": 8,
+  "updatedAt": "2025-12-22T15:33:01.504Z"
+}

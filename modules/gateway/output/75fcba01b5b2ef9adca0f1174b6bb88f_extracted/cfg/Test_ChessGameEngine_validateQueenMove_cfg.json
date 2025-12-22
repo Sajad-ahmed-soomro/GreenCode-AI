@@ -1,0 +1,25 @@
+{
+  "methodName": "validateQueenMove",
+  "nodes": [
+    {
+      "id": "1258f533-d794-4e62-9b5b-8965d514a52b",
+      "label": "Start",
+      "type": "start",
+      "next": [
+        "0eb791b3-4cfe-403f-bdd9-31efb2a5ef6c"
+      ]
+    },
+    {
+      "id": "0eb791b3-4cfe-403f-bdd9-31efb2a5ef6c",
+      "label": "End",
+      "type": "end",
+      "next": []
+    }
+  ],
+  "edges": [
+    [
+      "1258f533-d794-4e62-9b5b-8965d514a52b",
+      "0eb791b3-4cfe-403f-bdd9-31efb2a5ef6c"
+    ]
+  ]
+}

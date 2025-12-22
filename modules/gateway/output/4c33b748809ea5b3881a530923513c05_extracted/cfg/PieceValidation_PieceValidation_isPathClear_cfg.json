@@ -1,0 +1,25 @@
+{
+  "methodName": "isPathClear",
+  "nodes": [
+    {
+      "id": "7a47f7d1-4a31-42bf-92e6-5b337113e0d7",
+      "label": "Start",
+      "type": "start",
+      "next": [
+        "08797c54-7860-43cd-bf06-1a3615dedec4"
+      ]
+    },
+    {
+      "id": "08797c54-7860-43cd-bf06-1a3615dedec4",
+      "label": "End",
+      "type": "end",
+      "next": []
+    }
+  ],
+  "edges": [
+    [
+      "7a47f7d1-4a31-42bf-92e6-5b337113e0d7",
+      "08797c54-7860-43cd-bf06-1a3615dedec4"
+    ]
+  ]
+}

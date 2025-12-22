@@ -1,0 +1,25 @@
+{
+  "methodName": "addUsrTwice",
+  "nodes": [
+    {
+      "id": "f5451c35-70a4-4cdd-8a31-05150ec40f5a",
+      "label": "Start",
+      "type": "start",
+      "next": [
+        "177af574-cf3e-4f70-afa0-ed896c80942d"
+      ]
+    },
+    {
+      "id": "177af574-cf3e-4f70-afa0-ed896c80942d",
+      "label": "End",
+      "type": "end",
+      "next": []
+    }
+  ],
+  "edges": [
+    [
+      "f5451c35-70a4-4cdd-8a31-05150ec40f5a",
+      "177af574-cf3e-4f70-afa0-ed896c80942d"
+    ]
+  ]
+}

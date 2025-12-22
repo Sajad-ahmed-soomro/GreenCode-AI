@@ -88,6 +88,13 @@ app.post("/scan", upload.single("project"), async (req, res) => {
       zip.extractAllTo(extractDir, true);
       projectPath = extractDir;
       console.log(`✅ Extracted to: ${extractDir}`);
+      
+      // Keep the original zip file AND extracted folder
+      console.log(`💾 Original zip preserved at: ${req.file.path}`);
+      console.log(`📂 Extracted folder kept at: ${extractDir}`);
+    } else {
+      // For non-zip files, keep the original file
+      console.log(`💾 File preserved at: ${projectPath}`);
     }
 
     const scanId = path.basename(projectPath);
@@ -97,20 +104,35 @@ app.post("/scan", upload.single("project"), async (req, res) => {
     console.log(`🎯 Starting analysis pipeline for: ${scanId}`);
     await runAnalysisPipeline(projectPath, scanOutputDir, res);
 
-    // Cleanup temp files
-    try {
-      if (fs.existsSync(req.file.path)) fs.unlinkSync(req.file.path);
-      if (extractDir && fs.existsSync(extractDir)) fs.rmSync(extractDir, { recursive: true, force: true });
-    } catch (cleanupError) {
-      console.warn("⚠️  Cleanup warning:", cleanupError.message);
+    // REMOVED CLEANUP - FILES ARE PRESERVED
+    console.log("\n" + "=".repeat(60));
+    console.log("✅ ANALYSIS COMPLETE - FILES PRESERVED");
+    console.log("=".repeat(60));
+    console.log(`📦 Original upload: ${req.file.path}`);
+    if (extractDir) {
+      console.log(`📁 Extracted folder: ${extractDir}`);
     }
+    console.log(`📊 Results saved to: ${scanOutputDir}`);
+    console.log("=".repeat(60) + "\n");
 
   } catch (error) {
     console.error("❌ Pipeline error:", error);
-    if (!res.headersSent) res.status(500).json({ status: "error", message: "Analysis pipeline failed", error: error.message });
+    
+    // Even on error, files are preserved for debugging
+    console.log(`🔍 Files preserved for debugging:`);
+    console.log(`   - Original: ${req.file.path}`);
+    if (extractDir) console.log(`   - Extracted: ${extractDir}`);
+    
+    if (!res.headersSent) {
+      res.status(500).json({ 
+        status: "error", 
+        message: "Analysis pipeline failed", 
+        error: error.message,
+        note: "Uploaded files preserved for debugging"
+      });
+    }
   }
 });
-
 // Run energy analyzer separately
 app.post("/energy-analyzer", async (req, res) => {
   try {

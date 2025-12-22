@@ -1,0 +1,48 @@
+{
+  "fileName": "ReportGenerator.java",
+  "sourcePath": "/Users/sajad-ahmed/Documents/semesters/Seventh-Semester/greencode-ai/GreenCode-AI/modules/gateway/uploads/75fcba01b5b2ef9adca0f1174b6bb88f_extracted/samples/ReportGenerator.java",
+  "astPath": "/Users/sajad-ahmed/Documents/semesters/Seventh-Semester/greencode-ai/GreenCode-AI/modules/gateway/output/75fcba01b5b2ef9adca0f1174b6bb88f_extracted/ast/ReportGenerator.json",
+  "agent": "optimization",
+  "results": [
+    {
+      "message": "Method 'ReportGenerator.generateReport' contains 2 loop constructs. Nested loops can be costly; consider whether a different algorithm or precomputed data structure (for example, a Map/Set) could avoid one of the loops.",
+      "severity": "medium",
+      "location": "/Users/sajad-ahmed/Documents/semesters/Seventh-Semester/greencode-ai/GreenCode-AI/modules/gateway/uploads/75fcba01b5b2ef9adca0f1174b6bb88f_extracted/samples/ReportGenerator.java"
+    },
+    {
+      "message": "Method 'ReportGenerator.generateReport' contains 2 loop constructs. Nested loops are commonly used for searching or checking duplicates; if the collections are large, consider using Sets/Maps or precomputed indexes instead of scanning in the inner loop.",
+      "severity": "medium",
+      "location": "/Users/sajad-ahmed/Documents/semesters/Seventh-Semester/greencode-ai/GreenCode-AI/modules/gateway/uploads/75fcba01b5b2ef9adca0f1174b6bb88f_extracted/samples/ReportGenerator.java"
+    },
+    {
+      "message": "Method 'ReportGenerator.sortItems' contains a loop. If the collection is large or this method is called frequently, ensure the loop body does not contain unnecessary heavy work.",
+      "severity": "low",
+      "location": "/Users/sajad-ahmed/Documents/semesters/Seventh-Semester/greencode-ai/GreenCode-AI/modules/gateway/uploads/75fcba01b5b2ef9adca0f1174b6bb88f_extracted/samples/ReportGenerator.java"
+    },
+    {
+      "message": "Method 'ReportGenerator.sortItems' contains a loop that likely performs a linear scan. If this runs over large collections or is called frequently, think about using more efficient data structures (for example, HashSet/Map) or algorithms.",
+      "severity": "low",
+      "location": "/Users/sajad-ahmed/Documents/semesters/Seventh-Semester/greencode-ai/GreenCode-AI/modules/gateway/uploads/75fcba01b5b2ef9adca0f1174b6bb88f_extracted/samples/ReportGenerator.java"
+    },
+    {
+      "message": "Method 'ReportGenerator.printLongestItem' contains a loop. If the collection is large or this method is called frequently, ensure the loop body does not contain unnecessary heavy work.",
+      "severity": "low",
+      "location": "/Users/sajad-ahmed/Documents/semesters/Seventh-Semester/greencode-ai/GreenCode-AI/modules/gateway/uploads/75fcba01b5b2ef9adca0f1174b6bb88f_extracted/samples/ReportGenerator.java"
+    },
+    {
+      "message": "Method 'ReportGenerator.printLongestItem' contains a loop that likely performs a linear scan. If this runs over large collections or is called frequently, think about using more efficient data structures (for example, HashSet/Map) or algorithms.",
+      "severity": "low",
+      "location": "/Users/sajad-ahmed/Documents/semesters/Seventh-Semester/greencode-ai/GreenCode-AI/modules/gateway/uploads/75fcba01b5b2ef9adca0f1174b6bb88f_extracted/samples/ReportGenerator.java"
+    },
+    {
+      "message": "Method 'ReportGenerator.printSummary' contains a loop. If the collection is large or this method is called frequently, ensure the loop body does not contain unnecessary heavy work.",
+      "severity": "low",
+      "location": "/Users/sajad-ahmed/Documents/semesters/Seventh-Semester/greencode-ai/GreenCode-AI/modules/gateway/uploads/75fcba01b5b2ef9adca0f1174b6bb88f_extracted/samples/ReportGenerator.java"
+    },
+    {
+      "message": "Method 'ReportGenerator.printSummary' contains a loop that likely performs a linear scan. If this runs over large collections or is called frequently, think about using more efficient data structures (for example, HashSet/Map) or algorithms.",
+      "severity": "low",
+      "location": "/Users/sajad-ahmed/Documents/semesters/Seventh-Semester/greencode-ai/GreenCode-AI/modules/gateway/uploads/75fcba01b5b2ef9adca0f1174b6bb88f_extracted/samples/ReportGenerator.java"
+    }
+  ]
+}

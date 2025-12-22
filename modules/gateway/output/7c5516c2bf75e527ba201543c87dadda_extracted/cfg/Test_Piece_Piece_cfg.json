@@ -1,0 +1,25 @@
+{
+  "methodName": "Piece",
+  "nodes": [
+    {
+      "id": "cb3c64df-97c9-409b-bf6d-34158111866e",
+      "label": "Start",
+      "type": "start",
+      "next": [
+        "da6439a9-4d64-479a-b613-53ec2fa49847"
+      ]
+    },
+    {
+      "id": "da6439a9-4d64-479a-b613-53ec2fa49847",
+      "label": "End",
+      "type": "end",
+      "next": []
+    }
+  ],
+  "edges": [
+    [
+      "cb3c64df-97c9-409b-bf6d-34158111866e",
+      "da6439a9-4d64-479a-b613-53ec2fa49847"
+    ]
+  ]
+}

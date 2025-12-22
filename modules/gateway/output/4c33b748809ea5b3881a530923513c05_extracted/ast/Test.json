@@ -1,0 +1,267 @@
+{
+  "file": "/Users/sajad-ahmed/Documents/semesters/Seventh-Semester/greencode-ai/GreenCode-AI/modules/gateway/uploads/4c33b748809ea5b3881a530923513c05_extracted/samples/Test.java",
+  "classes": [
+    {
+      "type": "Class",
+      "name": "ChessGameEngine",
+      "methods": [
+        {
+          "name": "ChessGameEngine",
+          "params": [],
+          "loops": [],
+          "conditionals": [],
+          "modifiers": [
+            "public"
+          ]
+        },
+        {
+          "name": "ChessGameEngine",
+          "params": [
+            {
+              "type": "int",
+              "name": "size"
+            }
+          ],
+          "loops": [],
+          "conditionals": [],
+          "modifiers": [
+            "public"
+          ]
+        },
+        {
+          "name": "validateQueenMove",
+          "params": [
+            {
+              "type": "int",
+              "name": "startX"
+            },
+            {
+              "type": "int",
+              "name": "startY"
+            },
+            {
+              "type": "int",
+              "name": "endX"
+            },
+            {
+              "type": "int",
+              "name": "endY"
+            }
+          ],
+          "loops": [],
+          "conditionals": [
+            "if",
+            "return"
+          ],
+          "conditionalsTree": [
+            {
+              "type": "IfStatement",
+              "thenBlock": [
+                {
+                  "type": "Statement"
+                }
+              ],
+              "elseBlock": [
+                {
+                  "type": "IfStatement",
+                  "thenBlock": [
+                    {
+                      "type": "Statement"
+                    }
+                  ],
+                  "elseBlock": null
+                }
+              ]
+            }
+          ],
+          "returnType": "boolean",
+          "modifiers": [
+            "public"
+          ]
+        },
+        {
+          "name": "validateRookMove",
+          "params": [
+            {
+              "type": "int",
+              "name": "startX"
+            },
+            {
+              "type": "int",
+              "name": "startY"
+            },
+            {
+              "type": "int",
+              "name": "endX"
+            },
+            {
+              "type": "int",
+              "name": "endY"
+            }
+          ],
+          "loops": [
+            "for"
+          ],
+          "conditionals": [
+            "if",
+            "return"
+          ],
+          "conditionalsTree": [
+            {
+              "type": "IfStatement",
+              "thenBlock": [
+                {
+                  "type": "Statement"
+                }
+              ],
+              "elseBlock": null
+            }
+          ],
+          "loopsTree": [
+            {
+              "type": "for",
+              "nested": [],
+              "depth": 0
+            }
+          ],
+          "loopNestingDepth": 1,
+          "totalLoopCount": 1,
+          "localVariables": [
+            "int steps",
+            "int i",
+            "int tempX",
+            "int tempY"
+          ],
+          "returnType": "boolean",
+          "modifiers": [
+            "public"
+          ]
+        },
+        {
+          "name": "validatePawnMove",
+          "params": [
+            {
+              "type": "int",
+              "name": "startX"
+            },
+            {
+              "type": "int",
+              "name": "startY"
+            },
+            {
+              "type": "int",
+              "name": "endX"
+            },
+            {
+              "type": "int",
+              "name": "endY"
+            },
+            {
+              "type": "boolean",
+              "name": "firstMove"
+            }
+          ],
+          "loops": [],
+          "conditionals": [
+            "if",
+            "return"
+          ],
+          "conditionalsTree": [
+            {
+              "type": "IfStatement",
+              "thenBlock": [
+                {
+                  "type": "Statement"
+                }
+              ],
+              "elseBlock": null
+            },
+            {
+              "type": "IfStatement",
+              "thenBlock": [
+                {
+                  "type": "Statement"
+                }
+              ],
+              "elseBlock": null
+            }
+          ],
+          "localVariables": [
+            "int direction"
+          ],
+          "returnType": "boolean",
+          "modifiers": [
+            "public"
+          ]
+        },
+        {
+          "name": "createPieces",
+          "params": [],
+          "loops": [],
+          "conditionals": [],
+          "localVariables": [
+            "Piece queen",
+            "Piece rook",
+            "Piece pawn"
+          ],
+          "returnType": "void",
+          "modifiers": [
+            "public"
+          ]
+        },
+        {
+          "name": "ChessGameEngine",
+          "params": [
+            {
+              "type": "String",
+              "name": "type"
+            }
+          ],
+          "loops": [],
+          "conditionals": [],
+          "modifiers": []
+        },
+        {
+          "name": "printType",
+          "params": [],
+          "loops": [],
+          "conditionals": [],
+          "returnType": "void",
+          "modifiers": []
+        }
+      ],
+      "fields": [
+        "private int boardSize;"
+      ]
+    },
+    {
+      "type": "Class",
+      "name": "Piece",
+      "methods": [
+        {
+          "name": "Piece",
+          "params": [
+            {
+              "type": "String",
+              "name": "type"
+            }
+          ],
+          "loops": [],
+          "conditionals": [],
+          "modifiers": []
+        },
+        {
+          "name": "printType",
+          "params": [],
+          "loops": [],
+          "conditionals": [],
+          "returnType": "void",
+          "modifiers": []
+        }
+      ],
+      "fields": [
+        "String type;"
+      ]
+    }
+  ]
+}

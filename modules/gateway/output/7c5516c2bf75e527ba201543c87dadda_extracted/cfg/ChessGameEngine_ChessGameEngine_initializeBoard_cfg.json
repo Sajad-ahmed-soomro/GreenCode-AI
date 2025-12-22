@@ -1,0 +1,25 @@
+{
+  "methodName": "initializeBoard",
+  "nodes": [
+    {
+      "id": "d2234675-557f-451f-838a-506637874d7b",
+      "label": "Start",
+      "type": "start",
+      "next": [
+        "1e30bd10-9cf6-4c07-9ce7-16099192ee48"
+      ]
+    },
+    {
+      "id": "1e30bd10-9cf6-4c07-9ce7-16099192ee48",
+      "label": "End",
+      "type": "end",
+      "next": []
+    }
+  ],
+  "edges": [
+    [
+      "d2234675-557f-451f-838a-506637874d7b",
+      "1e30bd10-9cf6-4c07-9ce7-16099192ee48"
+    ]
+  ]
+}

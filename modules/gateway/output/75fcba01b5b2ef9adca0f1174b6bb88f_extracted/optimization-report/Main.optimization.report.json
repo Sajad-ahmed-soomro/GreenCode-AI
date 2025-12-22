@@ -1,0 +1,18 @@
+{
+  "fileName": "Main.java",
+  "sourcePath": "/Users/sajad-ahmed/Documents/semesters/Seventh-Semester/greencode-ai/GreenCode-AI/modules/gateway/uploads/75fcba01b5b2ef9adca0f1174b6bb88f_extracted/samples/Main.java",
+  "astPath": "/Users/sajad-ahmed/Documents/semesters/Seventh-Semester/greencode-ai/GreenCode-AI/modules/gateway/output/75fcba01b5b2ef9adca0f1174b6bb88f_extracted/ast/Main.json",
+  "agent": "optimization",
+  "results": [
+    {
+      "message": "Method 'Main.main' contains 2 loop constructs. Nested loops can be costly; consider whether a different algorithm or precomputed data structure (for example, a Map/Set) could avoid one of the loops.",
+      "severity": "medium",
+      "location": "/Users/sajad-ahmed/Documents/semesters/Seventh-Semester/greencode-ai/GreenCode-AI/modules/gateway/uploads/75fcba01b5b2ef9adca0f1174b6bb88f_extracted/samples/Main.java"
+    },
+    {
+      "message": "Method 'Main.main' contains 2 loop constructs. Nested loops are commonly used for searching or checking duplicates; if the collections are large, consider using Sets/Maps or precomputed indexes instead of scanning in the inner loop.",
+      "severity": "medium",
+      "location": "/Users/sajad-ahmed/Documents/semesters/Seventh-Semester/greencode-ai/GreenCode-AI/modules/gateway/uploads/75fcba01b5b2ef9adca0f1174b6bb88f_extracted/samples/Main.java"
+    }
+  ]
+}

@@ -1,38 +1,5 @@
 #!/usr/bin/env node
 "use strict";
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    var desc = Object.getOwnPropertyDescriptor(m, k);
-    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
-      desc = { enumerable: true, get: function() { return m[k]; } };
-    }
-    Object.defineProperty(o, k2, desc);
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
-    Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-    o["default"] = v;
-});
-var __importStar = (this && this.__importStar) || (function () {
-    var ownKeys = function(o) {
-        ownKeys = Object.getOwnPropertyNames || function (o) {
-            var ar = [];
-            for (var k in o) if (Object.prototype.hasOwnProperty.call(o, k)) ar[ar.length] = k;
-            return ar;
-        };
-        return ownKeys(o);
-    };
-    return function (mod) {
-        if (mod && mod.__esModule) return mod;
-        var result = {};
-        if (mod != null) for (var k = ownKeys(mod), i = 0; i < k.length; i++) if (k[i] !== "default") __createBinding(result, mod, k[i]);
-        __setModuleDefault(result, mod);
-        return result;
-    };
-})();
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
@@ -41,21 +8,52 @@ const commander_1 = require("commander");
 const path_1 = __importDefault(require("path"));
 const fs_1 = __importDefault(require("fs"));
 const orchestrator_1 = require("../core/orchestrator");
+const benchmarkAnalyzer_1 = require("../analyzers/benchmarkAnalyzer");
 const program = new commander_1.Command();
 program.name("greencode-energy-analyze")
-    .description("Generate energy/perf reports from Java ASTs + CFGs")
-    .version("0.2.0");
+    .description("Generate energy/perf reports from Java ASTs + CFGs with optional runtime benchmarks")
+    .version("0.3.0")
+    .addHelpText('after', `
+
+EXAMPLES:
+  # Static analysis only
+  $ greencode-energy-analyze -A ./ast-files -c ./cfg-files -o ./energy-reports
+  
+  # Combined analysis with benchmarks
+  $ greencode-energy-analyze -A ./ast-files -c ./cfg-files -b ./benchmark-results.json
+  
+  # Generate per-method reports
+  $ greencode-energy-analyze -A ./ast-files -c ./cfg-files --per-method
+  
+  # Include zero-energy methods
+  $ greencode-energy-analyze -A ./ast-files -c ./cfg-files --include-zero
+
+BENCHMARK FORMAT:
+  [
+    {
+      "className": "MyClass",
+      "methodName": "myMethod",
+      "medianMs": 25.3,
+      "meanMs": 26.1,
+      "runs": 100
+    }
+  ]
+
+VIEW RESULTS:
+  $ cat energy-reports/summary-energy-report.json | jq '.statistics'
+  $ cat energy-reports/enhanced-energy-report.json | jq '.reports[] | select(.confidenceLevel == "high")'
+`);
 program
     .option("-a, --ast <path>", "Path to single AST JSON file")
     .option("-A, --ast-dir <path>", "Path to directory containing AST JSON files")
     .requiredOption("-c, --cfg <path>", "Path to a CFG JSON file OR directory")
-    .option("-b, --benchmark <path>", "Path to existing benchmark JSON file or directory")
+    .option("-b, --benchmark <path>", "Path to benchmark JSON file or directory (optional)")
     .option("-o, --out <path>", "Output directory for energy reports", "energy-reports")
     .option("--per-method", "Generate separate report for each method", false)
     .option("--per-class", "Generate separate report for each class", true)
     .option("--include-zero", "Include methods with zero energy score", false)
     .action(async (opts) => {
-    console.log("🚀 GreenCode Energy Analyzer");
+    console.log("🚀 GreenCode Energy Analyzer v0.3.0");
     console.log("=".repeat(70));
     // Handle AST inputs
     let astPaths = [];
@@ -124,30 +122,7 @@ program
     }
     console.log(`\n   ✅ Processed ${processedCount} AST files`);
     console.log(`   📊 Generated ${allReports.length} method reports`);
-    // 🔥 VALIDATION: Check for duplicates
-    const methodKeys = allReports.map(r => `${r.className}.${r.methodName}`);
-    const uniqueKeys = new Set(methodKeys);
-    const duplicateCount = methodKeys.length - uniqueKeys.size;
-    if (duplicateCount > 0) {
-        console.warn(`   ⚠️  WARNING: Detected ${duplicateCount} duplicate method reports!`);
-        console.warn(`   ℹ️  This should not happen with the fixed orchestrator.`);
-        // Show which methods are duplicated
-        const keyCount = new Map();
-        methodKeys.forEach(key => keyCount.set(key, (keyCount.get(key) || 0) + 1));
-        const duplicates = Array.from(keyCount.entries()).filter(([_, count]) => count > 1);
-        console.warn(`   📋 Duplicated methods:`);
-        duplicates.slice(0, 5).forEach(([key, count]) => {
-            console.warn(`      • ${key} (appears ${count} times)`);
-        });
-        if (duplicates.length > 5) {
-            console.warn(`      ... and ${duplicates.length - 5} more`);
-        }
-    }
-    if (allReports.length === 0) {
-        console.error("❌ No methods found to analyze");
-        process.exit(1);
-    }
-    // 🔥 FIX: Deduplicate reports by keeping the one with highest energy score
+    // Deduplicate reports
     const deduplicatedReports = [];
     const reportMap = new Map();
     for (const report of allReports) {
@@ -158,66 +133,69 @@ program
         }
     }
     deduplicatedReports.push(...reportMap.values());
+    const duplicateCount = allReports.length - deduplicatedReports.length;
     if (duplicateCount > 0) {
         console.log(`   ✅ Deduplicated: ${deduplicatedReports.length} unique methods (removed ${duplicateCount} duplicates)`);
     }
     // Filter out zero energy methods if requested
-    let finalReports = deduplicatedReports;
+    let staticReports = deduplicatedReports;
     if (!opts.includeZero) {
-        const beforeCount = finalReports.length;
-        finalReports = finalReports.filter(r => r.energyScore > 0);
-        const removedCount = beforeCount - finalReports.length;
+        const beforeCount = staticReports.length;
+        staticReports = staticReports.filter(r => r.energyScore > 0);
+        const removedCount = beforeCount - staticReports.length;
         if (removedCount > 0) {
-            console.log(`   ℹ️  Filtered out ${removedCount} methods with zero energy (use --include-zero to keep them)`);
+            console.log(`   ℹ️  Filtered out ${removedCount} methods with zero energy`);
         }
+    }
+    if (staticReports.length === 0) {
+        console.error("❌ No methods found to analyze after filtering");
+        process.exit(1);
     }
     // Create output directory
     const outputDir = path_1.default.resolve(opts.out);
     fs_1.default.mkdirSync(outputDir, { recursive: true });
     // STEP 2: Handle benchmarks (if provided)
+    let finalReports = staticReports;
+    let hasBenchmarks = false;
     let benchmarkResults = [];
     if (opts.benchmark) {
-        console.log("\n📊 STEP 2: Load Benchmarks");
+        console.log("\n📊 STEP 2: Load & Merge Benchmarks");
         console.log("-".repeat(70));
         try {
-            // Dynamically import if benchmark module exists
-            const { loadJavaBenchmarkResults, mergeStaticWithBenchmarks, saveEnhancedReport } = await Promise.resolve().then(() => __importStar(require("../analyzers/benchmarkAnalyzer")));
             const resolvedPath = path_1.default.resolve(opts.benchmark);
             console.log(`   📂 Loading from: ${resolvedPath}`);
-            benchmarkResults = loadJavaBenchmarkResults(resolvedPath);
-            console.log(`   ✅ Loaded ${benchmarkResults.length} benchmark results`);
-            // Merge with static analysis
+            benchmarkResults = (0, benchmarkAnalyzer_1.loadJavaBenchmarkResults)(resolvedPath);
+            console.log(`   ✅ Loaded ${benchmarkResults.length} benchmark results\n`);
             if (benchmarkResults.length > 0) {
-                console.log("\n   🔗 Merging static analysis with benchmark data...");
-                const enhancedReports = mergeStaticWithBenchmarks(finalReports, benchmarkResults);
-                const mergedCount = enhancedReports.filter(r => r.confidenceLevel === "high").length;
-                console.log(`   ✅ Merged ${mergedCount}/${enhancedReports.length} methods with benchmarks`);
+                const enhancedReports = (0, benchmarkAnalyzer_1.mergeStaticWithBenchmarks)(staticReports, benchmarkResults);
                 // Save enhanced report
                 const enhancedReportPath = path_1.default.join(outputDir, "enhanced-energy-report.json");
-                saveEnhancedReport(enhancedReports, enhancedReportPath, {
+                (0, benchmarkAnalyzer_1.saveEnhancedReport)(enhancedReports, enhancedReportPath, {
                     astFiles: astPaths.length,
                     cfgFiles: cfgPaths.length,
                     benchmarkResults: benchmarkResults.length,
                     deduplicationApplied: duplicateCount > 0,
                     duplicatesRemoved: duplicateCount
                 });
-                // Use enhanced reports for further processing
                 finalReports = enhancedReports;
+                hasBenchmarks = true;
             }
         }
         catch (error) {
             console.error(`   ❌ Failed to load benchmarks:`, error);
-            console.log("   ℹ️  Continuing with static analysis only...");
+            console.log("   ℹ️  Continuing with static analysis only...\n");
         }
     }
     else {
         console.log("\n📊 STEP 2: Benchmarks");
         console.log("-".repeat(70));
-        console.log("   ℹ️  No benchmarks provided - using static analysis only");
+        console.log("   ℹ️  No benchmarks provided - using static analysis only\n");
     }
     // STEP 3: Generate reports
-    console.log("\n📈 STEP 3: Generate Reports");
+    console.log("📈 STEP 3: Generate Reports");
     console.log("-".repeat(70));
+    // Helper to get the right energy score
+    const getEnergyScore = (r) => r.combinedEnergyScore ?? r.energyScore;
     // Generate per-class reports
     if (opts.perClass) {
         console.log("\n   📝 Generating per-class reports...");
@@ -230,26 +208,26 @@ program
         }
         for (const [className, classReports] of classesByName.entries()) {
             const classReportPath = path_1.default.join(outputDir, `${className}-energy-report.json`);
-            // Calculate class-level statistics
             const classStats = {
-                totalEnergy: classReports.reduce((sum, r) => sum + (r.energyScore || 0), 0),
-                avgEnergy: classReports.reduce((sum, r) => sum + (r.energyScore || 0), 0) / classReports.length,
-                maxEnergy: Math.max(...classReports.map(r => r.energyScore || 0)),
-                minEnergy: Math.min(...classReports.map(r => r.energyScore || 0)),
+                totalEnergy: classReports.reduce((sum, r) => sum + getEnergyScore(r), 0),
+                avgEnergy: classReports.reduce((sum, r) => sum + getEnergyScore(r), 0) / classReports.length,
+                maxEnergy: Math.max(...classReports.map(r => getEnergyScore(r))),
+                minEnergy: Math.min(...classReports.map(r => getEnergyScore(r))),
                 methodsWithLoops: classReports.filter(r => r.loopCount > 0).length,
                 methodsWithRecursion: classReports.filter(r => r.recursion).length,
-                highEnergyMethods: classReports.filter(r => (r.energyScore || 0) > 0.5).length
+                highEnergyMethods: classReports.filter(r => getEnergyScore(r) > 0.5).length,
+                withBenchmarks: classReports.filter((r) => r.confidenceLevel === "high").length
             };
             const classOutput = {
                 generatedAt: new Date().toISOString(),
                 className: className,
                 totalMethods: classReports.length,
-                hasBenchmarks: classReports.some((r) => r.confidenceLevel === "high"),
+                hasBenchmarks: hasBenchmarks,
                 statistics: classStats,
-                reports: classReports
+                reports: classReports.sort((a, b) => getEnergyScore(b) - getEnergyScore(a))
             };
             fs_1.default.writeFileSync(classReportPath, JSON.stringify(classOutput, null, 2));
-            console.log(`      ✓ ${className}: ${classReports.length} methods, avg energy: ${classStats.avgEnergy.toFixed(3)}`);
+            console.log(`      ✓ ${className}: ${classReports.length} methods, avg: ${classStats.avgEnergy.toFixed(3)}`);
         }
         console.log(`   ✅ Generated ${classesByName.size} class reports`);
     }
@@ -262,8 +240,6 @@ program
         }
         console.log(`   ✅ Generated ${finalReports.length} method reports`);
     }
-    // Helper functions for type-safe access
-    const getEnergyScore = (r) => r.combinedEnergyScore ?? r.energyScore;
     // Generate summary report
     const summaryReportPath = path_1.default.join(outputDir, "summary-energy-report.json");
     const energyScores = finalReports.map(r => getEnergyScore(r));
@@ -277,8 +253,11 @@ program
         totalMethods: finalReports.length,
         astFiles: astPaths.length,
         cfgFiles: cfgPaths.length,
-        hasBenchmarks: benchmarkResults.length > 0,
+        hasBenchmarks: hasBenchmarks,
         benchmarkCount: benchmarkResults.length,
+        benchmarkCoverage: hasBenchmarks
+            ? `${((finalReports.filter((r) => r.confidenceLevel === "high").length / finalReports.length) * 100).toFixed(1)}%`
+            : "0%",
         deduplicationInfo: {
             applied: duplicateCount > 0,
             duplicatesRemoved: duplicateCount,
@@ -310,12 +289,16 @@ program
                 methodsWithIO: finalReports.filter(r => r.ioCalls > 0).length,
                 methodsWithDB: finalReports.filter(r => r.dbCalls > 0).length,
                 totalIOCalls: finalReports.reduce((sum, r) => sum + r.ioCalls, 0),
-                totalDBCalls: finalReports.reduce((sum, r) => sum + r.dbCalls, 0)
+                totalDBCalls: finalReports.reduce((sum, r) => sum + (r.dbCalls || 0), 0)
             },
-            benchmarks: {
+            benchmarks: hasBenchmarks ? {
                 methodsWithBenchmarks: finalReports.filter((r) => r.confidenceLevel === "high").length,
-                methodsStaticOnly: finalReports.filter((r) => !r.confidenceLevel || r.confidenceLevel === "low").length
-            }
+                methodsStaticOnly: finalReports.filter((r) => !r.confidenceLevel || r.confidenceLevel === "low").length,
+                avgExecutionTime: finalReports.filter((r) => r.medianMs).length > 0
+                    ? finalReports.filter((r) => r.medianMs).reduce((sum, r) => sum + r.medianMs, 0) /
+                        finalReports.filter((r) => r.medianMs).length
+                    : 0
+            } : null
         },
         topEnergyConsumers: finalReports
             .sort((a, b) => getEnergyScore(b) - getEnergyScore(a))
@@ -324,9 +307,12 @@ program
             className: r.className,
             methodName: r.methodName,
             energyScore: getEnergyScore(r),
-            cpuScore: r.cpuScore,
+            staticEnergy: r.staticEnergyScore || r.energyScore,
+            runtimeEnergy: r.runtimeEnergyScore,
+            executionTime: r.medianMs,
             loopCount: r.loopCount,
-            nestingDepth: r.nestingDepth
+            nestingDepth: r.nestingDepth,
+            hasBenchmark: r.confidenceLevel === "high"
         })),
         reports: finalReports
     };
@@ -337,42 +323,55 @@ program
     console.log("✨ Analysis Complete!");
     console.log("=".repeat(70));
     console.log(`📂 Output directory: ${outputDir}`);
-    console.log(`📊 Analysis summary:`);
+    console.log(`\n📊 Analysis Summary:`);
     console.log(`   • Total methods: ${finalReports.length}`);
     console.log(`   • Classes analyzed: ${summary.totalClasses}`);
-    console.log(`   • Average energy score: ${summary.statistics.energy.average}`);
+    console.log(`   • Average energy score: ${summary.statistics.energy.average.toFixed(3)}`);
     console.log(`   • High energy methods: ${summary.statistics.distribution.highEnergy}`);
     console.log(`   • Medium energy methods: ${summary.statistics.distribution.mediumEnergy}`);
     console.log(`   • Low energy methods: ${summary.statistics.distribution.lowEnergy}`);
-    if (benchmarkResults.length > 0) {
+    if (hasBenchmarks && summary.statistics.benchmarks) {
+        console.log(`\n⏱️  Benchmark Integration:`);
         console.log(`   • Methods with benchmarks: ${summary.statistics.benchmarks.methodsWithBenchmarks}`);
+        console.log(`   • Benchmark coverage: ${summary.benchmarkCoverage}`);
+        console.log(`   • Avg execution time: ${summary.statistics.benchmarks.avgExecutionTime.toFixed(2)}ms`);
     }
     if (duplicateCount > 0) {
+        console.log(`\n🔧 Deduplication:`);
         console.log(`   • Duplicates removed: ${duplicateCount}`);
     }
-    console.log("\n📖 Reports generated:");
-    console.log(`   • summary-energy-report.json (with statistics)`);
+    console.log("\n📖 Reports Generated:");
+    console.log(`   • summary-energy-report.json (comprehensive statistics)`);
+    if (hasBenchmarks) {
+        console.log(`   • enhanced-energy-report.json (static + benchmark data)`);
+    }
     if (opts.perClass) {
         console.log(`   • *-energy-report.json (${summary.totalClasses} class reports)`);
     }
     if (opts.perMethod) {
         console.log(`   • *_*-energy.json (${finalReports.length} method reports)`);
     }
-    if (benchmarkResults.length > 0) {
-        console.log(`   • enhanced-energy-report.json (with benchmark data)`);
-    }
     // Show top energy consumers
     if (summary.topEnergyConsumers.length > 0) {
         console.log("\n🔥 Top 5 Energy Consumers:");
         summary.topEnergyConsumers.slice(0, 5).forEach((method, i) => {
+            const benchmarkInfo = method.hasBenchmark
+                ? ` | ${method.executionTime?.toFixed(2)}ms`
+                : " | no benchmark";
             console.log(`   ${i + 1}. ${method.className}.${method.methodName}`);
-            console.log(`      Energy: ${method.energyScore.toFixed(3)}, Loops: ${method.loopCount}, Nesting: ${method.nestingDepth}`);
+            console.log(`      Energy: ${method.energyScore.toFixed(3)}${benchmarkInfo}`);
         });
     }
     if (errorCount > 0) {
         console.warn(`\n⚠️  Warning: ${errorCount} files failed to process`);
     }
     console.log("\n✅ Done!");
-    console.log(`\n💡 Tip: View detailed analysis in ${outputDir}/summary-energy-report.json`);
+    console.log(`💡 Tip: View detailed analysis in ${outputDir}/summary-energy-report.json`);
+    if (hasBenchmarks) {
+        console.log(`💡 Combined results available in ${outputDir}/enhanced-energy-report.json`);
+    }
+    else {
+        console.log(`💡 Add --benchmark <path> to include runtime performance data`);
+    }
 });
 program.parse(process.argv);

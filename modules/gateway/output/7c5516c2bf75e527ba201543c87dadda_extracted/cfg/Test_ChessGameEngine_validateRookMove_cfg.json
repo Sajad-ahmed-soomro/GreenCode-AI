@@ -1,0 +1,25 @@
+{
+  "methodName": "validateRookMove",
+  "nodes": [
+    {
+      "id": "b52c20e7-eb90-4113-997e-0be9b8f62ee5",
+      "label": "Start",
+      "type": "start",
+      "next": [
+        "035e884d-766e-4a92-bb91-885220ef5ca4"
+      ]
+    },
+    {
+      "id": "035e884d-766e-4a92-bb91-885220ef5ca4",
+      "label": "End",
+      "type": "end",
+      "next": []
+    }
+  ],
+  "edges": [
+    [
+      "b52c20e7-eb90-4113-997e-0be9b8f62ee5",
+      "035e884d-766e-4a92-bb91-885220ef5ca4"
+    ]
+  ]
+}

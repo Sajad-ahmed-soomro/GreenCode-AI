@@ -1,0 +1,18 @@
+{
+  "fileName": "PieceValidation.java",
+  "sourcePath": "/Users/sajad-ahmed/Documents/semesters/Seventh-Semester/greencode-ai/GreenCode-AI/modules/gateway/uploads/4c33b748809ea5b3881a530923513c05_extracted/samples/PieceValidation.java",
+  "astPath": "/Users/sajad-ahmed/Documents/semesters/Seventh-Semester/greencode-ai/GreenCode-AI/modules/gateway/output/4c33b748809ea5b3881a530923513c05_extracted/ast/PieceValidation.json",
+  "agent": "optimization",
+  "results": [
+    {
+      "message": "Method 'PieceValidation.isPathClear' contains a loop. If the collection is large or this method is called frequently, ensure the loop body does not contain unnecessary heavy work.",
+      "severity": "low",
+      "location": "/Users/sajad-ahmed/Documents/semesters/Seventh-Semester/greencode-ai/GreenCode-AI/modules/gateway/uploads/4c33b748809ea5b3881a530923513c05_extracted/samples/PieceValidation.java"
+    },
+    {
+      "message": "Method 'PieceValidation.isPathClear' contains a loop that likely performs a linear scan. If this runs over large collections or is called frequently, think about using more efficient data structures (for example, HashSet/Map) or algorithms.",
+      "severity": "low",
+      "location": "/Users/sajad-ahmed/Documents/semesters/Seventh-Semester/greencode-ai/GreenCode-AI/modules/gateway/uploads/4c33b748809ea5b3881a530923513c05_extracted/samples/PieceValidation.java"
+    }
+  ]
+}

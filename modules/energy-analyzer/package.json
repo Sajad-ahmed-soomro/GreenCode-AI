@@ -1,19 +1,22 @@
 {
   "name": "energy-analyzer-ts",
-  "version": "0.1.0",
+  "version": "0.3.0",
   "private": true,
   "scripts": {
     "build": "tsc -p .",
     "start": "node dist/cli/cli.js",
     "dev": "ts-node-dev --respawn --transpile-only src/cli/cli.ts",
-    "analyze": "ts-node src/cli/cli.ts analyze",
+    "analyze": "ts-node src/cli/cli.ts",
     "bench": "ts-node src/cli/cli.ts bench",
     "benchmark": "ts-node src/cli/benchmark.ts",
-    "benchmark:prod": "node dist/cli/benchmark.js"
+    "benchmark:prod": "node dist/cli/benchmark.js",
+    
+    "analyze:static": "npm run build && node dist/cli/cli.js -A ./ast-files -c ./cfg-files -o ./reports",
+    "analyze:combined": "npm run build && node dist/cli/cli.js -A ./ast-files -c ./cfg-files -b ./benchmarks.json -o ./reports"
   },
   "bin": {
-    "greencode-analyze": "./dist/cli/cli.js",
-    "greencode-benchmark": "./dist/cli/benchmark.js"
+    "greencode-energy-analyze": "./dist/cli/cli.js",
+    "greencode-analyze": "./dist/cli/cli.js"
   },
   "dependencies": {
     "commander": "^11.1.0",

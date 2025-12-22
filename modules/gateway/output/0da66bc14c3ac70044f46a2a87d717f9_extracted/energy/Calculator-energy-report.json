@@ -1,0 +1,77 @@
+{
+  "generatedAt": "2025-12-22T15:33:01.560Z",
+  "className": "Calculator",
+  "totalMethods": 3,
+  "hasBenchmarks": false,
+  "statistics": {
+    "totalEnergy": 0.315,
+    "avgEnergy": 0.105,
+    "maxEnergy": 0.19,
+    "minEnergy": 0.025,
+    "methodsWithLoops": 1,
+    "methodsWithRecursion": 0,
+    "highEnergyMethods": 0,
+    "withBenchmarks": 0
+  },
+  "reports": [
+    {
+      "className": "Calculator",
+      "methodName": "sumArray",
+      "loopCount": 1,
+      "loops": [
+        "forEach"
+      ],
+      "conditionalsCount": 1,
+      "methodCalls": 0,
+      "objectCreations": 0,
+      "ioCalls": 0,
+      "dbCalls": 0,
+      "methodCallsInsideLoop": 0,
+      "recursion": false,
+      "cyclomatic": 1,
+      "nestingDepth": 1,
+      "cpuScore": 0.35,
+      "memScore": 0.05,
+      "ioScore": 0,
+      "energyScore": 0.19
+    },
+    {
+      "className": "Calculator",
+      "methodName": "checkValue",
+      "loopCount": 0,
+      "loops": [],
+      "conditionalsCount": 4,
+      "methodCalls": 0,
+      "objectCreations": 0,
+      "ioCalls": 0,
+      "dbCalls": 0,
+      "methodCallsInsideLoop": 0,
+      "recursion": false,
+      "cyclomatic": 1,
+      "nestingDepth": 1,
+      "cpuScore": 0.2,
+      "memScore": 0,
+      "ioScore": 0,
+      "energyScore": 0.1
+    },
+    {
+      "className": "Calculator",
+      "methodName": "add",
+      "loopCount": 0,
+      "loops": [],
+      "conditionalsCount": 1,
+      "methodCalls": 0,
+      "objectCreations": 0,
+      "ioCalls": 0,
+      "dbCalls": 0,
+      "methodCallsInsideLoop": 0,
+      "recursion": false,
+      "cyclomatic": 1,
+      "nestingDepth": 1,
+      "cpuScore": 0.05,
+      "memScore": 0,
+      "ioScore": 0,
+      "energyScore": 0.025
+    }
+  ]
+}

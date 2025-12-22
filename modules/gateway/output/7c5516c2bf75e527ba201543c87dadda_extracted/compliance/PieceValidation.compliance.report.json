@@ -1,0 +1,237 @@
+{
+  "agent": "JavaComplianceAgent",
+  "issues": [
+    {
+      "line": 6,
+      "type": "Formatting Issue",
+      "message": "Remove trailing spaces.",
+      "severity": "low"
+    },
+    {
+      "line": 9,
+      "type": "Formatting Issue",
+      "message": "Remove trailing spaces.",
+      "severity": "low"
+    },
+    {
+      "line": 17,
+      "type": "Formatting Issue",
+      "message": "Remove trailing spaces.",
+      "severity": "low"
+    },
+    {
+      "line": 20,
+      "type": "Formatting Issue",
+      "message": "Remove trailing spaces.",
+      "severity": "low"
+    },
+    {
+      "line": 21,
+      "type": "Formatting Issue",
+      "message": "Line is too long (limit: 120 characters).",
+      "severity": "low"
+    },
+    {
+      "line": 21,
+      "type": "Formatting Issue",
+      "message": "Line is too long (limit: 120 characters).",
+      "severity": "low"
+    },
+    {
+      "line": 25,
+      "type": "Formatting Issue",
+      "message": "Remove trailing spaces.",
+      "severity": "low"
+    },
+    {
+      "line": 30,
+      "type": "Formatting Issue",
+      "message": "Remove trailing spaces.",
+      "severity": "low"
+    },
+    {
+      "line": 32,
+      "type": "Formatting Issue",
+      "message": "Remove trailing spaces.",
+      "severity": "low"
+    },
+    {
+      "line": 33,
+      "type": "Formatting Issue",
+      "message": "Remove trailing spaces.",
+      "severity": "low"
+    },
+    {
+      "line": 34,
+      "type": "Formatting Issue",
+      "message": "Remove trailing spaces.",
+      "severity": "low"
+    },
+    {
+      "line": 38,
+      "type": "Formatting Issue",
+      "message": "Remove trailing spaces.",
+      "severity": "low"
+    },
+    {
+      "line": 46,
+      "type": "Formatting Issue",
+      "message": "Remove trailing spaces.",
+      "severity": "low"
+    },
+    {
+      "line": 49,
+      "type": "Formatting Issue",
+      "message": "Remove trailing spaces.",
+      "severity": "low"
+    },
+    {
+      "line": 55,
+      "type": "Formatting Issue",
+      "message": "Remove trailing spaces.",
+      "severity": "low"
+    },
+    {
+      "line": 58,
+      "type": "Formatting Issue",
+      "message": "Remove trailing spaces.",
+      "severity": "low"
+    },
+    {
+      "line": 63,
+      "type": "Formatting Issue",
+      "message": "Remove trailing spaces.",
+      "severity": "low"
+    },
+    {
+      "line": 66,
+      "type": "Formatting Issue",
+      "message": "Remove trailing spaces.",
+      "severity": "low"
+    },
+    {
+      "line": 72,
+      "type": "Formatting Issue",
+      "message": "Remove trailing spaces.",
+      "severity": "low"
+    },
+    {
+      "line": 75,
+      "type": "Formatting Issue",
+      "message": "Remove trailing spaces.",
+      "severity": "low"
+    },
+    {
+      "line": 85,
+      "type": "Formatting Issue",
+      "message": "Remove trailing spaces.",
+      "severity": "low"
+    },
+    {
+      "line": 90,
+      "type": "Formatting Issue",
+      "message": "Remove trailing spaces.",
+      "severity": "low"
+    }
+  ],
+  "suggestions": [
+    {
+      "line": 6,
+      "suggestion": "Remove trailing spaces on line 6."
+    },
+    {
+      "line": 9,
+      "suggestion": "Remove trailing spaces on line 9."
+    },
+    {
+      "line": 17,
+      "suggestion": "Remove trailing spaces on line 17."
+    },
+    {
+      "line": 20,
+      "suggestion": "Remove trailing spaces on line 20."
+    },
+    {
+      "line": 21,
+      "suggestion": "Split line 21 (exceeds 120 characters)."
+    },
+    {
+      "line": 25,
+      "suggestion": "Remove trailing spaces on line 25."
+    },
+    {
+      "line": 30,
+      "suggestion": "Remove trailing spaces on line 30."
+    },
+    {
+      "line": 32,
+      "suggestion": "Remove trailing spaces on line 32."
+    },
+    {
+      "line": 33,
+      "suggestion": "Remove trailing spaces on line 33."
+    },
+    {
+      "line": 34,
+      "suggestion": "Remove trailing spaces on line 34."
+    },
+    {
+      "line": 38,
+      "suggestion": "Remove trailing spaces on line 38."
+    },
+    {
+      "line": 46,
+      "suggestion": "Remove trailing spaces on line 46."
+    },
+    {
+      "line": 49,
+      "suggestion": "Remove trailing spaces on line 49."
+    },
+    {
+      "line": 55,
+      "suggestion": "Remove trailing spaces on line 55."
+    },
+    {
+      "line": 58,
+      "suggestion": "Remove trailing spaces on line 58."
+    },
+    {
+      "line": 63,
+      "suggestion": "Remove trailing spaces on line 63."
+    },
+    {
+      "line": 66,
+      "suggestion": "Remove trailing spaces on line 66."
+    },
+    {
+      "line": 72,
+      "suggestion": "Remove trailing spaces on line 72."
+    },
+    {
+      "line": 75,
+      "suggestion": "Remove trailing spaces on line 75."
+    },
+    {
+      "line": 85,
+      "suggestion": "Remove trailing spaces on line 85."
+    },
+    {
+      "line": 90,
+      "suggestion": "Remove trailing spaces on line 90."
+    }
+  ],
+  "summary": {
+    "totalIssues": 22,
+    "bySeverity": {
+      "high": 0,
+      "medium": 0,
+      "low": 22
+    },
+    "byType": {
+      "naming": 0,
+      "formatting": 22,
+      "deadCode": 0,
+      "import": 0
+    }
+  }
+}

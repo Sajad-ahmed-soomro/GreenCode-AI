@@ -1,0 +1,25 @@
+{
+  "methodName": "handleCastling",
+  "nodes": [
+    {
+      "id": "2552ff88-359e-4ff8-8780-9cbb1ba91c27",
+      "label": "Start",
+      "type": "start",
+      "next": [
+        "00024c8b-4c10-4869-947a-9edcd2c99236"
+      ]
+    },
+    {
+      "id": "00024c8b-4c10-4869-947a-9edcd2c99236",
+      "label": "End",
+      "type": "end",
+      "next": []
+    }
+  ],
+  "edges": [
+    [
+      "2552ff88-359e-4ff8-8780-9cbb1ba91c27",
+      "00024c8b-4c10-4869-947a-9edcd2c99236"
+    ]
+  ]
+}
