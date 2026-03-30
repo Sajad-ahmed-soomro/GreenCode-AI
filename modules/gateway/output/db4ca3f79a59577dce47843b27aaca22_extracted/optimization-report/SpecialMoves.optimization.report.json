@@ -1,0 +1,38 @@
+{
+  "fileName": "SpecialMoves.java",
+  "sourcePath": "/Users/sajad-ahmed/GreenCode-AI/GreenCode-AI/modules/gateway/uploads/db4ca3f79a59577dce47843b27aaca22_extracted/samples/SpecialMoves.java",
+  "astPath": "/Users/sajad-ahmed/GreenCode-AI/GreenCode-AI/modules/gateway/output/db4ca3f79a59577dce47843b27aaca22_extracted/ast/SpecialMoves.json",
+  "agent": "optimization",
+  "results": [
+    {
+      "message": "Method 'SpecialMoves.isCheckmate' contains a loop. If the collection is large or this method is called frequently, ensure the loop body does not contain unnecessary heavy work.",
+      "severity": "low",
+      "location": "/Users/sajad-ahmed/GreenCode-AI/GreenCode-AI/modules/gateway/uploads/db4ca3f79a59577dce47843b27aaca22_extracted/samples/SpecialMoves.java"
+    },
+    {
+      "message": "Method 'SpecialMoves.isCheckmate' contains a loop that likely performs a linear scan. If this runs over large collections or is called frequently, think about using more efficient data structures (for example, HashSet/Map) or algorithms.",
+      "severity": "low",
+      "location": "/Users/sajad-ahmed/GreenCode-AI/GreenCode-AI/modules/gateway/uploads/db4ca3f79a59577dce47843b27aaca22_extracted/samples/SpecialMoves.java"
+    },
+    {
+      "message": "Method 'SpecialMoves.isInCheck' contains a loop. If the collection is large or this method is called frequently, ensure the loop body does not contain unnecessary heavy work.",
+      "severity": "low",
+      "location": "/Users/sajad-ahmed/GreenCode-AI/GreenCode-AI/modules/gateway/uploads/db4ca3f79a59577dce47843b27aaca22_extracted/samples/SpecialMoves.java"
+    },
+    {
+      "message": "Method 'SpecialMoves.isInCheck' contains a loop that likely performs a linear scan. If this runs over large collections or is called frequently, think about using more efficient data structures (for example, HashSet/Map) or algorithms.",
+      "severity": "low",
+      "location": "/Users/sajad-ahmed/GreenCode-AI/GreenCode-AI/modules/gateway/uploads/db4ca3f79a59577dce47843b27aaca22_extracted/samples/SpecialMoves.java"
+    },
+    {
+      "message": "Method 'SpecialMoves.findKing' contains a loop. If the collection is large or this method is called frequently, ensure the loop body does not contain unnecessary heavy work.",
+      "severity": "low",
+      "location": "/Users/sajad-ahmed/GreenCode-AI/GreenCode-AI/modules/gateway/uploads/db4ca3f79a59577dce47843b27aaca22_extracted/samples/SpecialMoves.java"
+    },
+    {
+      "message": "Method 'SpecialMoves.findKing' contains a loop that likely performs a linear scan. If this runs over large collections or is called frequently, think about using more efficient data structures (for example, HashSet/Map) or algorithms.",
+      "severity": "low",
+      "location": "/Users/sajad-ahmed/GreenCode-AI/GreenCode-AI/modules/gateway/uploads/db4ca3f79a59577dce47843b27aaca22_extracted/samples/SpecialMoves.java"
+    }
+  ]
+}

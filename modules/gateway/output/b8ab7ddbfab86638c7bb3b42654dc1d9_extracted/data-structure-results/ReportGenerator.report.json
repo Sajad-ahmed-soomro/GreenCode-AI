@@ -1,0 +1,63 @@
+{
+  "fileName": "ReportGenerator.java",
+  "suggestions": [
+    {
+      "issueType": "BadLookup",
+      "pattern": "List.contains() used inside loop",
+      "recommendedDataStructure": "HashSet (Set)",
+      "why": "List.contains() inside a loop is O(n²). Replace List with Set for O(1) lookup.",
+      "energyImpact": "Reduces CPU cycles significantly by avoiding repeated scans.",
+      "lineNumber": 35
+    },
+    {
+      "issueType": "ManualSearch",
+      "pattern": "Manual List.get(i) search inside loop",
+      "recommendedDataStructure": "Use HashSet or HashMap",
+      "why": "Manual index scan inside loop is O(n). Using Set/Map gives O(1) lookup.",
+      "energyImpact": "Significantly reduces CPU cycles and energy consumption.",
+      "lineNumber": 55
+    },
+    {
+      "issueType": "NestedLoops",
+      "pattern": "Nested loops detected",
+      "recommendedDataStructure": "Use HashMap/HashSet for matching instead of O(n²) nested scans.",
+      "why": "Nested loops cause O(n²) complexity. Converting one list to a Map reduces time to O(n).",
+      "energyImpact": "Massive CPU & energy reduction (up to 95%).",
+      "lineNumber": 21,
+      "outerLoopStartsAt": 20
+    },
+    {
+      "issueType": "BigListNeverIndexed",
+      "pattern": "items declared as List but only used in foreach",
+      "recommendedDataStructure": "Use HashSet instead of List",
+      "why": "List indexing ability is wasted when never used; Set is faster & lighter.",
+      "energyImpact": "Lower memory footprint and O(1) lookups.",
+      "variable": "items",
+      "declaredAt": 6
+    },
+    {
+      "issueType": "ListAsDictionary",
+      "pattern": "List used as dictionary (list.get(key))",
+      "recommendedDataStructure": "Use HashMap<Key, Value>",
+      "why": "List.get(keyName) implies key-value usage, but lists have no keys. Use a Map instead.",
+      "energyImpact": "Avoids scanning and wrong access patterns.",
+      "lineNumber": 12
+    },
+    {
+      "issueType": "ListAsDictionary",
+      "pattern": "List used as dictionary (list.get(key))",
+      "recommendedDataStructure": "Use HashMap<Key, Value>",
+      "why": "List.get(keyName) implies key-value usage, but lists have no keys. Use a Map instead.",
+      "energyImpact": "Avoids scanning and wrong access patterns.",
+      "lineNumber": 21
+    },
+    {
+      "issueType": "ListAsDictionary",
+      "pattern": "List used as dictionary (list.get(key))",
+      "recommendedDataStructure": "Use HashMap<Key, Value>",
+      "why": "List.get(keyName) implies key-value usage, but lists have no keys. Use a Map instead.",
+      "energyImpact": "Avoids scanning and wrong access patterns.",
+      "lineNumber": 55
+    }
+  ]
+}

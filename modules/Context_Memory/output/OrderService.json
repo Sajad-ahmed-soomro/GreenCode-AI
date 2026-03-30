@@ -1,0 +1,45 @@
+{
+  "OrderService": {
+    "placeOrder": {
+      "visibility": "public",
+      "static": false,
+      "calls": {
+        "OrderService.validate": 1,
+        "OrderService.saveOrder": 1
+      },
+      "calledBy": {
+        "MainApp.main": 2
+      },
+      "risk": "high"
+    },
+    "validate": {
+      "visibility": "private",
+      "static": false,
+      "calls": {
+        "OrderService.checkStock": 1
+      },
+      "calledBy": {
+        "OrderService.placeOrder": 1
+      },
+      "risk": "low"
+    },
+    "saveOrder": {
+      "visibility": "private",
+      "static": false,
+      "calls": {},
+      "calledBy": {
+        "OrderService.placeOrder": 1
+      },
+      "risk": "low"
+    },
+    "checkStock": {
+      "visibility": "private",
+      "static": false,
+      "calls": {},
+      "calledBy": {
+        "OrderService.validate": 1
+      },
+      "risk": "low"
+    }
+  }
+}

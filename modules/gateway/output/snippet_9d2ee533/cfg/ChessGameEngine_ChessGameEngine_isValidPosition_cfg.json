@@ -1,0 +1,25 @@
+{
+  "methodName": "isValidPosition",
+  "nodes": [
+    {
+      "id": "a70ca191-4eae-4628-9815-75e467ce07cb",
+      "label": "Start",
+      "type": "start",
+      "next": [
+        "6b333c4f-8ffa-4025-a023-fb32c9a633f0"
+      ]
+    },
+    {
+      "id": "6b333c4f-8ffa-4025-a023-fb32c9a633f0",
+      "label": "End",
+      "type": "end",
+      "next": []
+    }
+  ],
+  "edges": [
+    [
+      "a70ca191-4eae-4628-9815-75e467ce07cb",
+      "6b333c4f-8ffa-4025-a023-fb32c9a633f0"
+    ]
+  ]
+}

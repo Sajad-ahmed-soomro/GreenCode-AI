@@ -1,0 +1,37 @@
+{
+  "fileName": "Main.java",
+  "suggestions": [
+    {
+      "issueType": "ManualSearch",
+      "pattern": "Manual List.get(i) search inside loop",
+      "recommendedDataStructure": "Use HashSet or HashMap",
+      "why": "Manual index scan inside loop is O(n). Using Set/Map gives O(1) lookup.",
+      "energyImpact": "Significantly reduces CPU cycles and energy consumption.",
+      "lineNumber": 400
+    },
+    {
+      "issueType": "ManualCounting",
+      "pattern": "count++ pattern inside loop",
+      "recommendedDataStructure": "Use HashMap<Key, Count> instead",
+      "why": "Manual counting inside loops becomes expensive. HashMap aggregates in O(1).",
+      "energyImpact": "Better CPU use by avoiding repeated conditional increments.",
+      "lineNumber": 109
+    },
+    {
+      "issueType": "ManualCounting",
+      "pattern": "count++ pattern inside loop",
+      "recommendedDataStructure": "Use HashMap<Key, Count> instead",
+      "why": "Manual counting inside loops becomes expensive. HashMap aggregates in O(1).",
+      "energyImpact": "Better CPU use by avoiding repeated conditional increments.",
+      "lineNumber": 412
+    },
+    {
+      "issueType": "ListAsDictionary",
+      "pattern": "List used as dictionary (list.get(key))",
+      "recommendedDataStructure": "Use HashMap<Key, Value>",
+      "why": "List.get(keyName) implies key-value usage, but lists have no keys. Use a Map instead.",
+      "energyImpact": "Avoids scanning and wrong access patterns.",
+      "lineNumber": 400
+    }
+  ]
+}

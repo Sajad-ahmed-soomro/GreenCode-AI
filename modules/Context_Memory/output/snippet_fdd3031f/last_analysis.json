@@ -1,0 +1,45 @@
+{
+  "issues": [
+    {
+      "id": "maint_snippet_fdd3031f_Calculator.java_add_4b168891",
+      "filePath": "Calculator.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": " Low comment coverage. Add documentation or inline comments.",
+      "explanation": "Method Calculator.add score: 85",
+      "recommendation": " Low comment coverage. Add documentation or inline comments.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "snippet_fdd3031f"
+      }
+    },
+    {
+      "id": "maint_snippet_fdd3031f_Calculator.java_square_a606a6c2",
+      "filePath": "Calculator.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": " Low comment coverage. Add documentation or inline comments.",
+      "explanation": "Method Calculator.square score: 85",
+      "recommendation": " Low comment coverage. Add documentation or inline comments.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "snippet_fdd3031f"
+      }
+    }
+  ],
+  "scanId": "snippet_fdd3031f",
+  "timestamp": "2026-02-08T09:42:28.690Z",
+  "storedAt": "2026-02-08T09:42:28.690Z"
+}

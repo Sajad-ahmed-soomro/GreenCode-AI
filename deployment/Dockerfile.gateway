@@ -1,0 +1,20 @@
+# Build from repo root: docker build -f deployment/Dockerfile.gateway -t greencode-gateway .
+FROM node:20-alpine
+WORKDIR /app
+COPY package.json package-lock.json ./
+COPY modules/gateway ./modules/gateway
+COPY modules/static-analyzer ./modules/static-analyzer
+COPY modules/Multi_Agent ./modules/Multi_Agent
+COPY modules/energy-analyzer ./modules/energy-analyzer
+COPY modules/Context_Memory ./modules/Context_Memory
+COPY modules/refactoring-engine ./modules/refactoring-engine
+COPY orchestrator ./orchestrator
+COPY integrations ./integrations
+COPY shared ./shared
+
+RUN cd modules/gateway && npm install
+RUN cd modules/static-analyzer && npm install && npm run build
+WORKDIR /app/modules/gateway
+EXPOSE 5400
+ENV PORT=5400
+CMD ["node", "server.js"]

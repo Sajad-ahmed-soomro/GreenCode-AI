@@ -1,0 +1,3300 @@
+{
+  "issues": [
+    {
+      "id": "ds_db4ca3f79a59577dce47843b27aaca22_extracted_ChessGameEngine.java_0_ab2145d6",
+      "filePath": "ChessGameEngine.java",
+      "line": 24,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Manual arr[i] search inside loop",
+      "explanation": "Manual scanning inside loop is slow (O(n)). Hashed lookup is O(1).",
+      "recommendation": "Use Set or Map depending on logic",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "Use Set or Map depending on logic"
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_db4ca3f79a59577dce47843b27aaca22_extracted_ChessGameEngine.java_1_a52fdc62",
+      "filePath": "ChessGameEngine.java",
+      "line": 116,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Manual arr[i] search inside loop",
+      "explanation": "Manual scanning inside loop is slow (O(n)). Hashed lookup is O(1).",
+      "recommendation": "Use Set or Map depending on logic",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "Use Set or Map depending on logic"
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_db4ca3f79a59577dce47843b27aaca22_extracted_ChessGameEngine.java_2_6e0fe535",
+      "filePath": "ChessGameEngine.java",
+      "line": 118,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Manual arr[i] search inside loop",
+      "explanation": "Manual scanning inside loop is slow (O(n)). Hashed lookup is O(1).",
+      "recommendation": "Use Set or Map depending on logic",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "Use Set or Map depending on logic"
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_db4ca3f79a59577dce47843b27aaca22_extracted_ChessGameEngine.java_3_d87d85d9",
+      "filePath": "ChessGameEngine.java",
+      "line": 176,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Manual arr[i] search inside loop",
+      "explanation": "Manual scanning inside loop is slow (O(n)). Hashed lookup is O(1).",
+      "recommendation": "Use Set or Map depending on logic",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "Use Set or Map depending on logic"
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_db4ca3f79a59577dce47843b27aaca22_extracted_ChessGameEngine.java_4_ef86199b",
+      "filePath": "ChessGameEngine.java",
+      "line": 115,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Nested loops detected",
+      "explanation": "Nested loops cause O(n²) complexity. Converting one list to a Map reduces time to O(n).",
+      "recommendation": "Use HashMap/HashSet for matching instead of O(n²) nested scans.",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "Use HashMap/HashSet for matching instead of O(n²) nested scans."
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_db4ca3f79a59577dce47843b27aaca22_extracted_ChessGameEngine.java_5_bbb03c47",
+      "filePath": "ChessGameEngine.java",
+      "line": 175,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Nested loops detected",
+      "explanation": "Nested loops cause O(n²) complexity. Converting one list to a Map reduces time to O(n).",
+      "recommendation": "Use HashMap/HashSet for matching instead of O(n²) nested scans.",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "Use HashMap/HashSet for matching instead of O(n²) nested scans."
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_db4ca3f79a59577dce47843b27aaca22_extracted_ChessGameEngine.java_6_b524e9ec",
+      "filePath": "ChessGameEngine.java",
+      "line": 24,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Array used as dictionary with string key",
+      "explanation": "Arrays only support numeric indexing. Using them like maps is incorrect.",
+      "recommendation": "HashMap or TreeMap",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "HashMap or TreeMap"
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_db4ca3f79a59577dce47843b27aaca22_extracted_ChessGameEngine.java_7_4de9c720",
+      "filePath": "ChessGameEngine.java",
+      "line": 37,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Array used as dictionary with string key",
+      "explanation": "Arrays only support numeric indexing. Using them like maps is incorrect.",
+      "recommendation": "HashMap or TreeMap",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "HashMap or TreeMap"
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_db4ca3f79a59577dce47843b27aaca22_extracted_ChessGameEngine.java_8_363dc3cf",
+      "filePath": "ChessGameEngine.java",
+      "line": 38,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Array used as dictionary with string key",
+      "explanation": "Arrays only support numeric indexing. Using them like maps is incorrect.",
+      "recommendation": "HashMap or TreeMap",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "HashMap or TreeMap"
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_db4ca3f79a59577dce47843b27aaca22_extracted_ChessGameEngine.java_9_ba75a8fd",
+      "filePath": "ChessGameEngine.java",
+      "line": 41,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Array used as dictionary with string key",
+      "explanation": "Arrays only support numeric indexing. Using them like maps is incorrect.",
+      "recommendation": "HashMap or TreeMap",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "HashMap or TreeMap"
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_db4ca3f79a59577dce47843b27aaca22_extracted_ChessGameEngine.java_10_807f1fbe",
+      "filePath": "ChessGameEngine.java",
+      "line": 42,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Array used as dictionary with string key",
+      "explanation": "Arrays only support numeric indexing. Using them like maps is incorrect.",
+      "recommendation": "HashMap or TreeMap",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "HashMap or TreeMap"
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_db4ca3f79a59577dce47843b27aaca22_extracted_ChessGameEngine.java_11_19a5d5f2",
+      "filePath": "ChessGameEngine.java",
+      "line": 50,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Array used as dictionary with string key",
+      "explanation": "Arrays only support numeric indexing. Using them like maps is incorrect.",
+      "recommendation": "HashMap or TreeMap",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "HashMap or TreeMap"
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_db4ca3f79a59577dce47843b27aaca22_extracted_ChessGameEngine.java_12_57512b44",
+      "filePath": "ChessGameEngine.java",
+      "line": 51,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Array used as dictionary with string key",
+      "explanation": "Arrays only support numeric indexing. Using them like maps is incorrect.",
+      "recommendation": "HashMap or TreeMap",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "HashMap or TreeMap"
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_db4ca3f79a59577dce47843b27aaca22_extracted_ChessGameEngine.java_13_c96c808d",
+      "filePath": "ChessGameEngine.java",
+      "line": 66,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Array used as dictionary with string key",
+      "explanation": "Arrays only support numeric indexing. Using them like maps is incorrect.",
+      "recommendation": "HashMap or TreeMap",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "HashMap or TreeMap"
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_db4ca3f79a59577dce47843b27aaca22_extracted_ChessGameEngine.java_14_2f30f5c5",
+      "filePath": "ChessGameEngine.java",
+      "line": 103,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Array used as dictionary with string key",
+      "explanation": "Arrays only support numeric indexing. Using them like maps is incorrect.",
+      "recommendation": "HashMap or TreeMap",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "HashMap or TreeMap"
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_db4ca3f79a59577dce47843b27aaca22_extracted_ChessGameEngine.java_15_5611ce3f",
+      "filePath": "ChessGameEngine.java",
+      "line": 116,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Array used as dictionary with string key",
+      "explanation": "Arrays only support numeric indexing. Using them like maps is incorrect.",
+      "recommendation": "HashMap or TreeMap",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "HashMap or TreeMap"
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_db4ca3f79a59577dce47843b27aaca22_extracted_ChessGameEngine.java_16_d2415f52",
+      "filePath": "ChessGameEngine.java",
+      "line": 176,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Array used as dictionary with string key",
+      "explanation": "Arrays only support numeric indexing. Using them like maps is incorrect.",
+      "recommendation": "HashMap or TreeMap",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "HashMap or TreeMap"
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_db4ca3f79a59577dce47843b27aaca22_extracted_Main.java_0_d227729d",
+      "filePath": "Main.java",
+      "line": 24,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Manual List.get(i) search inside loop",
+      "explanation": "Manual index scan inside loop is O(n). Using Set/Map gives O(1) lookup.",
+      "recommendation": "Use HashSet or HashMap",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "Use HashSet or HashMap"
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_db4ca3f79a59577dce47843b27aaca22_extracted_Main.java_1_3cb68b97",
+      "filePath": "Main.java",
+      "line": 25,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Manual List.get(i) search inside loop",
+      "explanation": "Manual index scan inside loop is O(n). Using Set/Map gives O(1) lookup.",
+      "recommendation": "Use HashSet or HashMap",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "Use HashSet or HashMap"
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_db4ca3f79a59577dce47843b27aaca22_extracted_Main.java_2_89cad9bb",
+      "filePath": "Main.java",
+      "line": 23,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Nested loops detected",
+      "explanation": "Nested loops cause O(n²) complexity. Converting one list to a Map reduces time to O(n).",
+      "recommendation": "Use HashMap/HashSet for matching instead of O(n²) nested scans.",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "Use HashMap/HashSet for matching instead of O(n²) nested scans."
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_db4ca3f79a59577dce47843b27aaca22_extracted_Main.java_3_15501656",
+      "filePath": "Main.java",
+      "line": 24,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "List used as dictionary (list.get(key))",
+      "explanation": "List.get(keyName) implies key-value usage, but lists have no keys. Use a Map instead.",
+      "recommendation": "Use HashMap<Key, Value>",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "Use HashMap<Key, Value>"
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_db4ca3f79a59577dce47843b27aaca22_extracted_Main.java_4_c9c86322",
+      "filePath": "Main.java",
+      "line": 25,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "List used as dictionary (list.get(key))",
+      "explanation": "List.get(keyName) implies key-value usage, but lists have no keys. Use a Map instead.",
+      "recommendation": "Use HashMap<Key, Value>",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "Use HashMap<Key, Value>"
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_db4ca3f79a59577dce47843b27aaca22_extracted_Main.java_5_d2cc09e3",
+      "filePath": "Main.java",
+      "line": 11,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Temporary list created and used once",
+      "explanation": "Creating large temporary lists wastes memory and CPU. Use streaming or process directly.",
+      "recommendation": "Stream / direct processing",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "Stream / direct processing"
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_db4ca3f79a59577dce47843b27aaca22_extracted_ReportGenerator.java_0_988fd29e",
+      "filePath": "ReportGenerator.java",
+      "line": 35,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "List.contains() used inside loop",
+      "explanation": "List.contains() inside a loop is O(n²). Replace List with Set for O(1) lookup.",
+      "recommendation": "HashSet (Set)",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "HashSet (Set)"
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_db4ca3f79a59577dce47843b27aaca22_extracted_ReportGenerator.java_1_e19aa0df",
+      "filePath": "ReportGenerator.java",
+      "line": 55,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Manual List.get(i) search inside loop",
+      "explanation": "Manual index scan inside loop is O(n). Using Set/Map gives O(1) lookup.",
+      "recommendation": "Use HashSet or HashMap",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "Use HashSet or HashMap"
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_db4ca3f79a59577dce47843b27aaca22_extracted_ReportGenerator.java_2_6dd0a362",
+      "filePath": "ReportGenerator.java",
+      "line": 21,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Nested loops detected",
+      "explanation": "Nested loops cause O(n²) complexity. Converting one list to a Map reduces time to O(n).",
+      "recommendation": "Use HashMap/HashSet for matching instead of O(n²) nested scans.",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "Use HashMap/HashSet for matching instead of O(n²) nested scans."
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_db4ca3f79a59577dce47843b27aaca22_extracted_ReportGenerator.java_3_51ffb793",
+      "filePath": "ReportGenerator.java",
+      "line": 0,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "items declared as List but only used in foreach",
+      "explanation": "List indexing ability is wasted when never used; Set is faster & lighter.",
+      "recommendation": "Use HashSet instead of List",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "Use HashSet instead of List"
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_db4ca3f79a59577dce47843b27aaca22_extracted_ReportGenerator.java_4_61a0137b",
+      "filePath": "ReportGenerator.java",
+      "line": 12,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "List used as dictionary (list.get(key))",
+      "explanation": "List.get(keyName) implies key-value usage, but lists have no keys. Use a Map instead.",
+      "recommendation": "Use HashMap<Key, Value>",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "Use HashMap<Key, Value>"
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_db4ca3f79a59577dce47843b27aaca22_extracted_ReportGenerator.java_5_aca59996",
+      "filePath": "ReportGenerator.java",
+      "line": 21,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "List used as dictionary (list.get(key))",
+      "explanation": "List.get(keyName) implies key-value usage, but lists have no keys. Use a Map instead.",
+      "recommendation": "Use HashMap<Key, Value>",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "Use HashMap<Key, Value>"
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_db4ca3f79a59577dce47843b27aaca22_extracted_ReportGenerator.java_6_4929382c",
+      "filePath": "ReportGenerator.java",
+      "line": 55,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "List used as dictionary (list.get(key))",
+      "explanation": "List.get(keyName) implies key-value usage, but lists have no keys. Use a Map instead.",
+      "recommendation": "Use HashMap<Key, Value>",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "Use HashMap<Key, Value>"
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_db4ca3f79a59577dce47843b27aaca22_extracted_SpecialMoves.java_0_45a96a5e",
+      "filePath": "SpecialMoves.java",
+      "line": 35,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Manual arr[i] search inside loop",
+      "explanation": "Manual scanning inside loop is slow (O(n)). Hashed lookup is O(1).",
+      "recommendation": "Use Set or Map depending on logic",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "Use Set or Map depending on logic"
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_db4ca3f79a59577dce47843b27aaca22_extracted_SpecialMoves.java_1_7d000889",
+      "filePath": "SpecialMoves.java",
+      "line": 49,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Manual arr[i] search inside loop",
+      "explanation": "Manual scanning inside loop is slow (O(n)). Hashed lookup is O(1).",
+      "recommendation": "Use Set or Map depending on logic",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "Use Set or Map depending on logic"
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_db4ca3f79a59577dce47843b27aaca22_extracted_SpecialMoves.java_2_4543cc6a",
+      "filePath": "SpecialMoves.java",
+      "line": 50,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Manual arr[i] search inside loop",
+      "explanation": "Manual scanning inside loop is slow (O(n)). Hashed lookup is O(1).",
+      "recommendation": "Use Set or Map depending on logic",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "Use Set or Map depending on logic"
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_db4ca3f79a59577dce47843b27aaca22_extracted_SpecialMoves.java_3_277c95a6",
+      "filePath": "SpecialMoves.java",
+      "line": 51,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Manual arr[i] search inside loop",
+      "explanation": "Manual scanning inside loop is slow (O(n)). Hashed lookup is O(1).",
+      "recommendation": "Use Set or Map depending on logic",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "Use Set or Map depending on logic"
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_db4ca3f79a59577dce47843b27aaca22_extracted_SpecialMoves.java_4_fedef861",
+      "filePath": "SpecialMoves.java",
+      "line": 57,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Manual arr[i] search inside loop",
+      "explanation": "Manual scanning inside loop is slow (O(n)). Hashed lookup is O(1).",
+      "recommendation": "Use Set or Map depending on logic",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "Use Set or Map depending on logic"
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_db4ca3f79a59577dce47843b27aaca22_extracted_SpecialMoves.java_5_34ebd29e",
+      "filePath": "SpecialMoves.java",
+      "line": 58,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Manual arr[i] search inside loop",
+      "explanation": "Manual scanning inside loop is slow (O(n)). Hashed lookup is O(1).",
+      "recommendation": "Use Set or Map depending on logic",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "Use Set or Map depending on logic"
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_db4ca3f79a59577dce47843b27aaca22_extracted_SpecialMoves.java_6_c79cb2e5",
+      "filePath": "SpecialMoves.java",
+      "line": 79,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Manual arr[i] search inside loop",
+      "explanation": "Manual scanning inside loop is slow (O(n)). Hashed lookup is O(1).",
+      "recommendation": "Use Set or Map depending on logic",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "Use Set or Map depending on logic"
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_db4ca3f79a59577dce47843b27aaca22_extracted_SpecialMoves.java_7_f4832119",
+      "filePath": "SpecialMoves.java",
+      "line": 81,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Manual arr[i] search inside loop",
+      "explanation": "Manual scanning inside loop is slow (O(n)). Hashed lookup is O(1).",
+      "recommendation": "Use Set or Map depending on logic",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "Use Set or Map depending on logic"
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_db4ca3f79a59577dce47843b27aaca22_extracted_SpecialMoves.java_8_d66779f3",
+      "filePath": "SpecialMoves.java",
+      "line": 107,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Manual arr[i] search inside loop",
+      "explanation": "Manual scanning inside loop is slow (O(n)). Hashed lookup is O(1).",
+      "recommendation": "Use Set or Map depending on logic",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "Use Set or Map depending on logic"
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_db4ca3f79a59577dce47843b27aaca22_extracted_SpecialMoves.java_9_c56e500c",
+      "filePath": "SpecialMoves.java",
+      "line": 34,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Nested loops detected",
+      "explanation": "Nested loops cause O(n²) complexity. Converting one list to a Map reduces time to O(n).",
+      "recommendation": "Use HashMap/HashSet for matching instead of O(n²) nested scans.",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "Use HashMap/HashSet for matching instead of O(n²) nested scans."
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_db4ca3f79a59577dce47843b27aaca22_extracted_SpecialMoves.java_10_249942f6",
+      "filePath": "SpecialMoves.java",
+      "line": 41,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Nested loops detected",
+      "explanation": "Nested loops cause O(n²) complexity. Converting one list to a Map reduces time to O(n).",
+      "recommendation": "Use HashMap/HashSet for matching instead of O(n²) nested scans.",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "Use HashMap/HashSet for matching instead of O(n²) nested scans."
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_db4ca3f79a59577dce47843b27aaca22_extracted_SpecialMoves.java_11_0db35c67",
+      "filePath": "SpecialMoves.java",
+      "line": 42,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Nested loops detected",
+      "explanation": "Nested loops cause O(n²) complexity. Converting one list to a Map reduces time to O(n).",
+      "recommendation": "Use HashMap/HashSet for matching instead of O(n²) nested scans.",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "Use HashMap/HashSet for matching instead of O(n²) nested scans."
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_db4ca3f79a59577dce47843b27aaca22_extracted_SpecialMoves.java_12_cfe3bad5",
+      "filePath": "SpecialMoves.java",
+      "line": 78,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Nested loops detected",
+      "explanation": "Nested loops cause O(n²) complexity. Converting one list to a Map reduces time to O(n).",
+      "recommendation": "Use HashMap/HashSet for matching instead of O(n²) nested scans.",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "Use HashMap/HashSet for matching instead of O(n²) nested scans."
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_db4ca3f79a59577dce47843b27aaca22_extracted_SpecialMoves.java_13_0f97963b",
+      "filePath": "SpecialMoves.java",
+      "line": 106,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Nested loops detected",
+      "explanation": "Nested loops cause O(n²) complexity. Converting one list to a Map reduces time to O(n).",
+      "recommendation": "Use HashMap/HashSet for matching instead of O(n²) nested scans.",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "Use HashMap/HashSet for matching instead of O(n²) nested scans."
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_db4ca3f79a59577dce47843b27aaca22_extracted_SpecialMoves.java_14_87b62652",
+      "filePath": "SpecialMoves.java",
+      "line": 9,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Array used as dictionary with string key",
+      "explanation": "Arrays only support numeric indexing. Using them like maps is incorrect.",
+      "recommendation": "HashMap or TreeMap",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "HashMap or TreeMap"
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_db4ca3f79a59577dce47843b27aaca22_extracted_SpecialMoves.java_15_97762882",
+      "filePath": "SpecialMoves.java",
+      "line": 11,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Array used as dictionary with string key",
+      "explanation": "Arrays only support numeric indexing. Using them like maps is incorrect.",
+      "recommendation": "HashMap or TreeMap",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "HashMap or TreeMap"
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_db4ca3f79a59577dce47843b27aaca22_extracted_SpecialMoves.java_16_87f40a8a",
+      "filePath": "SpecialMoves.java",
+      "line": 12,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Array used as dictionary with string key",
+      "explanation": "Arrays only support numeric indexing. Using them like maps is incorrect.",
+      "recommendation": "HashMap or TreeMap",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "HashMap or TreeMap"
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_db4ca3f79a59577dce47843b27aaca22_extracted_SpecialMoves.java_17_9ff009e0",
+      "filePath": "SpecialMoves.java",
+      "line": 17,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Array used as dictionary with string key",
+      "explanation": "Arrays only support numeric indexing. Using them like maps is incorrect.",
+      "recommendation": "HashMap or TreeMap",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "HashMap or TreeMap"
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_db4ca3f79a59577dce47843b27aaca22_extracted_SpecialMoves.java_18_9362b509",
+      "filePath": "SpecialMoves.java",
+      "line": 18,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Array used as dictionary with string key",
+      "explanation": "Arrays only support numeric indexing. Using them like maps is incorrect.",
+      "recommendation": "HashMap or TreeMap",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "HashMap or TreeMap"
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_db4ca3f79a59577dce47843b27aaca22_extracted_SpecialMoves.java_19_a242dede",
+      "filePath": "SpecialMoves.java",
+      "line": 23,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Array used as dictionary with string key",
+      "explanation": "Arrays only support numeric indexing. Using them like maps is incorrect.",
+      "recommendation": "HashMap or TreeMap",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "HashMap or TreeMap"
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_db4ca3f79a59577dce47843b27aaca22_extracted_SpecialMoves.java_20_d5164c06",
+      "filePath": "SpecialMoves.java",
+      "line": 35,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Array used as dictionary with string key",
+      "explanation": "Arrays only support numeric indexing. Using them like maps is incorrect.",
+      "recommendation": "HashMap or TreeMap",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "HashMap or TreeMap"
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_db4ca3f79a59577dce47843b27aaca22_extracted_SpecialMoves.java_21_860af480",
+      "filePath": "SpecialMoves.java",
+      "line": 49,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Array used as dictionary with string key",
+      "explanation": "Arrays only support numeric indexing. Using them like maps is incorrect.",
+      "recommendation": "HashMap or TreeMap",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "HashMap or TreeMap"
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_db4ca3f79a59577dce47843b27aaca22_extracted_SpecialMoves.java_22_bf6ec7c4",
+      "filePath": "SpecialMoves.java",
+      "line": 50,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Array used as dictionary with string key",
+      "explanation": "Arrays only support numeric indexing. Using them like maps is incorrect.",
+      "recommendation": "HashMap or TreeMap",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "HashMap or TreeMap"
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_db4ca3f79a59577dce47843b27aaca22_extracted_SpecialMoves.java_23_25f491de",
+      "filePath": "SpecialMoves.java",
+      "line": 51,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Array used as dictionary with string key",
+      "explanation": "Arrays only support numeric indexing. Using them like maps is incorrect.",
+      "recommendation": "HashMap or TreeMap",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "HashMap or TreeMap"
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_db4ca3f79a59577dce47843b27aaca22_extracted_SpecialMoves.java_24_1b649ddd",
+      "filePath": "SpecialMoves.java",
+      "line": 57,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Array used as dictionary with string key",
+      "explanation": "Arrays only support numeric indexing. Using them like maps is incorrect.",
+      "recommendation": "HashMap or TreeMap",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "HashMap or TreeMap"
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_db4ca3f79a59577dce47843b27aaca22_extracted_SpecialMoves.java_25_3620fae6",
+      "filePath": "SpecialMoves.java",
+      "line": 58,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Array used as dictionary with string key",
+      "explanation": "Arrays only support numeric indexing. Using them like maps is incorrect.",
+      "recommendation": "HashMap or TreeMap",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "HashMap or TreeMap"
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_db4ca3f79a59577dce47843b27aaca22_extracted_SpecialMoves.java_26_2199ca85",
+      "filePath": "SpecialMoves.java",
+      "line": 79,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Array used as dictionary with string key",
+      "explanation": "Arrays only support numeric indexing. Using them like maps is incorrect.",
+      "recommendation": "HashMap or TreeMap",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "HashMap or TreeMap"
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_db4ca3f79a59577dce47843b27aaca22_extracted_SpecialMoves.java_27_7efdb9ef",
+      "filePath": "SpecialMoves.java",
+      "line": 91,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Array used as dictionary with string key",
+      "explanation": "Arrays only support numeric indexing. Using them like maps is incorrect.",
+      "recommendation": "HashMap or TreeMap",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "HashMap or TreeMap"
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_db4ca3f79a59577dce47843b27aaca22_extracted_SpecialMoves.java_28_6967e8ea",
+      "filePath": "SpecialMoves.java",
+      "line": 107,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Array used as dictionary with string key",
+      "explanation": "Arrays only support numeric indexing. Using them like maps is incorrect.",
+      "recommendation": "HashMap or TreeMap",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "HashMap or TreeMap"
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_db4ca3f79a59577dce47843b27aaca22_extracted_UserServices.java_0_99fa8413",
+      "filePath": "UserServices.java",
+      "line": 18,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "List used as dictionary (list.get(key))",
+      "explanation": "List.get(keyName) implies key-value usage, but lists have no keys. Use a Map instead.",
+      "recommendation": "Use HashMap<Key, Value>",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "Use HashMap<Key, Value>"
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "comp_db4ca3f79a59577dce47843b27aaca22_extracted_Calculator.java_0_0baec581",
+      "filePath": "Calculator.java",
+      "line": 1,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "medium",
+      "confidence": 0.9,
+      "description": "Method name should be in camelCase.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "comp_db4ca3f79a59577dce47843b27aaca22_extracted_Calculator.java_1_a04a6448",
+      "filePath": "Calculator.java",
+      "line": 1,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "medium",
+      "confidence": 0.9,
+      "description": "Method name should be in camelCase.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "comp_db4ca3f79a59577dce47843b27aaca22_extracted_ChessGameEngine.java_0_7abd00de",
+      "filePath": "ChessGameEngine.java",
+      "line": 3,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "medium",
+      "confidence": 0.9,
+      "description": "Method name should be in camelCase.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "comp_db4ca3f79a59577dce47843b27aaca22_extracted_ChessGameEngine.java_1_44355454",
+      "filePath": "ChessGameEngine.java",
+      "line": 8,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "comp_db4ca3f79a59577dce47843b27aaca22_extracted_ChessGameEngine.java_2_d7541131",
+      "filePath": "ChessGameEngine.java",
+      "line": 15,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "comp_db4ca3f79a59577dce47843b27aaca22_extracted_ChessGameEngine.java_3_20ce4b02",
+      "filePath": "ChessGameEngine.java",
+      "line": 30,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "comp_db4ca3f79a59577dce47843b27aaca22_extracted_ChessGameEngine.java_4_c3b90988",
+      "filePath": "ChessGameEngine.java",
+      "line": 35,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "comp_db4ca3f79a59577dce47843b27aaca22_extracted_ChessGameEngine.java_5_c73b09c0",
+      "filePath": "ChessGameEngine.java",
+      "line": 39,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "comp_db4ca3f79a59577dce47843b27aaca22_extracted_ChessGameEngine.java_6_39e53feb",
+      "filePath": "ChessGameEngine.java",
+      "line": 46,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "comp_db4ca3f79a59577dce47843b27aaca22_extracted_ChessGameEngine.java_7_c6779d21",
+      "filePath": "ChessGameEngine.java",
+      "line": 54,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "comp_db4ca3f79a59577dce47843b27aaca22_extracted_ChessGameEngine.java_8_74d0bae5",
+      "filePath": "ChessGameEngine.java",
+      "line": 59,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "comp_db4ca3f79a59577dce47843b27aaca22_extracted_ChessGameEngine.java_9_4406dd4f",
+      "filePath": "ChessGameEngine.java",
+      "line": 65,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "comp_db4ca3f79a59577dce47843b27aaca22_extracted_ChessGameEngine.java_10_819f205b",
+      "filePath": "ChessGameEngine.java",
+      "line": 68,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "comp_db4ca3f79a59577dce47843b27aaca22_extracted_ChessGameEngine.java_11_5db04057",
+      "filePath": "ChessGameEngine.java",
+      "line": 73,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "comp_db4ca3f79a59577dce47843b27aaca22_extracted_ChessGameEngine.java_12_6fe87d4f",
+      "filePath": "ChessGameEngine.java",
+      "line": 77,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "comp_db4ca3f79a59577dce47843b27aaca22_extracted_ChessGameEngine.java_13_a72ae231",
+      "filePath": "ChessGameEngine.java",
+      "line": 90,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "comp_db4ca3f79a59577dce47843b27aaca22_extracted_ChessGameEngine.java_14_2397e17d",
+      "filePath": "ChessGameEngine.java",
+      "line": 96,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "comp_db4ca3f79a59577dce47843b27aaca22_extracted_ChessGameEngine.java_15_0f6d67b3",
+      "filePath": "ChessGameEngine.java",
+      "line": 101,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "comp_db4ca3f79a59577dce47843b27aaca22_extracted_ChessGameEngine.java_16_b808998b",
+      "filePath": "ChessGameEngine.java",
+      "line": 107,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "comp_db4ca3f79a59577dce47843b27aaca22_extracted_ChessGameEngine.java_17_c7606220",
+      "filePath": "ChessGameEngine.java",
+      "line": 112,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "comp_db4ca3f79a59577dce47843b27aaca22_extracted_ChessGameEngine.java_18_c9c5a570",
+      "filePath": "ChessGameEngine.java",
+      "line": 126,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "comp_db4ca3f79a59577dce47843b27aaca22_extracted_ChessGameEngine.java_19_d982b82a",
+      "filePath": "ChessGameEngine.java",
+      "line": 130,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "comp_db4ca3f79a59577dce47843b27aaca22_extracted_ChessGameEngine.java_20_83d97fd1",
+      "filePath": "ChessGameEngine.java",
+      "line": 134,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "comp_db4ca3f79a59577dce47843b27aaca22_extracted_ChessGameEngine.java_21_aa20d4ae",
+      "filePath": "ChessGameEngine.java",
+      "line": 139,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "comp_db4ca3f79a59577dce47843b27aaca22_extracted_ChessGameEngine.java_22_537eec95",
+      "filePath": "ChessGameEngine.java",
+      "line": 143,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "comp_db4ca3f79a59577dce47843b27aaca22_extracted_ChessGameEngine.java_23_c29b6415",
+      "filePath": "ChessGameEngine.java",
+      "line": 147,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "comp_db4ca3f79a59577dce47843b27aaca22_extracted_ChessGameEngine.java_24_fc18a6a9",
+      "filePath": "ChessGameEngine.java",
+      "line": 151,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "comp_db4ca3f79a59577dce47843b27aaca22_extracted_ChessGameEngine.java_25_d21ed693",
+      "filePath": "ChessGameEngine.java",
+      "line": 155,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "comp_db4ca3f79a59577dce47843b27aaca22_extracted_ChessGameEngine.java_26_c99eeed2",
+      "filePath": "ChessGameEngine.java",
+      "line": 159,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "comp_db4ca3f79a59577dce47843b27aaca22_extracted_ChessGameEngine.java_27_d7caae44",
+      "filePath": "ChessGameEngine.java",
+      "line": 163,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "comp_db4ca3f79a59577dce47843b27aaca22_extracted_ChessGameEngine.java_28_51ab774e",
+      "filePath": "ChessGameEngine.java",
+      "line": 167,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "comp_db4ca3f79a59577dce47843b27aaca22_extracted_ChessGameEngine.java_29_c8bb1059",
+      "filePath": "ChessGameEngine.java",
+      "line": 171,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "comp_db4ca3f79a59577dce47843b27aaca22_extracted_ChessGameEngine.java_30_d04b536f",
+      "filePath": "ChessGameEngine.java",
+      "line": 183,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "comp_db4ca3f79a59577dce47843b27aaca22_extracted_ChessGameEngine.java_31_64476dde",
+      "filePath": "ChessGameEngine.java",
+      "line": 187,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "comp_db4ca3f79a59577dce47843b27aaca22_extracted_Main.java_0_ea3c1b57",
+      "filePath": "Main.java",
+      "line": 1,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Commented-out code detected.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "comp_db4ca3f79a59577dce47843b27aaca22_extracted_Main.java_1_332e1d88",
+      "filePath": "Main.java",
+      "line": 3,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Commented-out code detected.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "comp_db4ca3f79a59577dce47843b27aaca22_extracted_ReportGenerator.java_0_5e21ec22",
+      "filePath": "ReportGenerator.java",
+      "line": 1,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Commented-out code detected.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "comp_db4ca3f79a59577dce47843b27aaca22_extracted_ReportGenerator.java_1_d0894873",
+      "filePath": "ReportGenerator.java",
+      "line": 3,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Commented-out code detected.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "comp_db4ca3f79a59577dce47843b27aaca22_extracted_SpecialMoves.java_0_b9760a93",
+      "filePath": "SpecialMoves.java",
+      "line": 5,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "comp_db4ca3f79a59577dce47843b27aaca22_extracted_SpecialMoves.java_1_a2ce245b",
+      "filePath": "SpecialMoves.java",
+      "line": 10,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "comp_db4ca3f79a59577dce47843b27aaca22_extracted_SpecialMoves.java_2_f1c3873f",
+      "filePath": "SpecialMoves.java",
+      "line": 14,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "comp_db4ca3f79a59577dce47843b27aaca22_extracted_SpecialMoves.java_3_1a83ac9d",
+      "filePath": "SpecialMoves.java",
+      "line": 20,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "comp_db4ca3f79a59577dce47843b27aaca22_extracted_SpecialMoves.java_4_4a9089b7",
+      "filePath": "SpecialMoves.java",
+      "line": 25,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "comp_db4ca3f79a59577dce47843b27aaca22_extracted_SpecialMoves.java_5_1a2152eb",
+      "filePath": "SpecialMoves.java",
+      "line": 31,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "comp_db4ca3f79a59577dce47843b27aaca22_extracted_SpecialMoves.java_6_47221e58",
+      "filePath": "SpecialMoves.java",
+      "line": 39,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "comp_db4ca3f79a59577dce47843b27aaca22_extracted_SpecialMoves.java_7_3339509d",
+      "filePath": "SpecialMoves.java",
+      "line": 47,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "comp_db4ca3f79a59577dce47843b27aaca22_extracted_SpecialMoves.java_8_6ba98e2a",
+      "filePath": "SpecialMoves.java",
+      "line": 52,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "comp_db4ca3f79a59577dce47843b27aaca22_extracted_SpecialMoves.java_9_0166822b",
+      "filePath": "SpecialMoves.java",
+      "line": 55,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "comp_db4ca3f79a59577dce47843b27aaca22_extracted_SpecialMoves.java_10_ae45a911",
+      "filePath": "SpecialMoves.java",
+      "line": 59,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "comp_db4ca3f79a59577dce47843b27aaca22_extracted_SpecialMoves.java_11_abf507a7",
+      "filePath": "SpecialMoves.java",
+      "line": 67,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "comp_db4ca3f79a59577dce47843b27aaca22_extracted_SpecialMoves.java_12_b62edcee",
+      "filePath": "SpecialMoves.java",
+      "line": 70,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "comp_db4ca3f79a59577dce47843b27aaca22_extracted_SpecialMoves.java_13_82e4e3b9",
+      "filePath": "SpecialMoves.java",
+      "line": 75,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "comp_db4ca3f79a59577dce47843b27aaca22_extracted_SpecialMoves.java_14_e9c70115",
+      "filePath": "SpecialMoves.java",
+      "line": 89,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "comp_db4ca3f79a59577dce47843b27aaca22_extracted_SpecialMoves.java_15_dcba3972",
+      "filePath": "SpecialMoves.java",
+      "line": 102,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "comp_db4ca3f79a59577dce47843b27aaca22_extracted_Test.java_0_9f907267",
+      "filePath": "Test.java",
+      "line": 1,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "medium",
+      "confidence": 0.9,
+      "description": "Method name should be in camelCase.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "comp_db4ca3f79a59577dce47843b27aaca22_extracted_Test.java_1_616589fc",
+      "filePath": "Test.java",
+      "line": 1,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "medium",
+      "confidence": 0.9,
+      "description": "Method name should be in camelCase.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "comp_db4ca3f79a59577dce47843b27aaca22_extracted_Test.java_2_407386a8",
+      "filePath": "Test.java",
+      "line": 1,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "medium",
+      "confidence": 0.9,
+      "description": "Method name should be in camelCase.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "comp_db4ca3f79a59577dce47843b27aaca22_extracted_Test.java_3_a40e2e72",
+      "filePath": "Test.java",
+      "line": 51,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "medium",
+      "confidence": 0.9,
+      "description": "Method name should be in camelCase.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "comp_db4ca3f79a59577dce47843b27aaca22_extracted_UserServices.java_0_7758aa48",
+      "filePath": "UserServices.java",
+      "line": 1,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Commented-out code detected.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "comp_db4ca3f79a59577dce47843b27aaca22_extracted_UserServices.java_1_6ed6c579",
+      "filePath": "UserServices.java",
+      "line": 3,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Commented-out code detected.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "maint_db4ca3f79a59577dce47843b27aaca22_extracted_Calculator.java_add_216c8c0b",
+      "filePath": "Calculator.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": " Low comment coverage. Add documentation or inline comments.",
+      "explanation": "Method Calculator.add score: 77",
+      "recommendation": " Low comment coverage. Add documentation or inline comments.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "maint_db4ca3f79a59577dce47843b27aaca22_extracted_Calculator.java_sumArray_c8f987d1",
+      "filePath": "Calculator.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": " Low comment coverage. Add documentation or inline comments.",
+      "explanation": "Method Calculator.sumArray score: 82",
+      "recommendation": " Low comment coverage. Add documentation or inline comments.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "maint_db4ca3f79a59577dce47843b27aaca22_extracted_Calculator.java_checkValue_471eeed8",
+      "filePath": "Calculator.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": " Low comment coverage. Add documentation or inline comments.",
+      "explanation": "Method Calculator.checkValue score: 77",
+      "recommendation": " Low comment coverage. Add documentation or inline comments.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "maint_db4ca3f79a59577dce47843b27aaca22_extracted_ChessGameEngine.java_initializeBoard_6faea895",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": "Function is too long. Split into smaller helper methods.",
+      "explanation": "Method ChessGameEngine.initializeBoard score: 75",
+      "recommendation": "Function is too long. Split into smaller helper methods.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "maint_db4ca3f79a59577dce47843b27aaca22_extracted_ChessGameEngine.java_makeMove_37729c81",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": "Function is too long. Split into smaller helper methods.",
+      "explanation": "Method ChessGameEngine.makeMove score: 62",
+      "recommendation": "Function is too long. Split into smaller helper methods.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "maint_db4ca3f79a59577dce47843b27aaca22_extracted_ChessGameEngine.java_isValidMove_df24e06b",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": "Function is too long. Split into smaller helper methods.",
+      "explanation": "Method ChessGameEngine.isValidMove score: 62",
+      "recommendation": "Function is too long. Split into smaller helper methods.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "maint_db4ca3f79a59577dce47843b27aaca22_extracted_ChessGameEngine.java_validatePieceMove_63365622",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": "Function is too long. Split into smaller helper methods.",
+      "explanation": "Method ChessGameEngine.validatePieceMove score: 70",
+      "recommendation": "Function is too long. Split into smaller helper methods.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "maint_db4ca3f79a59577dce47843b27aaca22_extracted_ChessGameEngine.java_handleSpecialMoves_0ca55612",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": "Function is too long. Split into smaller helper methods.",
+      "explanation": "Method ChessGameEngine.handleSpecialMoves score: 62",
+      "recommendation": "Function is too long. Split into smaller helper methods.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "maint_db4ca3f79a59577dce47843b27aaca22_extracted_ChessGameEngine.java_isInCheck_f2714723",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": "Function is too long. Split into smaller helper methods.",
+      "explanation": "Method ChessGameEngine.isInCheck score: 67",
+      "recommendation": "Function is too long. Split into smaller helper methods.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "maint_db4ca3f79a59577dce47843b27aaca22_extracted_ChessGameEngine.java_isValidPosition_27c533db",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": "Function is too long. Split into smaller helper methods.",
+      "explanation": "Method ChessGameEngine.isValidPosition score: 75",
+      "recommendation": "Function is too long. Split into smaller helper methods.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "maint_db4ca3f79a59577dce47843b27aaca22_extracted_ChessGameEngine.java_isWhitePiece_c1e048d9",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": "Function is too long. Split into smaller helper methods.",
+      "explanation": "Method ChessGameEngine.isWhitePiece score: 75",
+      "recommendation": "Function is too long. Split into smaller helper methods.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "maint_db4ca3f79a59577dce47843b27aaca22_extracted_ChessGameEngine.java_validatePawnMove_bb3ec048",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": "Function is too long. Split into smaller helper methods.",
+      "explanation": "Method ChessGameEngine.validatePawnMove score: 70",
+      "recommendation": "Function is too long. Split into smaller helper methods.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "maint_db4ca3f79a59577dce47843b27aaca22_extracted_ChessGameEngine.java_validateRookMove_f5290b49",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": "Function is too long. Split into smaller helper methods.",
+      "explanation": "Method ChessGameEngine.validateRookMove score: 70",
+      "recommendation": "Function is too long. Split into smaller helper methods.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "maint_db4ca3f79a59577dce47843b27aaca22_extracted_ChessGameEngine.java_validateKnightMove_6fcc7763",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": "Function is too long. Split into smaller helper methods.",
+      "explanation": "Method ChessGameEngine.validateKnightMove score: 70",
+      "recommendation": "Function is too long. Split into smaller helper methods.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "maint_db4ca3f79a59577dce47843b27aaca22_extracted_ChessGameEngine.java_validateBishopMove_6435422e",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": "Function is too long. Split into smaller helper methods.",
+      "explanation": "Method ChessGameEngine.validateBishopMove score: 70",
+      "recommendation": "Function is too long. Split into smaller helper methods.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "maint_db4ca3f79a59577dce47843b27aaca22_extracted_ChessGameEngine.java_validateQueenMove_fbac5ea5",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": "Function is too long. Split into smaller helper methods.",
+      "explanation": "Method ChessGameEngine.validateQueenMove score: 70",
+      "recommendation": "Function is too long. Split into smaller helper methods.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "maint_db4ca3f79a59577dce47843b27aaca22_extracted_ChessGameEngine.java_validateKingMove_acf8243f",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": "Function is too long. Split into smaller helper methods.",
+      "explanation": "Method ChessGameEngine.validateKingMove score: 70",
+      "recommendation": "Function is too long. Split into smaller helper methods.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "maint_db4ca3f79a59577dce47843b27aaca22_extracted_ChessGameEngine.java_handleCastling_14d9f367",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": "Function is too long. Split into smaller helper methods.",
+      "explanation": "Method ChessGameEngine.handleCastling score: 70",
+      "recommendation": "Function is too long. Split into smaller helper methods.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "maint_db4ca3f79a59577dce47843b27aaca22_extracted_ChessGameEngine.java_handlePromotion_0b6dbad9",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": "Function is too long. Split into smaller helper methods.",
+      "explanation": "Method ChessGameEngine.handlePromotion score: 75",
+      "recommendation": "Function is too long. Split into smaller helper methods.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "maint_db4ca3f79a59577dce47843b27aaca22_extracted_ChessGameEngine.java_handleEnPassant_01fbf0e5",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": "Function is too long. Split into smaller helper methods.",
+      "explanation": "Method ChessGameEngine.handleEnPassant score: 75",
+      "recommendation": "Function is too long. Split into smaller helper methods.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "maint_db4ca3f79a59577dce47843b27aaca22_extracted_ChessGameEngine.java_findKing_e928fdff",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": "Function is too long. Split into smaller helper methods.",
+      "explanation": "Method ChessGameEngine.findKing score: 67",
+      "recommendation": "Function is too long. Split into smaller helper methods.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "maint_db4ca3f79a59577dce47843b27aaca22_extracted_ChessGameEngine.java_getBoard_96e654b6",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": "Function is too long. Split into smaller helper methods.",
+      "explanation": "Method ChessGameEngine.getBoard score: 75",
+      "recommendation": "Function is too long. Split into smaller helper methods.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "maint_db4ca3f79a59577dce47843b27aaca22_extracted_ChessGameEngine.java_isWhiteTurn_72267ccc",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": "Function is too long. Split into smaller helper methods.",
+      "explanation": "Method ChessGameEngine.isWhiteTurn score: 75",
+      "recommendation": "Function is too long. Split into smaller helper methods.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "maint_db4ca3f79a59577dce47843b27aaca22_extracted_Main.java_main_37309cd3",
+      "filePath": "Main.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": "Deeply nested logic. Consider flattening with early returns or switch cases.",
+      "explanation": "Method Main.main score: 67",
+      "recommendation": "Deeply nested logic. Consider flattening with early returns or switch cases.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "maint_db4ca3f79a59577dce47843b27aaca22_extracted_ReportGenerator.java_addItem_265105f5",
+      "filePath": "ReportGenerator.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": " Low comment coverage. Add documentation or inline comments.",
+      "explanation": "Method ReportGenerator.addItem score: 74",
+      "recommendation": " Low comment coverage. Add documentation or inline comments.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "maint_db4ca3f79a59577dce47843b27aaca22_extracted_ReportGenerator.java_generateReport_12d4f25b",
+      "filePath": "ReportGenerator.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": " Low comment coverage. Add documentation or inline comments.",
+      "explanation": "Method ReportGenerator.generateReport score: 82",
+      "recommendation": " Low comment coverage. Add documentation or inline comments.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "maint_db4ca3f79a59577dce47843b27aaca22_extracted_ReportGenerator.java_sortItems_2dfa4e62",
+      "filePath": "ReportGenerator.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": " Low comment coverage. Add documentation or inline comments.",
+      "explanation": "Method ReportGenerator.sortItems score: 74",
+      "recommendation": " Low comment coverage. Add documentation or inline comments.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "maint_db4ca3f79a59577dce47843b27aaca22_extracted_ReportGenerator.java_printLongestItem_3dde7504",
+      "filePath": "ReportGenerator.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": " Low comment coverage. Add documentation or inline comments.",
+      "explanation": "Method ReportGenerator.printLongestItem score: 74",
+      "recommendation": " Low comment coverage. Add documentation or inline comments.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "maint_db4ca3f79a59577dce47843b27aaca22_extracted_ReportGenerator.java_printSummary_0457c3d9",
+      "filePath": "ReportGenerator.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": " Low comment coverage. Add documentation or inline comments.",
+      "explanation": "Method ReportGenerator.printSummary score: 82",
+      "recommendation": " Low comment coverage. Add documentation or inline comments.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "maint_db4ca3f79a59577dce47843b27aaca22_extracted_SpecialMoves.java_handleCastling_0dbbee11",
+      "filePath": "SpecialMoves.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": "Function is too long. Split into smaller helper methods.",
+      "explanation": "Method SpecialMoves.handleCastling score: 70",
+      "recommendation": "Function is too long. Split into smaller helper methods.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "maint_db4ca3f79a59577dce47843b27aaca22_extracted_SpecialMoves.java_handlePromotion_116c1a43",
+      "filePath": "SpecialMoves.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": "Function is too long. Split into smaller helper methods.",
+      "explanation": "Method SpecialMoves.handlePromotion score: 75",
+      "recommendation": "Function is too long. Split into smaller helper methods.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "maint_db4ca3f79a59577dce47843b27aaca22_extracted_SpecialMoves.java_handleEnPassant_7bd408ec",
+      "filePath": "SpecialMoves.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": "Function is too long. Split into smaller helper methods.",
+      "explanation": "Method SpecialMoves.handleEnPassant score: 70",
+      "recommendation": "Function is too long. Split into smaller helper methods.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "maint_db4ca3f79a59577dce47843b27aaca22_extracted_SpecialMoves.java_isCheckmate_7b11f5ef",
+      "filePath": "SpecialMoves.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": "Function is too long. Split into smaller helper methods.",
+      "explanation": "Method SpecialMoves.isCheckmate score: 67",
+      "recommendation": "Function is too long. Split into smaller helper methods.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "maint_db4ca3f79a59577dce47843b27aaca22_extracted_SpecialMoves.java_isInCheck_2a9fabec",
+      "filePath": "SpecialMoves.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": "Function is too long. Split into smaller helper methods.",
+      "explanation": "Method SpecialMoves.isInCheck score: 67",
+      "recommendation": "Function is too long. Split into smaller helper methods.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "maint_db4ca3f79a59577dce47843b27aaca22_extracted_SpecialMoves.java_isValidMove_a17a168f",
+      "filePath": "SpecialMoves.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": "Function is too long. Split into smaller helper methods.",
+      "explanation": "Method SpecialMoves.isValidMove score: 70",
+      "recommendation": "Function is too long. Split into smaller helper methods.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "maint_db4ca3f79a59577dce47843b27aaca22_extracted_SpecialMoves.java_findKing_2968b3cb",
+      "filePath": "SpecialMoves.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": "Function is too long. Split into smaller helper methods.",
+      "explanation": "Method SpecialMoves.findKing score: 67",
+      "recommendation": "Function is too long. Split into smaller helper methods.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "maint_db4ca3f79a59577dce47843b27aaca22_extracted_Test.java_validateQueenMove_9bd9afa4",
+      "filePath": "Test.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": " Low comment coverage. Add documentation or inline comments.",
+      "explanation": "Method ChessGameEngine.validateQueenMove score: 69",
+      "recommendation": " Low comment coverage. Add documentation or inline comments.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "maint_db4ca3f79a59577dce47843b27aaca22_extracted_Test.java_validateRookMove_f3d28d4b",
+      "filePath": "Test.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": " Low comment coverage. Add documentation or inline comments.",
+      "explanation": "Method ChessGameEngine.validateRookMove score: 69",
+      "recommendation": " Low comment coverage. Add documentation or inline comments.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "maint_db4ca3f79a59577dce47843b27aaca22_extracted_Test.java_validatePawnMove_385104c8",
+      "filePath": "Test.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": " Low comment coverage. Add documentation or inline comments.",
+      "explanation": "Method ChessGameEngine.validatePawnMove score: 69",
+      "recommendation": " Low comment coverage. Add documentation or inline comments.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "maint_db4ca3f79a59577dce47843b27aaca22_extracted_Test.java_createPieces_0e3b50c1",
+      "filePath": "Test.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": " Low comment coverage. Add documentation or inline comments.",
+      "explanation": "Method ChessGameEngine.createPieces score: 82",
+      "recommendation": " Low comment coverage. Add documentation or inline comments.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "maint_db4ca3f79a59577dce47843b27aaca22_extracted_Test.java_printType_478d4ec6",
+      "filePath": "Test.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": " Low comment coverage. Add documentation or inline comments.",
+      "explanation": "Method ChessGameEngine.printType score: 82",
+      "recommendation": " Low comment coverage. Add documentation or inline comments.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "maint_db4ca3f79a59577dce47843b27aaca22_extracted_Test.java_printType_9a452994",
+      "filePath": "Test.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": " Low comment coverage. Add documentation or inline comments.",
+      "explanation": "Method Piece.printType score: 82",
+      "recommendation": " Low comment coverage. Add documentation or inline comments.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "maint_db4ca3f79a59577dce47843b27aaca22_extracted_UserServices.java_addUsr_617afc8d",
+      "filePath": "UserServices.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": " Low comment coverage. Add documentation or inline comments.",
+      "explanation": "Method UserService.addUsr score: 74",
+      "recommendation": " Low comment coverage. Add documentation or inline comments.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "maint_db4ca3f79a59577dce47843b27aaca22_extracted_UserServices.java_chkUsr_fae26eb1",
+      "filePath": "UserServices.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": "Deeply nested logic. Consider flattening with early returns or switch cases.",
+      "explanation": "Method UserService.chkUsr score: 67",
+      "recommendation": "Deeply nested logic. Consider flattening with early returns or switch cases.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "maint_db4ca3f79a59577dce47843b27aaca22_extracted_UserServices.java_resetAll_4ec436f0",
+      "filePath": "UserServices.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": " Low comment coverage. Add documentation or inline comments.",
+      "explanation": "Method UserService.resetAll score: 82",
+      "recommendation": " Low comment coverage. Add documentation or inline comments.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "maint_db4ca3f79a59577dce47843b27aaca22_extracted_UserServices.java_printUsers_84b99057",
+      "filePath": "UserServices.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": " Low comment coverage. Add documentation or inline comments.",
+      "explanation": "Method UserService.printUsers score: 82",
+      "recommendation": " Low comment coverage. Add documentation or inline comments.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    },
+    {
+      "id": "maint_db4ca3f79a59577dce47843b27aaca22_extracted_UserServices.java_addUsrTwice_abe655e4",
+      "filePath": "UserServices.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": " Low comment coverage. Add documentation or inline comments.",
+      "explanation": "Method UserService.addUsrTwice score: 82",
+      "recommendation": " Low comment coverage. Add documentation or inline comments.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "db4ca3f79a59577dce47843b27aaca22_extracted"
+      }
+    }
+  ],
+  "scanId": "db4ca3f79a59577dce47843b27aaca22_extracted",
+  "timestamp": "2026-03-30T14:54:33.399Z",
+  "storedAt": "2026-03-30T14:54:33.399Z"
+}

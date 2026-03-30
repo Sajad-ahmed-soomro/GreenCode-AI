@@ -1,0 +1,77 @@
+{
+  "name": "greencode-ai",
+  "displayName": "GreenCode AI",
+  "description": "Real-time code analysis and refactoring suggestions",
+  "version": "1.0.0",
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p .",
+    "watch": "tsc -watch -p ."
+  },
+  "categories": [
+    "Linters",
+    "Code Review",
+    "Machine Learning"
+  ],
+  "activationEvents": [
+    "onLanguage:java",
+    "onLanguage:javascript",
+    "onLanguage:python"
+  ],
+  "main": "./out/extension.js",
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/vscode": "^1.60.0",
+    "typescript": "^5.0.0"
+  },
+  "contributes": {
+    "commands": [
+      {
+        "command": "greencode.runAnalysis",
+        "title": "GreenCode: Run Code Analysis"
+      },
+      {
+        "command": "greencode.applyFix",
+        "title": "GreenCode: Apply Suggested Fix"
+      },
+      {
+        "command": "greencode.showEnergyBreakdown",
+        "title": "GreenCode: Show Energy Breakdown"
+      }
+    ],
+    "configuration": {
+      "title": "GreenCode AI",
+      "properties": {
+        "greencode.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable GreenCode AI analysis"
+        },
+        "greencode.gatewayUrl": {
+          "type": "string",
+          "default": "http://localhost:5400",
+          "description": "GreenCode Gateway URL"
+        },
+        "greencode.analyzeOnSave": {
+          "type": "boolean",
+          "default": true,
+          "description": "Analyze Java files on save"
+        },
+        "greencode.autoApply": {
+          "type": "boolean",
+          "default": false,
+          "description": "Auto-apply fixes with high confidence"
+        },
+        "greencode.severityThreshold": {
+          "type": "string",
+          "enum": ["low", "medium", "high"],
+          "default": "medium",
+          "description": "Minimum severity to show issues"
+        }
+      }
+    }
+  }
+}

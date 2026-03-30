@@ -1,0 +1,5 @@
+
+# Required dependencies for compilation
+org.openjdk.jmh:jmh-core:1.37
+org.openjdk.jmh:jmh-generator-annprocess:1.37
+com.google.code.gson:gson:2.10.1

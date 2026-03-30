@@ -1,0 +1,25 @@
+{
+  "methodName": "getBoard",
+  "nodes": [
+    {
+      "id": "f6635889-3155-4a40-8119-963315f2805b",
+      "label": "Start",
+      "type": "start",
+      "next": [
+        "fcde21a3-4418-45bf-b06e-a2c81df1b181"
+      ]
+    },
+    {
+      "id": "fcde21a3-4418-45bf-b06e-a2c81df1b181",
+      "label": "End",
+      "type": "end",
+      "next": []
+    }
+  ],
+  "edges": [
+    [
+      "f6635889-3155-4a40-8119-963315f2805b",
+      "fcde21a3-4418-45bf-b06e-a2c81df1b181"
+    ]
+  ]
+}

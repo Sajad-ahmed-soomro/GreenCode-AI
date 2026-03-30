@@ -1,0 +1,25 @@
+{
+  "methodName": "isWhiteTurn",
+  "nodes": [
+    {
+      "id": "605dc5e6-cd66-4231-b959-5947dd4cd9d8",
+      "label": "Start",
+      "type": "start",
+      "next": [
+        "c80ce267-f723-4744-92f8-5547458dbb35"
+      ]
+    },
+    {
+      "id": "c80ce267-f723-4744-92f8-5547458dbb35",
+      "label": "End",
+      "type": "end",
+      "next": []
+    }
+  ],
+  "edges": [
+    [
+      "605dc5e6-cd66-4231-b959-5947dd4cd9d8",
+      "c80ce267-f723-4744-92f8-5547458dbb35"
+    ]
+  ]
+}

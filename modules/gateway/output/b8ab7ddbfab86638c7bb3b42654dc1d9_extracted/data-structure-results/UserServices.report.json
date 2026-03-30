@@ -1,0 +1,13 @@
+{
+  "fileName": "UserServices.java",
+  "suggestions": [
+    {
+      "issueType": "ListAsDictionary",
+      "pattern": "List used as dictionary (list.get(key))",
+      "recommendedDataStructure": "Use HashMap<Key, Value>",
+      "why": "List.get(keyName) implies key-value usage, but lists have no keys. Use a Map instead.",
+      "energyImpact": "Avoids scanning and wrong access patterns.",
+      "lineNumber": 18
+    }
+  ]
+}

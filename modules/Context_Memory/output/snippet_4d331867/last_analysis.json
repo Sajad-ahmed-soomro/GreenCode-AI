@@ -1,0 +1,102 @@
+{
+  "issues": [
+    {
+      "id": "comp_snippet_4d331867_Calculator.java_0_00ec1297",
+      "filePath": "Calculator.java",
+      "line": 1,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "medium",
+      "confidence": 0.9,
+      "description": "Method name should be in camelCase.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "snippet_4d331867"
+      }
+    },
+    {
+      "id": "comp_snippet_4d331867_Calculator.java_1_50952522",
+      "filePath": "Calculator.java",
+      "line": 1,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "medium",
+      "confidence": 0.9,
+      "description": "Method name should be in camelCase.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "snippet_4d331867"
+      }
+    },
+    {
+      "id": "maint_snippet_4d331867_Calculator.java_add_243307ac",
+      "filePath": "Calculator.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": " Low comment coverage. Add documentation or inline comments.",
+      "explanation": "Method Calculator.add score: 77",
+      "recommendation": " Low comment coverage. Add documentation or inline comments.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "snippet_4d331867"
+      }
+    },
+    {
+      "id": "maint_snippet_4d331867_Calculator.java_sumArray_d52516e7",
+      "filePath": "Calculator.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": " Low comment coverage. Add documentation or inline comments.",
+      "explanation": "Method Calculator.sumArray score: 82",
+      "recommendation": " Low comment coverage. Add documentation or inline comments.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "snippet_4d331867"
+      }
+    },
+    {
+      "id": "maint_snippet_4d331867_Calculator.java_checkValue_692cdba4",
+      "filePath": "Calculator.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": " Low comment coverage. Add documentation or inline comments.",
+      "explanation": "Method Calculator.checkValue score: 77",
+      "recommendation": " Low comment coverage. Add documentation or inline comments.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "snippet_4d331867"
+      }
+    }
+  ],
+  "scanId": "snippet_4d331867",
+  "timestamp": "2026-02-08T10:09:38.552Z",
+  "storedAt": "2026-02-08T10:09:38.552Z"
+}

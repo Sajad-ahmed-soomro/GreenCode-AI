@@ -1,0 +1,7 @@
+{
+  "name": "greencode-context-memory",
+  "version": "1.0.0",
+  "description": "Context Memory integration for GreenCode AI",
+  "type": "module",
+  "main": "index.js"
+}

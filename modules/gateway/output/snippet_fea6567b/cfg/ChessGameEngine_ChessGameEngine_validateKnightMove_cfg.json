@@ -1,0 +1,25 @@
+{
+  "methodName": "validateKnightMove",
+  "nodes": [
+    {
+      "id": "ade0fba2-e738-49fb-80a1-c42983dc121f",
+      "label": "Start",
+      "type": "start",
+      "next": [
+        "cd278eae-26c3-4e5a-b11d-522961563450"
+      ]
+    },
+    {
+      "id": "cd278eae-26c3-4e5a-b11d-522961563450",
+      "label": "End",
+      "type": "end",
+      "next": []
+    }
+  ],
+  "edges": [
+    [
+      "ade0fba2-e738-49fb-80a1-c42983dc121f",
+      "cd278eae-26c3-4e5a-b11d-522961563450"
+    ]
+  ]
+}

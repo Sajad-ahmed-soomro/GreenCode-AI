@@ -1,0 +1,50 @@
+{
+  "file": "/Users/sajad-ahmed/Documents/greencode-ais/GreenCode-AI/modules/gateway/uploads/snippet_fdd3031f/samples/Calculator.java",
+  "classes": [
+    {
+      "type": "Class",
+      "name": "Calculator",
+      "methods": [
+        {
+          "name": "add",
+          "params": [
+            {
+              "type": "int",
+              "name": "a"
+            },
+            {
+              "type": "int",
+              "name": "b"
+            }
+          ],
+          "loops": [],
+          "conditionals": [
+            "return"
+          ],
+          "returnType": "int",
+          "modifiers": [
+            "public"
+          ]
+        },
+        {
+          "name": "square",
+          "params": [
+            {
+              "type": "int",
+              "name": "x"
+            }
+          ],
+          "loops": [],
+          "conditionals": [
+            "return"
+          ],
+          "returnType": "int",
+          "modifiers": [
+            "private"
+          ]
+        }
+      ],
+      "fields": []
+    }
+  ]
+}

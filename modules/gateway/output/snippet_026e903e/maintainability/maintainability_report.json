@@ -1,0 +1,15 @@
+{
+  "analyzedFiles": [
+    {
+      "file": "ChessGameEngine.json",
+      "avgScore": 70.3,
+      "level": "Medium",
+      "totalMethods": 20,
+      "analyzedAt": "2026-03-21T12:45:10.130Z"
+    }
+  ],
+  "overallAvg": 70.3,
+  "overallLevel": "Medium",
+  "totalFiles": 1,
+  "updatedAt": "2026-03-21T12:45:10.130Z"
+}

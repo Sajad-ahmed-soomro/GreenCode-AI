@@ -1,0 +1,25 @@
+{
+  "methodName": "addUsr",
+  "nodes": [
+    {
+      "id": "b2b1f8b1-f49e-426e-82d0-ab01d5dbe771",
+      "label": "Start",
+      "type": "start",
+      "next": [
+        "904665cf-bc57-43b0-becc-89ebe725e5b4"
+      ]
+    },
+    {
+      "id": "904665cf-bc57-43b0-becc-89ebe725e5b4",
+      "label": "End",
+      "type": "end",
+      "next": []
+    }
+  ],
+  "edges": [
+    [
+      "b2b1f8b1-f49e-426e-82d0-ab01d5dbe771",
+      "904665cf-bc57-43b0-becc-89ebe725e5b4"
+    ]
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "analyzedFiles": [
+    {
+      "file": "Calculator.json",
+      "avgScore": 85,
+      "level": "High",
+      "totalMethods": 2,
+      "analyzedAt": "2026-02-08T09:42:27.134Z"
+    }
+  ],
+  "overallAvg": 85,
+  "overallLevel": "High",
+  "totalFiles": 1,
+  "updatedAt": "2026-02-08T09:42:27.134Z"
+}

@@ -1,0 +1,13 @@
+{
+  "MainApp": {
+    "main": {
+      "visibility": "public",
+      "static": true,
+      "calls": {
+        "OrderService.placeOrder": 2
+      },
+      "calledBy": {},
+      "risk": "medium"
+    }
+  }
+}

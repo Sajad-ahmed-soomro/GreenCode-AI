@@ -1,0 +1,129 @@
+{
+  "IndependentService": {
+    "startProcess": {
+      "visibility": "public",
+      "static": false,
+      "calls": {
+        "IndependentService.validate": 1,
+        "IndependentService.calculate": 1,
+        "IndependentService.saveResult": 1,
+        "IndependentService.logAction": 1
+      },
+      "calledBy": {},
+      "risk": "medium"
+    },
+    "stopProcess": {
+      "visibility": "public",
+      "static": false,
+      "calls": {
+        "IndependentService.validate": 1,
+        "IndependentService.cleanup": 1,
+        "IndependentService.logAction": 1
+      },
+      "calledBy": {},
+      "risk": "medium"
+    },
+    "validate": {
+      "visibility": "private",
+      "static": false,
+      "calls": {
+        "IndependentService.checkRange": 1
+      },
+      "calledBy": {
+        "IndependentService.startProcess": 1,
+        "IndependentService.stopProcess": 1
+      },
+      "risk": "low"
+    },
+    "checkRange": {
+      "visibility": "private",
+      "static": false,
+      "calls": {},
+      "calledBy": {
+        "IndependentService.validate": 1
+      },
+      "risk": "low"
+    },
+    "calculate": {
+      "visibility": "private",
+      "static": false,
+      "calls": {
+        "IndependentService.applyFormula": 2
+      },
+      "calledBy": {
+        "IndependentService.startProcess": 1
+      },
+      "risk": "low"
+    },
+    "applyFormula": {
+      "visibility": "private",
+      "static": false,
+      "calls": {},
+      "calledBy": {
+        "IndependentService.calculate": 2
+      },
+      "risk": "low"
+    },
+    "saveResult": {
+      "visibility": "private",
+      "static": false,
+      "calls": {
+        "IndependentService.writeToStore": 1
+      },
+      "calledBy": {
+        "IndependentService.startProcess": 1
+      },
+      "risk": "low"
+    },
+    "writeToStore": {
+      "visibility": "private",
+      "static": false,
+      "calls": {},
+      "calledBy": {
+        "IndependentService.saveResult": 1
+      },
+      "risk": "low"
+    },
+    "cleanup": {
+      "visibility": "private",
+      "static": false,
+      "calls": {
+        "IndependentService.clearTemp": 1
+      },
+      "calledBy": {
+        "IndependentService.stopProcess": 1
+      },
+      "risk": "low"
+    },
+    "clearTemp": {
+      "visibility": "private",
+      "static": false,
+      "calls": {},
+      "calledBy": {
+        "IndependentService.cleanup": 1
+      },
+      "risk": "low"
+    },
+    "logAction": {
+      "visibility": "private",
+      "static": false,
+      "calls": {
+        "IndependentService.printLog": 1
+      },
+      "calledBy": {
+        "IndependentService.startProcess": 1,
+        "IndependentService.stopProcess": 1
+      },
+      "risk": "low"
+    },
+    "printLog": {
+      "visibility": "private",
+      "static": false,
+      "calls": {},
+      "calledBy": {
+        "IndependentService.logAction": 1
+      },
+      "risk": "low"
+    }
+  }
+}

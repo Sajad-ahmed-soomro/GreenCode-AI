@@ -1,0 +1,25 @@
+{
+  "methodName": "printType",
+  "nodes": [
+    {
+      "id": "d2c19119-fadf-4578-a4da-2b5190a0bf40",
+      "label": "Start",
+      "type": "start",
+      "next": [
+        "cd19f9cc-8b05-485f-9f22-134f6c8a8cd8"
+      ]
+    },
+    {
+      "id": "cd19f9cc-8b05-485f-9f22-134f6c8a8cd8",
+      "label": "End",
+      "type": "end",
+      "next": []
+    }
+  ],
+  "edges": [
+    [
+      "d2c19119-fadf-4578-a4da-2b5190a0bf40",
+      "cd19f9cc-8b05-485f-9f22-134f6c8a8cd8"
+    ]
+  ]
+}

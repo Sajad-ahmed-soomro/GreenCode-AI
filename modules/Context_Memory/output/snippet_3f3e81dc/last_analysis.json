@@ -1,0 +1,663 @@
+{
+  "issues": [
+    {
+      "id": "ds_snippet_3f3e81dc_PieceValidation.java_0_70f242ea",
+      "filePath": "PieceValidation.java",
+      "line": 11,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Manual arr[i] search inside loop",
+      "explanation": "Manual scanning inside loop is slow (O(n)). Hashed lookup is O(1).",
+      "recommendation": "Use Set or Map depending on logic",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "Use Set or Map depending on logic"
+      },
+      "context": {
+        "projectId": "snippet_3f3e81dc",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_snippet_3f3e81dc_PieceValidation.java_1_1c0ec7c0",
+      "filePath": "PieceValidation.java",
+      "line": 11,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Array used as dictionary with string key",
+      "explanation": "Arrays only support numeric indexing. Using them like maps is incorrect.",
+      "recommendation": "HashMap or TreeMap",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "HashMap or TreeMap"
+      },
+      "context": {
+        "projectId": "snippet_3f3e81dc",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_snippet_3f3e81dc_PieceValidation.java_2_d8b08647",
+      "filePath": "PieceValidation.java",
+      "line": 27,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Array used as dictionary with string key",
+      "explanation": "Arrays only support numeric indexing. Using them like maps is incorrect.",
+      "recommendation": "HashMap or TreeMap",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "HashMap or TreeMap"
+      },
+      "context": {
+        "projectId": "snippet_3f3e81dc",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_snippet_3f3e81dc_PieceValidation.java_3_61ee513b",
+      "filePath": "PieceValidation.java",
+      "line": 34,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Array used as dictionary with string key",
+      "explanation": "Arrays only support numeric indexing. Using them like maps is incorrect.",
+      "recommendation": "HashMap or TreeMap",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "HashMap or TreeMap"
+      },
+      "context": {
+        "projectId": "snippet_3f3e81dc",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_snippet_3f3e81dc_PieceValidation.java_4_81fef41c",
+      "filePath": "PieceValidation.java",
+      "line": 41,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Array used as dictionary with string key",
+      "explanation": "Arrays only support numeric indexing. Using them like maps is incorrect.",
+      "recommendation": "HashMap or TreeMap",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "HashMap or TreeMap"
+      },
+      "context": {
+        "projectId": "snippet_3f3e81dc",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "comp_snippet_3f3e81dc_PieceValidation.java_0_b16ef541",
+      "filePath": "PieceValidation.java",
+      "line": 6,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "snippet_3f3e81dc"
+      }
+    },
+    {
+      "id": "comp_snippet_3f3e81dc_PieceValidation.java_1_12ed8a31",
+      "filePath": "PieceValidation.java",
+      "line": 9,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "snippet_3f3e81dc"
+      }
+    },
+    {
+      "id": "comp_snippet_3f3e81dc_PieceValidation.java_2_f06aea64",
+      "filePath": "PieceValidation.java",
+      "line": 17,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "snippet_3f3e81dc"
+      }
+    },
+    {
+      "id": "comp_snippet_3f3e81dc_PieceValidation.java_3_85e11730",
+      "filePath": "PieceValidation.java",
+      "line": 20,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "snippet_3f3e81dc"
+      }
+    },
+    {
+      "id": "comp_snippet_3f3e81dc_PieceValidation.java_4_2407ad75",
+      "filePath": "PieceValidation.java",
+      "line": 21,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Line is too long (limit: 120 characters).",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "snippet_3f3e81dc"
+      }
+    },
+    {
+      "id": "comp_snippet_3f3e81dc_PieceValidation.java_5_a2e775bd",
+      "filePath": "PieceValidation.java",
+      "line": 21,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Line is too long (limit: 120 characters).",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "snippet_3f3e81dc"
+      }
+    },
+    {
+      "id": "comp_snippet_3f3e81dc_PieceValidation.java_6_81ac83b7",
+      "filePath": "PieceValidation.java",
+      "line": 25,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "snippet_3f3e81dc"
+      }
+    },
+    {
+      "id": "comp_snippet_3f3e81dc_PieceValidation.java_7_731e08ac",
+      "filePath": "PieceValidation.java",
+      "line": 30,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "snippet_3f3e81dc"
+      }
+    },
+    {
+      "id": "comp_snippet_3f3e81dc_PieceValidation.java_8_846207d3",
+      "filePath": "PieceValidation.java",
+      "line": 32,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "snippet_3f3e81dc"
+      }
+    },
+    {
+      "id": "comp_snippet_3f3e81dc_PieceValidation.java_9_7f9ef4e0",
+      "filePath": "PieceValidation.java",
+      "line": 33,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "snippet_3f3e81dc"
+      }
+    },
+    {
+      "id": "comp_snippet_3f3e81dc_PieceValidation.java_10_6c23819c",
+      "filePath": "PieceValidation.java",
+      "line": 34,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "snippet_3f3e81dc"
+      }
+    },
+    {
+      "id": "comp_snippet_3f3e81dc_PieceValidation.java_11_b7f5c403",
+      "filePath": "PieceValidation.java",
+      "line": 38,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "snippet_3f3e81dc"
+      }
+    },
+    {
+      "id": "comp_snippet_3f3e81dc_PieceValidation.java_12_59b74b2b",
+      "filePath": "PieceValidation.java",
+      "line": 46,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "snippet_3f3e81dc"
+      }
+    },
+    {
+      "id": "comp_snippet_3f3e81dc_PieceValidation.java_13_e1f2492d",
+      "filePath": "PieceValidation.java",
+      "line": 49,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "snippet_3f3e81dc"
+      }
+    },
+    {
+      "id": "comp_snippet_3f3e81dc_PieceValidation.java_14_12909972",
+      "filePath": "PieceValidation.java",
+      "line": 55,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "snippet_3f3e81dc"
+      }
+    },
+    {
+      "id": "comp_snippet_3f3e81dc_PieceValidation.java_15_b962c3cf",
+      "filePath": "PieceValidation.java",
+      "line": 58,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "snippet_3f3e81dc"
+      }
+    },
+    {
+      "id": "comp_snippet_3f3e81dc_PieceValidation.java_16_a88b6562",
+      "filePath": "PieceValidation.java",
+      "line": 63,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "snippet_3f3e81dc"
+      }
+    },
+    {
+      "id": "comp_snippet_3f3e81dc_PieceValidation.java_17_0b976e20",
+      "filePath": "PieceValidation.java",
+      "line": 66,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "snippet_3f3e81dc"
+      }
+    },
+    {
+      "id": "comp_snippet_3f3e81dc_PieceValidation.java_18_1d89b202",
+      "filePath": "PieceValidation.java",
+      "line": 72,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "snippet_3f3e81dc"
+      }
+    },
+    {
+      "id": "comp_snippet_3f3e81dc_PieceValidation.java_19_195eef40",
+      "filePath": "PieceValidation.java",
+      "line": 75,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "snippet_3f3e81dc"
+      }
+    },
+    {
+      "id": "comp_snippet_3f3e81dc_PieceValidation.java_20_bc641d43",
+      "filePath": "PieceValidation.java",
+      "line": 85,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "snippet_3f3e81dc"
+      }
+    },
+    {
+      "id": "comp_snippet_3f3e81dc_PieceValidation.java_21_4f39a21e",
+      "filePath": "PieceValidation.java",
+      "line": 90,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "snippet_3f3e81dc"
+      }
+    },
+    {
+      "id": "maint_snippet_3f3e81dc_PieceValidation.java_isPathClear_8cc31c31",
+      "filePath": "PieceValidation.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": "Function is too long. Split into smaller helper methods.",
+      "explanation": "Method PieceValidation.isPathClear score: 62",
+      "recommendation": "Function is too long. Split into smaller helper methods.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "snippet_3f3e81dc"
+      }
+    },
+    {
+      "id": "maint_snippet_3f3e81dc_PieceValidation.java_validatePawnMove_4c6c9930",
+      "filePath": "PieceValidation.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": "Function is too long. Split into smaller helper methods.",
+      "explanation": "Method PieceValidation.validatePawnMove score: 57",
+      "recommendation": "Function is too long. Split into smaller helper methods.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "snippet_3f3e81dc"
+      }
+    },
+    {
+      "id": "maint_snippet_3f3e81dc_PieceValidation.java_validateRookMove_09238cab",
+      "filePath": "PieceValidation.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": "Function is too long. Split into smaller helper methods.",
+      "explanation": "Method PieceValidation.validateRookMove score: 62",
+      "recommendation": "Function is too long. Split into smaller helper methods.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "snippet_3f3e81dc"
+      }
+    },
+    {
+      "id": "maint_snippet_3f3e81dc_PieceValidation.java_validateKnightMove_4ea72ac3",
+      "filePath": "PieceValidation.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": "Function is too long. Split into smaller helper methods.",
+      "explanation": "Method PieceValidation.validateKnightMove score: 70",
+      "recommendation": "Function is too long. Split into smaller helper methods.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "snippet_3f3e81dc"
+      }
+    },
+    {
+      "id": "maint_snippet_3f3e81dc_PieceValidation.java_validateBishopMove_1dcae4dc",
+      "filePath": "PieceValidation.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": "Function is too long. Split into smaller helper methods.",
+      "explanation": "Method PieceValidation.validateBishopMove score: 62",
+      "recommendation": "Function is too long. Split into smaller helper methods.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "snippet_3f3e81dc"
+      }
+    },
+    {
+      "id": "maint_snippet_3f3e81dc_PieceValidation.java_validateQueenMove_4ac33bdf",
+      "filePath": "PieceValidation.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": "Function is too long. Split into smaller helper methods.",
+      "explanation": "Method PieceValidation.validateQueenMove score: 62",
+      "recommendation": "Function is too long. Split into smaller helper methods.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "snippet_3f3e81dc"
+      }
+    },
+    {
+      "id": "maint_snippet_3f3e81dc_PieceValidation.java_validateKingMove_d8dbc130",
+      "filePath": "PieceValidation.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": "Function is too long. Split into smaller helper methods.",
+      "explanation": "Method PieceValidation.validateKingMove score: 70",
+      "recommendation": "Function is too long. Split into smaller helper methods.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "snippet_3f3e81dc"
+      }
+    }
+  ],
+  "scanId": "snippet_3f3e81dc",
+  "timestamp": "2026-02-11T08:07:20.770Z",
+  "storedAt": "2026-02-11T08:07:20.770Z"
+}

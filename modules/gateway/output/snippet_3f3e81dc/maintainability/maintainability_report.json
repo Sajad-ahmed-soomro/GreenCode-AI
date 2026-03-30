@@ -1,0 +1,15 @@
+{
+  "analyzedFiles": [
+    {
+      "file": "PieceValidation.json",
+      "avgScore": 63.6,
+      "level": "Medium",
+      "totalMethods": 7,
+      "analyzedAt": "2026-02-11T08:07:20.731Z"
+    }
+  ],
+  "overallAvg": 63.6,
+  "overallLevel": "Medium",
+  "totalFiles": 1,
+  "updatedAt": "2026-02-11T08:07:20.731Z"
+}

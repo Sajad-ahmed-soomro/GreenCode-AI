@@ -1,0 +1,22 @@
+{
+  "fileName": "User.java",
+  "suggestions": [
+    {
+      "issueType": "BadLookup",
+      "pattern": "List.contains() used inside loop",
+      "recommendedDataStructure": "HashSet (Set)",
+      "why": "List.contains() inside a loop is O(n²). Replace List with Set for O(1) lookup.",
+      "energyImpact": "Reduces CPU cycles significantly by avoiding repeated scans.",
+      "lineNumber": 14
+    },
+    {
+      "issueType": "NestedLoops",
+      "pattern": "Nested loops detected",
+      "recommendedDataStructure": "Use HashMap/HashSet for matching instead of O(n²) nested scans.",
+      "why": "Nested loops cause O(n²) complexity. Converting one list to a Map reduces time to O(n).",
+      "energyImpact": "Massive CPU & energy reduction (up to 95%).",
+      "lineNumber": 13,
+      "outerLoopStartsAt": 9
+    }
+  ]
+}

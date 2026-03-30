@@ -1,0 +1,352 @@
+{
+  "agent": "JavaComplianceAgent",
+  "issues": [
+    {
+      "line": 3,
+      "type": "Naming Issue",
+      "name": "ChessGameEngine",
+      "message": "Method name should be in camelCase.",
+      "severity": "medium"
+    },
+    {
+      "line": 8,
+      "type": "Formatting Issue",
+      "message": "Remove trailing spaces.",
+      "severity": "low"
+    },
+    {
+      "line": 15,
+      "type": "Formatting Issue",
+      "message": "Remove trailing spaces.",
+      "severity": "low"
+    },
+    {
+      "line": 30,
+      "type": "Formatting Issue",
+      "message": "Remove trailing spaces.",
+      "severity": "low"
+    },
+    {
+      "line": 35,
+      "type": "Formatting Issue",
+      "message": "Remove trailing spaces.",
+      "severity": "low"
+    },
+    {
+      "line": 39,
+      "type": "Formatting Issue",
+      "message": "Remove trailing spaces.",
+      "severity": "low"
+    },
+    {
+      "line": 43,
+      "type": "Formatting Issue",
+      "message": "Remove trailing spaces.",
+      "severity": "low"
+    },
+    {
+      "line": 46,
+      "type": "Formatting Issue",
+      "message": "Remove trailing spaces.",
+      "severity": "low"
+    },
+    {
+      "line": 54,
+      "type": "Formatting Issue",
+      "message": "Remove trailing spaces.",
+      "severity": "low"
+    },
+    {
+      "line": 59,
+      "type": "Formatting Issue",
+      "message": "Remove trailing spaces.",
+      "severity": "low"
+    },
+    {
+      "line": 65,
+      "type": "Formatting Issue",
+      "message": "Remove trailing spaces.",
+      "severity": "low"
+    },
+    {
+      "line": 68,
+      "type": "Formatting Issue",
+      "message": "Remove trailing spaces.",
+      "severity": "low"
+    },
+    {
+      "line": 73,
+      "type": "Formatting Issue",
+      "message": "Remove trailing spaces.",
+      "severity": "low"
+    },
+    {
+      "line": 77,
+      "type": "Formatting Issue",
+      "message": "Remove trailing spaces.",
+      "severity": "low"
+    },
+    {
+      "line": 90,
+      "type": "Formatting Issue",
+      "message": "Remove trailing spaces.",
+      "severity": "low"
+    },
+    {
+      "line": 96,
+      "type": "Formatting Issue",
+      "message": "Remove trailing spaces.",
+      "severity": "low"
+    },
+    {
+      "line": 101,
+      "type": "Formatting Issue",
+      "message": "Remove trailing spaces.",
+      "severity": "low"
+    },
+    {
+      "line": 107,
+      "type": "Formatting Issue",
+      "message": "Remove trailing spaces.",
+      "severity": "low"
+    },
+    {
+      "line": 112,
+      "type": "Formatting Issue",
+      "message": "Remove trailing spaces.",
+      "severity": "low"
+    },
+    {
+      "line": 126,
+      "type": "Formatting Issue",
+      "message": "Remove trailing spaces.",
+      "severity": "low"
+    },
+    {
+      "line": 130,
+      "type": "Formatting Issue",
+      "message": "Remove trailing spaces.",
+      "severity": "low"
+    },
+    {
+      "line": 134,
+      "type": "Formatting Issue",
+      "message": "Remove trailing spaces.",
+      "severity": "low"
+    },
+    {
+      "line": 139,
+      "type": "Formatting Issue",
+      "message": "Remove trailing spaces.",
+      "severity": "low"
+    },
+    {
+      "line": 143,
+      "type": "Formatting Issue",
+      "message": "Remove trailing spaces.",
+      "severity": "low"
+    },
+    {
+      "line": 147,
+      "type": "Formatting Issue",
+      "message": "Remove trailing spaces.",
+      "severity": "low"
+    },
+    {
+      "line": 151,
+      "type": "Formatting Issue",
+      "message": "Remove trailing spaces.",
+      "severity": "low"
+    },
+    {
+      "line": 155,
+      "type": "Formatting Issue",
+      "message": "Remove trailing spaces.",
+      "severity": "low"
+    },
+    {
+      "line": 159,
+      "type": "Formatting Issue",
+      "message": "Remove trailing spaces.",
+      "severity": "low"
+    },
+    {
+      "line": 163,
+      "type": "Formatting Issue",
+      "message": "Remove trailing spaces.",
+      "severity": "low"
+    },
+    {
+      "line": 167,
+      "type": "Formatting Issue",
+      "message": "Remove trailing spaces.",
+      "severity": "low"
+    },
+    {
+      "line": 171,
+      "type": "Formatting Issue",
+      "message": "Remove trailing spaces.",
+      "severity": "low"
+    },
+    {
+      "line": 183,
+      "type": "Formatting Issue",
+      "message": "Remove trailing spaces.",
+      "severity": "low"
+    },
+    {
+      "line": 187,
+      "type": "Formatting Issue",
+      "message": "Remove trailing spaces.",
+      "severity": "low"
+    }
+  ],
+  "suggestions": [
+    {
+      "line": 3,
+      "suggestion": "Rename 'ChessGameEngine' to camelCase (e.g., 'chessGameEngine')."
+    },
+    {
+      "line": 8,
+      "suggestion": "Remove trailing spaces on line 8."
+    },
+    {
+      "line": 15,
+      "suggestion": "Remove trailing spaces on line 15."
+    },
+    {
+      "line": 30,
+      "suggestion": "Remove trailing spaces on line 30."
+    },
+    {
+      "line": 35,
+      "suggestion": "Remove trailing spaces on line 35."
+    },
+    {
+      "line": 39,
+      "suggestion": "Remove trailing spaces on line 39."
+    },
+    {
+      "line": 43,
+      "suggestion": "Remove trailing spaces on line 43."
+    },
+    {
+      "line": 46,
+      "suggestion": "Remove trailing spaces on line 46."
+    },
+    {
+      "line": 54,
+      "suggestion": "Remove trailing spaces on line 54."
+    },
+    {
+      "line": 59,
+      "suggestion": "Remove trailing spaces on line 59."
+    },
+    {
+      "line": 65,
+      "suggestion": "Remove trailing spaces on line 65."
+    },
+    {
+      "line": 68,
+      "suggestion": "Remove trailing spaces on line 68."
+    },
+    {
+      "line": 73,
+      "suggestion": "Remove trailing spaces on line 73."
+    },
+    {
+      "line": 77,
+      "suggestion": "Remove trailing spaces on line 77."
+    },
+    {
+      "line": 90,
+      "suggestion": "Remove trailing spaces on line 90."
+    },
+    {
+      "line": 96,
+      "suggestion": "Remove trailing spaces on line 96."
+    },
+    {
+      "line": 101,
+      "suggestion": "Remove trailing spaces on line 101."
+    },
+    {
+      "line": 107,
+      "suggestion": "Remove trailing spaces on line 107."
+    },
+    {
+      "line": 112,
+      "suggestion": "Remove trailing spaces on line 112."
+    },
+    {
+      "line": 126,
+      "suggestion": "Remove trailing spaces on line 126."
+    },
+    {
+      "line": 130,
+      "suggestion": "Remove trailing spaces on line 130."
+    },
+    {
+      "line": 134,
+      "suggestion": "Remove trailing spaces on line 134."
+    },
+    {
+      "line": 139,
+      "suggestion": "Remove trailing spaces on line 139."
+    },
+    {
+      "line": 143,
+      "suggestion": "Remove trailing spaces on line 143."
+    },
+    {
+      "line": 147,
+      "suggestion": "Remove trailing spaces on line 147."
+    },
+    {
+      "line": 151,
+      "suggestion": "Remove trailing spaces on line 151."
+    },
+    {
+      "line": 155,
+      "suggestion": "Remove trailing spaces on line 155."
+    },
+    {
+      "line": 159,
+      "suggestion": "Remove trailing spaces on line 159."
+    },
+    {
+      "line": 163,
+      "suggestion": "Remove trailing spaces on line 163."
+    },
+    {
+      "line": 167,
+      "suggestion": "Remove trailing spaces on line 167."
+    },
+    {
+      "line": 171,
+      "suggestion": "Remove trailing spaces on line 171."
+    },
+    {
+      "line": 183,
+      "suggestion": "Remove trailing spaces on line 183."
+    },
+    {
+      "line": 187,
+      "suggestion": "Remove trailing spaces on line 187."
+    }
+  ],
+  "summary": {
+    "totalIssues": 33,
+    "bySeverity": {
+      "high": 0,
+      "medium": 1,
+      "low": 32
+    },
+    "byType": {
+      "naming": 1,
+      "formatting": 32,
+      "deadCode": 0,
+      "import": 0
+    }
+  }
+}

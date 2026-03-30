@@ -1,0 +1,7 @@
+{
+  "name": "greencode-refactoring-adapter",
+  "version": "1.0.0",
+  "description": "Adapter: UnifiedIssue[] -> Refactoring Engine -> prioritized fixes with diffs",
+  "type": "module",
+  "main": "index.js"
+}

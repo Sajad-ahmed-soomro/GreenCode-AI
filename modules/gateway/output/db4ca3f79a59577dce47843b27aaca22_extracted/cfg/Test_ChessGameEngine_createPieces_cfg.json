@@ -1,0 +1,25 @@
+{
+  "methodName": "createPieces",
+  "nodes": [
+    {
+      "id": "57a6d27f-b79c-438c-aaa1-955607bf6751",
+      "label": "Start",
+      "type": "start",
+      "next": [
+        "471355a0-549c-4e43-8f41-482600b5a3dd"
+      ]
+    },
+    {
+      "id": "471355a0-549c-4e43-8f41-482600b5a3dd",
+      "label": "End",
+      "type": "end",
+      "next": []
+    }
+  ],
+  "edges": [
+    [
+      "57a6d27f-b79c-438c-aaa1-955607bf6751",
+      "471355a0-549c-4e43-8f41-482600b5a3dd"
+    ]
+  ]
+}

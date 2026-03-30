@@ -1,0 +1,25 @@
+{
+  "methodName": "handlePromotion",
+  "nodes": [
+    {
+      "id": "7eac9a37-dcab-48b7-8818-99a83d91a904",
+      "label": "Start",
+      "type": "start",
+      "next": [
+        "684dce48-e63c-4b50-9575-1f78522dc8c0"
+      ]
+    },
+    {
+      "id": "684dce48-e63c-4b50-9575-1f78522dc8c0",
+      "label": "End",
+      "type": "end",
+      "next": []
+    }
+  ],
+  "edges": [
+    [
+      "7eac9a37-dcab-48b7-8818-99a83d91a904",
+      "684dce48-e63c-4b50-9575-1f78522dc8c0"
+    ]
+  ]
+}
