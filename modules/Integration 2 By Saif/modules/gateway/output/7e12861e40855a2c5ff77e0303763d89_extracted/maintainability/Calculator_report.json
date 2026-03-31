@@ -1,0 +1,173 @@
+{
+  "file": "Calculator.json",
+  "totalClasses": 1,
+  "totalMethods": 3,
+  "realLOC": 31,
+  "realComments": 0,
+  "averageScore": 78.7,
+  "maintainabilityLevel": "Medium",
+  "results": [
+    {
+      "className": "Calculator",
+      "methodName": "add",
+      "methodScore": 77,
+      "maintainabilityLevel": "Medium",
+      "metrics": [
+        {
+          "metric": "Function Length",
+          "value": 31,
+          "status": "Medium",
+          "penalty": 0.08,
+          "message": "add has 31 lines of code (Medium)."
+        },
+        {
+          "metric": "Nesting Depth",
+          "value": 0,
+          "status": "Low",
+          "penalty": 0,
+          "message": "add has nesting depth 0 (Low)."
+        },
+        {
+          "metric": "Cyclomatic Complexity",
+          "value": 1,
+          "status": "Low",
+          "penalty": 0,
+          "message": "add has 1 decision points (Low)."
+        },
+        {
+          "metric": "Parameter Count",
+          "value": 2,
+          "status": "Low",
+          "penalty": 0,
+          "message": "add has 2 parameters (Low)."
+        },
+        {
+          "metric": "Comment Ratio",
+          "value": "0.0%",
+          "status": "High",
+          "penalty": 0.1,
+          "message": "add comment ratio = 0.0% (High)."
+        },
+        {
+          "metric": "Naming Clarity",
+          "value": "a, b",
+          "status": "Medium",
+          "penalty": 0.05,
+          "message": "add has unclear identifiers: a, b."
+        }
+      ],
+      "suggestions": [
+        " Low comment coverage. Add documentation or inline comments.",
+        " Some variable names are unclear. Use more descriptive names."
+      ]
+    },
+    {
+      "className": "Calculator",
+      "methodName": "sumArray",
+      "methodScore": 82,
+      "maintainabilityLevel": "Medium",
+      "metrics": [
+        {
+          "metric": "Function Length",
+          "value": 31,
+          "status": "Medium",
+          "penalty": 0.08,
+          "message": "sumArray has 31 lines of code (Medium)."
+        },
+        {
+          "metric": "Nesting Depth",
+          "value": 0,
+          "status": "Low",
+          "penalty": 0,
+          "message": "sumArray has nesting depth 0 (Low)."
+        },
+        {
+          "metric": "Cyclomatic Complexity",
+          "value": 2,
+          "status": "Low",
+          "penalty": 0,
+          "message": "sumArray has 2 decision points (Low)."
+        },
+        {
+          "metric": "Parameter Count",
+          "value": 1,
+          "status": "Low",
+          "penalty": 0,
+          "message": "sumArray has 1 parameters (Low)."
+        },
+        {
+          "metric": "Comment Ratio",
+          "value": "0.0%",
+          "status": "High",
+          "penalty": 0.1,
+          "message": "sumArray comment ratio = 0.0% (High)."
+        },
+        {
+          "metric": "Naming Clarity",
+          "value": "Good",
+          "status": "Low",
+          "penalty": 0,
+          "message": "sumArray naming is clear."
+        }
+      ],
+      "suggestions": [
+        " Low comment coverage. Add documentation or inline comments."
+      ]
+    },
+    {
+      "className": "Calculator",
+      "methodName": "checkValue",
+      "methodScore": 77,
+      "maintainabilityLevel": "Medium",
+      "metrics": [
+        {
+          "metric": "Function Length",
+          "value": 31,
+          "status": "Medium",
+          "penalty": 0.08,
+          "message": "checkValue has 31 lines of code (Medium)."
+        },
+        {
+          "metric": "Nesting Depth",
+          "value": 0,
+          "status": "Low",
+          "penalty": 0,
+          "message": "checkValue has nesting depth 0 (Low)."
+        },
+        {
+          "metric": "Cyclomatic Complexity",
+          "value": 4,
+          "status": "Low",
+          "penalty": 0,
+          "message": "checkValue has 4 decision points (Low)."
+        },
+        {
+          "metric": "Parameter Count",
+          "value": 1,
+          "status": "Low",
+          "penalty": 0,
+          "message": "checkValue has 1 parameters (Low)."
+        },
+        {
+          "metric": "Comment Ratio",
+          "value": "0.0%",
+          "status": "High",
+          "penalty": 0.1,
+          "message": "checkValue comment ratio = 0.0% (High)."
+        },
+        {
+          "metric": "Naming Clarity",
+          "value": "x",
+          "status": "Medium",
+          "penalty": 0.05,
+          "message": "checkValue has unclear identifiers: x."
+        }
+      ],
+      "suggestions": [
+        " Low comment coverage. Add documentation or inline comments.",
+        " Some variable names are unclear. Use more descriptive names."
+      ]
+    }
+  ],
+  "message": " File Calculator.json analyzed successfully."
+}

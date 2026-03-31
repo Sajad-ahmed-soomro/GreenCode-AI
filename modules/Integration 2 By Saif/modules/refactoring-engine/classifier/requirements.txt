@@ -1,0 +1,8 @@
+# For development
+pytest>=7.0.0
+black>=22.0.0
+flake8>=5.0.0
+
+# For production (if needed)
+# pydantic>=1.10.0  # Already using dataclasses
+# numpy>=1.24.0     # If we add ML later

@@ -1,0 +1,18 @@
+{
+  "Calculator": {
+    "add": {
+      "visibility": "public",
+      "static": false,
+      "calls": {},
+      "calledBy": {},
+      "risk": "medium"
+    },
+    "square": {
+      "visibility": "private",
+      "static": false,
+      "calls": {},
+      "calledBy": {},
+      "risk": "low"
+    }
+  }
+}

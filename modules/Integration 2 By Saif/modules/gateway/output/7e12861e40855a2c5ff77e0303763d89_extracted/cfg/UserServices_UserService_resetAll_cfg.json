@@ -1,0 +1,25 @@
+{
+  "methodName": "resetAll",
+  "nodes": [
+    {
+      "id": "4bec390e-a00f-4859-8871-e8cdabdc0120",
+      "label": "Start",
+      "type": "start",
+      "next": [
+        "79cd324e-9a48-44cc-8f05-1887469edae8"
+      ]
+    },
+    {
+      "id": "79cd324e-9a48-44cc-8f05-1887469edae8",
+      "label": "End",
+      "type": "end",
+      "next": []
+    }
+  ],
+  "edges": [
+    [
+      "4bec390e-a00f-4859-8871-e8cdabdc0120",
+      "79cd324e-9a48-44cc-8f05-1887469edae8"
+    ]
+  ]
+}

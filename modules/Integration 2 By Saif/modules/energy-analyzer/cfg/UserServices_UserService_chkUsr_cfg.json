@@ -1,0 +1,25 @@
+{
+  "methodName": "chkUsr",
+  "nodes": [
+    {
+      "id": "c2091417-a211-48fe-a1f6-d17be6e67647",
+      "label": "Start",
+      "type": "start",
+      "next": [
+        "34c046a9-a52e-4510-9a70-2b54720e7b64"
+      ]
+    },
+    {
+      "id": "34c046a9-a52e-4510-9a70-2b54720e7b64",
+      "label": "End",
+      "type": "end",
+      "next": []
+    }
+  ],
+  "edges": [
+    [
+      "c2091417-a211-48fe-a1f6-d17be6e67647",
+      "34c046a9-a52e-4510-9a70-2b54720e7b64"
+    ]
+  ]
+}

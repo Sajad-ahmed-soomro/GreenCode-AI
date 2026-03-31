@@ -1,0 +1,17 @@
+{
+  "name": "greencode-integration",
+  "version": "1.0.0",
+  "description": "Integration Module for GreenCode AI (IDE + CI/CD)",
+  "main": "dist/orchestrator/runAnalysis.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/orchestrator/runAnalysis.js",
+    "dev": "ts-node orchestrator/runAnalysis.ts"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^5.3.0",
+    "ts-node": "^10.9.1",
+    "@types/node": "^20.10.0"
+  }
+}
