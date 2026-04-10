@@ -3,6 +3,8 @@
 [![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)]()
 [![License](https://img.shields.io/badge/license-MIT-green.svg)]()
 [![FYP Project](https://img.shields.io/badge/🎓-Final_Year_Project-orange)]()
+<img width="907" height="774" alt="image" src="https://github.com/user-attachments/assets/fe4a132a-17a5-40fc-a44f-766ac0216928" />
+
 
 ## 📖 Abstract
 **GreenCode AI** is an intelligent, multi-agent system that integrates directly into software development workflows to optimize code for energy efficiency, performance, and maintainability. By combining static analysis (AST/CFG), runtime benchmarking, and AI-powered recommendations, it detects inefficiencies like nested loops, redundant queries, and memory leaks, providing actionable refactoring suggestions. The system operates as both a VS Code extension and CI/CD plugin, offering real-time feedback while reducing technical debt and carbon footprint.
