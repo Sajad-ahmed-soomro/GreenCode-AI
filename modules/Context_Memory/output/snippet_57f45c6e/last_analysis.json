@@ -1,0 +1,1898 @@
+{
+  "issues": [
+    {
+      "id": "ds_snippet_57f45c6e_ChessGameEngine.java_0_14b5b6b5",
+      "filePath": "ChessGameEngine.java",
+      "line": 24,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Manual arr[i] search inside loop",
+      "explanation": "Manual scanning inside loop is slow (O(n)). Hashed lookup is O(1).",
+      "recommendation": "Use Set or Map depending on logic",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "Use Set or Map depending on logic"
+      },
+      "context": {
+        "projectId": "snippet_57f45c6e",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_snippet_57f45c6e_ChessGameEngine.java_1_a7bf31eb",
+      "filePath": "ChessGameEngine.java",
+      "line": 116,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Manual arr[i] search inside loop",
+      "explanation": "Manual scanning inside loop is slow (O(n)). Hashed lookup is O(1).",
+      "recommendation": "Use Set or Map depending on logic",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "Use Set or Map depending on logic"
+      },
+      "context": {
+        "projectId": "snippet_57f45c6e",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_snippet_57f45c6e_ChessGameEngine.java_2_0cac3cbd",
+      "filePath": "ChessGameEngine.java",
+      "line": 118,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Manual arr[i] search inside loop",
+      "explanation": "Manual scanning inside loop is slow (O(n)). Hashed lookup is O(1).",
+      "recommendation": "Use Set or Map depending on logic",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "Use Set or Map depending on logic"
+      },
+      "context": {
+        "projectId": "snippet_57f45c6e",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_snippet_57f45c6e_ChessGameEngine.java_3_e6d81a7c",
+      "filePath": "ChessGameEngine.java",
+      "line": 176,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Manual arr[i] search inside loop",
+      "explanation": "Manual scanning inside loop is slow (O(n)). Hashed lookup is O(1).",
+      "recommendation": "Use Set or Map depending on logic",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "Use Set or Map depending on logic"
+      },
+      "context": {
+        "projectId": "snippet_57f45c6e",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_snippet_57f45c6e_ChessGameEngine.java_4_bdf908d7",
+      "filePath": "ChessGameEngine.java",
+      "line": 115,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Nested loops detected",
+      "explanation": "Nested loops cause O(n²) complexity. Converting one list to a Map reduces time to O(n).",
+      "recommendation": "Use HashMap/HashSet for matching instead of O(n²) nested scans.",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "Use HashMap/HashSet for matching instead of O(n²) nested scans."
+      },
+      "context": {
+        "projectId": "snippet_57f45c6e",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_snippet_57f45c6e_ChessGameEngine.java_5_8c6c40c6",
+      "filePath": "ChessGameEngine.java",
+      "line": 175,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Nested loops detected",
+      "explanation": "Nested loops cause O(n²) complexity. Converting one list to a Map reduces time to O(n).",
+      "recommendation": "Use HashMap/HashSet for matching instead of O(n²) nested scans.",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "Use HashMap/HashSet for matching instead of O(n²) nested scans."
+      },
+      "context": {
+        "projectId": "snippet_57f45c6e",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_snippet_57f45c6e_ChessGameEngine.java_6_6ee4b51c",
+      "filePath": "ChessGameEngine.java",
+      "line": 24,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Array used as dictionary with string key",
+      "explanation": "Arrays only support numeric indexing. Using them like maps is incorrect.",
+      "recommendation": "HashMap or TreeMap",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "HashMap or TreeMap"
+      },
+      "context": {
+        "projectId": "snippet_57f45c6e",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_snippet_57f45c6e_ChessGameEngine.java_7_64d310e8",
+      "filePath": "ChessGameEngine.java",
+      "line": 37,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Array used as dictionary with string key",
+      "explanation": "Arrays only support numeric indexing. Using them like maps is incorrect.",
+      "recommendation": "HashMap or TreeMap",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "HashMap or TreeMap"
+      },
+      "context": {
+        "projectId": "snippet_57f45c6e",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_snippet_57f45c6e_ChessGameEngine.java_8_fd5bc8dd",
+      "filePath": "ChessGameEngine.java",
+      "line": 38,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Array used as dictionary with string key",
+      "explanation": "Arrays only support numeric indexing. Using them like maps is incorrect.",
+      "recommendation": "HashMap or TreeMap",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "HashMap or TreeMap"
+      },
+      "context": {
+        "projectId": "snippet_57f45c6e",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_snippet_57f45c6e_ChessGameEngine.java_9_b539585f",
+      "filePath": "ChessGameEngine.java",
+      "line": 41,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Array used as dictionary with string key",
+      "explanation": "Arrays only support numeric indexing. Using them like maps is incorrect.",
+      "recommendation": "HashMap or TreeMap",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "HashMap or TreeMap"
+      },
+      "context": {
+        "projectId": "snippet_57f45c6e",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_snippet_57f45c6e_ChessGameEngine.java_10_bfd5dd8a",
+      "filePath": "ChessGameEngine.java",
+      "line": 42,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Array used as dictionary with string key",
+      "explanation": "Arrays only support numeric indexing. Using them like maps is incorrect.",
+      "recommendation": "HashMap or TreeMap",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "HashMap or TreeMap"
+      },
+      "context": {
+        "projectId": "snippet_57f45c6e",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_snippet_57f45c6e_ChessGameEngine.java_11_eea7af00",
+      "filePath": "ChessGameEngine.java",
+      "line": 50,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Array used as dictionary with string key",
+      "explanation": "Arrays only support numeric indexing. Using them like maps is incorrect.",
+      "recommendation": "HashMap or TreeMap",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "HashMap or TreeMap"
+      },
+      "context": {
+        "projectId": "snippet_57f45c6e",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_snippet_57f45c6e_ChessGameEngine.java_12_2e849b65",
+      "filePath": "ChessGameEngine.java",
+      "line": 51,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Array used as dictionary with string key",
+      "explanation": "Arrays only support numeric indexing. Using them like maps is incorrect.",
+      "recommendation": "HashMap or TreeMap",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "HashMap or TreeMap"
+      },
+      "context": {
+        "projectId": "snippet_57f45c6e",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_snippet_57f45c6e_ChessGameEngine.java_13_0db66abe",
+      "filePath": "ChessGameEngine.java",
+      "line": 66,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Array used as dictionary with string key",
+      "explanation": "Arrays only support numeric indexing. Using them like maps is incorrect.",
+      "recommendation": "HashMap or TreeMap",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "HashMap or TreeMap"
+      },
+      "context": {
+        "projectId": "snippet_57f45c6e",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_snippet_57f45c6e_ChessGameEngine.java_14_d364251a",
+      "filePath": "ChessGameEngine.java",
+      "line": 103,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Array used as dictionary with string key",
+      "explanation": "Arrays only support numeric indexing. Using them like maps is incorrect.",
+      "recommendation": "HashMap or TreeMap",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "HashMap or TreeMap"
+      },
+      "context": {
+        "projectId": "snippet_57f45c6e",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_snippet_57f45c6e_ChessGameEngine.java_15_0194653c",
+      "filePath": "ChessGameEngine.java",
+      "line": 116,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Array used as dictionary with string key",
+      "explanation": "Arrays only support numeric indexing. Using them like maps is incorrect.",
+      "recommendation": "HashMap or TreeMap",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "HashMap or TreeMap"
+      },
+      "context": {
+        "projectId": "snippet_57f45c6e",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_snippet_57f45c6e_ChessGameEngine.java_16_16babce5",
+      "filePath": "ChessGameEngine.java",
+      "line": 176,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Array used as dictionary with string key",
+      "explanation": "Arrays only support numeric indexing. Using them like maps is incorrect.",
+      "recommendation": "HashMap or TreeMap",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "HashMap or TreeMap"
+      },
+      "context": {
+        "projectId": "snippet_57f45c6e",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "comp_snippet_57f45c6e_ChessGameEngine.java_0_0754e725",
+      "filePath": "ChessGameEngine.java",
+      "line": 3,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "medium",
+      "confidence": 0.9,
+      "description": "Method name should be in camelCase.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "snippet_57f45c6e"
+      }
+    },
+    {
+      "id": "comp_snippet_57f45c6e_ChessGameEngine.java_1_58774a73",
+      "filePath": "ChessGameEngine.java",
+      "line": 8,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "snippet_57f45c6e"
+      }
+    },
+    {
+      "id": "comp_snippet_57f45c6e_ChessGameEngine.java_2_1f585dd0",
+      "filePath": "ChessGameEngine.java",
+      "line": 15,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "snippet_57f45c6e"
+      }
+    },
+    {
+      "id": "comp_snippet_57f45c6e_ChessGameEngine.java_3_6c236847",
+      "filePath": "ChessGameEngine.java",
+      "line": 30,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "snippet_57f45c6e"
+      }
+    },
+    {
+      "id": "comp_snippet_57f45c6e_ChessGameEngine.java_4_91c56abe",
+      "filePath": "ChessGameEngine.java",
+      "line": 35,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "snippet_57f45c6e"
+      }
+    },
+    {
+      "id": "comp_snippet_57f45c6e_ChessGameEngine.java_5_30eea2b5",
+      "filePath": "ChessGameEngine.java",
+      "line": 39,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "snippet_57f45c6e"
+      }
+    },
+    {
+      "id": "comp_snippet_57f45c6e_ChessGameEngine.java_6_974ad71f",
+      "filePath": "ChessGameEngine.java",
+      "line": 46,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "snippet_57f45c6e"
+      }
+    },
+    {
+      "id": "comp_snippet_57f45c6e_ChessGameEngine.java_7_3ef87a07",
+      "filePath": "ChessGameEngine.java",
+      "line": 54,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "snippet_57f45c6e"
+      }
+    },
+    {
+      "id": "comp_snippet_57f45c6e_ChessGameEngine.java_8_f92c4b40",
+      "filePath": "ChessGameEngine.java",
+      "line": 59,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "snippet_57f45c6e"
+      }
+    },
+    {
+      "id": "comp_snippet_57f45c6e_ChessGameEngine.java_9_1951ce41",
+      "filePath": "ChessGameEngine.java",
+      "line": 65,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "snippet_57f45c6e"
+      }
+    },
+    {
+      "id": "comp_snippet_57f45c6e_ChessGameEngine.java_10_ef9e20d3",
+      "filePath": "ChessGameEngine.java",
+      "line": 68,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "snippet_57f45c6e"
+      }
+    },
+    {
+      "id": "comp_snippet_57f45c6e_ChessGameEngine.java_11_51362efa",
+      "filePath": "ChessGameEngine.java",
+      "line": 73,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "snippet_57f45c6e"
+      }
+    },
+    {
+      "id": "comp_snippet_57f45c6e_ChessGameEngine.java_12_2c1abb6e",
+      "filePath": "ChessGameEngine.java",
+      "line": 77,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "snippet_57f45c6e"
+      }
+    },
+    {
+      "id": "comp_snippet_57f45c6e_ChessGameEngine.java_13_740b35ff",
+      "filePath": "ChessGameEngine.java",
+      "line": 90,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "snippet_57f45c6e"
+      }
+    },
+    {
+      "id": "comp_snippet_57f45c6e_ChessGameEngine.java_14_ff6f9981",
+      "filePath": "ChessGameEngine.java",
+      "line": 96,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "snippet_57f45c6e"
+      }
+    },
+    {
+      "id": "comp_snippet_57f45c6e_ChessGameEngine.java_15_fa5c8c1f",
+      "filePath": "ChessGameEngine.java",
+      "line": 101,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "snippet_57f45c6e"
+      }
+    },
+    {
+      "id": "comp_snippet_57f45c6e_ChessGameEngine.java_16_98deb5b0",
+      "filePath": "ChessGameEngine.java",
+      "line": 107,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "snippet_57f45c6e"
+      }
+    },
+    {
+      "id": "comp_snippet_57f45c6e_ChessGameEngine.java_17_373266be",
+      "filePath": "ChessGameEngine.java",
+      "line": 112,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "snippet_57f45c6e"
+      }
+    },
+    {
+      "id": "comp_snippet_57f45c6e_ChessGameEngine.java_18_2bce333a",
+      "filePath": "ChessGameEngine.java",
+      "line": 126,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "snippet_57f45c6e"
+      }
+    },
+    {
+      "id": "comp_snippet_57f45c6e_ChessGameEngine.java_19_dac7453e",
+      "filePath": "ChessGameEngine.java",
+      "line": 130,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "snippet_57f45c6e"
+      }
+    },
+    {
+      "id": "comp_snippet_57f45c6e_ChessGameEngine.java_20_c53f4a23",
+      "filePath": "ChessGameEngine.java",
+      "line": 134,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "snippet_57f45c6e"
+      }
+    },
+    {
+      "id": "comp_snippet_57f45c6e_ChessGameEngine.java_21_12b8ea39",
+      "filePath": "ChessGameEngine.java",
+      "line": 139,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "snippet_57f45c6e"
+      }
+    },
+    {
+      "id": "comp_snippet_57f45c6e_ChessGameEngine.java_22_a07db226",
+      "filePath": "ChessGameEngine.java",
+      "line": 143,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "snippet_57f45c6e"
+      }
+    },
+    {
+      "id": "comp_snippet_57f45c6e_ChessGameEngine.java_23_cdc5f06f",
+      "filePath": "ChessGameEngine.java",
+      "line": 147,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "snippet_57f45c6e"
+      }
+    },
+    {
+      "id": "comp_snippet_57f45c6e_ChessGameEngine.java_24_769bb479",
+      "filePath": "ChessGameEngine.java",
+      "line": 151,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "snippet_57f45c6e"
+      }
+    },
+    {
+      "id": "comp_snippet_57f45c6e_ChessGameEngine.java_25_d1ac4fa1",
+      "filePath": "ChessGameEngine.java",
+      "line": 155,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "snippet_57f45c6e"
+      }
+    },
+    {
+      "id": "comp_snippet_57f45c6e_ChessGameEngine.java_26_439dd291",
+      "filePath": "ChessGameEngine.java",
+      "line": 159,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "snippet_57f45c6e"
+      }
+    },
+    {
+      "id": "comp_snippet_57f45c6e_ChessGameEngine.java_27_35e11a4a",
+      "filePath": "ChessGameEngine.java",
+      "line": 163,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "snippet_57f45c6e"
+      }
+    },
+    {
+      "id": "comp_snippet_57f45c6e_ChessGameEngine.java_28_959f5bbf",
+      "filePath": "ChessGameEngine.java",
+      "line": 167,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "snippet_57f45c6e"
+      }
+    },
+    {
+      "id": "comp_snippet_57f45c6e_ChessGameEngine.java_29_016803b6",
+      "filePath": "ChessGameEngine.java",
+      "line": 171,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "snippet_57f45c6e"
+      }
+    },
+    {
+      "id": "comp_snippet_57f45c6e_ChessGameEngine.java_30_fba65494",
+      "filePath": "ChessGameEngine.java",
+      "line": 183,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "snippet_57f45c6e"
+      }
+    },
+    {
+      "id": "comp_snippet_57f45c6e_ChessGameEngine.java_31_011524ed",
+      "filePath": "ChessGameEngine.java",
+      "line": 187,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "snippet_57f45c6e"
+      }
+    },
+    {
+      "id": "maint_snippet_57f45c6e_ChessGameEngine.java_initializeBoard_06223c2e",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": "Function is too long. Split into smaller helper methods.",
+      "explanation": "Method ChessGameEngine.initializeBoard score: 75",
+      "recommendation": "Function is too long. Split into smaller helper methods.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "snippet_57f45c6e"
+      }
+    },
+    {
+      "id": "maint_snippet_57f45c6e_ChessGameEngine.java_makeMove_4385259f",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": "Function is too long. Split into smaller helper methods.",
+      "explanation": "Method ChessGameEngine.makeMove score: 62",
+      "recommendation": "Function is too long. Split into smaller helper methods.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "snippet_57f45c6e"
+      }
+    },
+    {
+      "id": "maint_snippet_57f45c6e_ChessGameEngine.java_isValidMove_b87c7894",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": "Function is too long. Split into smaller helper methods.",
+      "explanation": "Method ChessGameEngine.isValidMove score: 62",
+      "recommendation": "Function is too long. Split into smaller helper methods.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "snippet_57f45c6e"
+      }
+    },
+    {
+      "id": "maint_snippet_57f45c6e_ChessGameEngine.java_validatePieceMove_41091177",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": "Function is too long. Split into smaller helper methods.",
+      "explanation": "Method ChessGameEngine.validatePieceMove score: 70",
+      "recommendation": "Function is too long. Split into smaller helper methods.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "snippet_57f45c6e"
+      }
+    },
+    {
+      "id": "maint_snippet_57f45c6e_ChessGameEngine.java_handleSpecialMoves_4041737f",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": "Function is too long. Split into smaller helper methods.",
+      "explanation": "Method ChessGameEngine.handleSpecialMoves score: 62",
+      "recommendation": "Function is too long. Split into smaller helper methods.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "snippet_57f45c6e"
+      }
+    },
+    {
+      "id": "maint_snippet_57f45c6e_ChessGameEngine.java_isInCheck_6aab269e",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": "Function is too long. Split into smaller helper methods.",
+      "explanation": "Method ChessGameEngine.isInCheck score: 67",
+      "recommendation": "Function is too long. Split into smaller helper methods.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "snippet_57f45c6e"
+      }
+    },
+    {
+      "id": "maint_snippet_57f45c6e_ChessGameEngine.java_isValidPosition_aff56915",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": "Function is too long. Split into smaller helper methods.",
+      "explanation": "Method ChessGameEngine.isValidPosition score: 75",
+      "recommendation": "Function is too long. Split into smaller helper methods.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "snippet_57f45c6e"
+      }
+    },
+    {
+      "id": "maint_snippet_57f45c6e_ChessGameEngine.java_isWhitePiece_94e3a1ae",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": "Function is too long. Split into smaller helper methods.",
+      "explanation": "Method ChessGameEngine.isWhitePiece score: 75",
+      "recommendation": "Function is too long. Split into smaller helper methods.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "snippet_57f45c6e"
+      }
+    },
+    {
+      "id": "maint_snippet_57f45c6e_ChessGameEngine.java_validatePawnMove_09692e1f",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": "Function is too long. Split into smaller helper methods.",
+      "explanation": "Method ChessGameEngine.validatePawnMove score: 70",
+      "recommendation": "Function is too long. Split into smaller helper methods.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "snippet_57f45c6e"
+      }
+    },
+    {
+      "id": "maint_snippet_57f45c6e_ChessGameEngine.java_validateRookMove_d0176e49",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": "Function is too long. Split into smaller helper methods.",
+      "explanation": "Method ChessGameEngine.validateRookMove score: 70",
+      "recommendation": "Function is too long. Split into smaller helper methods.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "snippet_57f45c6e"
+      }
+    },
+    {
+      "id": "maint_snippet_57f45c6e_ChessGameEngine.java_validateKnightMove_957527c2",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": "Function is too long. Split into smaller helper methods.",
+      "explanation": "Method ChessGameEngine.validateKnightMove score: 70",
+      "recommendation": "Function is too long. Split into smaller helper methods.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "snippet_57f45c6e"
+      }
+    },
+    {
+      "id": "maint_snippet_57f45c6e_ChessGameEngine.java_validateBishopMove_6a1fa4ae",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": "Function is too long. Split into smaller helper methods.",
+      "explanation": "Method ChessGameEngine.validateBishopMove score: 70",
+      "recommendation": "Function is too long. Split into smaller helper methods.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "snippet_57f45c6e"
+      }
+    },
+    {
+      "id": "maint_snippet_57f45c6e_ChessGameEngine.java_validateQueenMove_8b91cb8e",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": "Function is too long. Split into smaller helper methods.",
+      "explanation": "Method ChessGameEngine.validateQueenMove score: 70",
+      "recommendation": "Function is too long. Split into smaller helper methods.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "snippet_57f45c6e"
+      }
+    },
+    {
+      "id": "maint_snippet_57f45c6e_ChessGameEngine.java_validateKingMove_db3ac947",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": "Function is too long. Split into smaller helper methods.",
+      "explanation": "Method ChessGameEngine.validateKingMove score: 70",
+      "recommendation": "Function is too long. Split into smaller helper methods.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "snippet_57f45c6e"
+      }
+    },
+    {
+      "id": "maint_snippet_57f45c6e_ChessGameEngine.java_handleCastling_126a7972",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": "Function is too long. Split into smaller helper methods.",
+      "explanation": "Method ChessGameEngine.handleCastling score: 70",
+      "recommendation": "Function is too long. Split into smaller helper methods.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "snippet_57f45c6e"
+      }
+    },
+    {
+      "id": "maint_snippet_57f45c6e_ChessGameEngine.java_handlePromotion_1162d292",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": "Function is too long. Split into smaller helper methods.",
+      "explanation": "Method ChessGameEngine.handlePromotion score: 75",
+      "recommendation": "Function is too long. Split into smaller helper methods.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "snippet_57f45c6e"
+      }
+    },
+    {
+      "id": "maint_snippet_57f45c6e_ChessGameEngine.java_handleEnPassant_c71d593e",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": "Function is too long. Split into smaller helper methods.",
+      "explanation": "Method ChessGameEngine.handleEnPassant score: 75",
+      "recommendation": "Function is too long. Split into smaller helper methods.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "snippet_57f45c6e"
+      }
+    },
+    {
+      "id": "maint_snippet_57f45c6e_ChessGameEngine.java_findKing_6808d61f",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": "Function is too long. Split into smaller helper methods.",
+      "explanation": "Method ChessGameEngine.findKing score: 67",
+      "recommendation": "Function is too long. Split into smaller helper methods.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "snippet_57f45c6e"
+      }
+    },
+    {
+      "id": "maint_snippet_57f45c6e_ChessGameEngine.java_getBoard_f7a398f7",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": "Function is too long. Split into smaller helper methods.",
+      "explanation": "Method ChessGameEngine.getBoard score: 75",
+      "recommendation": "Function is too long. Split into smaller helper methods.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "snippet_57f45c6e"
+      }
+    },
+    {
+      "id": "maint_snippet_57f45c6e_ChessGameEngine.java_isWhiteTurn_8e59cb97",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": "Function is too long. Split into smaller helper methods.",
+      "explanation": "Method ChessGameEngine.isWhiteTurn score: 75",
+      "recommendation": "Function is too long. Split into smaller helper methods.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "snippet_57f45c6e"
+      }
+    },
+    {
+      "id": "energy_snippet_57f45c6e_ChessGameEngine.java_findKing_fd2149f5",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "energy",
+      "category": "energy",
+      "severity": "high",
+      "confidence": 0.9,
+      "description": "High energy footprint detected in findKing()",
+      "explanation": "energyScore=0.619 | median=31.177ms | loops=2 | nesting=2",
+      "recommendation": "Reduce nested loops and repeated heavy operations in hot paths.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "snippet_57f45c6e",
+        "frequency": 100,
+        "energyScore": 0.6188590479009491,
+        "executionTimeMs": 31.177,
+        "loopCount": 2,
+        "nestingDepth": 2,
+        "cyclomatic": 1,
+        "benchmarkRuns": 100
+      }
+    },
+    {
+      "id": "energy_snippet_57f45c6e_ChessGameEngine.java_isInCheck_a3b8a3d3",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "energy",
+      "category": "energy",
+      "severity": "high",
+      "confidence": 0.9,
+      "description": "High energy footprint detected in isInCheck()",
+      "explanation": "energyScore=0.590 | median=22.011ms | loops=2 | nesting=2",
+      "recommendation": "Reduce nested loops and repeated heavy operations in hot paths.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "snippet_57f45c6e",
+        "frequency": 100,
+        "energyScore": 0.5897998241670881,
+        "executionTimeMs": 22.011,
+        "loopCount": 2,
+        "nestingDepth": 2,
+        "cyclomatic": 1,
+        "benchmarkRuns": 100
+      }
+    },
+    {
+      "id": "energy_snippet_57f45c6e_ChessGameEngine.java_validatePieceMove_ecf0ff46",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "energy",
+      "category": "energy",
+      "severity": "high",
+      "confidence": 0.9,
+      "description": "High energy footprint detected in validatePieceMove()",
+      "explanation": "energyScore=0.583 | median=25.127ms | loops=0 | nesting=1",
+      "recommendation": "Reduce nested loops and repeated heavy operations in hot paths.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "snippet_57f45c6e",
+        "frequency": 100,
+        "energyScore": 0.5828068519963154,
+        "executionTimeMs": 25.127,
+        "loopCount": 0,
+        "nestingDepth": 1,
+        "cyclomatic": 1,
+        "benchmarkRuns": 100
+      }
+    },
+    {
+      "id": "energy_snippet_57f45c6e_ChessGameEngine.java_validateKnightMove_36ab8b15",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "energy",
+      "category": "energy",
+      "severity": "high",
+      "confidence": 0.9,
+      "description": "High energy footprint detected in validateKnightMove()",
+      "explanation": "energyScore=0.571 | median=21.922ms | loops=0 | nesting=1",
+      "recommendation": "Reduce nested loops and repeated heavy operations in hot paths.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "snippet_57f45c6e",
+        "frequency": 100,
+        "energyScore": 0.5714639530339474,
+        "executionTimeMs": 21.922,
+        "loopCount": 0,
+        "nestingDepth": 1,
+        "cyclomatic": 1,
+        "benchmarkRuns": 100
+      }
+    },
+    {
+      "id": "energy_snippet_57f45c6e_ChessGameEngine.java_makeMove_5d1c6be0",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "energy",
+      "category": "energy",
+      "severity": "high",
+      "confidence": 0.9,
+      "description": "High energy footprint detected in makeMove()",
+      "explanation": "energyScore=0.565 | median=20.301ms | loops=0 | nesting=1",
+      "recommendation": "Reduce nested loops and repeated heavy operations in hot paths.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "snippet_57f45c6e",
+        "frequency": 100,
+        "energyScore": 0.5651071848553727,
+        "executionTimeMs": 20.301,
+        "loopCount": 0,
+        "nestingDepth": 1,
+        "cyclomatic": 1,
+        "benchmarkRuns": 100
+      }
+    },
+    {
+      "id": "energy_snippet_57f45c6e_ChessGameEngine.java_validateKingMove_d3fa080f",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "energy",
+      "category": "energy",
+      "severity": "high",
+      "confidence": 0.9,
+      "description": "High energy footprint detected in validateKingMove()",
+      "explanation": "energyScore=0.564 | median=20.079ms | loops=0 | nesting=1",
+      "recommendation": "Reduce nested loops and repeated heavy operations in hot paths.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "snippet_57f45c6e",
+        "frequency": 100,
+        "energyScore": 0.5641991491311347,
+        "executionTimeMs": 20.079,
+        "loopCount": 0,
+        "nestingDepth": 1,
+        "cyclomatic": 1,
+        "benchmarkRuns": 100
+      }
+    },
+    {
+      "id": "energy_snippet_57f45c6e_ChessGameEngine.java_isValidMove_8e50cfd5",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "energy",
+      "category": "energy",
+      "severity": "medium",
+      "confidence": 0.9,
+      "description": "High energy footprint detected in isValidMove()",
+      "explanation": "energyScore=0.556 | median=18.189ms | loops=0 | nesting=1",
+      "recommendation": "Reduce nested loops and repeated heavy operations in hot paths.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "snippet_57f45c6e",
+        "frequency": 100,
+        "energyScore": 0.5560572091157135,
+        "executionTimeMs": 18.189,
+        "loopCount": 0,
+        "nestingDepth": 1,
+        "cyclomatic": 1,
+        "benchmarkRuns": 100
+      }
+    },
+    {
+      "id": "energy_snippet_57f45c6e_ChessGameEngine.java_validateQueenMove_feb6d8fd",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "energy",
+      "category": "energy",
+      "severity": "medium",
+      "confidence": 0.9,
+      "description": "High energy footprint detected in validateQueenMove()",
+      "explanation": "energyScore=0.549 | median=16.596ms | loops=0 | nesting=1",
+      "recommendation": "Reduce nested loops and repeated heavy operations in hot paths.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "snippet_57f45c6e",
+        "frequency": 100,
+        "energyScore": 0.5485457610930777,
+        "executionTimeMs": 16.596,
+        "loopCount": 0,
+        "nestingDepth": 1,
+        "cyclomatic": 1,
+        "benchmarkRuns": 100
+      }
+    },
+    {
+      "id": "energy_snippet_57f45c6e_ChessGameEngine.java_initializeBoard_d566ff81",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "energy",
+      "category": "energy",
+      "severity": "medium",
+      "confidence": 0.9,
+      "description": "High energy footprint detected in initializeBoard()",
+      "explanation": "energyScore=0.539 | median=13.237ms | loops=1 | nesting=1",
+      "recommendation": "Reduce nested loops and repeated heavy operations in hot paths.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "snippet_57f45c6e",
+        "frequency": 100,
+        "energyScore": 0.5391863364079044,
+        "executionTimeMs": 13.237,
+        "loopCount": 1,
+        "nestingDepth": 1,
+        "cyclomatic": 1,
+        "benchmarkRuns": 100
+      }
+    },
+    {
+      "id": "energy_snippet_57f45c6e_ChessGameEngine.java_getBoard_0f490bb2",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "energy",
+      "category": "energy",
+      "severity": "medium",
+      "confidence": 0.9,
+      "description": "High energy footprint detected in getBoard()",
+      "explanation": "energyScore=0.536 | median=14.204ms | loops=0 | nesting=1",
+      "recommendation": "Reduce nested loops and repeated heavy operations in hot paths.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "snippet_57f45c6e",
+        "frequency": 100,
+        "energyScore": 0.535881905245649,
+        "executionTimeMs": 14.204,
+        "loopCount": 0,
+        "nestingDepth": 1,
+        "cyclomatic": 1,
+        "benchmarkRuns": 100
+      }
+    },
+    {
+      "id": "energy_snippet_57f45c6e_ChessGameEngine.java_validatePawnMove_a3983062",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "energy",
+      "category": "energy",
+      "severity": "medium",
+      "confidence": 0.9,
+      "description": "High energy footprint detected in validatePawnMove()",
+      "explanation": "energyScore=0.530 | median=13.242ms | loops=0 | nesting=1",
+      "recommendation": "Reduce nested loops and repeated heavy operations in hot paths.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "snippet_57f45c6e",
+        "frequency": 100,
+        "energyScore": 0.5302167699298064,
+        "executionTimeMs": 13.242,
+        "loopCount": 0,
+        "nestingDepth": 1,
+        "cyclomatic": 1,
+        "benchmarkRuns": 100
+      }
+    },
+    {
+      "id": "energy_snippet_57f45c6e_ChessGameEngine.java_validateBishopMove_d080646f",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "energy",
+      "category": "energy",
+      "severity": "medium",
+      "confidence": 0.9,
+      "description": "High energy footprint detected in validateBishopMove()",
+      "explanation": "energyScore=0.512 | median=10.491ms | loops=0 | nesting=1",
+      "recommendation": "Reduce nested loops and repeated heavy operations in hot paths.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "snippet_57f45c6e",
+        "frequency": 100,
+        "energyScore": 0.5116143326152257,
+        "executionTimeMs": 10.491,
+        "loopCount": 0,
+        "nestingDepth": 1,
+        "cyclomatic": 1,
+        "benchmarkRuns": 100
+      }
+    },
+    {
+      "id": "energy_snippet_57f45c6e_ChessGameEngine.java_ChessGameEngine_50ff1307",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "energy",
+      "category": "energy",
+      "severity": "medium",
+      "confidence": 0.9,
+      "description": "High energy footprint detected in ChessGameEngine()",
+      "explanation": "energyScore=0.503 | median=9.356ms | loops=0 | nesting=1",
+      "recommendation": "Reduce nested loops and repeated heavy operations in hot paths.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "snippet_57f45c6e",
+        "frequency": 100,
+        "energyScore": 0.5026006517800925,
+        "executionTimeMs": 9.356,
+        "loopCount": 0,
+        "nestingDepth": 1,
+        "cyclomatic": 1,
+        "benchmarkRuns": 100
+      }
+    },
+    {
+      "id": "energy_snippet_57f45c6e_ChessGameEngine.java_handleCastling_efc3ce77",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "energy",
+      "category": "energy",
+      "severity": "medium",
+      "confidence": 0.9,
+      "description": "High energy footprint detected in handleCastling()",
+      "explanation": "energyScore=0.501 | median=9.14ms | loops=0 | nesting=1",
+      "recommendation": "Reduce nested loops and repeated heavy operations in hot paths.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "snippet_57f45c6e",
+        "frequency": 100,
+        "energyScore": 0.5007737817211775,
+        "executionTimeMs": 9.14,
+        "loopCount": 0,
+        "nestingDepth": 1,
+        "cyclomatic": 1,
+        "benchmarkRuns": 100
+      }
+    },
+    {
+      "id": "energy_snippet_57f45c6e_ChessGameEngine.java_isWhitePiece_46bef891",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "energy",
+      "category": "energy",
+      "severity": "medium",
+      "confidence": 0.9,
+      "description": "High energy footprint detected in isWhitePiece()",
+      "explanation": "energyScore=0.490 | median=7.969ms | loops=0 | nesting=1",
+      "recommendation": "Reduce nested loops and repeated heavy operations in hot paths.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "snippet_57f45c6e",
+        "frequency": 100,
+        "energyScore": 0.4901379761703261,
+        "executionTimeMs": 7.969,
+        "loopCount": 0,
+        "nestingDepth": 1,
+        "cyclomatic": 1,
+        "benchmarkRuns": 100
+      }
+    },
+    {
+      "id": "energy_snippet_57f45c6e_ChessGameEngine.java_handlePromotion_0ea296cf",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "energy",
+      "category": "energy",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "High energy footprint detected in handlePromotion()",
+      "explanation": "energyScore=0.477 | median=6.711ms | loops=0 | nesting=1",
+      "recommendation": "Reduce nested loops and repeated heavy operations in hot paths.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "snippet_57f45c6e",
+        "frequency": 100,
+        "energyScore": 0.4770396134529444,
+        "executionTimeMs": 6.711,
+        "loopCount": 0,
+        "nestingDepth": 1,
+        "cyclomatic": 1,
+        "benchmarkRuns": 100
+      }
+    },
+    {
+      "id": "energy_snippet_57f45c6e_ChessGameEngine.java_isValidPosition_b3f73055",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "energy",
+      "category": "energy",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "High energy footprint detected in isValidPosition()",
+      "explanation": "energyScore=0.467 | median=5.857ms | loops=0 | nesting=1",
+      "recommendation": "Reduce nested loops and repeated heavy operations in hot paths.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "snippet_57f45c6e",
+        "frequency": 100,
+        "energyScore": 0.4668662841004157,
+        "executionTimeMs": 5.857,
+        "loopCount": 0,
+        "nestingDepth": 1,
+        "cyclomatic": 1,
+        "benchmarkRuns": 100
+      }
+    },
+    {
+      "id": "energy_snippet_57f45c6e_ChessGameEngine.java_handleSpecialMoves_f3eaef57",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "energy",
+      "category": "energy",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "High energy footprint detected in handleSpecialMoves()",
+      "explanation": "energyScore=0.465 | median=5.745ms | loops=0 | nesting=1",
+      "recommendation": "Reduce nested loops and repeated heavy operations in hot paths.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "snippet_57f45c6e",
+        "frequency": 100,
+        "energyScore": 0.4654389290762154,
+        "executionTimeMs": 5.745,
+        "loopCount": 0,
+        "nestingDepth": 1,
+        "cyclomatic": 1,
+        "benchmarkRuns": 100
+      }
+    },
+    {
+      "id": "energy_snippet_57f45c6e_ChessGameEngine.java_validateRookMove_8110fa1a",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "energy",
+      "category": "energy",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "High energy footprint detected in validateRookMove()",
+      "explanation": "energyScore=0.451 | median=4.732ms | loops=0 | nesting=1",
+      "recommendation": "Reduce nested loops and repeated heavy operations in hot paths.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "snippet_57f45c6e",
+        "frequency": 100,
+        "energyScore": 0.45133425041398395,
+        "executionTimeMs": 4.732,
+        "loopCount": 0,
+        "nestingDepth": 1,
+        "cyclomatic": 1,
+        "benchmarkRuns": 100
+      }
+    },
+    {
+      "id": "energy_snippet_57f45c6e_ChessGameEngine.java_isWhiteTurn_2930ec40",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "energy",
+      "category": "energy",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "High energy footprint detected in isWhiteTurn()",
+      "explanation": "energyScore=0.436 | median=3.805ms | loops=0 | nesting=1",
+      "recommendation": "Reduce nested loops and repeated heavy operations in hot paths.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "snippet_57f45c6e",
+        "frequency": 100,
+        "energyScore": 0.4360447283397557,
+        "executionTimeMs": 3.805,
+        "loopCount": 0,
+        "nestingDepth": 1,
+        "cyclomatic": 1,
+        "benchmarkRuns": 100
+      }
+    },
+    {
+      "id": "energy_snippet_57f45c6e_ChessGameEngine.java_handleEnPassant_623d2637",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "energy",
+      "category": "energy",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "High energy footprint detected in handleEnPassant()",
+      "explanation": "energyScore=0.430 | median=3.479ms | loops=0 | nesting=1",
+      "recommendation": "Reduce nested loops and repeated heavy operations in hot paths.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "snippet_57f45c6e",
+        "frequency": 100,
+        "energyScore": 0.4299554195175299,
+        "executionTimeMs": 3.479,
+        "loopCount": 0,
+        "nestingDepth": 1,
+        "cyclomatic": 1,
+        "benchmarkRuns": 100
+      }
+    }
+  ],
+  "scanId": "snippet_57f45c6e",
+  "timestamp": "2026-04-10T12:01:40.722Z",
+  "storedAt": "2026-04-10T12:01:40.722Z"
+}

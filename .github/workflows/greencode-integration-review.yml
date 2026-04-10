@@ -1,0 +1,39 @@
+name: GreenCode Integration Review
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  greencode-review:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: "modules/Integration 2 By Saif"
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: "modules/Integration 2 By Saif/package-lock.json"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build integration module
+        run: npm run build
+
+      - name: Run automated GreenCode review
+        run: npm run ci:review
+
+      - name: Upload SARIF report artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: greencode-integration-report
+          path: "modules/Integration 2 By Saif/reports/integration-report.sarif"

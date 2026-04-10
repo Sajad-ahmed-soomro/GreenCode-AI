@@ -1,0 +1,25 @@
+{
+  "methodName": "generateReport",
+  "nodes": [
+    {
+      "id": "e5e19239-9a73-4903-a47c-1a309dfef47c",
+      "label": "Start",
+      "type": "start",
+      "next": [
+        "4799bf72-c161-4fd5-8818-9e4baabaf253"
+      ]
+    },
+    {
+      "id": "4799bf72-c161-4fd5-8818-9e4baabaf253",
+      "label": "End",
+      "type": "end",
+      "next": []
+    }
+  ],
+  "edges": [
+    [
+      "e5e19239-9a73-4903-a47c-1a309dfef47c",
+      "4799bf72-c161-4fd5-8818-9e4baabaf253"
+    ]
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "analyzedFiles": [
+    {
+      "file": "SpecialMoves.json",
+      "avgScore": 69.4,
+      "level": "Medium",
+      "totalMethods": 7,
+      "analyzedAt": "2026-04-10T11:37:05.164Z"
+    }
+  ],
+  "overallAvg": 69.4,
+  "overallLevel": "Medium",
+  "totalFiles": 1,
+  "updatedAt": "2026-04-10T11:37:05.164Z"
+}

@@ -1,0 +1,25 @@
+{
+  "methodName": "isValidMove",
+  "nodes": [
+    {
+      "id": "f0b1e551-8fa1-42b9-878c-36428f86e828",
+      "label": "Start",
+      "type": "start",
+      "next": [
+        "d4e4ce76-5dc1-4072-b938-c58495421b64"
+      ]
+    },
+    {
+      "id": "d4e4ce76-5dc1-4072-b938-c58495421b64",
+      "label": "End",
+      "type": "end",
+      "next": []
+    }
+  ],
+  "edges": [
+    [
+      "f0b1e551-8fa1-42b9-878c-36428f86e828",
+      "d4e4ce76-5dc1-4072-b938-c58495421b64"
+    ]
+  ]
+}

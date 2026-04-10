@@ -836,17 +836,17 @@ const MultiAgentReviewPage = () => {
   const selectedSummary = calculateSelectedSummary();
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 p-6">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 p-4 sm:p-6">
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
         <div className="mb-8">
-          <div className="flex items-center justify-between mb-6">
+          <div className="flex flex-col gap-4 xl:flex-row xl:items-center xl:justify-between mb-6">
             <div className="flex items-center gap-3">
               <div className="bg-gradient-to-br from-blue-500 to-purple-600 p-3 rounded-xl">
                 <TrendingUp className="w-8 h-8 text-white" />
               </div>
               <div>
-                <h1 className="text-4xl font-bold text-slate-800">
+                <h1 className="text-2xl sm:text-3xl xl:text-4xl font-bold text-slate-800">
                   Multi-Agent Review System
                 </h1>
                 <div className="flex items-center gap-3 mt-1">
@@ -865,7 +865,7 @@ const MultiAgentReviewPage = () => {
                 </div>
               </div>
             </div>
-            <div className="flex items-center gap-3">
+            <div className="flex flex-wrap items-center gap-2 sm:gap-3">
               <button
                 onClick={loadAnalysisData}
                 className="flex items-center gap-2 bg-white px-4 py-2 rounded-lg border-2 border-slate-300 hover:border-blue-500 transition-colors"
@@ -915,7 +915,7 @@ const MultiAgentReviewPage = () => {
           {/* Sync Status Bar */}
           <div className="bg-white rounded-xl shadow-md p-4 mb-6 border-2 border-slate-200">
             <h3 className="text-lg font-semibold text-slate-800 mb-3">Agent Synchronization Status</h3>
-            <div className="grid grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
               {agents.map(agent => (
                 <div key={agent.id} className="flex items-center justify-between p-3 border-2 border-slate-200 rounded-lg">
                   <div className="flex items-center gap-3">
@@ -947,7 +947,7 @@ const MultiAgentReviewPage = () => {
           {/* File Selector Dropdown */}
           {showFileSelector && (
             <div className="bg-white rounded-xl shadow-lg p-6 mb-6 border-2 border-slate-300">
-              <div className="flex items-center justify-between mb-4">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-4">
                 <h3 className="text-lg font-semibold text-slate-800">Select Files for Analysis</h3>
                 <button
                   onClick={selectAllFiles}
@@ -1023,7 +1023,7 @@ const MultiAgentReviewPage = () => {
                 ))}
               </div>
               
-              <div className="flex items-center justify-between mt-4 pt-4 border-t border-slate-200">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mt-4 pt-4 border-t border-slate-200">
                 <div className="text-sm text-slate-600">
                   <span className="font-semibold">{selectedFiles.length}</span> of{' '}
                   <span className="font-semibold">{analysisData?.files.length}</span> files selected

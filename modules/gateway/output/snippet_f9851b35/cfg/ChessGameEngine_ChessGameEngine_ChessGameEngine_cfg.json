@@ -1,0 +1,25 @@
+{
+  "methodName": "ChessGameEngine",
+  "nodes": [
+    {
+      "id": "aab63bea-a57a-467e-911b-3f54b19a379c",
+      "label": "Start",
+      "type": "start",
+      "next": [
+        "2b94e03e-4814-44f8-b798-37d09e2d5f8f"
+      ]
+    },
+    {
+      "id": "2b94e03e-4814-44f8-b798-37d09e2d5f8f",
+      "label": "End",
+      "type": "end",
+      "next": []
+    }
+  ],
+  "edges": [
+    [
+      "aab63bea-a57a-467e-911b-3f54b19a379c",
+      "2b94e03e-4814-44f8-b798-37d09e2d5f8f"
+    ]
+  ]
+}

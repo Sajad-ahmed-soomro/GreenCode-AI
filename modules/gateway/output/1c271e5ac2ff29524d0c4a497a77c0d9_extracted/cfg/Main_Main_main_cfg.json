@@ -1,0 +1,25 @@
+{
+  "methodName": "main",
+  "nodes": [
+    {
+      "id": "caf5e0e1-9020-4815-8a3e-125832062340",
+      "label": "Start",
+      "type": "start",
+      "next": [
+        "b1815237-6f27-42b3-826d-fcd0641ad2e7"
+      ]
+    },
+    {
+      "id": "b1815237-6f27-42b3-826d-fcd0641ad2e7",
+      "label": "End",
+      "type": "end",
+      "next": []
+    }
+  ],
+  "edges": [
+    [
+      "caf5e0e1-9020-4815-8a3e-125832062340",
+      "b1815237-6f27-42b3-826d-fcd0641ad2e7"
+    ]
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "methodName": "isWhitePiece",
+  "nodes": [
+    {
+      "id": "e90a62ca-338d-4076-93cc-4b5021a70095",
+      "label": "Start",
+      "type": "start",
+      "next": [
+        "131b112e-a509-4e66-85e5-2c7400ff46fb"
+      ]
+    },
+    {
+      "id": "131b112e-a509-4e66-85e5-2c7400ff46fb",
+      "label": "End",
+      "type": "end",
+      "next": []
+    }
+  ],
+  "edges": [
+    [
+      "e90a62ca-338d-4076-93cc-4b5021a70095",
+      "131b112e-a509-4e66-85e5-2c7400ff46fb"
+    ]
+  ]
+}

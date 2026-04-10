@@ -1,0 +1,1235 @@
+{
+  "issues": [
+    {
+      "id": "ds_snippet_c35f54ca_SpecialMoves.java_0_9f71303f",
+      "filePath": "SpecialMoves.java",
+      "line": 35,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Manual arr[i] search inside loop",
+      "explanation": "Manual scanning inside loop is slow (O(n)). Hashed lookup is O(1).",
+      "recommendation": "Use Set or Map depending on logic",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "Use Set or Map depending on logic"
+      },
+      "context": {
+        "projectId": "snippet_c35f54ca",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_snippet_c35f54ca_SpecialMoves.java_1_e29cb5eb",
+      "filePath": "SpecialMoves.java",
+      "line": 49,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Manual arr[i] search inside loop",
+      "explanation": "Manual scanning inside loop is slow (O(n)). Hashed lookup is O(1).",
+      "recommendation": "Use Set or Map depending on logic",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "Use Set or Map depending on logic"
+      },
+      "context": {
+        "projectId": "snippet_c35f54ca",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_snippet_c35f54ca_SpecialMoves.java_2_7dedf72f",
+      "filePath": "SpecialMoves.java",
+      "line": 50,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Manual arr[i] search inside loop",
+      "explanation": "Manual scanning inside loop is slow (O(n)). Hashed lookup is O(1).",
+      "recommendation": "Use Set or Map depending on logic",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "Use Set or Map depending on logic"
+      },
+      "context": {
+        "projectId": "snippet_c35f54ca",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_snippet_c35f54ca_SpecialMoves.java_3_09ef5b37",
+      "filePath": "SpecialMoves.java",
+      "line": 51,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Manual arr[i] search inside loop",
+      "explanation": "Manual scanning inside loop is slow (O(n)). Hashed lookup is O(1).",
+      "recommendation": "Use Set or Map depending on logic",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "Use Set or Map depending on logic"
+      },
+      "context": {
+        "projectId": "snippet_c35f54ca",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_snippet_c35f54ca_SpecialMoves.java_4_f9ab4cf2",
+      "filePath": "SpecialMoves.java",
+      "line": 57,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Manual arr[i] search inside loop",
+      "explanation": "Manual scanning inside loop is slow (O(n)). Hashed lookup is O(1).",
+      "recommendation": "Use Set or Map depending on logic",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "Use Set or Map depending on logic"
+      },
+      "context": {
+        "projectId": "snippet_c35f54ca",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_snippet_c35f54ca_SpecialMoves.java_5_22c7b5b1",
+      "filePath": "SpecialMoves.java",
+      "line": 58,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Manual arr[i] search inside loop",
+      "explanation": "Manual scanning inside loop is slow (O(n)). Hashed lookup is O(1).",
+      "recommendation": "Use Set or Map depending on logic",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "Use Set or Map depending on logic"
+      },
+      "context": {
+        "projectId": "snippet_c35f54ca",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_snippet_c35f54ca_SpecialMoves.java_6_99e16e89",
+      "filePath": "SpecialMoves.java",
+      "line": 79,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Manual arr[i] search inside loop",
+      "explanation": "Manual scanning inside loop is slow (O(n)). Hashed lookup is O(1).",
+      "recommendation": "Use Set or Map depending on logic",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "Use Set or Map depending on logic"
+      },
+      "context": {
+        "projectId": "snippet_c35f54ca",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_snippet_c35f54ca_SpecialMoves.java_7_1e994b69",
+      "filePath": "SpecialMoves.java",
+      "line": 81,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Manual arr[i] search inside loop",
+      "explanation": "Manual scanning inside loop is slow (O(n)). Hashed lookup is O(1).",
+      "recommendation": "Use Set or Map depending on logic",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "Use Set or Map depending on logic"
+      },
+      "context": {
+        "projectId": "snippet_c35f54ca",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_snippet_c35f54ca_SpecialMoves.java_8_5401eb2d",
+      "filePath": "SpecialMoves.java",
+      "line": 107,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Manual arr[i] search inside loop",
+      "explanation": "Manual scanning inside loop is slow (O(n)). Hashed lookup is O(1).",
+      "recommendation": "Use Set or Map depending on logic",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "Use Set or Map depending on logic"
+      },
+      "context": {
+        "projectId": "snippet_c35f54ca",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_snippet_c35f54ca_SpecialMoves.java_9_17fe739a",
+      "filePath": "SpecialMoves.java",
+      "line": 34,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Nested loops detected",
+      "explanation": "Nested loops cause O(n²) complexity. Converting one list to a Map reduces time to O(n).",
+      "recommendation": "Use HashMap/HashSet for matching instead of O(n²) nested scans.",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "Use HashMap/HashSet for matching instead of O(n²) nested scans."
+      },
+      "context": {
+        "projectId": "snippet_c35f54ca",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_snippet_c35f54ca_SpecialMoves.java_10_2140f277",
+      "filePath": "SpecialMoves.java",
+      "line": 41,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Nested loops detected",
+      "explanation": "Nested loops cause O(n²) complexity. Converting one list to a Map reduces time to O(n).",
+      "recommendation": "Use HashMap/HashSet for matching instead of O(n²) nested scans.",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "Use HashMap/HashSet for matching instead of O(n²) nested scans."
+      },
+      "context": {
+        "projectId": "snippet_c35f54ca",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_snippet_c35f54ca_SpecialMoves.java_11_8230457e",
+      "filePath": "SpecialMoves.java",
+      "line": 42,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Nested loops detected",
+      "explanation": "Nested loops cause O(n²) complexity. Converting one list to a Map reduces time to O(n).",
+      "recommendation": "Use HashMap/HashSet for matching instead of O(n²) nested scans.",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "Use HashMap/HashSet for matching instead of O(n²) nested scans."
+      },
+      "context": {
+        "projectId": "snippet_c35f54ca",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_snippet_c35f54ca_SpecialMoves.java_12_e3d54992",
+      "filePath": "SpecialMoves.java",
+      "line": 78,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Nested loops detected",
+      "explanation": "Nested loops cause O(n²) complexity. Converting one list to a Map reduces time to O(n).",
+      "recommendation": "Use HashMap/HashSet for matching instead of O(n²) nested scans.",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "Use HashMap/HashSet for matching instead of O(n²) nested scans."
+      },
+      "context": {
+        "projectId": "snippet_c35f54ca",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_snippet_c35f54ca_SpecialMoves.java_13_a1e9cc3f",
+      "filePath": "SpecialMoves.java",
+      "line": 106,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Nested loops detected",
+      "explanation": "Nested loops cause O(n²) complexity. Converting one list to a Map reduces time to O(n).",
+      "recommendation": "Use HashMap/HashSet for matching instead of O(n²) nested scans.",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "Use HashMap/HashSet for matching instead of O(n²) nested scans."
+      },
+      "context": {
+        "projectId": "snippet_c35f54ca",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_snippet_c35f54ca_SpecialMoves.java_14_17df0d90",
+      "filePath": "SpecialMoves.java",
+      "line": 9,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Array used as dictionary with string key",
+      "explanation": "Arrays only support numeric indexing. Using them like maps is incorrect.",
+      "recommendation": "HashMap or TreeMap",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "HashMap or TreeMap"
+      },
+      "context": {
+        "projectId": "snippet_c35f54ca",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_snippet_c35f54ca_SpecialMoves.java_15_d626302c",
+      "filePath": "SpecialMoves.java",
+      "line": 11,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Array used as dictionary with string key",
+      "explanation": "Arrays only support numeric indexing. Using them like maps is incorrect.",
+      "recommendation": "HashMap or TreeMap",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "HashMap or TreeMap"
+      },
+      "context": {
+        "projectId": "snippet_c35f54ca",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_snippet_c35f54ca_SpecialMoves.java_16_347db052",
+      "filePath": "SpecialMoves.java",
+      "line": 12,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Array used as dictionary with string key",
+      "explanation": "Arrays only support numeric indexing. Using them like maps is incorrect.",
+      "recommendation": "HashMap or TreeMap",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "HashMap or TreeMap"
+      },
+      "context": {
+        "projectId": "snippet_c35f54ca",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_snippet_c35f54ca_SpecialMoves.java_17_dacd3ba8",
+      "filePath": "SpecialMoves.java",
+      "line": 17,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Array used as dictionary with string key",
+      "explanation": "Arrays only support numeric indexing. Using them like maps is incorrect.",
+      "recommendation": "HashMap or TreeMap",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "HashMap or TreeMap"
+      },
+      "context": {
+        "projectId": "snippet_c35f54ca",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_snippet_c35f54ca_SpecialMoves.java_18_90d059b4",
+      "filePath": "SpecialMoves.java",
+      "line": 18,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Array used as dictionary with string key",
+      "explanation": "Arrays only support numeric indexing. Using them like maps is incorrect.",
+      "recommendation": "HashMap or TreeMap",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "HashMap or TreeMap"
+      },
+      "context": {
+        "projectId": "snippet_c35f54ca",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_snippet_c35f54ca_SpecialMoves.java_19_c00caba3",
+      "filePath": "SpecialMoves.java",
+      "line": 23,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Array used as dictionary with string key",
+      "explanation": "Arrays only support numeric indexing. Using them like maps is incorrect.",
+      "recommendation": "HashMap or TreeMap",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "HashMap or TreeMap"
+      },
+      "context": {
+        "projectId": "snippet_c35f54ca",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_snippet_c35f54ca_SpecialMoves.java_20_057bfbfb",
+      "filePath": "SpecialMoves.java",
+      "line": 35,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Array used as dictionary with string key",
+      "explanation": "Arrays only support numeric indexing. Using them like maps is incorrect.",
+      "recommendation": "HashMap or TreeMap",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "HashMap or TreeMap"
+      },
+      "context": {
+        "projectId": "snippet_c35f54ca",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_snippet_c35f54ca_SpecialMoves.java_21_d1353a0a",
+      "filePath": "SpecialMoves.java",
+      "line": 49,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Array used as dictionary with string key",
+      "explanation": "Arrays only support numeric indexing. Using them like maps is incorrect.",
+      "recommendation": "HashMap or TreeMap",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "HashMap or TreeMap"
+      },
+      "context": {
+        "projectId": "snippet_c35f54ca",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_snippet_c35f54ca_SpecialMoves.java_22_bfc1ea4e",
+      "filePath": "SpecialMoves.java",
+      "line": 50,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Array used as dictionary with string key",
+      "explanation": "Arrays only support numeric indexing. Using them like maps is incorrect.",
+      "recommendation": "HashMap or TreeMap",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "HashMap or TreeMap"
+      },
+      "context": {
+        "projectId": "snippet_c35f54ca",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_snippet_c35f54ca_SpecialMoves.java_23_3ec6f847",
+      "filePath": "SpecialMoves.java",
+      "line": 51,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Array used as dictionary with string key",
+      "explanation": "Arrays only support numeric indexing. Using them like maps is incorrect.",
+      "recommendation": "HashMap or TreeMap",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "HashMap or TreeMap"
+      },
+      "context": {
+        "projectId": "snippet_c35f54ca",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_snippet_c35f54ca_SpecialMoves.java_24_ac782278",
+      "filePath": "SpecialMoves.java",
+      "line": 57,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Array used as dictionary with string key",
+      "explanation": "Arrays only support numeric indexing. Using them like maps is incorrect.",
+      "recommendation": "HashMap or TreeMap",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "HashMap or TreeMap"
+      },
+      "context": {
+        "projectId": "snippet_c35f54ca",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_snippet_c35f54ca_SpecialMoves.java_25_7b8e74a0",
+      "filePath": "SpecialMoves.java",
+      "line": 58,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Array used as dictionary with string key",
+      "explanation": "Arrays only support numeric indexing. Using them like maps is incorrect.",
+      "recommendation": "HashMap or TreeMap",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "HashMap or TreeMap"
+      },
+      "context": {
+        "projectId": "snippet_c35f54ca",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_snippet_c35f54ca_SpecialMoves.java_26_15ff5251",
+      "filePath": "SpecialMoves.java",
+      "line": 79,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Array used as dictionary with string key",
+      "explanation": "Arrays only support numeric indexing. Using them like maps is incorrect.",
+      "recommendation": "HashMap or TreeMap",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "HashMap or TreeMap"
+      },
+      "context": {
+        "projectId": "snippet_c35f54ca",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_snippet_c35f54ca_SpecialMoves.java_27_7dc52042",
+      "filePath": "SpecialMoves.java",
+      "line": 91,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Array used as dictionary with string key",
+      "explanation": "Arrays only support numeric indexing. Using them like maps is incorrect.",
+      "recommendation": "HashMap or TreeMap",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "HashMap or TreeMap"
+      },
+      "context": {
+        "projectId": "snippet_c35f54ca",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_snippet_c35f54ca_SpecialMoves.java_28_4841cd29",
+      "filePath": "SpecialMoves.java",
+      "line": 107,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Array used as dictionary with string key",
+      "explanation": "Arrays only support numeric indexing. Using them like maps is incorrect.",
+      "recommendation": "HashMap or TreeMap",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "HashMap or TreeMap"
+      },
+      "context": {
+        "projectId": "snippet_c35f54ca",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "comp_snippet_c35f54ca_SpecialMoves.java_0_08984734",
+      "filePath": "SpecialMoves.java",
+      "line": 5,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "snippet_c35f54ca"
+      }
+    },
+    {
+      "id": "comp_snippet_c35f54ca_SpecialMoves.java_1_99fab995",
+      "filePath": "SpecialMoves.java",
+      "line": 10,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "snippet_c35f54ca"
+      }
+    },
+    {
+      "id": "comp_snippet_c35f54ca_SpecialMoves.java_2_8367d665",
+      "filePath": "SpecialMoves.java",
+      "line": 14,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "snippet_c35f54ca"
+      }
+    },
+    {
+      "id": "comp_snippet_c35f54ca_SpecialMoves.java_3_5a7a10c1",
+      "filePath": "SpecialMoves.java",
+      "line": 20,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "snippet_c35f54ca"
+      }
+    },
+    {
+      "id": "comp_snippet_c35f54ca_SpecialMoves.java_4_922bfa69",
+      "filePath": "SpecialMoves.java",
+      "line": 25,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "snippet_c35f54ca"
+      }
+    },
+    {
+      "id": "comp_snippet_c35f54ca_SpecialMoves.java_5_fb9983b1",
+      "filePath": "SpecialMoves.java",
+      "line": 31,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "snippet_c35f54ca"
+      }
+    },
+    {
+      "id": "comp_snippet_c35f54ca_SpecialMoves.java_6_73cf71b2",
+      "filePath": "SpecialMoves.java",
+      "line": 39,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "snippet_c35f54ca"
+      }
+    },
+    {
+      "id": "comp_snippet_c35f54ca_SpecialMoves.java_7_fc276197",
+      "filePath": "SpecialMoves.java",
+      "line": 47,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "snippet_c35f54ca"
+      }
+    },
+    {
+      "id": "comp_snippet_c35f54ca_SpecialMoves.java_8_ab181373",
+      "filePath": "SpecialMoves.java",
+      "line": 52,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "snippet_c35f54ca"
+      }
+    },
+    {
+      "id": "comp_snippet_c35f54ca_SpecialMoves.java_9_e82ecd7c",
+      "filePath": "SpecialMoves.java",
+      "line": 55,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "snippet_c35f54ca"
+      }
+    },
+    {
+      "id": "comp_snippet_c35f54ca_SpecialMoves.java_10_9eb301d6",
+      "filePath": "SpecialMoves.java",
+      "line": 59,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "snippet_c35f54ca"
+      }
+    },
+    {
+      "id": "comp_snippet_c35f54ca_SpecialMoves.java_11_5fd38b7b",
+      "filePath": "SpecialMoves.java",
+      "line": 67,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "snippet_c35f54ca"
+      }
+    },
+    {
+      "id": "comp_snippet_c35f54ca_SpecialMoves.java_12_af80f10f",
+      "filePath": "SpecialMoves.java",
+      "line": 70,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "snippet_c35f54ca"
+      }
+    },
+    {
+      "id": "comp_snippet_c35f54ca_SpecialMoves.java_13_0f89ac35",
+      "filePath": "SpecialMoves.java",
+      "line": 75,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "snippet_c35f54ca"
+      }
+    },
+    {
+      "id": "comp_snippet_c35f54ca_SpecialMoves.java_14_c882d5b9",
+      "filePath": "SpecialMoves.java",
+      "line": 89,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "snippet_c35f54ca"
+      }
+    },
+    {
+      "id": "comp_snippet_c35f54ca_SpecialMoves.java_15_2b9b1bd0",
+      "filePath": "SpecialMoves.java",
+      "line": 102,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "snippet_c35f54ca"
+      }
+    },
+    {
+      "id": "maint_snippet_c35f54ca_SpecialMoves.java_handleCastling_637b0a80",
+      "filePath": "SpecialMoves.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": "Function is too long. Split into smaller helper methods.",
+      "explanation": "Method SpecialMoves.handleCastling score: 70",
+      "recommendation": "Function is too long. Split into smaller helper methods.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "snippet_c35f54ca"
+      }
+    },
+    {
+      "id": "maint_snippet_c35f54ca_SpecialMoves.java_handlePromotion_935b248d",
+      "filePath": "SpecialMoves.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": "Function is too long. Split into smaller helper methods.",
+      "explanation": "Method SpecialMoves.handlePromotion score: 75",
+      "recommendation": "Function is too long. Split into smaller helper methods.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "snippet_c35f54ca"
+      }
+    },
+    {
+      "id": "maint_snippet_c35f54ca_SpecialMoves.java_handleEnPassant_2202a61f",
+      "filePath": "SpecialMoves.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": "Function is too long. Split into smaller helper methods.",
+      "explanation": "Method SpecialMoves.handleEnPassant score: 70",
+      "recommendation": "Function is too long. Split into smaller helper methods.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "snippet_c35f54ca"
+      }
+    },
+    {
+      "id": "maint_snippet_c35f54ca_SpecialMoves.java_isCheckmate_382e66e2",
+      "filePath": "SpecialMoves.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": "Function is too long. Split into smaller helper methods.",
+      "explanation": "Method SpecialMoves.isCheckmate score: 67",
+      "recommendation": "Function is too long. Split into smaller helper methods.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "snippet_c35f54ca"
+      }
+    },
+    {
+      "id": "maint_snippet_c35f54ca_SpecialMoves.java_isInCheck_c4155882",
+      "filePath": "SpecialMoves.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": "Function is too long. Split into smaller helper methods.",
+      "explanation": "Method SpecialMoves.isInCheck score: 67",
+      "recommendation": "Function is too long. Split into smaller helper methods.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "snippet_c35f54ca"
+      }
+    },
+    {
+      "id": "maint_snippet_c35f54ca_SpecialMoves.java_isValidMove_7ca0a90f",
+      "filePath": "SpecialMoves.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": "Function is too long. Split into smaller helper methods.",
+      "explanation": "Method SpecialMoves.isValidMove score: 70",
+      "recommendation": "Function is too long. Split into smaller helper methods.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "snippet_c35f54ca"
+      }
+    },
+    {
+      "id": "maint_snippet_c35f54ca_SpecialMoves.java_findKing_97214947",
+      "filePath": "SpecialMoves.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": "Function is too long. Split into smaller helper methods.",
+      "explanation": "Method SpecialMoves.findKing score: 67",
+      "recommendation": "Function is too long. Split into smaller helper methods.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "snippet_c35f54ca"
+      }
+    },
+    {
+      "id": "energy_snippet_c35f54ca_SpecialMoves.java_isCheckmate_c1f3c344",
+      "filePath": "SpecialMoves.java",
+      "line": 0,
+      "agent": "energy",
+      "category": "energy",
+      "severity": "high",
+      "confidence": 0.9,
+      "description": "High energy footprint detected in isCheckmate()",
+      "explanation": "energyScore=0.656 | median=39.279ms | loops=4 | nesting=4",
+      "recommendation": "Reduce nested loops and repeated heavy operations in hot paths.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "snippet_c35f54ca",
+        "frequency": 100,
+        "energyScore": 0.6563236169316982,
+        "executionTimeMs": 39.279,
+        "loopCount": 4,
+        "nestingDepth": 4,
+        "cyclomatic": 1,
+        "benchmarkRuns": 100
+      }
+    },
+    {
+      "id": "energy_snippet_c35f54ca_SpecialMoves.java_isInCheck_24e8a3d3",
+      "filePath": "SpecialMoves.java",
+      "line": 0,
+      "agent": "energy",
+      "category": "energy",
+      "severity": "high",
+      "confidence": 0.9,
+      "description": "High energy footprint detected in isInCheck()",
+      "explanation": "energyScore=0.598 | median=24.409ms | loops=2 | nesting=2",
+      "recommendation": "Reduce nested loops and repeated heavy operations in hot paths.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "snippet_c35f54ca",
+        "frequency": 100,
+        "energyScore": 0.5983916760281756,
+        "executionTimeMs": 24.409,
+        "loopCount": 2,
+        "nestingDepth": 2,
+        "cyclomatic": 1,
+        "benchmarkRuns": 100
+      }
+    },
+    {
+      "id": "energy_snippet_c35f54ca_SpecialMoves.java_findKing_68d46a49",
+      "filePath": "SpecialMoves.java",
+      "line": 0,
+      "agent": "energy",
+      "category": "energy",
+      "severity": "high",
+      "confidence": 0.9,
+      "description": "High energy footprint detected in findKing()",
+      "explanation": "energyScore=0.584 | median=20.524ms | loops=2 | nesting=2",
+      "recommendation": "Reduce nested loops and repeated heavy operations in hot paths.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "snippet_c35f54ca",
+        "frequency": 100,
+        "energyScore": 0.5840098327163784,
+        "executionTimeMs": 20.524,
+        "loopCount": 2,
+        "nestingDepth": 2,
+        "cyclomatic": 1,
+        "benchmarkRuns": 100
+      }
+    },
+    {
+      "id": "energy_snippet_c35f54ca_SpecialMoves.java_handlePromotion_25c777d4",
+      "filePath": "SpecialMoves.java",
+      "line": 0,
+      "agent": "energy",
+      "category": "energy",
+      "severity": "medium",
+      "confidence": 0.9,
+      "description": "High energy footprint detected in handlePromotion()",
+      "explanation": "energyScore=0.559 | median=18.942ms | loops=0 | nesting=1",
+      "recommendation": "Reduce nested loops and repeated heavy operations in hot paths.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "snippet_c35f54ca",
+        "frequency": 100,
+        "energyScore": 0.5593932747355418,
+        "executionTimeMs": 18.942,
+        "loopCount": 0,
+        "nestingDepth": 1,
+        "cyclomatic": 1,
+        "benchmarkRuns": 100
+      }
+    },
+    {
+      "id": "energy_snippet_c35f54ca_SpecialMoves.java_handleEnPassant_c32ac045",
+      "filePath": "SpecialMoves.java",
+      "line": 0,
+      "agent": "energy",
+      "category": "energy",
+      "severity": "medium",
+      "confidence": 0.9,
+      "description": "High energy footprint detected in handleEnPassant()",
+      "explanation": "energyScore=0.558 | median=18.664ms | loops=0 | nesting=1",
+      "recommendation": "Reduce nested loops and repeated heavy operations in hot paths.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "snippet_c35f54ca",
+        "frequency": 100,
+        "energyScore": 0.5581765344548324,
+        "executionTimeMs": 18.664,
+        "loopCount": 0,
+        "nestingDepth": 1,
+        "cyclomatic": 1,
+        "benchmarkRuns": 100
+      }
+    },
+    {
+      "id": "energy_snippet_c35f54ca_SpecialMoves.java_handleCastling_b2b5aa47",
+      "filePath": "SpecialMoves.java",
+      "line": 0,
+      "agent": "energy",
+      "category": "energy",
+      "severity": "medium",
+      "confidence": 0.9,
+      "description": "High energy footprint detected in handleCastling()",
+      "explanation": "energyScore=0.530 | median=13.259ms | loops=0 | nesting=1",
+      "recommendation": "Reduce nested loops and repeated heavy operations in hot paths.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "snippet_c35f54ca",
+        "frequency": 100,
+        "energyScore": 0.5303201640436281,
+        "executionTimeMs": 13.259,
+        "loopCount": 0,
+        "nestingDepth": 1,
+        "cyclomatic": 1,
+        "benchmarkRuns": 100
+      }
+    },
+    {
+      "id": "energy_snippet_c35f54ca_SpecialMoves.java_isValidMove_adbf9ec7",
+      "filePath": "SpecialMoves.java",
+      "line": 0,
+      "agent": "energy",
+      "category": "energy",
+      "severity": "medium",
+      "confidence": 0.9,
+      "description": "High energy footprint detected in isValidMove()",
+      "explanation": "energyScore=0.512 | median=10.538ms | loops=0 | nesting=1",
+      "recommendation": "Reduce nested loops and repeated heavy operations in hot paths.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "snippet_c35f54ca",
+        "frequency": 100,
+        "energyScore": 0.5119681102073216,
+        "executionTimeMs": 10.538,
+        "loopCount": 0,
+        "nestingDepth": 1,
+        "cyclomatic": 1,
+        "benchmarkRuns": 100
+      }
+    }
+  ],
+  "scanId": "snippet_c35f54ca",
+  "timestamp": "2026-04-10T11:39:30.300Z",
+  "storedAt": "2026-04-10T11:39:30.300Z"
+}

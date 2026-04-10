@@ -164,14 +164,14 @@ export default function GreencodeScannerUI() {
     <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50">
       {/* Top Navigation */}
       <nav className="bg-white border-b border-gray-200 shadow-sm">
-      <div className="max-w-7xl mx-auto px-6 py-4">
-        <div className="flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4">
+        <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
           
           {/* Left Side Branding */}
           <div className="flex items-center gap-3">
-            <Leaf className="w-8 h-8 text-emerald-600" />
+            <Leaf className="w-6 h-6 sm:w-8 sm:h-8 text-emerald-600" />
             <div>
-              <h1 className="text-2xl font-bold bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
+              <h1 className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
                 Greencode Scanner
               </h1>
               <p className="text-sm text-gray-600">Sustainable Code Analysis Platform</p>
@@ -179,7 +179,11 @@ export default function GreencodeScannerUI() {
           </div>
 
           {/* Right Side Navigation */}
-          <div className="flex items-center gap-6 text-gray-700 font-medium">
+          <div className="flex flex-wrap items-center gap-4 sm:gap-6 text-gray-700 font-medium">
+            <Link href="/" className="hover:text-emerald-600 flex items-center gap-1">
+              <Leaf className="w-5 h-5 text-emerald-600" />
+              Scanner
+            </Link>
 
             <Link href="/energy-analyzer" className="hover:text-emerald-600 flex items-center gap-1">
               <Zap className="w-5 h-5 text-emerald-600" />
@@ -196,7 +200,7 @@ export default function GreencodeScannerUI() {
     </nav>
 
 
-      <div className="max-w-7xl mx-auto p-6">
+      <div className="max-w-7xl mx-auto p-4 sm:p-6">
         {/* Main Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Upload Section */}
@@ -367,7 +371,7 @@ export default function GreencodeScannerUI() {
                     {/* Overview Tab */}
                     {activeTab === "overview" && (
                       <div className="space-y-6">
-                        <div className="grid grid-cols-3 gap-4">
+                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                           <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-4 border border-blue-200">
                             <div className="flex items-center gap-2 text-blue-700 mb-2">
                               <FileCode className="w-4 h-4" />

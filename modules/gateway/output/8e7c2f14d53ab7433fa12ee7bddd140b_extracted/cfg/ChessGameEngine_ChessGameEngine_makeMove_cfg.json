@@ -1,0 +1,25 @@
+{
+  "methodName": "makeMove",
+  "nodes": [
+    {
+      "id": "0dfd20a6-92fe-4ba7-ab41-df6a4058d2f2",
+      "label": "Start",
+      "type": "start",
+      "next": [
+        "45b9a7ac-a75b-4e2e-bd6e-6ee487ad94b6"
+      ]
+    },
+    {
+      "id": "45b9a7ac-a75b-4e2e-bd6e-6ee487ad94b6",
+      "label": "End",
+      "type": "end",
+      "next": []
+    }
+  ],
+  "edges": [
+    [
+      "0dfd20a6-92fe-4ba7-ab41-df6a4058d2f2",
+      "45b9a7ac-a75b-4e2e-bd6e-6ee487ad94b6"
+    ]
+  ]
+}

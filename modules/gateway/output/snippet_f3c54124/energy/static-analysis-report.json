@@ -1,0 +1,118 @@
+{
+  "generatedAt": "2026-04-10T11:35:52.345Z",
+  "analysisType": "static_only",
+  "totalMethods": 5,
+  "totalClasses": 1,
+  "statistics": {
+    "totalEnergy": 2.575,
+    "avgEnergy": 0.515,
+    "methodsWithLoops": 4,
+    "methodsWithRecursion": 0
+  },
+  "reports": [
+    {
+      "className": "ReportGenerator",
+      "methodName": "generateReport",
+      "loopCount": 2,
+      "loops": [
+        "forEach",
+        "for"
+      ],
+      "conditionalsCount": 0,
+      "methodCalls": 0,
+      "objectCreations": 0,
+      "ioCalls": 0,
+      "dbCalls": 0,
+      "methodCallsInsideLoop": 0,
+      "recursion": false,
+      "cyclomatic": 1,
+      "nestingDepth": 2,
+      "cpuScore": 1,
+      "memScore": 0.1,
+      "ioScore": 0,
+      "energyScore": 0.53
+    },
+    {
+      "className": "ReportGenerator",
+      "methodName": "printLongestItem",
+      "loopCount": 1,
+      "loops": [
+        "forEach"
+      ],
+      "conditionalsCount": 1,
+      "methodCalls": 0,
+      "objectCreations": 0,
+      "ioCalls": 0,
+      "dbCalls": 0,
+      "methodCallsInsideLoop": 0,
+      "recursion": false,
+      "cyclomatic": 1,
+      "nestingDepth": 1,
+      "cpuScore": 1,
+      "memScore": 0.05,
+      "ioScore": 0,
+      "energyScore": 0.515
+    },
+    {
+      "className": "ReportGenerator",
+      "methodName": "printSummary",
+      "loopCount": 1,
+      "loops": [
+        "forEach"
+      ],
+      "conditionalsCount": 0,
+      "methodCalls": 0,
+      "objectCreations": 0,
+      "ioCalls": 0,
+      "dbCalls": 0,
+      "methodCallsInsideLoop": 0,
+      "recursion": false,
+      "cyclomatic": 1,
+      "nestingDepth": 1,
+      "cpuScore": 1,
+      "memScore": 0.05,
+      "ioScore": 0,
+      "energyScore": 0.515
+    },
+    {
+      "className": "ReportGenerator",
+      "methodName": "sortItems",
+      "loopCount": 1,
+      "loops": [
+        "forEach"
+      ],
+      "conditionalsCount": 1,
+      "methodCalls": 0,
+      "objectCreations": 0,
+      "ioCalls": 0,
+      "dbCalls": 0,
+      "methodCallsInsideLoop": 0,
+      "recursion": false,
+      "cyclomatic": 1,
+      "nestingDepth": 1,
+      "cpuScore": 1,
+      "memScore": 0.05,
+      "ioScore": 0,
+      "energyScore": 0.515
+    },
+    {
+      "className": "ReportGenerator",
+      "methodName": "addItem",
+      "loopCount": 0,
+      "loops": [],
+      "conditionalsCount": 1,
+      "methodCalls": 0,
+      "objectCreations": 0,
+      "ioCalls": 0,
+      "dbCalls": 0,
+      "methodCallsInsideLoop": 0,
+      "recursion": false,
+      "cyclomatic": 1,
+      "nestingDepth": 1,
+      "cpuScore": 1,
+      "memScore": 0,
+      "ioScore": 0,
+      "energyScore": 0.5
+    }
+  ]
+}

@@ -1,0 +1,417 @@
+{
+  "issues": [
+    {
+      "id": "ds_snippet_f3c54124_ReportGenerator.java_0_06a7e3a2",
+      "filePath": "ReportGenerator.java",
+      "line": 35,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "List.contains() used inside loop",
+      "explanation": "List.contains() inside a loop is O(n²). Replace List with Set for O(1) lookup.",
+      "recommendation": "HashSet (Set)",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "HashSet (Set)"
+      },
+      "context": {
+        "projectId": "snippet_f3c54124",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_snippet_f3c54124_ReportGenerator.java_1_b61d4899",
+      "filePath": "ReportGenerator.java",
+      "line": 55,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Manual List.get(i) search inside loop",
+      "explanation": "Manual index scan inside loop is O(n). Using Set/Map gives O(1) lookup.",
+      "recommendation": "Use HashSet or HashMap",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "Use HashSet or HashMap"
+      },
+      "context": {
+        "projectId": "snippet_f3c54124",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_snippet_f3c54124_ReportGenerator.java_2_94e8e196",
+      "filePath": "ReportGenerator.java",
+      "line": 21,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Nested loops detected",
+      "explanation": "Nested loops cause O(n²) complexity. Converting one list to a Map reduces time to O(n).",
+      "recommendation": "Use HashMap/HashSet for matching instead of O(n²) nested scans.",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "Use HashMap/HashSet for matching instead of O(n²) nested scans."
+      },
+      "context": {
+        "projectId": "snippet_f3c54124",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_snippet_f3c54124_ReportGenerator.java_3_a2649e8b",
+      "filePath": "ReportGenerator.java",
+      "line": 0,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "items declared as List but only used in foreach",
+      "explanation": "List indexing ability is wasted when never used; Set is faster & lighter.",
+      "recommendation": "Use HashSet instead of List",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "Use HashSet instead of List"
+      },
+      "context": {
+        "projectId": "snippet_f3c54124",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_snippet_f3c54124_ReportGenerator.java_4_207e4e49",
+      "filePath": "ReportGenerator.java",
+      "line": 12,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "List used as dictionary (list.get(key))",
+      "explanation": "List.get(keyName) implies key-value usage, but lists have no keys. Use a Map instead.",
+      "recommendation": "Use HashMap<Key, Value>",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "Use HashMap<Key, Value>"
+      },
+      "context": {
+        "projectId": "snippet_f3c54124",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_snippet_f3c54124_ReportGenerator.java_5_ab403029",
+      "filePath": "ReportGenerator.java",
+      "line": 21,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "List used as dictionary (list.get(key))",
+      "explanation": "List.get(keyName) implies key-value usage, but lists have no keys. Use a Map instead.",
+      "recommendation": "Use HashMap<Key, Value>",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "Use HashMap<Key, Value>"
+      },
+      "context": {
+        "projectId": "snippet_f3c54124",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_snippet_f3c54124_ReportGenerator.java_6_5b875f66",
+      "filePath": "ReportGenerator.java",
+      "line": 55,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "List used as dictionary (list.get(key))",
+      "explanation": "List.get(keyName) implies key-value usage, but lists have no keys. Use a Map instead.",
+      "recommendation": "Use HashMap<Key, Value>",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "Use HashMap<Key, Value>"
+      },
+      "context": {
+        "projectId": "snippet_f3c54124",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "comp_snippet_f3c54124_ReportGenerator.java_0_e6717ed2",
+      "filePath": "ReportGenerator.java",
+      "line": 1,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Commented-out code detected.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "snippet_f3c54124"
+      }
+    },
+    {
+      "id": "comp_snippet_f3c54124_ReportGenerator.java_1_c0a20afe",
+      "filePath": "ReportGenerator.java",
+      "line": 3,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Commented-out code detected.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "snippet_f3c54124"
+      }
+    },
+    {
+      "id": "maint_snippet_f3c54124_ReportGenerator.java_addItem_fcfe9f0d",
+      "filePath": "ReportGenerator.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": " Low comment coverage. Add documentation or inline comments.",
+      "explanation": "Method ReportGenerator.addItem score: 74",
+      "recommendation": " Low comment coverage. Add documentation or inline comments.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "snippet_f3c54124"
+      }
+    },
+    {
+      "id": "maint_snippet_f3c54124_ReportGenerator.java_generateReport_c31d18ab",
+      "filePath": "ReportGenerator.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": " Low comment coverage. Add documentation or inline comments.",
+      "explanation": "Method ReportGenerator.generateReport score: 82",
+      "recommendation": " Low comment coverage. Add documentation or inline comments.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "snippet_f3c54124"
+      }
+    },
+    {
+      "id": "maint_snippet_f3c54124_ReportGenerator.java_sortItems_7f5c5bb8",
+      "filePath": "ReportGenerator.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": " Low comment coverage. Add documentation or inline comments.",
+      "explanation": "Method ReportGenerator.sortItems score: 74",
+      "recommendation": " Low comment coverage. Add documentation or inline comments.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "snippet_f3c54124"
+      }
+    },
+    {
+      "id": "maint_snippet_f3c54124_ReportGenerator.java_printLongestItem_36709382",
+      "filePath": "ReportGenerator.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": " Low comment coverage. Add documentation or inline comments.",
+      "explanation": "Method ReportGenerator.printLongestItem score: 74",
+      "recommendation": " Low comment coverage. Add documentation or inline comments.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "snippet_f3c54124"
+      }
+    },
+    {
+      "id": "maint_snippet_f3c54124_ReportGenerator.java_printSummary_7ef003a2",
+      "filePath": "ReportGenerator.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": " Low comment coverage. Add documentation or inline comments.",
+      "explanation": "Method ReportGenerator.printSummary score: 82",
+      "recommendation": " Low comment coverage. Add documentation or inline comments.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "snippet_f3c54124"
+      }
+    },
+    {
+      "id": "energy_snippet_f3c54124_ReportGenerator.java_printSummary_bc0c7521",
+      "filePath": "ReportGenerator.java",
+      "line": 0,
+      "agent": "energy",
+      "category": "energy",
+      "severity": "high",
+      "confidence": 0.9,
+      "description": "High energy footprint detected in printSummary()",
+      "explanation": "energyScore=0.597 | median=26.627ms | loops=1 | nesting=1",
+      "recommendation": "Reduce nested loops and repeated heavy operations in hot paths.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "snippet_f3c54124",
+        "frequency": 100,
+        "energyScore": 0.5966452342508994,
+        "executionTimeMs": 26.627,
+        "loopCount": 1,
+        "nestingDepth": 1,
+        "cyclomatic": 1,
+        "benchmarkRuns": 100
+      }
+    },
+    {
+      "id": "energy_snippet_f3c54124_ReportGenerator.java_sortItems_ee98e612",
+      "filePath": "ReportGenerator.java",
+      "line": 0,
+      "agent": "energy",
+      "category": "energy",
+      "severity": "high",
+      "confidence": 0.9,
+      "description": "High energy footprint detected in sortItems()",
+      "explanation": "energyScore=0.582 | median=22.385ms | loops=1 | nesting=1",
+      "recommendation": "Reduce nested loops and repeated heavy operations in hot paths.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "snippet_f3c54124",
+        "frequency": 100,
+        "energyScore": 0.5821971812805657,
+        "executionTimeMs": 22.385,
+        "loopCount": 1,
+        "nestingDepth": 1,
+        "cyclomatic": 1,
+        "benchmarkRuns": 100
+      }
+    },
+    {
+      "id": "energy_snippet_f3c54124_ReportGenerator.java_printLongestItem_934b0184",
+      "filePath": "ReportGenerator.java",
+      "line": 0,
+      "agent": "energy",
+      "category": "energy",
+      "severity": "high",
+      "confidence": 0.9,
+      "description": "High energy footprint detected in printLongestItem()",
+      "explanation": "energyScore=0.575 | median=20.525ms | loops=1 | nesting=1",
+      "recommendation": "Reduce nested loops and repeated heavy operations in hot paths.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "snippet_f3c54124",
+        "frequency": 100,
+        "energyScore": 0.5750138593662959,
+        "executionTimeMs": 20.525,
+        "loopCount": 1,
+        "nestingDepth": 1,
+        "cyclomatic": 1,
+        "benchmarkRuns": 100
+      }
+    },
+    {
+      "id": "energy_snippet_f3c54124_ReportGenerator.java_generateReport_17b2ef76",
+      "filePath": "ReportGenerator.java",
+      "line": 0,
+      "agent": "energy",
+      "category": "energy",
+      "severity": "high",
+      "confidence": 0.9,
+      "description": "High energy footprint detected in generateReport()",
+      "explanation": "energyScore=0.569 | median=17.023ms | loops=2 | nesting=2",
+      "recommendation": "Reduce nested loops and repeated heavy operations in hot paths.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "snippet_f3c54124",
+        "frequency": 100,
+        "energyScore": 0.5686238967722392,
+        "executionTimeMs": 17.023,
+        "loopCount": 2,
+        "nestingDepth": 2,
+        "cyclomatic": 1,
+        "benchmarkRuns": 100
+      }
+    },
+    {
+      "id": "energy_snippet_f3c54124_ReportGenerator.java_addItem_8b101fa0",
+      "filePath": "ReportGenerator.java",
+      "line": 0,
+      "agent": "energy",
+      "category": "energy",
+      "severity": "medium",
+      "confidence": 0.9,
+      "description": "High energy footprint detected in addItem()",
+      "explanation": "energyScore=0.527 | median=12.789ms | loops=0 | nesting=1",
+      "recommendation": "Reduce nested loops and repeated heavy operations in hot paths.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "snippet_f3c54124",
+        "frequency": 100,
+        "energyScore": 0.5274151813184257,
+        "executionTimeMs": 12.789,
+        "loopCount": 0,
+        "nestingDepth": 1,
+        "cyclomatic": 1,
+        "benchmarkRuns": 100
+      }
+    }
+  ],
+  "scanId": "snippet_f3c54124",
+  "timestamp": "2026-04-10T11:35:59.499Z",
+  "storedAt": "2026-04-10T11:35:59.499Z"
+}

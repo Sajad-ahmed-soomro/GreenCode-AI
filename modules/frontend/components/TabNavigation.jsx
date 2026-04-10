@@ -2,10 +2,10 @@ import { Activity, Code } from 'lucide-react';
 
 const TabNavigation = ({ activeTab, onTabChange, methodsCount }) => (
   <div className="border-b border-gray-200 bg-gray-50">
-    <nav className="flex">
+    <nav className="flex overflow-x-auto">
       <button
         onClick={() => onTabChange("overview")}
-        className={`px-6 py-4 font-medium text-sm transition-colors relative ${
+        className={`px-4 sm:px-6 py-3 sm:py-4 font-medium text-sm transition-colors relative whitespace-nowrap ${
           activeTab === "overview"
             ? "text-emerald-600 bg-white"
             : "text-gray-600 hover:text-gray-900"
@@ -19,7 +19,7 @@ const TabNavigation = ({ activeTab, onTabChange, methodsCount }) => (
       </button>
       <button
         onClick={() => onTabChange("methods")}
-        className={`px-6 py-4 font-medium text-sm transition-colors relative ${
+        className={`px-4 sm:px-6 py-3 sm:py-4 font-medium text-sm transition-colors relative whitespace-nowrap ${
           activeTab === "methods"
             ? "text-emerald-600 bg-white"
             : "text-gray-600 hover:text-gray-900"
@@ -33,7 +33,7 @@ const TabNavigation = ({ activeTab, onTabChange, methodsCount }) => (
       </button>
       <button
         onClick={() => onTabChange("analysis")}
-        className={`px-6 py-4 font-medium text-sm transition-colors relative ${
+        className={`px-4 sm:px-6 py-3 sm:py-4 font-medium text-sm transition-colors relative whitespace-nowrap ${
           activeTab === "analysis"
             ? "text-emerald-600 bg-white"
             : "text-gray-600 hover:text-gray-900"

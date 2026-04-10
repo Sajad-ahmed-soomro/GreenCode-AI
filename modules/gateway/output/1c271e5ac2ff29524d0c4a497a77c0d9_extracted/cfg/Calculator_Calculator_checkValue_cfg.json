@@ -1,0 +1,25 @@
+{
+  "methodName": "checkValue",
+  "nodes": [
+    {
+      "id": "2e9d4859-7601-4f8e-9aa3-5f4568d861d1",
+      "label": "Start",
+      "type": "start",
+      "next": [
+        "fd42c055-8a05-4c3a-845e-7e37ef2dd311"
+      ]
+    },
+    {
+      "id": "fd42c055-8a05-4c3a-845e-7e37ef2dd311",
+      "label": "End",
+      "type": "end",
+      "next": []
+    }
+  ],
+  "edges": [
+    [
+      "2e9d4859-7601-4f8e-9aa3-5f4568d861d1",
+      "fd42c055-8a05-4c3a-845e-7e37ef2dd311"
+    ]
+  ]
+}

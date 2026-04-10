@@ -1,0 +1,25 @@
+{
+  "methodName": "validatePieceMove",
+  "nodes": [
+    {
+      "id": "18607ab7-c2f5-4e3c-953c-ae8ed6de0fa1",
+      "label": "Start",
+      "type": "start",
+      "next": [
+        "6d0166b7-2a61-4b72-8c6b-2057de507648"
+      ]
+    },
+    {
+      "id": "6d0166b7-2a61-4b72-8c6b-2057de507648",
+      "label": "End",
+      "type": "end",
+      "next": []
+    }
+  ],
+  "edges": [
+    [
+      "18607ab7-c2f5-4e3c-953c-ae8ed6de0fa1",
+      "6d0166b7-2a61-4b72-8c6b-2057de507648"
+    ]
+  ]
+}

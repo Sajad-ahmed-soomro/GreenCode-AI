@@ -1,0 +1,72 @@
+[
+  {
+    "className": "ReportGenerator",
+    "methodName": "generateReport",
+    "benchmarkTool": "complexity-estimated",
+    "medianMs": 17.023,
+    "meanMs": 17.846,
+    "p95Ms": 21.929,
+    "minMs": 14.201,
+    "maxMs": 23.428,
+    "stdDev": 2.211,
+    "runs": 100,
+    "complexityScore": 46,
+    "note": "Estimated from static complexity analysis"
+  },
+  {
+    "className": "ReportGenerator",
+    "methodName": "printLongestItem",
+    "benchmarkTool": "complexity-estimated",
+    "medianMs": 20.525,
+    "meanMs": 20.662,
+    "p95Ms": 26.335,
+    "minMs": 18.412,
+    "maxMs": 29.423,
+    "stdDev": 2.771,
+    "runs": 100,
+    "complexityScore": 26,
+    "note": "Estimated from static complexity analysis"
+  },
+  {
+    "className": "ReportGenerator",
+    "methodName": "printSummary",
+    "benchmarkTool": "complexity-estimated",
+    "medianMs": 26.627,
+    "meanMs": 29.003,
+    "p95Ms": 34.605,
+    "minMs": 21.409,
+    "maxMs": 37.331,
+    "stdDev": 3.331,
+    "runs": 100,
+    "complexityScore": 23,
+    "note": "Estimated from static complexity analysis"
+  },
+  {
+    "className": "ReportGenerator",
+    "methodName": "sortItems",
+    "benchmarkTool": "complexity-estimated",
+    "medianMs": 22.385,
+    "meanMs": 23.895,
+    "p95Ms": 27.789,
+    "minMs": 19.092,
+    "maxMs": 30.68,
+    "stdDev": 2.888,
+    "runs": 100,
+    "complexityScore": 26,
+    "note": "Estimated from static complexity analysis"
+  },
+  {
+    "className": "ReportGenerator",
+    "methodName": "addItem",
+    "benchmarkTool": "complexity-estimated",
+    "medianMs": 12.789,
+    "meanMs": 13.382,
+    "p95Ms": 15.888,
+    "minMs": 10.764,
+    "maxMs": 17.74,
+    "stdDev": 1.293,
+    "runs": 100,
+    "complexityScore": 11,
+    "note": "Estimated from static complexity analysis"
+  }
+]

@@ -22,13 +22,13 @@ const MethodCard = ({ method, isSelected, onSelect }) => {
       }`}
       onClick={() => onSelect(method)}
     >
-      <div className="bg-gradient-to-r from-emerald-500 to-teal-500 px-6 py-4">
-        <div className="flex items-center justify-between">
-          <h3 className="text-xl font-semibold text-white flex items-center gap-2">
+      <div className="bg-gradient-to-r from-emerald-500 to-teal-500 px-4 sm:px-6 py-3 sm:py-4">
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+          <h3 className="text-lg sm:text-xl font-semibold text-white flex items-center gap-2 break-all">
             <Code className="w-5 h-5" />
             {method.methodName}
           </h3>
-          <div className="flex gap-2">
+          <div className="flex flex-wrap gap-2">
             <span className={`px-3 py-1 rounded-full text-sm font-semibold border ${energyLevel.color} bg-white`}>
               {energyLevel.icon}
               <span className="ml-1">{energyLevel.label}</span>
@@ -42,8 +42,8 @@ const MethodCard = ({ method, isSelected, onSelect }) => {
         </div>
       </div>
 
-      <div className="p-6">
-        <div className="grid grid-cols-4 gap-3 mb-4">
+      <div className="p-4 sm:p-6">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-4">
           <div className="text-center p-3 bg-purple-50 rounded-lg border border-purple-100">
             <p className="text-xs text-purple-600 mb-1">Energy</p>
             <p className="text-xl font-bold text-purple-700">{energyScore.toFixed(2)}</p>

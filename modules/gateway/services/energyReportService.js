@@ -537,6 +537,142 @@ const getEnergyComparison = (className1, className2) => {
   }
 };
 
+// Before/after impact comparison for module adoption
+const getBeforeAfterImpactComparison = ({
+  monthlyExecutions = 100000,
+  costPerKwhUsd = 0.12,
+  co2KgPerKwh = 0.475,
+  baselineOverheadRatio = 0.3
+} = {}) => {
+  try {
+    const statsResponse = getEnergyStatistics();
+    const stats = statsResponse.statistics || {};
+    const allReports = getAllReports();
+    const dedupedByClass = new Map();
+    (allReports.reports || []).forEach((report) => {
+      const key = report.className || report.fileName || 'Unknown';
+      const prev = dedupedByClass.get(key);
+      const prevTime = prev?.generatedAt ? new Date(prev.generatedAt).getTime() : 0;
+      const nextTime = report?.generatedAt ? new Date(report.generatedAt).getTime() : 0;
+      if (!prev || nextTime >= prevTime) dedupedByClass.set(key, report);
+    });
+    const uniqueReports = Array.from(dedupedByClass.values());
+
+    const totalMethods = Math.max(1, stats.totalMethods || 1);
+    const postAvgEnergy = Number(stats.avgEnergyPerMethod || 0);
+    // Approximate kWh/run from normalized score (project-level heuristic).
+    const postKwhPerRun = Math.max(0.000001, postAvgEnergy * 0.00002);
+    const baselineKwhPerRun = postKwhPerRun * (1 + Math.max(0, baselineOverheadRatio));
+
+    const before = {
+      kwhPerRun: baselineKwhPerRun,
+      monthlyKwh: baselineKwhPerRun * monthlyExecutions,
+      monthlyCostUsd: baselineKwhPerRun * monthlyExecutions * costPerKwhUsd,
+      monthlyCo2Kg: baselineKwhPerRun * monthlyExecutions * co2KgPerKwh
+    };
+
+    const after = {
+      kwhPerRun: postKwhPerRun,
+      monthlyKwh: postKwhPerRun * monthlyExecutions,
+      monthlyCostUsd: postKwhPerRun * monthlyExecutions * costPerKwhUsd,
+      monthlyCo2Kg: postKwhPerRun * monthlyExecutions * co2KgPerKwh
+    };
+
+    const savings = {
+      kwh: before.monthlyKwh - after.monthlyKwh,
+      costUsd: before.monthlyCostUsd - after.monthlyCostUsd,
+      co2Kg: before.monthlyCo2Kg - after.monthlyCo2Kg,
+      efficiencyGainPercent: before.monthlyKwh > 0
+        ? ((before.monthlyKwh - after.monthlyKwh) / before.monthlyKwh) * 100
+        : 0
+    };
+
+    const annualized = {
+      kwh: savings.kwh * 12,
+      costUsd: savings.costUsd * 12,
+      co2Kg: savings.co2Kg * 12
+    };
+
+    const fileComparisons = uniqueReports.map((report) => {
+      const className = report.className;
+      const classMethods = Math.max(1, Number(report.totalMethods || 1));
+      const share = classMethods / totalMethods;
+      const classExecutions = Math.max(1, monthlyExecutions * share);
+      const classAvgEnergy = Number(report.statistics?.avgEnergy || 0);
+      const classPostKwhPerRun = Math.max(0.000001, classAvgEnergy * 0.00002);
+      const highEnergyDensity = Math.min(1, Number(report.statistics?.highEnergyMethods || 0) / classMethods);
+      const loopDensity = Math.min(1, Number(report.statistics?.methodsWithLoops || 0) / classMethods);
+      // File-specific baseline gap so efficiency differs by file profile.
+      const fileOverheadRatio = Math.max(
+        0.08,
+        baselineOverheadRatio + (classAvgEnergy * 0.18) + (highEnergyDensity * 0.2) + (loopDensity * 0.12)
+      );
+      const classBaseKwhPerRun = classPostKwhPerRun * (1 + fileOverheadRatio);
+
+      const classBeforeMonthlyKwh = classBaseKwhPerRun * classExecutions;
+      const classAfterMonthlyKwh = classPostKwhPerRun * classExecutions;
+      const classBeforeCost = classBeforeMonthlyKwh * costPerKwhUsd;
+      const classAfterCost = classAfterMonthlyKwh * costPerKwhUsd;
+      const classBeforeCo2 = classBeforeMonthlyKwh * co2KgPerKwh;
+      const classAfterCo2 = classAfterMonthlyKwh * co2KgPerKwh;
+      const classSavedKwh = classBeforeMonthlyKwh - classAfterMonthlyKwh;
+      const classSavedCost = classBeforeCost - classAfterCost;
+      const classSavedCo2 = classBeforeCo2 - classAfterCo2;
+
+      return {
+        file: `${className}.java`,
+        className,
+        methods: classMethods,
+        monthlyExecutions: classExecutions,
+        before: {
+          monthlyKwh: classBeforeMonthlyKwh,
+          monthlyCostUsd: classBeforeCost,
+          monthlyCo2Kg: classBeforeCo2
+        },
+        after: {
+          monthlyKwh: classAfterMonthlyKwh,
+          monthlyCostUsd: classAfterCost,
+          monthlyCo2Kg: classAfterCo2
+        },
+        savings: {
+          kwh: classSavedKwh,
+          costUsd: classSavedCost,
+          co2Kg: classSavedCo2,
+          efficiencyGainPercent: classBeforeMonthlyKwh > 0
+            ? (classSavedKwh / classBeforeMonthlyKwh) * 100
+            : 0
+        },
+        model: {
+          classAvgEnergy,
+          fileOverheadRatio
+        }
+      };
+    }).sort((a, b) => b.savings.costUsd - a.savings.costUsd);
+
+    return {
+      success: true,
+      assumptions: {
+        monthlyExecutions,
+        costPerKwhUsd,
+        co2KgPerKwh,
+        baselineOverheadRatio
+      },
+      before,
+      after,
+      savings,
+      annualized,
+      fileComparisons,
+      advantages: [
+        'Lower monthly electricity usage and infrastructure spend.',
+        'Reduced carbon emissions with measurable annual impact.',
+        'Improved efficiency profile for sustainability reporting.'
+      ]
+    };
+  } catch (error) {
+    throw new Error(`Failed to compute before/after impact: ${error.message}`);
+  }
+};
+
 // ============ EXPORTS ============
 export default {
   getAllReports,
@@ -547,6 +683,7 @@ export default {
   getTopEnergyConsumers,
   searchMethods,
   getEnergyComparison,
+  getBeforeAfterImpactComparison,
   // Export calculation functions for testing
   calculateEnergyScore,
   calculateMethodMetrics

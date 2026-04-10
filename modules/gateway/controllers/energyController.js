@@ -124,6 +124,28 @@ const compareClassesController = (req, res) => {
   }
 };
 
+const getImpactComparisonController = (req, res) => {
+  try {
+    const monthlyExecutions = req.query.monthlyExecutions ? parseInt(req.query.monthlyExecutions, 10) : undefined;
+    const costPerKwhUsd = req.query.costPerKwhUsd ? parseFloat(req.query.costPerKwhUsd) : undefined;
+    const co2KgPerKwh = req.query.co2KgPerKwh ? parseFloat(req.query.co2KgPerKwh) : undefined;
+    const baselineOverheadRatio = req.query.baselineOverheadRatio ? parseFloat(req.query.baselineOverheadRatio) : undefined;
+
+    const comparison = energyService.getBeforeAfterImpactComparison({
+      monthlyExecutions,
+      costPerKwhUsd,
+      co2KgPerKwh,
+      baselineOverheadRatio
+    });
+    res.status(200).json(comparison);
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      error: error.message
+    });
+  }
+};
+
 export{
   energyReportController,
   getClassReportController,
@@ -132,7 +154,8 @@ export{
   getStatisticsController,
   getTopConsumersController,
   searchMethodsController,
-  compareClassesController
+  compareClassesController,
+  getImpactComparisonController
 };
 
 

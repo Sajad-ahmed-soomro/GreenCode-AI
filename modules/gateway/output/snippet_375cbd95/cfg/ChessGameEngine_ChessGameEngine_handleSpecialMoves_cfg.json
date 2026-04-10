@@ -1,0 +1,25 @@
+{
+  "methodName": "handleSpecialMoves",
+  "nodes": [
+    {
+      "id": "f9f62529-1c04-4673-96cf-329246585bbc",
+      "label": "Start",
+      "type": "start",
+      "next": [
+        "e0263a03-80ea-4a4a-b444-61e9da09f83d"
+      ]
+    },
+    {
+      "id": "e0263a03-80ea-4a4a-b444-61e9da09f83d",
+      "label": "End",
+      "type": "end",
+      "next": []
+    }
+  ],
+  "edges": [
+    [
+      "f9f62529-1c04-4673-96cf-329246585bbc",
+      "e0263a03-80ea-4a4a-b444-61e9da09f83d"
+    ]
+  ]
+}

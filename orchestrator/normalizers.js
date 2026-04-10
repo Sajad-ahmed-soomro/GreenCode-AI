@@ -13,6 +13,21 @@ function toSeverity(s) {
   return v === 'high' || v === 'medium' ? v : 'low';
 }
 
+function energySeverityFromScore(score, fallback = 'low') {
+  if (typeof score !== 'number' || Number.isNaN(score)) return fallback;
+  if (score >= 0.56) return 'high';
+  if (score >= 0.48) return 'medium';
+  return 'low';
+}
+
+function confidenceFromLevel(level, fallback = 0.75) {
+  const v = String(level || '').toLowerCase();
+  if (v === 'high') return 0.9;
+  if (v === 'medium') return 0.8;
+  if (v === 'low') return 0.65;
+  return fallback;
+}
+
 function toCategory(agent, raw) {
   if (agent === 'energy') return 'energy';
   if (agent === 'optimization' || agent === 'data-structures') return 'performance';
@@ -177,23 +192,56 @@ export function normalizeFromScanOutput(scanOutputDir, projectId = '') {
         for (const r of reports) {
           const filePath = (r.className || r.fileName || 'Unknown') + '.java';
           const energyLevel = (r.energyLevel || r.estimatedConsumption || '').toLowerCase();
-          const severity = energyLevel.includes('high') ? 'high' : energyLevel.includes('medium') ? 'medium' : 'low';
-          if (r.suggestions && r.suggestions.length) {
-            issues.push({
-              id: `energy_${sessionId}_${filePath}_${r.methodName || 'm'}_${randomUUID().slice(0, 8)}`,
-              filePath,
-              line: r.line ?? 0,
-              agent: 'energy',
-              category: 'energy',
-              severity,
-              confidence: 0.75,
-              description: r.suggestions[0] || 'Energy improvement opportunity',
-              explanation: r.reason || '',
-              recommendation: r.suggestions[0] || '',
-              fix: { type: 'suggestion', autoApply: false },
-              context: { projectId }
-            });
-          }
+          const score = Number(r.energyScore ?? r.combinedEnergyScore ?? r.staticEnergyScore);
+          const severityFromLabel = energyLevel.includes('high') ? 'high' : energyLevel.includes('medium') ? 'medium' : 'low';
+          const severity = energySeverityFromScore(score, severityFromLabel);
+
+          const description =
+            (Array.isArray(r.suggestions) && r.suggestions[0]) ||
+            (r.methodName ? `High energy footprint detected in ${r.methodName}()` : 'Energy improvement opportunity');
+          const recommendation =
+            (Array.isArray(r.suggestions) && r.suggestions[0]) ||
+            'Reduce nested loops and repeated heavy operations in hot paths.';
+          const explanation = [
+            r.reason,
+            typeof score === 'number' && !Number.isNaN(score) ? `energyScore=${score.toFixed(3)}` : '',
+            typeof r.medianMs === 'number' ? `median=${r.medianMs}ms` : '',
+            typeof r.loopCount === 'number' ? `loops=${r.loopCount}` : '',
+            typeof r.nestingDepth === 'number' ? `nesting=${r.nestingDepth}` : ''
+          ].filter(Boolean).join(' | ');
+
+          const structuralFrequency =
+            1 +
+            Math.max(0, Number(r.loopCount || 0)) +
+            Math.max(0, Number(r.nestingDepth || 0)) +
+            Math.max(0, Number(r.conditionalsCount || 0)) +
+            Math.max(0, Number(r.methodCallsInsideLoop || 0));
+          const benchmarkFrequency = Math.max(1, Number(r.benchmarkRuns || 1));
+          const frequency = Math.max(structuralFrequency, benchmarkFrequency);
+
+          issues.push({
+            id: `energy_${sessionId}_${filePath}_${r.methodName || 'm'}_${randomUUID().slice(0, 8)}`,
+            filePath,
+            line: r.line ?? r.lineNumber ?? 0,
+            agent: 'energy',
+            category: 'energy',
+            severity,
+            confidence: confidenceFromLevel(r.confidenceLevel, 0.75),
+            description,
+            explanation,
+            recommendation,
+            fix: { type: 'suggestion', autoApply: false },
+            context: {
+              projectId,
+              frequency,
+              energyScore: typeof score === 'number' && !Number.isNaN(score) ? score : undefined,
+              executionTimeMs: Number(r.medianMs ?? r.meanMs ?? 0) || undefined,
+              loopCount: Number(r.loopCount || 0),
+              nestingDepth: Number(r.nestingDepth || 0),
+              cyclomatic: Number(r.cyclomatic || 0),
+              benchmarkRuns: Number(r.benchmarkRuns || 0) || undefined
+            }
+          });
         }
       } catch (e) {
         console.warn('normalize energy:', e.message);

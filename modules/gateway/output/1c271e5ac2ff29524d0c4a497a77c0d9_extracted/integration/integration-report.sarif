@@ -1,0 +1,110 @@
+{
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "GreenCode Integration Module",
+          "version": "1.0.0"
+        }
+      },
+      "results": [
+        {
+          "ruleId": "COMPLEX_CONDITIONAL",
+          "level": "note",
+          "message": {
+            "text": "Complex conditionals in method \"checkValue\""
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Calculator.java"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "ENERGY_HOTSPOT",
+          "level": "warning",
+          "message": {
+            "text": "Elevated energy usage in Calculator.add()"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Calculator.java"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "ENERGY_HOTSPOT",
+          "level": "warning",
+          "message": {
+            "text": "Elevated energy usage in Calculator.sumArray()"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Calculator.java"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "ENERGY_HOTSPOT",
+          "level": "warning",
+          "message": {
+            "text": "Elevated energy usage in Calculator.checkValue()"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Calculator.java"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "ENERGY_HOTSPOT",
+          "level": "note",
+          "message": {
+            "text": "Elevated energy usage in Calculator.Calculator()"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Calculator.java"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

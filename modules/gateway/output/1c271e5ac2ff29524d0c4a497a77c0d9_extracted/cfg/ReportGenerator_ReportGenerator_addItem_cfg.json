@@ -1,0 +1,25 @@
+{
+  "methodName": "addItem",
+  "nodes": [
+    {
+      "id": "7ef89205-49cc-4c5e-b714-33cc7686b2a7",
+      "label": "Start",
+      "type": "start",
+      "next": [
+        "9853620a-6a51-4851-b492-b97483fb1ab4"
+      ]
+    },
+    {
+      "id": "9853620a-6a51-4851-b492-b97483fb1ab4",
+      "label": "End",
+      "type": "end",
+      "next": []
+    }
+  ],
+  "edges": [
+    [
+      "7ef89205-49cc-4c5e-b714-33cc7686b2a7",
+      "9853620a-6a51-4851-b492-b97483fb1ab4"
+    ]
+  ]
+}

@@ -7,7 +7,8 @@ import {
   getTopConsumersController,
   searchMethodsController,
   compareClassesController,
-  getMethodController
+  getMethodController,
+  getImpactComparisonController
 } from '../controllers/energyController.js';
 
 const router = express.Router();
@@ -18,6 +19,7 @@ router.get('/statistics', getStatisticsController);
 router.get('/top-consumers', getTopConsumersController);
 router.get('/search', searchMethodsController);
 router.get('/compare', compareClassesController);
+router.get('/impact-comparison', getImpactComparisonController);
 
 // Class-specific routes
 router.get('/class/:className', getClassReportController);

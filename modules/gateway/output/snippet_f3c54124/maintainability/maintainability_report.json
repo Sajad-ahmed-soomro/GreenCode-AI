@@ -1,0 +1,15 @@
+{
+  "analyzedFiles": [
+    {
+      "file": "ReportGenerator.json",
+      "avgScore": 77.2,
+      "level": "Medium",
+      "totalMethods": 5,
+      "analyzedAt": "2026-04-10T11:35:52.299Z"
+    }
+  ],
+  "overallAvg": 77.2,
+  "overallLevel": "Medium",
+  "totalFiles": 1,
+  "updatedAt": "2026-04-10T11:35:52.299Z"
+}

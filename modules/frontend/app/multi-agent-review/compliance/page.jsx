@@ -473,7 +473,7 @@ const ComplianceAgentPage = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-green-50 p-6">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-green-50 p-4 sm:p-6">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-8">
@@ -485,13 +485,13 @@ const ComplianceAgentPage = () => {
             <span className="font-semibold">Back to Multi-Agent Review</span>
           </button>
           
-          <div className="flex items-start justify-between mb-4">
+          <div className="flex flex-col gap-4 xl:flex-row xl:items-start xl:justify-between mb-4">
             <div className="flex items-center gap-4">
               <div className="bg-gradient-to-br from-green-500 to-green-600 p-4 rounded-xl">
                 <FileCheck className="w-10 h-10 text-white" />
               </div>
               <div>
-                <h1 className="text-4xl font-bold text-slate-800">Compliance Agent</h1>
+                <h1 className="text-2xl sm:text-3xl xl:text-4xl font-bold text-slate-800">Compliance Agent</h1>
                 <p className="text-slate-600 mt-1 flex items-center gap-2">
                   <span>Analyzing {files.length} Java file{files.length !== 1 ? 's' : ''}</span>
                   <span className={`px-2 py-1 rounded-full text-xs font-medium ${getBackendHealthColor()}`}>
@@ -608,7 +608,7 @@ const ComplianceAgentPage = () => {
             <BarChart className="w-6 h-6 text-green-600" />
             Java Project-Wide Compliance Metrics
           </h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
             <div className="bg-green-50 border-2 border-green-300 rounded-lg p-4">
               <p className="text-sm font-semibold text-green-800">Total Issues</p>
               <p className="text-2xl font-bold text-green-800">{aggregatedMetrics?.totalIssues || 0}</p>

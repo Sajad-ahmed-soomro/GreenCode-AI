@@ -1,0 +1,4600 @@
+{
+  "issues": [
+    {
+      "id": "ds_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ChessGameEngine.java_0_00918947",
+      "filePath": "ChessGameEngine.java",
+      "line": 24,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Manual arr[i] search inside loop",
+      "explanation": "Manual scanning inside loop is slow (O(n)). Hashed lookup is O(1).",
+      "recommendation": "Use Set or Map depending on logic",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "Use Set or Map depending on logic"
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ChessGameEngine.java_1_5e6e83a4",
+      "filePath": "ChessGameEngine.java",
+      "line": 116,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Manual arr[i] search inside loop",
+      "explanation": "Manual scanning inside loop is slow (O(n)). Hashed lookup is O(1).",
+      "recommendation": "Use Set or Map depending on logic",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "Use Set or Map depending on logic"
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ChessGameEngine.java_2_8da9f7b8",
+      "filePath": "ChessGameEngine.java",
+      "line": 118,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Manual arr[i] search inside loop",
+      "explanation": "Manual scanning inside loop is slow (O(n)). Hashed lookup is O(1).",
+      "recommendation": "Use Set or Map depending on logic",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "Use Set or Map depending on logic"
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ChessGameEngine.java_3_029f6420",
+      "filePath": "ChessGameEngine.java",
+      "line": 176,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Manual arr[i] search inside loop",
+      "explanation": "Manual scanning inside loop is slow (O(n)). Hashed lookup is O(1).",
+      "recommendation": "Use Set or Map depending on logic",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "Use Set or Map depending on logic"
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ChessGameEngine.java_4_3b015658",
+      "filePath": "ChessGameEngine.java",
+      "line": 115,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Nested loops detected",
+      "explanation": "Nested loops cause O(n²) complexity. Converting one list to a Map reduces time to O(n).",
+      "recommendation": "Use HashMap/HashSet for matching instead of O(n²) nested scans.",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "Use HashMap/HashSet for matching instead of O(n²) nested scans."
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ChessGameEngine.java_5_a0ccbbbe",
+      "filePath": "ChessGameEngine.java",
+      "line": 175,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Nested loops detected",
+      "explanation": "Nested loops cause O(n²) complexity. Converting one list to a Map reduces time to O(n).",
+      "recommendation": "Use HashMap/HashSet for matching instead of O(n²) nested scans.",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "Use HashMap/HashSet for matching instead of O(n²) nested scans."
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ChessGameEngine.java_6_035b9664",
+      "filePath": "ChessGameEngine.java",
+      "line": 24,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Array used as dictionary with string key",
+      "explanation": "Arrays only support numeric indexing. Using them like maps is incorrect.",
+      "recommendation": "HashMap or TreeMap",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "HashMap or TreeMap"
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ChessGameEngine.java_7_7da6da4a",
+      "filePath": "ChessGameEngine.java",
+      "line": 37,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Array used as dictionary with string key",
+      "explanation": "Arrays only support numeric indexing. Using them like maps is incorrect.",
+      "recommendation": "HashMap or TreeMap",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "HashMap or TreeMap"
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ChessGameEngine.java_8_b5bee21a",
+      "filePath": "ChessGameEngine.java",
+      "line": 38,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Array used as dictionary with string key",
+      "explanation": "Arrays only support numeric indexing. Using them like maps is incorrect.",
+      "recommendation": "HashMap or TreeMap",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "HashMap or TreeMap"
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ChessGameEngine.java_9_1605e286",
+      "filePath": "ChessGameEngine.java",
+      "line": 41,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Array used as dictionary with string key",
+      "explanation": "Arrays only support numeric indexing. Using them like maps is incorrect.",
+      "recommendation": "HashMap or TreeMap",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "HashMap or TreeMap"
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ChessGameEngine.java_10_07ab86e6",
+      "filePath": "ChessGameEngine.java",
+      "line": 42,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Array used as dictionary with string key",
+      "explanation": "Arrays only support numeric indexing. Using them like maps is incorrect.",
+      "recommendation": "HashMap or TreeMap",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "HashMap or TreeMap"
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ChessGameEngine.java_11_42270b4a",
+      "filePath": "ChessGameEngine.java",
+      "line": 50,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Array used as dictionary with string key",
+      "explanation": "Arrays only support numeric indexing. Using them like maps is incorrect.",
+      "recommendation": "HashMap or TreeMap",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "HashMap or TreeMap"
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ChessGameEngine.java_12_7214f1f5",
+      "filePath": "ChessGameEngine.java",
+      "line": 51,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Array used as dictionary with string key",
+      "explanation": "Arrays only support numeric indexing. Using them like maps is incorrect.",
+      "recommendation": "HashMap or TreeMap",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "HashMap or TreeMap"
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ChessGameEngine.java_13_bff5b20d",
+      "filePath": "ChessGameEngine.java",
+      "line": 66,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Array used as dictionary with string key",
+      "explanation": "Arrays only support numeric indexing. Using them like maps is incorrect.",
+      "recommendation": "HashMap or TreeMap",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "HashMap or TreeMap"
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ChessGameEngine.java_14_bde2da85",
+      "filePath": "ChessGameEngine.java",
+      "line": 103,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Array used as dictionary with string key",
+      "explanation": "Arrays only support numeric indexing. Using them like maps is incorrect.",
+      "recommendation": "HashMap or TreeMap",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "HashMap or TreeMap"
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ChessGameEngine.java_15_ac1e29db",
+      "filePath": "ChessGameEngine.java",
+      "line": 116,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Array used as dictionary with string key",
+      "explanation": "Arrays only support numeric indexing. Using them like maps is incorrect.",
+      "recommendation": "HashMap or TreeMap",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "HashMap or TreeMap"
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ChessGameEngine.java_16_f26e8756",
+      "filePath": "ChessGameEngine.java",
+      "line": 176,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Array used as dictionary with string key",
+      "explanation": "Arrays only support numeric indexing. Using them like maps is incorrect.",
+      "recommendation": "HashMap or TreeMap",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "HashMap or TreeMap"
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_Main.java_0_d5b57ade",
+      "filePath": "Main.java",
+      "line": 24,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Manual List.get(i) search inside loop",
+      "explanation": "Manual index scan inside loop is O(n). Using Set/Map gives O(1) lookup.",
+      "recommendation": "Use HashSet or HashMap",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "Use HashSet or HashMap"
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_Main.java_1_b8d911af",
+      "filePath": "Main.java",
+      "line": 25,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Manual List.get(i) search inside loop",
+      "explanation": "Manual index scan inside loop is O(n). Using Set/Map gives O(1) lookup.",
+      "recommendation": "Use HashSet or HashMap",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "Use HashSet or HashMap"
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_Main.java_2_d31844ca",
+      "filePath": "Main.java",
+      "line": 23,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Nested loops detected",
+      "explanation": "Nested loops cause O(n²) complexity. Converting one list to a Map reduces time to O(n).",
+      "recommendation": "Use HashMap/HashSet for matching instead of O(n²) nested scans.",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "Use HashMap/HashSet for matching instead of O(n²) nested scans."
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_Main.java_3_63d50b67",
+      "filePath": "Main.java",
+      "line": 24,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "List used as dictionary (list.get(key))",
+      "explanation": "List.get(keyName) implies key-value usage, but lists have no keys. Use a Map instead.",
+      "recommendation": "Use HashMap<Key, Value>",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "Use HashMap<Key, Value>"
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_Main.java_4_09a73a45",
+      "filePath": "Main.java",
+      "line": 25,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "List used as dictionary (list.get(key))",
+      "explanation": "List.get(keyName) implies key-value usage, but lists have no keys. Use a Map instead.",
+      "recommendation": "Use HashMap<Key, Value>",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "Use HashMap<Key, Value>"
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_Main.java_5_a61d8ed4",
+      "filePath": "Main.java",
+      "line": 11,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Temporary list created and used once",
+      "explanation": "Creating large temporary lists wastes memory and CPU. Use streaming or process directly.",
+      "recommendation": "Stream / direct processing",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "Stream / direct processing"
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ReportGenerator.java_0_947945ee",
+      "filePath": "ReportGenerator.java",
+      "line": 35,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "List.contains() used inside loop",
+      "explanation": "List.contains() inside a loop is O(n²). Replace List with Set for O(1) lookup.",
+      "recommendation": "HashSet (Set)",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "HashSet (Set)"
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ReportGenerator.java_1_71985ed0",
+      "filePath": "ReportGenerator.java",
+      "line": 55,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Manual List.get(i) search inside loop",
+      "explanation": "Manual index scan inside loop is O(n). Using Set/Map gives O(1) lookup.",
+      "recommendation": "Use HashSet or HashMap",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "Use HashSet or HashMap"
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ReportGenerator.java_2_83e25292",
+      "filePath": "ReportGenerator.java",
+      "line": 21,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Nested loops detected",
+      "explanation": "Nested loops cause O(n²) complexity. Converting one list to a Map reduces time to O(n).",
+      "recommendation": "Use HashMap/HashSet for matching instead of O(n²) nested scans.",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "Use HashMap/HashSet for matching instead of O(n²) nested scans."
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ReportGenerator.java_3_9c26472c",
+      "filePath": "ReportGenerator.java",
+      "line": 0,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "items declared as List but only used in foreach",
+      "explanation": "List indexing ability is wasted when never used; Set is faster & lighter.",
+      "recommendation": "Use HashSet instead of List",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "Use HashSet instead of List"
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ReportGenerator.java_4_28cd7d08",
+      "filePath": "ReportGenerator.java",
+      "line": 12,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "List used as dictionary (list.get(key))",
+      "explanation": "List.get(keyName) implies key-value usage, but lists have no keys. Use a Map instead.",
+      "recommendation": "Use HashMap<Key, Value>",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "Use HashMap<Key, Value>"
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ReportGenerator.java_5_b653ba0b",
+      "filePath": "ReportGenerator.java",
+      "line": 21,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "List used as dictionary (list.get(key))",
+      "explanation": "List.get(keyName) implies key-value usage, but lists have no keys. Use a Map instead.",
+      "recommendation": "Use HashMap<Key, Value>",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "Use HashMap<Key, Value>"
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ReportGenerator.java_6_147ef9a9",
+      "filePath": "ReportGenerator.java",
+      "line": 55,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "List used as dictionary (list.get(key))",
+      "explanation": "List.get(keyName) implies key-value usage, but lists have no keys. Use a Map instead.",
+      "recommendation": "Use HashMap<Key, Value>",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "Use HashMap<Key, Value>"
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_SpecialMoves.java_0_65f604a0",
+      "filePath": "SpecialMoves.java",
+      "line": 35,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Manual arr[i] search inside loop",
+      "explanation": "Manual scanning inside loop is slow (O(n)). Hashed lookup is O(1).",
+      "recommendation": "Use Set or Map depending on logic",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "Use Set or Map depending on logic"
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_SpecialMoves.java_1_bfdc0299",
+      "filePath": "SpecialMoves.java",
+      "line": 49,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Manual arr[i] search inside loop",
+      "explanation": "Manual scanning inside loop is slow (O(n)). Hashed lookup is O(1).",
+      "recommendation": "Use Set or Map depending on logic",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "Use Set or Map depending on logic"
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_SpecialMoves.java_2_fc97a188",
+      "filePath": "SpecialMoves.java",
+      "line": 50,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Manual arr[i] search inside loop",
+      "explanation": "Manual scanning inside loop is slow (O(n)). Hashed lookup is O(1).",
+      "recommendation": "Use Set or Map depending on logic",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "Use Set or Map depending on logic"
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_SpecialMoves.java_3_ac1eeb8a",
+      "filePath": "SpecialMoves.java",
+      "line": 51,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Manual arr[i] search inside loop",
+      "explanation": "Manual scanning inside loop is slow (O(n)). Hashed lookup is O(1).",
+      "recommendation": "Use Set or Map depending on logic",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "Use Set or Map depending on logic"
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_SpecialMoves.java_4_d335b09d",
+      "filePath": "SpecialMoves.java",
+      "line": 57,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Manual arr[i] search inside loop",
+      "explanation": "Manual scanning inside loop is slow (O(n)). Hashed lookup is O(1).",
+      "recommendation": "Use Set or Map depending on logic",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "Use Set or Map depending on logic"
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_SpecialMoves.java_5_54befedd",
+      "filePath": "SpecialMoves.java",
+      "line": 58,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Manual arr[i] search inside loop",
+      "explanation": "Manual scanning inside loop is slow (O(n)). Hashed lookup is O(1).",
+      "recommendation": "Use Set or Map depending on logic",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "Use Set or Map depending on logic"
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_SpecialMoves.java_6_cfdd479a",
+      "filePath": "SpecialMoves.java",
+      "line": 79,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Manual arr[i] search inside loop",
+      "explanation": "Manual scanning inside loop is slow (O(n)). Hashed lookup is O(1).",
+      "recommendation": "Use Set or Map depending on logic",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "Use Set or Map depending on logic"
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_SpecialMoves.java_7_add53fd6",
+      "filePath": "SpecialMoves.java",
+      "line": 81,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Manual arr[i] search inside loop",
+      "explanation": "Manual scanning inside loop is slow (O(n)). Hashed lookup is O(1).",
+      "recommendation": "Use Set or Map depending on logic",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "Use Set or Map depending on logic"
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_SpecialMoves.java_8_5a998ae4",
+      "filePath": "SpecialMoves.java",
+      "line": 107,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Manual arr[i] search inside loop",
+      "explanation": "Manual scanning inside loop is slow (O(n)). Hashed lookup is O(1).",
+      "recommendation": "Use Set or Map depending on logic",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "Use Set or Map depending on logic"
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_SpecialMoves.java_9_5e15315c",
+      "filePath": "SpecialMoves.java",
+      "line": 34,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Nested loops detected",
+      "explanation": "Nested loops cause O(n²) complexity. Converting one list to a Map reduces time to O(n).",
+      "recommendation": "Use HashMap/HashSet for matching instead of O(n²) nested scans.",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "Use HashMap/HashSet for matching instead of O(n²) nested scans."
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_SpecialMoves.java_10_04e61a9a",
+      "filePath": "SpecialMoves.java",
+      "line": 41,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Nested loops detected",
+      "explanation": "Nested loops cause O(n²) complexity. Converting one list to a Map reduces time to O(n).",
+      "recommendation": "Use HashMap/HashSet for matching instead of O(n²) nested scans.",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "Use HashMap/HashSet for matching instead of O(n²) nested scans."
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_SpecialMoves.java_11_9dcf5fde",
+      "filePath": "SpecialMoves.java",
+      "line": 42,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Nested loops detected",
+      "explanation": "Nested loops cause O(n²) complexity. Converting one list to a Map reduces time to O(n).",
+      "recommendation": "Use HashMap/HashSet for matching instead of O(n²) nested scans.",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "Use HashMap/HashSet for matching instead of O(n²) nested scans."
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_SpecialMoves.java_12_60a22219",
+      "filePath": "SpecialMoves.java",
+      "line": 78,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Nested loops detected",
+      "explanation": "Nested loops cause O(n²) complexity. Converting one list to a Map reduces time to O(n).",
+      "recommendation": "Use HashMap/HashSet for matching instead of O(n²) nested scans.",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "Use HashMap/HashSet for matching instead of O(n²) nested scans."
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_SpecialMoves.java_13_3eca24f6",
+      "filePath": "SpecialMoves.java",
+      "line": 106,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Nested loops detected",
+      "explanation": "Nested loops cause O(n²) complexity. Converting one list to a Map reduces time to O(n).",
+      "recommendation": "Use HashMap/HashSet for matching instead of O(n²) nested scans.",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "Use HashMap/HashSet for matching instead of O(n²) nested scans."
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_SpecialMoves.java_14_2ef7085f",
+      "filePath": "SpecialMoves.java",
+      "line": 9,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Array used as dictionary with string key",
+      "explanation": "Arrays only support numeric indexing. Using them like maps is incorrect.",
+      "recommendation": "HashMap or TreeMap",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "HashMap or TreeMap"
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_SpecialMoves.java_15_4018d753",
+      "filePath": "SpecialMoves.java",
+      "line": 11,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Array used as dictionary with string key",
+      "explanation": "Arrays only support numeric indexing. Using them like maps is incorrect.",
+      "recommendation": "HashMap or TreeMap",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "HashMap or TreeMap"
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_SpecialMoves.java_16_8406e812",
+      "filePath": "SpecialMoves.java",
+      "line": 12,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Array used as dictionary with string key",
+      "explanation": "Arrays only support numeric indexing. Using them like maps is incorrect.",
+      "recommendation": "HashMap or TreeMap",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "HashMap or TreeMap"
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_SpecialMoves.java_17_4c8805e7",
+      "filePath": "SpecialMoves.java",
+      "line": 17,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Array used as dictionary with string key",
+      "explanation": "Arrays only support numeric indexing. Using them like maps is incorrect.",
+      "recommendation": "HashMap or TreeMap",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "HashMap or TreeMap"
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_SpecialMoves.java_18_d45652bd",
+      "filePath": "SpecialMoves.java",
+      "line": 18,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Array used as dictionary with string key",
+      "explanation": "Arrays only support numeric indexing. Using them like maps is incorrect.",
+      "recommendation": "HashMap or TreeMap",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "HashMap or TreeMap"
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_SpecialMoves.java_19_a746681b",
+      "filePath": "SpecialMoves.java",
+      "line": 23,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Array used as dictionary with string key",
+      "explanation": "Arrays only support numeric indexing. Using them like maps is incorrect.",
+      "recommendation": "HashMap or TreeMap",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "HashMap or TreeMap"
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_SpecialMoves.java_20_a171a63c",
+      "filePath": "SpecialMoves.java",
+      "line": 35,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Array used as dictionary with string key",
+      "explanation": "Arrays only support numeric indexing. Using them like maps is incorrect.",
+      "recommendation": "HashMap or TreeMap",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "HashMap or TreeMap"
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_SpecialMoves.java_21_63fc62a1",
+      "filePath": "SpecialMoves.java",
+      "line": 49,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Array used as dictionary with string key",
+      "explanation": "Arrays only support numeric indexing. Using them like maps is incorrect.",
+      "recommendation": "HashMap or TreeMap",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "HashMap or TreeMap"
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_SpecialMoves.java_22_bbe26ef7",
+      "filePath": "SpecialMoves.java",
+      "line": 50,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Array used as dictionary with string key",
+      "explanation": "Arrays only support numeric indexing. Using them like maps is incorrect.",
+      "recommendation": "HashMap or TreeMap",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "HashMap or TreeMap"
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_SpecialMoves.java_23_045e1e82",
+      "filePath": "SpecialMoves.java",
+      "line": 51,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Array used as dictionary with string key",
+      "explanation": "Arrays only support numeric indexing. Using them like maps is incorrect.",
+      "recommendation": "HashMap or TreeMap",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "HashMap or TreeMap"
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_SpecialMoves.java_24_3f0dcd56",
+      "filePath": "SpecialMoves.java",
+      "line": 57,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Array used as dictionary with string key",
+      "explanation": "Arrays only support numeric indexing. Using them like maps is incorrect.",
+      "recommendation": "HashMap or TreeMap",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "HashMap or TreeMap"
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_SpecialMoves.java_25_b8828459",
+      "filePath": "SpecialMoves.java",
+      "line": 58,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Array used as dictionary with string key",
+      "explanation": "Arrays only support numeric indexing. Using them like maps is incorrect.",
+      "recommendation": "HashMap or TreeMap",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "HashMap or TreeMap"
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_SpecialMoves.java_26_3094dc9b",
+      "filePath": "SpecialMoves.java",
+      "line": 79,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Array used as dictionary with string key",
+      "explanation": "Arrays only support numeric indexing. Using them like maps is incorrect.",
+      "recommendation": "HashMap or TreeMap",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "HashMap or TreeMap"
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_SpecialMoves.java_27_64880fb3",
+      "filePath": "SpecialMoves.java",
+      "line": 91,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Array used as dictionary with string key",
+      "explanation": "Arrays only support numeric indexing. Using them like maps is incorrect.",
+      "recommendation": "HashMap or TreeMap",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "HashMap or TreeMap"
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_SpecialMoves.java_28_25143756",
+      "filePath": "SpecialMoves.java",
+      "line": 107,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "Array used as dictionary with string key",
+      "explanation": "Arrays only support numeric indexing. Using them like maps is incorrect.",
+      "recommendation": "HashMap or TreeMap",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "HashMap or TreeMap"
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "ds_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_UserServices.java_0_2dbade86",
+      "filePath": "UserServices.java",
+      "line": 18,
+      "agent": "data-structures",
+      "category": "performance",
+      "severity": "medium",
+      "confidence": 0.85,
+      "description": "List used as dictionary (list.get(key))",
+      "explanation": "List.get(keyName) implies key-value usage, but lists have no keys. Use a Map instead.",
+      "recommendation": "Use HashMap<Key, Value>",
+      "fix": {
+        "type": "refactor",
+        "autoApply": false,
+        "code": "Use HashMap<Key, Value>"
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 1
+      }
+    },
+    {
+      "id": "comp_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_Calculator.java_0_9c6d9ca5",
+      "filePath": "Calculator.java",
+      "line": 1,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "medium",
+      "confidence": 0.9,
+      "description": "Method name should be in camelCase.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "comp_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_Calculator.java_1_c59a6fd9",
+      "filePath": "Calculator.java",
+      "line": 1,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "medium",
+      "confidence": 0.9,
+      "description": "Method name should be in camelCase.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "comp_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ChessGameEngine.java_0_a540e949",
+      "filePath": "ChessGameEngine.java",
+      "line": 3,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "medium",
+      "confidence": 0.9,
+      "description": "Method name should be in camelCase.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "comp_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ChessGameEngine.java_1_9350ef15",
+      "filePath": "ChessGameEngine.java",
+      "line": 8,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "comp_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ChessGameEngine.java_2_adb060e0",
+      "filePath": "ChessGameEngine.java",
+      "line": 15,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "comp_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ChessGameEngine.java_3_7b788a50",
+      "filePath": "ChessGameEngine.java",
+      "line": 30,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "comp_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ChessGameEngine.java_4_8562b5aa",
+      "filePath": "ChessGameEngine.java",
+      "line": 35,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "comp_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ChessGameEngine.java_5_221f4a69",
+      "filePath": "ChessGameEngine.java",
+      "line": 39,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "comp_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ChessGameEngine.java_6_6cfc7643",
+      "filePath": "ChessGameEngine.java",
+      "line": 46,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "comp_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ChessGameEngine.java_7_3cdd10f1",
+      "filePath": "ChessGameEngine.java",
+      "line": 54,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "comp_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ChessGameEngine.java_8_210b746a",
+      "filePath": "ChessGameEngine.java",
+      "line": 59,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "comp_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ChessGameEngine.java_9_9150c926",
+      "filePath": "ChessGameEngine.java",
+      "line": 65,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "comp_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ChessGameEngine.java_10_a639bf2b",
+      "filePath": "ChessGameEngine.java",
+      "line": 68,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "comp_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ChessGameEngine.java_11_74591db4",
+      "filePath": "ChessGameEngine.java",
+      "line": 73,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "comp_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ChessGameEngine.java_12_bc3ed194",
+      "filePath": "ChessGameEngine.java",
+      "line": 77,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "comp_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ChessGameEngine.java_13_e8b9c18a",
+      "filePath": "ChessGameEngine.java",
+      "line": 90,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "comp_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ChessGameEngine.java_14_88a4b651",
+      "filePath": "ChessGameEngine.java",
+      "line": 96,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "comp_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ChessGameEngine.java_15_3580ff63",
+      "filePath": "ChessGameEngine.java",
+      "line": 101,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "comp_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ChessGameEngine.java_16_0796a43a",
+      "filePath": "ChessGameEngine.java",
+      "line": 107,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "comp_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ChessGameEngine.java_17_19367c69",
+      "filePath": "ChessGameEngine.java",
+      "line": 112,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "comp_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ChessGameEngine.java_18_331346a0",
+      "filePath": "ChessGameEngine.java",
+      "line": 126,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "comp_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ChessGameEngine.java_19_b5dc91ac",
+      "filePath": "ChessGameEngine.java",
+      "line": 130,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "comp_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ChessGameEngine.java_20_3b44a9d4",
+      "filePath": "ChessGameEngine.java",
+      "line": 134,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "comp_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ChessGameEngine.java_21_1dcee0cb",
+      "filePath": "ChessGameEngine.java",
+      "line": 139,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "comp_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ChessGameEngine.java_22_7283a35c",
+      "filePath": "ChessGameEngine.java",
+      "line": 143,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "comp_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ChessGameEngine.java_23_35c37c4f",
+      "filePath": "ChessGameEngine.java",
+      "line": 147,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "comp_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ChessGameEngine.java_24_3d3c7a26",
+      "filePath": "ChessGameEngine.java",
+      "line": 151,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "comp_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ChessGameEngine.java_25_61c8e3db",
+      "filePath": "ChessGameEngine.java",
+      "line": 155,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "comp_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ChessGameEngine.java_26_c2f41139",
+      "filePath": "ChessGameEngine.java",
+      "line": 159,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "comp_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ChessGameEngine.java_27_1c8bdd8c",
+      "filePath": "ChessGameEngine.java",
+      "line": 163,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "comp_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ChessGameEngine.java_28_cc428e1a",
+      "filePath": "ChessGameEngine.java",
+      "line": 167,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "comp_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ChessGameEngine.java_29_cd9a5730",
+      "filePath": "ChessGameEngine.java",
+      "line": 171,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "comp_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ChessGameEngine.java_30_8598d066",
+      "filePath": "ChessGameEngine.java",
+      "line": 183,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "comp_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ChessGameEngine.java_31_a878a008",
+      "filePath": "ChessGameEngine.java",
+      "line": 187,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "comp_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_Main.java_0_97166b0d",
+      "filePath": "Main.java",
+      "line": 1,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Commented-out code detected.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "comp_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_Main.java_1_ba841476",
+      "filePath": "Main.java",
+      "line": 3,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Commented-out code detected.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "comp_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ReportGenerator.java_0_6c099d61",
+      "filePath": "ReportGenerator.java",
+      "line": 1,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Commented-out code detected.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "comp_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ReportGenerator.java_1_2c3573aa",
+      "filePath": "ReportGenerator.java",
+      "line": 3,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Commented-out code detected.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "comp_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_SpecialMoves.java_0_9efaa9d9",
+      "filePath": "SpecialMoves.java",
+      "line": 5,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "comp_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_SpecialMoves.java_1_964c6f57",
+      "filePath": "SpecialMoves.java",
+      "line": 10,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "comp_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_SpecialMoves.java_2_900a7a77",
+      "filePath": "SpecialMoves.java",
+      "line": 14,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "comp_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_SpecialMoves.java_3_adf59c18",
+      "filePath": "SpecialMoves.java",
+      "line": 20,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "comp_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_SpecialMoves.java_4_abdc2b97",
+      "filePath": "SpecialMoves.java",
+      "line": 25,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "comp_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_SpecialMoves.java_5_ae0af390",
+      "filePath": "SpecialMoves.java",
+      "line": 31,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "comp_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_SpecialMoves.java_6_e60ced51",
+      "filePath": "SpecialMoves.java",
+      "line": 39,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "comp_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_SpecialMoves.java_7_e5480c0c",
+      "filePath": "SpecialMoves.java",
+      "line": 47,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "comp_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_SpecialMoves.java_8_4d316be5",
+      "filePath": "SpecialMoves.java",
+      "line": 52,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "comp_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_SpecialMoves.java_9_3e294ce4",
+      "filePath": "SpecialMoves.java",
+      "line": 55,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "comp_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_SpecialMoves.java_10_17dc13b3",
+      "filePath": "SpecialMoves.java",
+      "line": 59,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "comp_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_SpecialMoves.java_11_89a912df",
+      "filePath": "SpecialMoves.java",
+      "line": 67,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "comp_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_SpecialMoves.java_12_88654dc6",
+      "filePath": "SpecialMoves.java",
+      "line": 70,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "comp_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_SpecialMoves.java_13_4a4de117",
+      "filePath": "SpecialMoves.java",
+      "line": 75,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "comp_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_SpecialMoves.java_14_70a06e9b",
+      "filePath": "SpecialMoves.java",
+      "line": 89,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "comp_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_SpecialMoves.java_15_fc3e099a",
+      "filePath": "SpecialMoves.java",
+      "line": 102,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Remove trailing spaces.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "comp_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_Test.java_0_6393e069",
+      "filePath": "Test.java",
+      "line": 1,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "medium",
+      "confidence": 0.9,
+      "description": "Method name should be in camelCase.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "comp_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_Test.java_1_0d7d51b9",
+      "filePath": "Test.java",
+      "line": 1,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "medium",
+      "confidence": 0.9,
+      "description": "Method name should be in camelCase.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "comp_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_Test.java_2_1c678853",
+      "filePath": "Test.java",
+      "line": 1,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "medium",
+      "confidence": 0.9,
+      "description": "Method name should be in camelCase.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "comp_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_Test.java_3_1ebb336c",
+      "filePath": "Test.java",
+      "line": 51,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "medium",
+      "confidence": 0.9,
+      "description": "Method name should be in camelCase.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "comp_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_UserServices.java_0_49a5a247",
+      "filePath": "UserServices.java",
+      "line": 1,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Commented-out code detected.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "comp_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_UserServices.java_1_e6d5bc72",
+      "filePath": "UserServices.java",
+      "line": 3,
+      "agent": "compliance",
+      "category": "style",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "Commented-out code detected.",
+      "explanation": "",
+      "recommendation": "",
+      "fix": {
+        "type": "code",
+        "autoApply": true
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "maint_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_Calculator.java_add_183c0bb3",
+      "filePath": "Calculator.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": " Low comment coverage. Add documentation or inline comments.",
+      "explanation": "Method Calculator.add score: 77",
+      "recommendation": " Low comment coverage. Add documentation or inline comments.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "maint_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_Calculator.java_sumArray_aabc97b3",
+      "filePath": "Calculator.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": " Low comment coverage. Add documentation or inline comments.",
+      "explanation": "Method Calculator.sumArray score: 82",
+      "recommendation": " Low comment coverage. Add documentation or inline comments.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "maint_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_Calculator.java_checkValue_aa6d8aeb",
+      "filePath": "Calculator.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": " Low comment coverage. Add documentation or inline comments.",
+      "explanation": "Method Calculator.checkValue score: 77",
+      "recommendation": " Low comment coverage. Add documentation or inline comments.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "maint_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ChessGameEngine.java_initializeBoard_87064fdd",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": "Function is too long. Split into smaller helper methods.",
+      "explanation": "Method ChessGameEngine.initializeBoard score: 75",
+      "recommendation": "Function is too long. Split into smaller helper methods.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "maint_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ChessGameEngine.java_makeMove_9128e03d",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": "Function is too long. Split into smaller helper methods.",
+      "explanation": "Method ChessGameEngine.makeMove score: 62",
+      "recommendation": "Function is too long. Split into smaller helper methods.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "maint_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ChessGameEngine.java_isValidMove_c712a836",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": "Function is too long. Split into smaller helper methods.",
+      "explanation": "Method ChessGameEngine.isValidMove score: 62",
+      "recommendation": "Function is too long. Split into smaller helper methods.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "maint_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ChessGameEngine.java_validatePieceMove_ea3b33d1",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": "Function is too long. Split into smaller helper methods.",
+      "explanation": "Method ChessGameEngine.validatePieceMove score: 70",
+      "recommendation": "Function is too long. Split into smaller helper methods.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "maint_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ChessGameEngine.java_handleSpecialMoves_627f33e0",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": "Function is too long. Split into smaller helper methods.",
+      "explanation": "Method ChessGameEngine.handleSpecialMoves score: 62",
+      "recommendation": "Function is too long. Split into smaller helper methods.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "maint_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ChessGameEngine.java_isInCheck_f17a6a01",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": "Function is too long. Split into smaller helper methods.",
+      "explanation": "Method ChessGameEngine.isInCheck score: 67",
+      "recommendation": "Function is too long. Split into smaller helper methods.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "maint_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ChessGameEngine.java_isValidPosition_453b6cbe",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": "Function is too long. Split into smaller helper methods.",
+      "explanation": "Method ChessGameEngine.isValidPosition score: 75",
+      "recommendation": "Function is too long. Split into smaller helper methods.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "maint_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ChessGameEngine.java_isWhitePiece_4b042b3a",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": "Function is too long. Split into smaller helper methods.",
+      "explanation": "Method ChessGameEngine.isWhitePiece score: 75",
+      "recommendation": "Function is too long. Split into smaller helper methods.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "maint_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ChessGameEngine.java_validatePawnMove_6e07a71d",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": "Function is too long. Split into smaller helper methods.",
+      "explanation": "Method ChessGameEngine.validatePawnMove score: 70",
+      "recommendation": "Function is too long. Split into smaller helper methods.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "maint_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ChessGameEngine.java_validateRookMove_e0be90d9",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": "Function is too long. Split into smaller helper methods.",
+      "explanation": "Method ChessGameEngine.validateRookMove score: 70",
+      "recommendation": "Function is too long. Split into smaller helper methods.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "maint_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ChessGameEngine.java_validateKnightMove_8117264b",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": "Function is too long. Split into smaller helper methods.",
+      "explanation": "Method ChessGameEngine.validateKnightMove score: 70",
+      "recommendation": "Function is too long. Split into smaller helper methods.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "maint_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ChessGameEngine.java_validateBishopMove_8b217750",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": "Function is too long. Split into smaller helper methods.",
+      "explanation": "Method ChessGameEngine.validateBishopMove score: 70",
+      "recommendation": "Function is too long. Split into smaller helper methods.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "maint_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ChessGameEngine.java_validateQueenMove_a6abfe29",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": "Function is too long. Split into smaller helper methods.",
+      "explanation": "Method ChessGameEngine.validateQueenMove score: 70",
+      "recommendation": "Function is too long. Split into smaller helper methods.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "maint_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ChessGameEngine.java_validateKingMove_e62c74d8",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": "Function is too long. Split into smaller helper methods.",
+      "explanation": "Method ChessGameEngine.validateKingMove score: 70",
+      "recommendation": "Function is too long. Split into smaller helper methods.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "maint_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ChessGameEngine.java_handleCastling_c4ff5455",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": "Function is too long. Split into smaller helper methods.",
+      "explanation": "Method ChessGameEngine.handleCastling score: 70",
+      "recommendation": "Function is too long. Split into smaller helper methods.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "maint_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ChessGameEngine.java_handlePromotion_bca29ff9",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": "Function is too long. Split into smaller helper methods.",
+      "explanation": "Method ChessGameEngine.handlePromotion score: 75",
+      "recommendation": "Function is too long. Split into smaller helper methods.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "maint_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ChessGameEngine.java_handleEnPassant_e4befc63",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": "Function is too long. Split into smaller helper methods.",
+      "explanation": "Method ChessGameEngine.handleEnPassant score: 75",
+      "recommendation": "Function is too long. Split into smaller helper methods.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "maint_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ChessGameEngine.java_findKing_e53aab0f",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": "Function is too long. Split into smaller helper methods.",
+      "explanation": "Method ChessGameEngine.findKing score: 67",
+      "recommendation": "Function is too long. Split into smaller helper methods.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "maint_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ChessGameEngine.java_getBoard_1dfd6102",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": "Function is too long. Split into smaller helper methods.",
+      "explanation": "Method ChessGameEngine.getBoard score: 75",
+      "recommendation": "Function is too long. Split into smaller helper methods.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "maint_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ChessGameEngine.java_isWhiteTurn_f8bc5e90",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": "Function is too long. Split into smaller helper methods.",
+      "explanation": "Method ChessGameEngine.isWhiteTurn score: 75",
+      "recommendation": "Function is too long. Split into smaller helper methods.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "maint_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_Main.java_main_7edd45f7",
+      "filePath": "Main.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": "Deeply nested logic. Consider flattening with early returns or switch cases.",
+      "explanation": "Method Main.main score: 67",
+      "recommendation": "Deeply nested logic. Consider flattening with early returns or switch cases.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "maint_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ReportGenerator.java_addItem_676ba186",
+      "filePath": "ReportGenerator.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": " Low comment coverage. Add documentation or inline comments.",
+      "explanation": "Method ReportGenerator.addItem score: 74",
+      "recommendation": " Low comment coverage. Add documentation or inline comments.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "maint_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ReportGenerator.java_generateReport_da83def0",
+      "filePath": "ReportGenerator.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": " Low comment coverage. Add documentation or inline comments.",
+      "explanation": "Method ReportGenerator.generateReport score: 82",
+      "recommendation": " Low comment coverage. Add documentation or inline comments.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "maint_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ReportGenerator.java_sortItems_12fa6d13",
+      "filePath": "ReportGenerator.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": " Low comment coverage. Add documentation or inline comments.",
+      "explanation": "Method ReportGenerator.sortItems score: 74",
+      "recommendation": " Low comment coverage. Add documentation or inline comments.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "maint_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ReportGenerator.java_printLongestItem_1494ea6c",
+      "filePath": "ReportGenerator.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": " Low comment coverage. Add documentation or inline comments.",
+      "explanation": "Method ReportGenerator.printLongestItem score: 74",
+      "recommendation": " Low comment coverage. Add documentation or inline comments.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "maint_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ReportGenerator.java_printSummary_2584d6fe",
+      "filePath": "ReportGenerator.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": " Low comment coverage. Add documentation or inline comments.",
+      "explanation": "Method ReportGenerator.printSummary score: 82",
+      "recommendation": " Low comment coverage. Add documentation or inline comments.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "maint_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_SpecialMoves.java_handleCastling_8071f2fe",
+      "filePath": "SpecialMoves.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": "Function is too long. Split into smaller helper methods.",
+      "explanation": "Method SpecialMoves.handleCastling score: 70",
+      "recommendation": "Function is too long. Split into smaller helper methods.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "maint_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_SpecialMoves.java_handlePromotion_6b419c3e",
+      "filePath": "SpecialMoves.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": "Function is too long. Split into smaller helper methods.",
+      "explanation": "Method SpecialMoves.handlePromotion score: 75",
+      "recommendation": "Function is too long. Split into smaller helper methods.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "maint_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_SpecialMoves.java_handleEnPassant_70d58625",
+      "filePath": "SpecialMoves.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": "Function is too long. Split into smaller helper methods.",
+      "explanation": "Method SpecialMoves.handleEnPassant score: 70",
+      "recommendation": "Function is too long. Split into smaller helper methods.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "maint_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_SpecialMoves.java_isCheckmate_0a9eb6b7",
+      "filePath": "SpecialMoves.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": "Function is too long. Split into smaller helper methods.",
+      "explanation": "Method SpecialMoves.isCheckmate score: 67",
+      "recommendation": "Function is too long. Split into smaller helper methods.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "maint_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_SpecialMoves.java_isInCheck_b0eca119",
+      "filePath": "SpecialMoves.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": "Function is too long. Split into smaller helper methods.",
+      "explanation": "Method SpecialMoves.isInCheck score: 67",
+      "recommendation": "Function is too long. Split into smaller helper methods.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "maint_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_SpecialMoves.java_isValidMove_72c6237f",
+      "filePath": "SpecialMoves.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": "Function is too long. Split into smaller helper methods.",
+      "explanation": "Method SpecialMoves.isValidMove score: 70",
+      "recommendation": "Function is too long. Split into smaller helper methods.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "maint_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_SpecialMoves.java_findKing_d34d7423",
+      "filePath": "SpecialMoves.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": "Function is too long. Split into smaller helper methods.",
+      "explanation": "Method SpecialMoves.findKing score: 67",
+      "recommendation": "Function is too long. Split into smaller helper methods.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "maint_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_Test.java_validateQueenMove_288ec421",
+      "filePath": "Test.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": " Low comment coverage. Add documentation or inline comments.",
+      "explanation": "Method ChessGameEngine.validateQueenMove score: 69",
+      "recommendation": " Low comment coverage. Add documentation or inline comments.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "maint_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_Test.java_validateRookMove_94c6149a",
+      "filePath": "Test.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": " Low comment coverage. Add documentation or inline comments.",
+      "explanation": "Method ChessGameEngine.validateRookMove score: 69",
+      "recommendation": " Low comment coverage. Add documentation or inline comments.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "maint_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_Test.java_validatePawnMove_211edc54",
+      "filePath": "Test.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": " Low comment coverage. Add documentation or inline comments.",
+      "explanation": "Method ChessGameEngine.validatePawnMove score: 69",
+      "recommendation": " Low comment coverage. Add documentation or inline comments.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "maint_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_Test.java_createPieces_7eca40f1",
+      "filePath": "Test.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": " Low comment coverage. Add documentation or inline comments.",
+      "explanation": "Method ChessGameEngine.createPieces score: 82",
+      "recommendation": " Low comment coverage. Add documentation or inline comments.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "maint_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_Test.java_printType_9998cea7",
+      "filePath": "Test.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": " Low comment coverage. Add documentation or inline comments.",
+      "explanation": "Method ChessGameEngine.printType score: 82",
+      "recommendation": " Low comment coverage. Add documentation or inline comments.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "maint_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_Test.java_printType_cb8e5385",
+      "filePath": "Test.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": " Low comment coverage. Add documentation or inline comments.",
+      "explanation": "Method Piece.printType score: 82",
+      "recommendation": " Low comment coverage. Add documentation or inline comments.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "maint_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_UserServices.java_addUsr_64f93b41",
+      "filePath": "UserServices.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": " Low comment coverage. Add documentation or inline comments.",
+      "explanation": "Method UserService.addUsr score: 74",
+      "recommendation": " Low comment coverage. Add documentation or inline comments.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "maint_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_UserServices.java_chkUsr_9eebbdf9",
+      "filePath": "UserServices.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": "Deeply nested logic. Consider flattening with early returns or switch cases.",
+      "explanation": "Method UserService.chkUsr score: 67",
+      "recommendation": "Deeply nested logic. Consider flattening with early returns or switch cases.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "maint_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_UserServices.java_resetAll_ffe4c015",
+      "filePath": "UserServices.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": " Low comment coverage. Add documentation or inline comments.",
+      "explanation": "Method UserService.resetAll score: 82",
+      "recommendation": " Low comment coverage. Add documentation or inline comments.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "maint_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_UserServices.java_printUsers_3bbe2caf",
+      "filePath": "UserServices.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": " Low comment coverage. Add documentation or inline comments.",
+      "explanation": "Method UserService.printUsers score: 82",
+      "recommendation": " Low comment coverage. Add documentation or inline comments.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "maint_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_UserServices.java_addUsrTwice_c8a7b57f",
+      "filePath": "UserServices.java",
+      "line": 0,
+      "agent": "maintainability",
+      "category": "maintainability",
+      "severity": "low",
+      "confidence": 0.8,
+      "description": " Low comment coverage. Add documentation or inline comments.",
+      "explanation": "Method UserService.addUsrTwice score: 82",
+      "recommendation": " Low comment coverage. Add documentation or inline comments.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted"
+      }
+    },
+    {
+      "id": "energy_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_SpecialMoves.java_isCheckmate_31753df8",
+      "filePath": "SpecialMoves.java",
+      "line": 0,
+      "agent": "energy",
+      "category": "energy",
+      "severity": "high",
+      "confidence": 0.9,
+      "description": "High energy footprint detected in isCheckmate()",
+      "explanation": "energyScore=0.648 | median=35.656ms | loops=4 | nesting=4",
+      "recommendation": "Reduce nested loops and repeated heavy operations in hot paths.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 100,
+        "energyScore": 0.6481545461331681,
+        "executionTimeMs": 35.656,
+        "loopCount": 4,
+        "nestingDepth": 4,
+        "cyclomatic": 1,
+        "benchmarkRuns": 100
+      }
+    },
+    {
+      "id": "energy_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_SpecialMoves.java_isInCheck_3d7fca1c",
+      "filePath": "SpecialMoves.java",
+      "line": 0,
+      "agent": "energy",
+      "category": "energy",
+      "severity": "high",
+      "confidence": 0.9,
+      "description": "High energy footprint detected in isInCheck()",
+      "explanation": "energyScore=0.621 | median=32.079ms | loops=2 | nesting=2",
+      "recommendation": "Reduce nested loops and repeated heavy operations in hot paths.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 100,
+        "energyScore": 0.6212552348034677,
+        "executionTimeMs": 32.079,
+        "loopCount": 2,
+        "nestingDepth": 2,
+        "cyclomatic": 1,
+        "benchmarkRuns": 100
+      }
+    },
+    {
+      "id": "energy_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ReportGenerator.java_generateReport_919f3a58",
+      "filePath": "ReportGenerator.java",
+      "line": 0,
+      "agent": "energy",
+      "category": "energy",
+      "severity": "high",
+      "confidence": 0.9,
+      "description": "High energy footprint detected in generateReport()",
+      "explanation": "energyScore=0.620 | median=31.506ms | loops=2 | nesting=2",
+      "recommendation": "Reduce nested loops and repeated heavy operations in hot paths.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 100,
+        "energyScore": 0.6197407389451044,
+        "executionTimeMs": 31.506,
+        "loopCount": 2,
+        "nestingDepth": 2,
+        "cyclomatic": 1,
+        "benchmarkRuns": 100
+      }
+    },
+    {
+      "id": "energy_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_SpecialMoves.java_findKing_b89734eb",
+      "filePath": "SpecialMoves.java",
+      "line": 0,
+      "agent": "energy",
+      "category": "energy",
+      "severity": "high",
+      "confidence": 0.9,
+      "description": "High energy footprint detected in findKing()",
+      "explanation": "energyScore=0.613 | median=28.922ms | loops=2 | nesting=2",
+      "recommendation": "Reduce nested loops and repeated heavy operations in hot paths.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 100,
+        "energyScore": 0.6125616681852677,
+        "executionTimeMs": 28.922,
+        "loopCount": 2,
+        "nestingDepth": 2,
+        "cyclomatic": 1,
+        "benchmarkRuns": 100
+      }
+    },
+    {
+      "id": "energy_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ChessGameEngine.java_isInCheck_a34cb37c",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "energy",
+      "category": "energy",
+      "severity": "high",
+      "confidence": 0.9,
+      "description": "High energy footprint detected in isInCheck()",
+      "explanation": "energyScore=0.605 | median=26.384ms | loops=2 | nesting=2",
+      "recommendation": "Reduce nested loops and repeated heavy operations in hot paths.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 100,
+        "energyScore": 0.6048795204068326,
+        "executionTimeMs": 26.384,
+        "loopCount": 2,
+        "nestingDepth": 2,
+        "cyclomatic": 1,
+        "benchmarkRuns": 100
+      }
+    },
+    {
+      "id": "energy_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ChessGameEngine.java_validateRookMove_1603d6db",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "energy",
+      "category": "energy",
+      "severity": "high",
+      "confidence": 0.9,
+      "description": "High energy footprint detected in validateRookMove()",
+      "explanation": "energyScore=0.601 | median=28.137ms | loops=1 | nesting=1",
+      "recommendation": "Reduce nested loops and repeated heavy operations in hot paths.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 100,
+        "energyScore": 0.6012574898655427,
+        "executionTimeMs": 28.137,
+        "loopCount": 1,
+        "nestingDepth": 1,
+        "cyclomatic": 1,
+        "benchmarkRuns": 100
+      }
+    },
+    {
+      "id": "energy_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_Main.java_main_41691420",
+      "filePath": "Main.java",
+      "line": 0,
+      "agent": "energy",
+      "category": "energy",
+      "severity": "high",
+      "confidence": 0.9,
+      "description": "High energy footprint detected in main()",
+      "explanation": "energyScore=0.597 | median=21.573ms | loops=3 | nesting=2",
+      "recommendation": "Reduce nested loops and repeated heavy operations in hot paths.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 100,
+        "energyScore": 0.5971341809322588,
+        "executionTimeMs": 21.573,
+        "loopCount": 3,
+        "nestingDepth": 2,
+        "cyclomatic": 1,
+        "benchmarkRuns": 100
+      }
+    },
+    {
+      "id": "energy_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_Calculator.java_sumArray_8045077a",
+      "filePath": "Calculator.java",
+      "line": 0,
+      "agent": "energy",
+      "category": "energy",
+      "severity": "high",
+      "confidence": 0.9,
+      "description": "High energy footprint detected in sumArray()",
+      "explanation": "energyScore=0.590 | median=24.609ms | loops=1 | nesting=1",
+      "recommendation": "Reduce nested loops and repeated heavy operations in hot paths.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 100,
+        "energyScore": 0.5900712171322866,
+        "executionTimeMs": 24.609,
+        "loopCount": 1,
+        "nestingDepth": 1,
+        "cyclomatic": 1,
+        "benchmarkRuns": 100
+      }
+    },
+    {
+      "id": "energy_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ChessGameEngine.java_findKing_4defb27a",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "energy",
+      "category": "energy",
+      "severity": "high",
+      "confidence": 0.9,
+      "description": "High energy footprint detected in findKing()",
+      "explanation": "energyScore=0.575 | median=18.347ms | loops=2 | nesting=2",
+      "recommendation": "Reduce nested loops and repeated heavy operations in hot paths.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 100,
+        "energyScore": 0.5747679312282842,
+        "executionTimeMs": 18.347,
+        "loopCount": 2,
+        "nestingDepth": 2,
+        "cyclomatic": 1,
+        "benchmarkRuns": 100
+      }
+    },
+    {
+      "id": "energy_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_Test.java_printType_f25d099c",
+      "filePath": "Test.java",
+      "line": 0,
+      "agent": "energy",
+      "category": "energy",
+      "severity": "high",
+      "confidence": 0.9,
+      "description": "High energy footprint detected in printType()",
+      "explanation": "energyScore=0.572 | median=22.131ms | loops=0 | nesting=1",
+      "recommendation": "Reduce nested loops and repeated heavy operations in hot paths.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 100,
+        "energyScore": 0.5722506333467614,
+        "executionTimeMs": 22.131,
+        "loopCount": 0,
+        "nestingDepth": 1,
+        "cyclomatic": 1,
+        "benchmarkRuns": 100
+      }
+    },
+    {
+      "id": "energy_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ChessGameEngine.java_getBoard_a27cd57b",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "energy",
+      "category": "energy",
+      "severity": "high",
+      "confidence": 0.9,
+      "description": "High energy footprint detected in getBoard()",
+      "explanation": "energyScore=0.567 | median=20.709ms | loops=0 | nesting=1",
+      "recommendation": "Reduce nested loops and repeated heavy operations in hot paths.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 100,
+        "energyScore": 0.5667515970493543,
+        "executionTimeMs": 20.709,
+        "loopCount": 0,
+        "nestingDepth": 1,
+        "cyclomatic": 1,
+        "benchmarkRuns": 100
+      }
+    },
+    {
+      "id": "energy_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ChessGameEngine.java_validateBishopMove_af4ca957",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "energy",
+      "category": "energy",
+      "severity": "high",
+      "confidence": 0.9,
+      "description": "High energy footprint detected in validateBishopMove()",
+      "explanation": "energyScore=0.566 | median=20.548ms | loops=0 | nesting=1",
+      "recommendation": "Reduce nested loops and repeated heavy operations in hot paths.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 100,
+        "energyScore": 0.5661064207198376,
+        "executionTimeMs": 20.548,
+        "loopCount": 0,
+        "nestingDepth": 1,
+        "cyclomatic": 1,
+        "benchmarkRuns": 100
+      }
+    },
+    {
+      "id": "energy_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_Test.java_validateQueenMove_e78f984f",
+      "filePath": "Test.java",
+      "line": 0,
+      "agent": "energy",
+      "category": "energy",
+      "severity": "high",
+      "confidence": 0.9,
+      "description": "High energy footprint detected in validateQueenMove()",
+      "explanation": "energyScore=0.565 | median=20.349ms | loops=0 | nesting=1",
+      "recommendation": "Reduce nested loops and repeated heavy operations in hot paths.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 100,
+        "energyScore": 0.5653022723025434,
+        "executionTimeMs": 20.349,
+        "loopCount": 0,
+        "nestingDepth": 1,
+        "cyclomatic": 1,
+        "benchmarkRuns": 100
+      }
+    },
+    {
+      "id": "energy_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ReportGenerator.java_addItem_cefbd755",
+      "filePath": "ReportGenerator.java",
+      "line": 0,
+      "agent": "energy",
+      "category": "energy",
+      "severity": "high",
+      "confidence": 0.9,
+      "description": "High energy footprint detected in addItem()",
+      "explanation": "energyScore=0.564 | median=20.014ms | loops=0 | nesting=1",
+      "recommendation": "Reduce nested loops and repeated heavy operations in hot paths.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 100,
+        "energyScore": 0.5639314723118702,
+        "executionTimeMs": 20.014,
+        "loopCount": 0,
+        "nestingDepth": 1,
+        "cyclomatic": 1,
+        "benchmarkRuns": 100
+      }
+    },
+    {
+      "id": "energy_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ChessGameEngine.java_isValidPosition_fde33aed",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "energy",
+      "category": "energy",
+      "severity": "high",
+      "confidence": 0.9,
+      "description": "High energy footprint detected in isValidPosition()",
+      "explanation": "energyScore=0.563 | median=19.826ms | loops=0 | nesting=1",
+      "recommendation": "Reduce nested loops and repeated heavy operations in hot paths.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 100,
+        "energyScore": 0.5631525824756387,
+        "executionTimeMs": 19.826,
+        "loopCount": 0,
+        "nestingDepth": 1,
+        "cyclomatic": 1,
+        "benchmarkRuns": 100
+      }
+    },
+    {
+      "id": "energy_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_UserServices.java_resetAll_087da087",
+      "filePath": "UserServices.java",
+      "line": 0,
+      "agent": "energy",
+      "category": "energy",
+      "severity": "high",
+      "confidence": 0.9,
+      "description": "High energy footprint detected in resetAll()",
+      "explanation": "energyScore=0.562 | median=19.643ms | loops=0 | nesting=1",
+      "recommendation": "Reduce nested loops and repeated heavy operations in hot paths.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 100,
+        "energyScore": 0.5623876250114039,
+        "executionTimeMs": 19.643,
+        "loopCount": 0,
+        "nestingDepth": 1,
+        "cyclomatic": 1,
+        "benchmarkRuns": 100
+      }
+    },
+    {
+      "id": "energy_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ChessGameEngine.java_initializeBoard_a061d7e4",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "energy",
+      "category": "energy",
+      "severity": "medium",
+      "confidence": 0.9,
+      "description": "High energy footprint detected in initializeBoard()",
+      "explanation": "energyScore=0.560 | median=17.014ms | loops=1 | nesting=1",
+      "recommendation": "Reduce nested loops and repeated heavy operations in hot paths.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 100,
+        "energyScore": 0.559580605452128,
+        "executionTimeMs": 17.014,
+        "loopCount": 1,
+        "nestingDepth": 1,
+        "cyclomatic": 1,
+        "benchmarkRuns": 100
+      }
+    },
+    {
+      "id": "energy_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_Calculator.java_add_80b68e22",
+      "filePath": "Calculator.java",
+      "line": 0,
+      "agent": "energy",
+      "category": "energy",
+      "severity": "medium",
+      "confidence": 0.9,
+      "description": "High energy footprint detected in add()",
+      "explanation": "energyScore=0.558 | median=18.53ms | loops=0 | nesting=1",
+      "recommendation": "Reduce nested loops and repeated heavy operations in hot paths.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 100,
+        "energyScore": 0.5575838905219046,
+        "executionTimeMs": 18.53,
+        "loopCount": 0,
+        "nestingDepth": 1,
+        "cyclomatic": 1,
+        "benchmarkRuns": 100
+      }
+    },
+    {
+      "id": "energy_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ChessGameEngine.java_validateKingMove_c2dc3358",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "energy",
+      "category": "energy",
+      "severity": "medium",
+      "confidence": 0.9,
+      "description": "High energy footprint detected in validateKingMove()",
+      "explanation": "energyScore=0.557 | median=18.368ms | loops=0 | nesting=1",
+      "recommendation": "Reduce nested loops and repeated heavy operations in hot paths.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 100,
+        "energyScore": 0.5568619570233159,
+        "executionTimeMs": 18.368,
+        "loopCount": 0,
+        "nestingDepth": 1,
+        "cyclomatic": 1,
+        "benchmarkRuns": 100
+      }
+    },
+    {
+      "id": "energy_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ChessGameEngine.java_validateQueenMove_e048f43e",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "energy",
+      "category": "energy",
+      "severity": "medium",
+      "confidence": 0.9,
+      "description": "High energy footprint detected in validateQueenMove()",
+      "explanation": "energyScore=0.550 | median=16.849ms | loops=0 | nesting=1",
+      "recommendation": "Reduce nested loops and repeated heavy operations in hot paths.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 100,
+        "energyScore": 0.549783074893123,
+        "executionTimeMs": 16.849,
+        "loopCount": 0,
+        "nestingDepth": 1,
+        "cyclomatic": 1,
+        "benchmarkRuns": 100
+      }
+    },
+    {
+      "id": "energy_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_UserServices.java_chkUsr_60bb4823",
+      "filePath": "UserServices.java",
+      "line": 0,
+      "agent": "energy",
+      "category": "energy",
+      "severity": "medium",
+      "confidence": 0.9,
+      "description": "High energy footprint detected in chkUsr()",
+      "explanation": "energyScore=0.546 | median=16.057ms | loops=0 | nesting=1",
+      "recommendation": "Reduce nested loops and repeated heavy operations in hot paths.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 100,
+        "energyScore": 0.5458493264743753,
+        "executionTimeMs": 16.057,
+        "loopCount": 0,
+        "nestingDepth": 1,
+        "cyclomatic": 1,
+        "benchmarkRuns": 100
+      }
+    },
+    {
+      "id": "energy_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_UserServices.java_printUsers_e9e659af",
+      "filePath": "UserServices.java",
+      "line": 0,
+      "agent": "energy",
+      "category": "energy",
+      "severity": "medium",
+      "confidence": 0.9,
+      "description": "High energy footprint detected in printUsers()",
+      "explanation": "energyScore=0.544 | median=15.75ms | loops=0 | nesting=1",
+      "recommendation": "Reduce nested loops and repeated heavy operations in hot paths.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 100,
+        "energyScore": 0.5442751601381868,
+        "executionTimeMs": 15.75,
+        "loopCount": 0,
+        "nestingDepth": 1,
+        "cyclomatic": 1,
+        "benchmarkRuns": 100
+      }
+    },
+    {
+      "id": "energy_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ChessGameEngine.java_isWhitePiece_8e85643b",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "energy",
+      "category": "energy",
+      "severity": "medium",
+      "confidence": 0.9,
+      "description": "High energy footprint detected in isWhitePiece()",
+      "explanation": "energyScore=0.543 | median=15.496ms | loops=0 | nesting=1",
+      "recommendation": "Reduce nested loops and repeated heavy operations in hot paths.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 100,
+        "energyScore": 0.5429507890028537,
+        "executionTimeMs": 15.496,
+        "loopCount": 0,
+        "nestingDepth": 1,
+        "cyclomatic": 1,
+        "benchmarkRuns": 100
+      }
+    },
+    {
+      "id": "energy_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ReportGenerator.java_printLongestItem_28d3c2fd",
+      "filePath": "ReportGenerator.java",
+      "line": 0,
+      "agent": "energy",
+      "category": "energy",
+      "severity": "medium",
+      "confidence": 0.9,
+      "description": "High energy footprint detected in printLongestItem()",
+      "explanation": "energyScore=0.543 | median=13.819ms | loops=1 | nesting=1",
+      "recommendation": "Reduce nested loops and repeated heavy operations in hot paths.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 100,
+        "energyScore": 0.5426589158502159,
+        "executionTimeMs": 13.819,
+        "loopCount": 1,
+        "nestingDepth": 1,
+        "cyclomatic": 1,
+        "benchmarkRuns": 100
+      }
+    },
+    {
+      "id": "energy_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ReportGenerator.java_sortItems_1d3ed826",
+      "filePath": "ReportGenerator.java",
+      "line": 0,
+      "agent": "energy",
+      "category": "energy",
+      "severity": "medium",
+      "confidence": 0.9,
+      "description": "High energy footprint detected in sortItems()",
+      "explanation": "energyScore=0.540 | median=13.42ms | loops=1 | nesting=1",
+      "recommendation": "Reduce nested loops and repeated heavy operations in hot paths.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 100,
+        "energyScore": 0.5402932996760217,
+        "executionTimeMs": 13.42,
+        "loopCount": 1,
+        "nestingDepth": 1,
+        "cyclomatic": 1,
+        "benchmarkRuns": 100
+      }
+    },
+    {
+      "id": "energy_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_Test.java_validatePawnMove_500193a6",
+      "filePath": "Test.java",
+      "line": 0,
+      "agent": "energy",
+      "category": "energy",
+      "severity": "medium",
+      "confidence": 0.9,
+      "description": "High energy footprint detected in validatePawnMove()",
+      "explanation": "energyScore=0.538 | median=14.524ms | loops=0 | nesting=1",
+      "recommendation": "Reduce nested loops and repeated heavy operations in hot paths.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 100,
+        "energyScore": 0.5376871592842944,
+        "executionTimeMs": 14.524,
+        "loopCount": 0,
+        "nestingDepth": 1,
+        "cyclomatic": 1,
+        "benchmarkRuns": 100
+      }
+    },
+    {
+      "id": "energy_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_Calculator.java_checkValue_b6bfddc2",
+      "filePath": "Calculator.java",
+      "line": 0,
+      "agent": "energy",
+      "category": "energy",
+      "severity": "medium",
+      "confidence": 0.9,
+      "description": "High energy footprint detected in checkValue()",
+      "explanation": "energyScore=0.536 | median=14.215ms | loops=0 | nesting=1",
+      "recommendation": "Reduce nested loops and repeated heavy operations in hot paths.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 100,
+        "energyScore": 0.5359445889583966,
+        "executionTimeMs": 14.215,
+        "loopCount": 0,
+        "nestingDepth": 1,
+        "cyclomatic": 1,
+        "benchmarkRuns": 100
+      }
+    },
+    {
+      "id": "energy_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_Calculator.java_Calculator_13966b19",
+      "filePath": "Calculator.java",
+      "line": 0,
+      "agent": "energy",
+      "category": "energy",
+      "severity": "medium",
+      "confidence": 0.9,
+      "description": "High energy footprint detected in Calculator()",
+      "explanation": "energyScore=0.535 | median=14.038ms | loops=0 | nesting=1",
+      "recommendation": "Reduce nested loops and repeated heavy operations in hot paths.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 100,
+        "energyScore": 0.5349304050513546,
+        "executionTimeMs": 14.038,
+        "loopCount": 0,
+        "nestingDepth": 1,
+        "cyclomatic": 1,
+        "benchmarkRuns": 100
+      }
+    },
+    {
+      "id": "energy_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ChessGameEngine.java_handleCastling_43108f36",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "energy",
+      "category": "energy",
+      "severity": "medium",
+      "confidence": 0.9,
+      "description": "High energy footprint detected in handleCastling()",
+      "explanation": "energyScore=0.532 | median=13.54ms | loops=0 | nesting=1",
+      "recommendation": "Reduce nested loops and repeated heavy operations in hot paths.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 100,
+        "energyScore": 0.5320115769316927,
+        "executionTimeMs": 13.54,
+        "loopCount": 0,
+        "nestingDepth": 1,
+        "cyclomatic": 1,
+        "benchmarkRuns": 100
+      }
+    },
+    {
+      "id": "energy_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_SpecialMoves.java_handleEnPassant_24fb6552",
+      "filePath": "SpecialMoves.java",
+      "line": 0,
+      "agent": "energy",
+      "category": "energy",
+      "severity": "medium",
+      "confidence": 0.9,
+      "description": "High energy footprint detected in handleEnPassant()",
+      "explanation": "energyScore=0.532 | median=13.539ms | loops=0 | nesting=1",
+      "recommendation": "Reduce nested loops and repeated heavy operations in hot paths.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 100,
+        "energyScore": 0.5320056158170623,
+        "executionTimeMs": 13.539,
+        "loopCount": 0,
+        "nestingDepth": 1,
+        "cyclomatic": 1,
+        "benchmarkRuns": 100
+      }
+    },
+    {
+      "id": "energy_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ChessGameEngine.java_handleEnPassant_64349f93",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "energy",
+      "category": "energy",
+      "severity": "medium",
+      "confidence": 0.9,
+      "description": "High energy footprint detected in handleEnPassant()",
+      "explanation": "energyScore=0.528 | median=12.882ms | loops=0 | nesting=1",
+      "recommendation": "Reduce nested loops and repeated heavy operations in hot paths.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 100,
+        "energyScore": 0.5279977762069673,
+        "executionTimeMs": 12.882,
+        "loopCount": 0,
+        "nestingDepth": 1,
+        "cyclomatic": 1,
+        "benchmarkRuns": 100
+      }
+    },
+    {
+      "id": "energy_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ReportGenerator.java_printSummary_06a8ca2b",
+      "filePath": "ReportGenerator.java",
+      "line": 0,
+      "agent": "energy",
+      "category": "energy",
+      "severity": "medium",
+      "confidence": 0.9,
+      "description": "High energy footprint detected in printSummary()",
+      "explanation": "energyScore=0.521 | median=10.594ms | loops=1 | nesting=1",
+      "recommendation": "Reduce nested loops and repeated heavy operations in hot paths.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 100,
+        "energyScore": 0.5213877557671873,
+        "executionTimeMs": 10.594,
+        "loopCount": 1,
+        "nestingDepth": 1,
+        "cyclomatic": 1,
+        "benchmarkRuns": 100
+      }
+    },
+    {
+      "id": "energy_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ChessGameEngine.java_ChessGameEngine_79629ab2",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "energy",
+      "category": "energy",
+      "severity": "medium",
+      "confidence": 0.9,
+      "description": "High energy footprint detected in ChessGameEngine()",
+      "explanation": "energyScore=0.519 | median=11.455ms | loops=0 | nesting=1",
+      "recommendation": "Reduce nested loops and repeated heavy operations in hot paths.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 100,
+        "energyScore": 0.5185964279381694,
+        "executionTimeMs": 11.455,
+        "loopCount": 0,
+        "nestingDepth": 1,
+        "cyclomatic": 1,
+        "benchmarkRuns": 100
+      }
+    },
+    {
+      "id": "energy_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ChessGameEngine.java_validateKnightMove_fd5843a2",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "energy",
+      "category": "energy",
+      "severity": "medium",
+      "confidence": 0.9,
+      "description": "High energy footprint detected in validateKnightMove()",
+      "explanation": "energyScore=0.512 | median=10.565ms | loops=0 | nesting=1",
+      "recommendation": "Reduce nested loops and repeated heavy operations in hot paths.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 100,
+        "energyScore": 0.5121706929862696,
+        "executionTimeMs": 10.565,
+        "loopCount": 0,
+        "nestingDepth": 1,
+        "cyclomatic": 1,
+        "benchmarkRuns": 100
+      }
+    },
+    {
+      "id": "energy_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_SpecialMoves.java_isValidMove_01c3d2b9",
+      "filePath": "SpecialMoves.java",
+      "line": 0,
+      "agent": "energy",
+      "category": "energy",
+      "severity": "medium",
+      "confidence": 0.9,
+      "description": "High energy footprint detected in isValidMove()",
+      "explanation": "energyScore=0.511 | median=10.444ms | loops=0 | nesting=1",
+      "recommendation": "Reduce nested loops and repeated heavy operations in hot paths.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 100,
+        "energyScore": 0.5112591050476962,
+        "executionTimeMs": 10.444,
+        "loopCount": 0,
+        "nestingDepth": 1,
+        "cyclomatic": 1,
+        "benchmarkRuns": 100
+      }
+    },
+    {
+      "id": "energy_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ChessGameEngine.java_isWhiteTurn_b3a98d7d",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "energy",
+      "category": "energy",
+      "severity": "medium",
+      "confidence": 0.9,
+      "description": "High energy footprint detected in isWhiteTurn()",
+      "explanation": "energyScore=0.509 | median=10.092ms | loops=0 | nesting=1",
+      "recommendation": "Reduce nested loops and repeated heavy operations in hot paths.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 100,
+        "energyScore": 0.5085513579957761,
+        "executionTimeMs": 10.092,
+        "loopCount": 0,
+        "nestingDepth": 1,
+        "cyclomatic": 1,
+        "benchmarkRuns": 100
+      }
+    },
+    {
+      "id": "energy_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ChessGameEngine.java_isValidMove_123dc299",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "energy",
+      "category": "energy",
+      "severity": "medium",
+      "confidence": 0.9,
+      "description": "High energy footprint detected in isValidMove()",
+      "explanation": "energyScore=0.504 | median=9.545ms | loops=0 | nesting=1",
+      "recommendation": "Reduce nested loops and repeated heavy operations in hot paths.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 100,
+        "energyScore": 0.5041681733193848,
+        "executionTimeMs": 9.545,
+        "loopCount": 0,
+        "nestingDepth": 1,
+        "cyclomatic": 1,
+        "benchmarkRuns": 100
+      }
+    },
+    {
+      "id": "energy_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ChessGameEngine.java_makeMove_0b5c98c6",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "energy",
+      "category": "energy",
+      "severity": "medium",
+      "confidence": 0.9,
+      "description": "High energy footprint detected in makeMove()",
+      "explanation": "energyScore=0.495 | median=8.473ms | loops=0 | nesting=1",
+      "recommendation": "Reduce nested loops and repeated heavy operations in hot paths.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 100,
+        "energyScore": 0.4948764404906425,
+        "executionTimeMs": 8.473,
+        "loopCount": 0,
+        "nestingDepth": 1,
+        "cyclomatic": 1,
+        "benchmarkRuns": 100
+      }
+    },
+    {
+      "id": "energy_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_Test.java_Piece_cac8ba7f",
+      "filePath": "Test.java",
+      "line": 0,
+      "agent": "energy",
+      "category": "energy",
+      "severity": "medium",
+      "confidence": 0.9,
+      "description": "High energy footprint detected in Piece()",
+      "explanation": "energyScore=0.493 | median=8.302ms | loops=0 | nesting=1",
+      "recommendation": "Reduce nested loops and repeated heavy operations in hot paths.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 100,
+        "energyScore": 0.49329761141998063,
+        "executionTimeMs": 8.302,
+        "loopCount": 0,
+        "nestingDepth": 1,
+        "cyclomatic": 1,
+        "benchmarkRuns": 100
+      }
+    },
+    {
+      "id": "energy_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_UserServices.java_addUsrTwice_457070af",
+      "filePath": "UserServices.java",
+      "line": 0,
+      "agent": "energy",
+      "category": "energy",
+      "severity": "medium",
+      "confidence": 0.9,
+      "description": "High energy footprint detected in addUsrTwice()",
+      "explanation": "energyScore=0.488 | median=7.731ms | loops=0 | nesting=1",
+      "recommendation": "Reduce nested loops and repeated heavy operations in hot paths.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 100,
+        "energyScore": 0.48780700550907863,
+        "executionTimeMs": 7.731,
+        "loopCount": 0,
+        "nestingDepth": 1,
+        "cyclomatic": 1,
+        "benchmarkRuns": 100
+      }
+    },
+    {
+      "id": "energy_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_Test.java_ChessGameEngine_b0e7d5c0",
+      "filePath": "Test.java",
+      "line": 0,
+      "agent": "energy",
+      "category": "energy",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "High energy footprint detected in ChessGameEngine()",
+      "explanation": "energyScore=0.480 | median=6.937ms | loops=0 | nesting=1",
+      "recommendation": "Reduce nested loops and repeated heavy operations in hot paths.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 100,
+        "energyScore": 0.4795433391218625,
+        "executionTimeMs": 6.937,
+        "loopCount": 0,
+        "nestingDepth": 1,
+        "cyclomatic": 1,
+        "benchmarkRuns": 100
+      }
+    },
+    {
+      "id": "energy_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ChessGameEngine.java_validatePawnMove_9a819cd0",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "energy",
+      "category": "energy",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "High energy footprint detected in validatePawnMove()",
+      "explanation": "energyScore=0.474 | median=6.432ms | loops=0 | nesting=1",
+      "recommendation": "Reduce nested loops and repeated heavy operations in hot paths.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 100,
+        "energyScore": 0.4738455144728805,
+        "executionTimeMs": 6.432,
+        "loopCount": 0,
+        "nestingDepth": 1,
+        "cyclomatic": 1,
+        "benchmarkRuns": 100
+      }
+    },
+    {
+      "id": "energy_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_SpecialMoves.java_handlePromotion_e85268bf",
+      "filePath": "SpecialMoves.java",
+      "line": 0,
+      "agent": "energy",
+      "category": "energy",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "High energy footprint detected in handlePromotion()",
+      "explanation": "energyScore=0.459 | median=5.227ms | loops=0 | nesting=1",
+      "recommendation": "Reduce nested loops and repeated heavy operations in hot paths.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 100,
+        "energyScore": 0.45851327558761745,
+        "executionTimeMs": 5.227,
+        "loopCount": 0,
+        "nestingDepth": 1,
+        "cyclomatic": 1,
+        "benchmarkRuns": 100
+      }
+    },
+    {
+      "id": "energy_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_Test.java_validateRookMove_84433774",
+      "filePath": "Test.java",
+      "line": 0,
+      "agent": "energy",
+      "category": "energy",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "High energy footprint detected in validateRookMove()",
+      "explanation": "energyScore=0.451 | median=4.715ms | loops=0 | nesting=1",
+      "recommendation": "Reduce nested loops and repeated heavy operations in hot paths.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 100,
+        "energyScore": 0.4510768172476506,
+        "executionTimeMs": 4.715,
+        "loopCount": 0,
+        "nestingDepth": 1,
+        "cyclomatic": 1,
+        "benchmarkRuns": 100
+      }
+    },
+    {
+      "id": "energy_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_SpecialMoves.java_handleCastling_a82661dc",
+      "filePath": "SpecialMoves.java",
+      "line": 0,
+      "agent": "energy",
+      "category": "energy",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "High energy footprint detected in handleCastling()",
+      "explanation": "energyScore=0.443 | median=4.228ms | loops=0 | nesting=1",
+      "recommendation": "Reduce nested loops and repeated heavy operations in hot paths.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 100,
+        "energyScore": 0.44335736540150394,
+        "executionTimeMs": 4.228,
+        "loopCount": 0,
+        "nestingDepth": 1,
+        "cyclomatic": 1,
+        "benchmarkRuns": 100
+      }
+    },
+    {
+      "id": "energy_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ChessGameEngine.java_handlePromotion_aed20c49",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "energy",
+      "category": "energy",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "High energy footprint detected in handlePromotion()",
+      "explanation": "energyScore=0.440 | median=4.002ms | loops=0 | nesting=1",
+      "recommendation": "Reduce nested loops and repeated heavy operations in hot paths.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 100,
+        "energyScore": 0.43952726275128806,
+        "executionTimeMs": 4.002,
+        "loopCount": 0,
+        "nestingDepth": 1,
+        "cyclomatic": 1,
+        "benchmarkRuns": 100
+      }
+    },
+    {
+      "id": "energy_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ChessGameEngine.java_handleSpecialMoves_16c281fb",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "energy",
+      "category": "energy",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "High energy footprint detected in handleSpecialMoves()",
+      "explanation": "energyScore=0.437 | median=3.866ms | loops=0 | nesting=1",
+      "recommendation": "Reduce nested loops and repeated heavy operations in hot paths.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 100,
+        "energyScore": 0.43713810840582684,
+        "executionTimeMs": 3.866,
+        "loopCount": 0,
+        "nestingDepth": 1,
+        "cyclomatic": 1,
+        "benchmarkRuns": 100
+      }
+    },
+    {
+      "id": "energy_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_Test.java_createPieces_5b041076",
+      "filePath": "Test.java",
+      "line": 0,
+      "agent": "energy",
+      "category": "energy",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "High energy footprint detected in createPieces()",
+      "explanation": "energyScore=0.424 | median=3.191ms | loops=0 | nesting=1",
+      "recommendation": "Reduce nested loops and repeated heavy operations in hot paths.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 100,
+        "energyScore": 0.42419518525801664,
+        "executionTimeMs": 3.191,
+        "loopCount": 0,
+        "nestingDepth": 1,
+        "cyclomatic": 1,
+        "benchmarkRuns": 100
+      }
+    },
+    {
+      "id": "energy_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_ChessGameEngine.java_validatePieceMove_2aed95c3",
+      "filePath": "ChessGameEngine.java",
+      "line": 0,
+      "agent": "energy",
+      "category": "energy",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "High energy footprint detected in validatePieceMove()",
+      "explanation": "energyScore=0.409 | median=2.537ms | loops=0 | nesting=1",
+      "recommendation": "Reduce nested loops and repeated heavy operations in hot paths.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 100,
+        "energyScore": 0.40949043741011326,
+        "executionTimeMs": 2.537,
+        "loopCount": 0,
+        "nestingDepth": 1,
+        "cyclomatic": 1,
+        "benchmarkRuns": 100
+      }
+    },
+    {
+      "id": "energy_8e7c2f14d53ab7433fa12ee7bddd140b_extracted_UserServices.java_addUsr_ad322f72",
+      "filePath": "UserServices.java",
+      "line": 0,
+      "agent": "energy",
+      "category": "energy",
+      "severity": "low",
+      "confidence": 0.9,
+      "description": "High energy footprint detected in addUsr()",
+      "explanation": "energyScore=0.406 | median=2.407ms | loops=0 | nesting=1",
+      "recommendation": "Reduce nested loops and repeated heavy operations in hot paths.",
+      "fix": {
+        "type": "suggestion",
+        "autoApply": false
+      },
+      "context": {
+        "projectId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+        "frequency": 100,
+        "energyScore": 0.40624486482687383,
+        "executionTimeMs": 2.407,
+        "loopCount": 0,
+        "nestingDepth": 1,
+        "cyclomatic": 1,
+        "benchmarkRuns": 100
+      }
+    }
+  ],
+  "scanId": "8e7c2f14d53ab7433fa12ee7bddd140b_extracted",
+  "timestamp": "2026-04-10T11:32:05.173Z",
+  "storedAt": "2026-04-10T11:32:05.174Z"
+}

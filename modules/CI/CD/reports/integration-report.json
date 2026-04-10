@@ -1,0 +1,160 @@
+{
+  "generatedAt": "2026-04-10T11:56:38.231Z",
+  "jobPath": "/Users/sajad-ahmed/GreenCode-AI/modules/gateway/output/1c271e5ac2ff29524d0c4a497a77c0d9_extracted",
+  "summary": {
+    "totalIssues": 5,
+    "bySeverity": {
+      "high": 0,
+      "medium": 3,
+      "low": 2
+    },
+    "bySource": {
+      "ast": 1,
+      "energy": 4
+    }
+  },
+  "issues": [
+    {
+      "id": "ast_cond_Calculator_checkValue_4",
+      "source": "ast",
+      "filePath": "Calculator.java",
+      "methodName": "checkValue",
+      "line": 0,
+      "severity": "low",
+      "issueType": "COMPLEX_CONDITIONAL",
+      "description": "Complex conditionals in method \"checkValue\"",
+      "explanation": "Multiple conditional statements detected.",
+      "fixedCode": "Refactor conditionals into smaller functions",
+      "recommendation": "Extract predicate methods for readability and maintainability.",
+      "confidence": 0.7,
+      "tags": [
+        "ast",
+        "maintainability"
+      ]
+    },
+    {
+      "id": "energy_Calculator_add_0",
+      "source": "energy",
+      "filePath": "Calculator.java",
+      "methodName": "add",
+      "line": 0,
+      "severity": "medium",
+      "issueType": "ENERGY_HOTSPOT",
+      "description": "Elevated energy usage in Calculator.add()",
+      "explanation": "Energy score 0.558 (loops=0, nesting=1)",
+      "recommendation": "Optimize loops/conditions and reduce repeated heavy operations.",
+      "fixedCode": "",
+      "confidence": 0.9,
+      "energyScore": 0.5576149500549854,
+      "tags": [
+        "energy",
+        "runtime"
+      ]
+    },
+    {
+      "id": "energy_Calculator_sumArray_1",
+      "source": "energy",
+      "filePath": "Calculator.java",
+      "methodName": "sumArray",
+      "line": 0,
+      "severity": "medium",
+      "issueType": "ENERGY_HOTSPOT",
+      "description": "Elevated energy usage in Calculator.sumArray()",
+      "explanation": "Energy score 0.527 (loops=1, nesting=1)",
+      "recommendation": "Optimize loops/conditions and reduce repeated heavy operations.",
+      "fixedCode": "",
+      "confidence": 0.9,
+      "energyScore": 0.5272268255608623,
+      "tags": [
+        "energy",
+        "runtime"
+      ]
+    },
+    {
+      "id": "energy_Calculator_checkValue_2",
+      "source": "energy",
+      "filePath": "Calculator.java",
+      "methodName": "checkValue",
+      "line": 0,
+      "severity": "medium",
+      "issueType": "ENERGY_HOTSPOT",
+      "description": "Elevated energy usage in Calculator.checkValue()",
+      "explanation": "Energy score 0.516 (loops=0, nesting=1)",
+      "recommendation": "Optimize loops/conditions and reduce repeated heavy operations.",
+      "fixedCode": "",
+      "confidence": 0.9,
+      "energyScore": 0.5163833551432876,
+      "tags": [
+        "energy",
+        "runtime"
+      ]
+    },
+    {
+      "id": "energy_Calculator_Calculator_3",
+      "source": "energy",
+      "filePath": "Calculator.java",
+      "methodName": "Calculator",
+      "line": 0,
+      "severity": "low",
+      "issueType": "ENERGY_HOTSPOT",
+      "description": "Elevated energy usage in Calculator.Calculator()",
+      "explanation": "Energy score 0.467 (loops=0, nesting=1)",
+      "recommendation": "Optimize loops/conditions and reduce repeated heavy operations.",
+      "fixedCode": "",
+      "confidence": 0.9,
+      "energyScore": 0.46685364330317397,
+      "tags": [
+        "energy",
+        "runtime"
+      ]
+    }
+  ],
+  "inlineSuggestions": [
+    {
+      "id": "ast_cond_Calculator_checkValue_4",
+      "filePath": "Calculator.java",
+      "line": 0,
+      "severity": "low",
+      "message": "Complex conditionals in method \"checkValue\"",
+      "replacement": "Refactor conditionals into smaller functions"
+    },
+    {
+      "id": "energy_Calculator_add_0",
+      "filePath": "Calculator.java",
+      "line": 0,
+      "severity": "medium",
+      "message": "Elevated energy usage in Calculator.add()",
+      "replacement": "Optimize loops/conditions and reduce repeated heavy operations."
+    },
+    {
+      "id": "energy_Calculator_sumArray_1",
+      "filePath": "Calculator.java",
+      "line": 0,
+      "severity": "medium",
+      "message": "Elevated energy usage in Calculator.sumArray()",
+      "replacement": "Optimize loops/conditions and reduce repeated heavy operations."
+    },
+    {
+      "id": "energy_Calculator_checkValue_2",
+      "filePath": "Calculator.java",
+      "line": 0,
+      "severity": "medium",
+      "message": "Elevated energy usage in Calculator.checkValue()",
+      "replacement": "Optimize loops/conditions and reduce repeated heavy operations."
+    },
+    {
+      "id": "energy_Calculator_Calculator_3",
+      "filePath": "Calculator.java",
+      "line": 0,
+      "severity": "low",
+      "message": "Elevated energy usage in Calculator.Calculator()",
+      "replacement": "Optimize loops/conditions and reduce repeated heavy operations."
+    }
+  ],
+  "detailed": {
+    "astMethodsScanned": 5,
+    "energyFindings": 4,
+    "refactorFixes": 0,
+    "agentSuggestions": 0
+  }
+}

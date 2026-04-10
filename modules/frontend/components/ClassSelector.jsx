@@ -13,12 +13,12 @@ const ClassSelector = ({ allReports, selectedClass, onClassSelect }) => {
   }, [allReports]);
 
   return (
-    <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-200 mb-6">
-      <div className="flex items-center justify-between mb-4">
-        <h2 className="text-xl font-semibold text-gray-800">Select Class to Analyze</h2>
+    <div className="bg-white rounded-2xl p-4 sm:p-6 shadow-lg border border-gray-200 mb-6">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-4">
+        <h2 className="text-lg sm:text-xl font-semibold text-gray-800">Select Class to Analyze</h2>
         <span className="text-sm text-gray-600">{uniqueClasses.length} classes available</span>
       </div>
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
         {uniqueClasses.map((report, index) => (
           <button
             key={report.className || `class-${index}`}

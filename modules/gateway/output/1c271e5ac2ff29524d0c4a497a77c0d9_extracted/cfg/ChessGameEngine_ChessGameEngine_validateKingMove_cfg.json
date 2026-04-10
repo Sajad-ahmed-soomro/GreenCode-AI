@@ -1,0 +1,25 @@
+{
+  "methodName": "validateKingMove",
+  "nodes": [
+    {
+      "id": "a1b0c136-6085-4115-af41-b933982da71d",
+      "label": "Start",
+      "type": "start",
+      "next": [
+        "a322229e-9880-4ea3-ada7-ce0ead555736"
+      ]
+    },
+    {
+      "id": "a322229e-9880-4ea3-ada7-ce0ead555736",
+      "label": "End",
+      "type": "end",
+      "next": []
+    }
+  ],
+  "edges": [
+    [
+      "a1b0c136-6085-4115-af41-b933982da71d",
+      "a322229e-9880-4ea3-ada7-ce0ead555736"
+    ]
+  ]
+}

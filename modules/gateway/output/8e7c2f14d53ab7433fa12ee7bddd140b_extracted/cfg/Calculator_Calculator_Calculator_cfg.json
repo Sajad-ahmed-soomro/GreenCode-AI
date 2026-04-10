@@ -1,0 +1,25 @@
+{
+  "methodName": "Calculator",
+  "nodes": [
+    {
+      "id": "bbebb932-d5c3-4b98-80ab-2c86bf823606",
+      "label": "Start",
+      "type": "start",
+      "next": [
+        "8daec835-e60b-45c2-a503-8f077870294f"
+      ]
+    },
+    {
+      "id": "8daec835-e60b-45c2-a503-8f077870294f",
+      "label": "End",
+      "type": "end",
+      "next": []
+    }
+  ],
+  "edges": [
+    [
+      "bbebb932-d5c3-4b98-80ab-2c86bf823606",
+      "8daec835-e60b-45c2-a503-8f077870294f"
+    ]
+  ]
+}

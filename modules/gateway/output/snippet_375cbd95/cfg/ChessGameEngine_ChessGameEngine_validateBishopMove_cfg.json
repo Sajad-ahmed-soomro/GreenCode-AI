@@ -1,0 +1,25 @@
+{
+  "methodName": "validateBishopMove",
+  "nodes": [
+    {
+      "id": "21eed2f0-8a9f-48de-b320-c3e5e939bdff",
+      "label": "Start",
+      "type": "start",
+      "next": [
+        "b2becde9-89c4-482d-b8ef-f591eac60919"
+      ]
+    },
+    {
+      "id": "b2becde9-89c4-482d-b8ef-f591eac60919",
+      "label": "End",
+      "type": "end",
+      "next": []
+    }
+  ],
+  "edges": [
+    [
+      "21eed2f0-8a9f-48de-b320-c3e5e939bdff",
+      "b2becde9-89c4-482d-b8ef-f591eac60919"
+    ]
+  ]
+}

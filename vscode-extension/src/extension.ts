@@ -7,6 +7,7 @@ declare const fetch: (input: string, init?: { method?: string; headers?: Record<
 const DIAGNOSTIC_COLLECTION = 'greencode';
 let diagnosticCollection: vscode.DiagnosticCollection;
 let statusBarItem: vscode.StatusBarItem;
+let energySummaryStatusBarItem: vscode.StatusBarItem;
 let highCriticalDecoration: vscode.TextEditorDecorationType;
 let mediumCriticalDecoration: vscode.TextEditorDecorationType;
 let lowCriticalDecoration: vscode.TextEditorDecorationType;
@@ -14,6 +15,7 @@ let highEnergyDecoration: vscode.TextEditorDecorationType;
 let classSummaryDecoration: vscode.TextEditorDecorationType;
 let codeLensEmitter: vscode.EventEmitter<void>;
 let lastAnalysis: { issues: any[]; patches: any[] } = { issues: [], patches: [] };
+const analysesByFile = new Map<string, { issues: UnifiedIssue[]; patches: any[] }>();
 
 type UnifiedIssue = {
   id: string;
@@ -28,6 +30,12 @@ type UnifiedIssue = {
   recommendation?: string;
   context?: {
     frequency?: number;
+    energyScore?: number;
+    executionTimeMs?: number;
+    loopCount?: number;
+    nestingDepth?: number;
+    cyclomatic?: number;
+    benchmarkRuns?: number;
   };
 };
 
@@ -35,6 +43,7 @@ export function activate(context: vscode.ExtensionContext) {
   console.log('GreenCode AI extension activated');
   diagnosticCollection = vscode.languages.createDiagnosticCollection(DIAGNOSTIC_COLLECTION);
   statusBarItem = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Right, 100);
+  energySummaryStatusBarItem = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Left, 120);
   highCriticalDecoration = vscode.window.createTextEditorDecorationType({
     isWholeLine: true,
     backgroundColor: 'rgba(255, 76, 76, 0.16)',
@@ -71,7 +80,7 @@ export function activate(context: vscode.ExtensionContext) {
       fontStyle: 'italic'
     }
   });
-  context.subscriptions.push(diagnosticCollection, statusBarItem);
+  context.subscriptions.push(diagnosticCollection, statusBarItem, energySummaryStatusBarItem);
   context.subscriptions.push(
     highCriticalDecoration,
     mediumCriticalDecoration,
@@ -118,6 +127,32 @@ export function activate(context: vscode.ExtensionContext) {
     if (config().get<boolean>('enabled') !== false) {
       await runAnalysisForDocument(doc, gatewayUrl());
     }
+  });
+
+  const refreshDecorationsForActiveEditor = () => {
+    const editor = vscode.window.activeTextEditor;
+    if (!editor || editor.document.languageId !== 'java') {
+      energySummaryStatusBarItem.hide();
+      return;
+    }
+    const fileName = path.basename(editor.document.uri.fsPath);
+    const fileAnalysis = analysesByFile.get(fileName);
+    const issues = fileAnalysis?.issues || [];
+    applyCriticalityDecorations(editor.document, issues);
+    applyClassSummaryDecorations(editor.document, issues);
+    updatePinnedEnergySummary(fileName, issues);
+  };
+
+  const onEditorChanged = vscode.window.onDidChangeActiveTextEditor((editor) => {
+    if (!editor || editor.document.languageId !== 'java') return;
+    refreshDecorationsForActiveEditor();
+  });
+
+  const onVisibleEditorsChanged = vscode.window.onDidChangeVisibleTextEditors((editors) => {
+    const active = vscode.window.activeTextEditor;
+    if (!active || active.document.languageId !== 'java') return;
+    if (!editors.some((e) => e.document.uri.toString() === active.document.uri.toString())) return;
+    refreshDecorationsForActiveEditor();
   });
 
   const codeActionProvider = vscode.languages.registerCodeActionsProvider(
@@ -178,7 +213,7 @@ export function activate(context: vscode.ExtensionContext) {
     async provideCodeLenses(document: vscode.TextDocument): Promise<vscode.CodeLens[]> {
       if (document.languageId !== 'java') return [];
       const filePath = path.basename(document.uri.fsPath);
-      const fileIssues = (lastAnalysis.issues as UnifiedIssue[]).filter((i) => i.filePath === filePath);
+      const fileIssues = analysesByFile.get(filePath)?.issues || [];
       if (fileIssues.length === 0) return [];
 
       const symbols = await vscode.commands.executeCommand<vscode.DocumentSymbol[]>(
@@ -197,6 +232,8 @@ export function activate(context: vscode.ExtensionContext) {
 
       for (const cls of classSymbols) {
         const issuesInClass = fileIssues.filter((issue) => {
+          const isEnergyIssue = issue.category === 'energy' || issue.agent === 'energy';
+          if (!isEnergyIssue) return false;
           const line = Math.max(0, issue.line || 0);
           return line >= cls.range.start.line && line <= cls.range.end.line;
         });
@@ -222,6 +259,8 @@ export function activate(context: vscode.ExtensionContext) {
 
       for (const fn of functionSymbols) {
         const issuesInFn = fileIssues.filter((issue) => {
+          const isEnergyIssue = issue.category === 'energy' || issue.agent === 'energy';
+          if (!isEnergyIssue) return false;
           const line = Math.max(0, issue.line || 0);
           return line >= fn.range.start.line && line <= fn.range.end.line;
         });
@@ -260,6 +299,8 @@ export function activate(context: vscode.ExtensionContext) {
     applyFixCommand,
     showEnergyBreakdownCommand,
     analyzeOnSave,
+    onEditorChanged,
+    onVisibleEditorsChanged,
     codeActionProvider,
     hoverProvider,
     codeLensRegistration
@@ -267,6 +308,9 @@ export function activate(context: vscode.ExtensionContext) {
   statusBarItem.text = '$(beaker) GreenCode';
   statusBarItem.tooltip = 'GreenCode AI – Run analysis from Command Palette';
   statusBarItem.show();
+  energySummaryStatusBarItem.text = '$(zap) GreenCode Energy: --';
+  energySummaryStatusBarItem.tooltip = 'Run analysis to pin per-file energy summary';
+  energySummaryStatusBarItem.show();
 }
 
 async function runAnalysisForDocument(document: vscode.TextDocument, gatewayUrl: string) {
@@ -287,6 +331,7 @@ async function runAnalysisForDocument(document: vscode.TextDocument, gatewayUrl:
     const issues: UnifiedIssue[] = (data.unifiedIssues || []) as UnifiedIssue[];
     const patches: any[] = data.patches || [];
     lastAnalysis = { issues, patches };
+    analysesByFile.set(fileName, { issues, patches });
     codeLensEmitter.fire();
 
     const severityThreshold = vscode.workspace.getConfiguration('greencode').get<string>('severityThreshold') || 'medium';
@@ -318,8 +363,9 @@ async function runAnalysisForDocument(document: vscode.TextDocument, gatewayUrl:
         : document.uri;
       diagnosticCollection.set(uri, diags);
     }
-    applyCriticalityDecorations(document, issues);
-    applyClassSummaryDecorations(document, issues);
+    const issuesForDoc = issues.filter((i) => (i.filePath || fileName) === fileName);
+    applyCriticalityDecorations(document, issuesForDoc);
+    applyClassSummaryDecorations(document, issuesForDoc);
     statusBarItem.text = `$(check) GreenCode: ${issues.length} issues`;
     const totalEstimate = issues.reduce(
       (acc, issue) => {
@@ -331,6 +377,7 @@ async function runAnalysisForDocument(document: vscode.TextDocument, gatewayUrl:
       { mWh: 0, co2: 0 }
     );
     statusBarItem.tooltip = `${issues.length} issues, ${patches.length} fixes, ~${totalEstimate.mWh.toFixed(1)} mWh/1k, ~${totalEstimate.co2.toFixed(1)} mg CO2e`;
+    updatePinnedEnergySummary(fileName, issuesForDoc);
     vscode.window.showInformationMessage(`GreenCode AI: ${issues.length} issues found. Check Problems panel.`);
   } catch (error: any) {
     statusBarItem.text = '$(warning) GreenCode';
@@ -396,7 +443,39 @@ export function deactivate() {
   }
   diagnosticCollection?.dispose();
   statusBarItem?.dispose();
+  energySummaryStatusBarItem?.dispose();
   codeLensEmitter?.dispose();
+}
+
+function updatePinnedEnergySummary(fileName: string, issues: UnifiedIssue[]): void {
+  const energyIssues = issues.filter((i) => i.category === 'energy' || i.agent === 'energy');
+  if (energyIssues.length === 0) {
+    energySummaryStatusBarItem.text = `$(zap) ${fileName}: no energy insights`;
+    energySummaryStatusBarItem.tooltip = `No energy-specific issues found for ${fileName}`;
+    energySummaryStatusBarItem.color = new vscode.ThemeColor('descriptionForeground');
+    energySummaryStatusBarItem.show();
+    return;
+  }
+
+  const totals = energyIssues.reduce(
+    (acc, issue) => {
+      const e = estimateEnergyImpact(issue);
+      acc.mWh += e.mWhPer1kRuns;
+      acc.co2 += e.co2eMg;
+      return acc;
+    },
+    { mWh: 0, co2: 0 }
+  );
+  const highCount = energyIssues.filter((i) => i.severity === 'high').length;
+  const severityIcon = highCount > 0 ? '$(flame)' : '$(zap)';
+  energySummaryStatusBarItem.text =
+    `${severityIcon} ${fileName}: ${totals.mWh.toFixed(1)} mWh/1k · ${totals.co2.toFixed(1)} mg`;
+  energySummaryStatusBarItem.tooltip =
+    `${energyIssues.length} energy insights (${highCount} high). This summary stays visible while scrolling.`;
+  energySummaryStatusBarItem.color = highCount > 0
+    ? new vscode.ThemeColor('statusBarItem.warningForeground')
+    : new vscode.ThemeColor('statusBarItem.prominentForeground');
+  energySummaryStatusBarItem.show();
 }
 
 function getSeverityIcon(severity?: string): string {
@@ -406,6 +485,10 @@ function getSeverityIcon(severity?: string): string {
 }
 
 function buildEnergyInterpretation(issue: UnifiedIssue): string {
+  const isEnergyIssue = issue.category === 'energy' || issue.agent === 'energy';
+  if (!isEnergyIssue) {
+    return 'Non-energy insight. Energy estimate hidden to keep output minimal.';
+  }
   const estimate = estimateEnergyImpact(issue);
   if (issue.severity === 'high') {
     return `Very high energy impact zone. Estimated ${estimate.mWhPer1kRuns} mWh per 1k runs (~${estimate.co2eMg} mg CO2e). Battery drain risk is high on repeated execution.`;
@@ -419,25 +502,28 @@ function buildEnergyInterpretation(issue: UnifiedIssue): string {
 function applyCriticalityDecorations(document: vscode.TextDocument, issues: UnifiedIssue[]): void {
   const editor = vscode.window.visibleTextEditors.find((e) => e.document.uri.toString() === document.uri.toString());
   if (!editor) return;
+  const fileName = path.basename(document.uri.fsPath);
+  const fileIssues = issues.filter((i) => (i.filePath || fileName) === fileName);
 
   const highRanges: vscode.DecorationOptions[] = [];
   const mediumRanges: vscode.DecorationOptions[] = [];
   const lowRanges: vscode.DecorationOptions[] = [];
   const highEnergyRanges: vscode.DecorationOptions[] = [];
 
-  for (const issue of issues) {
+  for (const issue of fileIssues) {
     const issueLine = Math.max(0, issue.line || 0);
     if (issueLine >= document.lineCount) continue;
     const line = document.lineAt(issueLine);
     const range = new vscode.Range(issueLine, 0, issueLine, Math.max(1, line.text.length));
+    const isEnergyIssue = issue.category === 'energy' || issue.agent === 'energy';
     const hover = new vscode.MarkdownString(
       `**${getSeverityIcon(issue.severity)} ${issue.agent || 'agent'}**\n\n` +
       `${issue.description || 'Issue'}\n\n` +
-      `🔋 ${buildEnergyInterpretation(issue)}\n\n` +
+      `${isEnergyIssue ? `🔋 ${buildEnergyInterpretation(issue)}\n\n` : ''}` +
       `${issue.recommendation ? `✅ ${issue.recommendation}` : ''}`
     );
-    // Keep line labels compact; main calculations are at method/class level via CodeLens.
-    const energyInline = issue.severity === 'high' ? buildInlineEnergyLabel(issue) : '';
+    // Keep line labels compact and minimal.
+    const energyInline = issue.severity === 'high' && isEnergyIssue ? buildInlineEnergyLabel(issue) : '';
     const opt: vscode.DecorationOptions = {
       range,
       hoverMessage: hover,
@@ -453,11 +539,10 @@ function applyCriticalityDecorations(document: vscode.TextDocument, issues: Unif
         : undefined
     };
 
+    // Minimal highlighting: only high-severity ranges.
     if (issue.severity === 'high') highRanges.push(opt);
-    else if (issue.severity === 'medium') mediumRanges.push(opt);
-    else lowRanges.push(opt);
 
-    if ((issue.category === 'energy' || issue.agent === 'energy' || issue.severity === 'high') && issue.severity === 'high') {
+    if (isEnergyIssue && issue.severity === 'high') {
       highEnergyRanges.push(opt);
     }
   }
@@ -471,6 +556,8 @@ function applyCriticalityDecorations(document: vscode.TextDocument, issues: Unif
 function applyClassSummaryDecorations(document: vscode.TextDocument, issues: UnifiedIssue[]): void {
   const editor = vscode.window.visibleTextEditors.find((e) => e.document.uri.toString() === document.uri.toString());
   if (!editor) return;
+  const fileName = path.basename(document.uri.fsPath);
+  const fileIssues = issues.filter((i) => (i.filePath || fileName) === fileName);
 
   const classRegex = /^\s*(public|private|protected)?\s*(abstract|final)?\s*class\s+([A-Za-z_]\w*)/;
   const classLines: Array<{ line: number; name: string }> = [];
@@ -488,7 +575,9 @@ function applyClassSummaryDecorations(document: vscode.TextDocument, issues: Uni
   for (let idx = 0; idx < classLines.length; idx++) {
     const start = classLines[idx].line;
     const end = idx + 1 < classLines.length ? classLines[idx + 1].line - 1 : document.lineCount - 1;
-    const issuesInClass = issues.filter((issue) => {
+    const issuesInClass = fileIssues.filter((issue) => {
+      const isEnergyIssue = issue.category === 'energy' || issue.agent === 'energy';
+      if (!isEnergyIssue) return false;
       const line = Math.max(0, issue.line || 0);
       return line >= start && line <= end;
     });
@@ -531,6 +620,27 @@ function flattenSymbols(symbols: vscode.DocumentSymbol[]): vscode.DocumentSymbol
 function estimateEnergyImpact(issue: UnifiedIssue): { mWhPer1kRuns: number; co2eMg: number } {
   const confidence = Math.max(0.2, Math.min(1, issue.confidence ?? 0.7));
   const frequency = Math.max(1, issue.context?.frequency ?? 1);
+
+  if (issue.agent === 'energy' || issue.category === 'energy') {
+    const energyScore = issue.context?.energyScore;
+    if (typeof energyScore === 'number' && Number.isFinite(energyScore)) {
+      const executionTimeMs = Math.max(0, issue.context?.executionTimeMs ?? 0);
+      const loopCount = Math.max(0, issue.context?.loopCount ?? 0);
+      const nestingDepth = Math.max(0, issue.context?.nestingDepth ?? 0);
+      const cyclomatic = Math.max(0, issue.context?.cyclomatic ?? 0);
+      const benchRuns = Math.max(1, issue.context?.benchmarkRuns ?? frequency);
+
+      const workloadFactor = 1 + Math.log2(executionTimeMs + 1) * 0.07;
+      const complexityFactor = 1 + loopCount * 0.12 + nestingDepth * 0.08 + cyclomatic * 0.03;
+      const runFactor = Math.log2(benchRuns + 1);
+      const mWhPer1kRuns = Math.round(
+        Math.max(0.1, energyScore * 18 * confidence * workloadFactor * complexityFactor * runFactor) * 10
+      ) / 10;
+      const co2eMg = Math.round(mWhPer1kRuns * 0.4 * 10) / 10;
+      return { mWhPer1kRuns, co2eMg };
+    }
+  }
+
   const severityBase = issue.severity === 'high' ? 16 : issue.severity === 'medium' ? 8 : 3;
   const mWhPer1kRuns = Math.round(severityBase * confidence * Math.log2(frequency + 1) * 10) / 10;
   // Lightweight approximation for visibility in-editor: 1 mWh ~ 0.4 mg CO2e (workload dependent).

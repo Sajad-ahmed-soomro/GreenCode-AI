@@ -23,6 +23,10 @@ const EnergyAnalyzer = () => {
   const [statistics, setStatistics] = useState(null);
   const [topConsumers, setTopConsumers] = useState([]);
   const [debugMode, setDebugMode] = useState(false);
+  const [comparisonData, setComparisonData] = useState(null);
+  const [comparisonOpen, setComparisonOpen] = useState(false);
+  const [comparisonLoading, setComparisonLoading] = useState(false);
+  const [comparisonError, setComparisonError] = useState(null);
 
   useEffect(() => {
     console.log('API Base URL:', API_BASE_URL);
@@ -158,6 +162,25 @@ const EnergyAnalyzer = () => {
     }
   };
 
+  const fetchImpactComparison = async () => {
+    try {
+      setComparisonLoading(true);
+      setComparisonError(null);
+      const response = await fetch(`${API_BASE_URL}/api/energy/impact-comparison?monthlyExecutions=100000&costPerKwhUsd=0.12&co2KgPerKwh=0.475&baselineOverheadRatio=0.3`);
+      const result = await response.json();
+      if (!result.success) {
+        throw new Error(result.error || 'Failed to load comparison');
+      }
+      setComparisonData(result);
+      setComparisonOpen(true);
+    } catch (err) {
+      setComparisonError(err.message || 'Failed to load comparison');
+      setComparisonOpen(true);
+    } finally {
+      setComparisonLoading(false);
+    }
+  };
+
   // Update activeMethodsData calculation with normalization
   const activeMethodsData = useMemo(() => {
     if (!data?.reports) return [];
@@ -206,14 +229,173 @@ const EnergyAnalyzer = () => {
     };
   }, [data, activeMethodsData]);
 
+  const comparisonRows = useMemo(() => {
+    const apiRows = comparisonData?.fileComparisons;
+    if (Array.isArray(apiRows) && apiRows.length > 0) return apiRows;
+    if (!comparisonData || !Array.isArray(allReports) || allReports.length === 0) return [];
+
+    const assumptions = comparisonData.assumptions || {};
+    const monthlyExecutions = Number(assumptions.monthlyExecutions || 100000);
+    const costPerKwhUsd = Number(assumptions.costPerKwhUsd || 0.12);
+    const co2KgPerKwh = Number(assumptions.co2KgPerKwh || 0.475);
+    const baselineOverheadRatio = Number(assumptions.baselineOverheadRatio || 0.3);
+
+    const totalMethods = Math.max(
+      1,
+      allReports.reduce((sum, r) => sum + Number(r.totalMethods || 0), 0)
+    );
+
+    const rawRows = allReports
+      .map((report) => {
+        const methods = Math.max(1, Number(report.totalMethods || 1));
+        const share = methods / totalMethods;
+        const classExecutions = Math.max(1, monthlyExecutions * share);
+        const avgEnergy = Number(report.statistics?.avgEnergy || 0);
+        const postKwhPerRun = Math.max(0.000001, avgEnergy * 0.00002);
+        const highEnergyDensity = Math.min(1, Number(report.statistics?.highEnergyMethods || 0) / methods);
+        const loopDensity = Math.min(1, Number(report.statistics?.methodsWithLoops || 0) / methods);
+        const fileOverheadRatio = Math.max(
+          0.08,
+          baselineOverheadRatio + (avgEnergy * 0.18) + (highEnergyDensity * 0.2) + (loopDensity * 0.12)
+        );
+        const baseKwhPerRun = postKwhPerRun * (1 + fileOverheadRatio);
+
+        const beforeMonthlyKwh = baseKwhPerRun * classExecutions;
+        const afterMonthlyKwh = postKwhPerRun * classExecutions;
+        const beforeCost = beforeMonthlyKwh * costPerKwhUsd;
+        const afterCost = afterMonthlyKwh * costPerKwhUsd;
+        const beforeCo2 = beforeMonthlyKwh * co2KgPerKwh;
+        const afterCo2 = afterMonthlyKwh * co2KgPerKwh;
+        const savedKwh = beforeMonthlyKwh - afterMonthlyKwh;
+        const savedCost = beforeCost - afterCost;
+        const savedCo2 = beforeCo2 - afterCo2;
+
+        const className = report.className || (report.fileName ? report.fileName.replace('-energy-report.json', '') : 'Unknown');
+        return {
+          file: `${className}.java`,
+          methods,
+          before: { monthlyCostUsd: beforeCost },
+          after: { monthlyCostUsd: afterCost },
+          savings: {
+            costUsd: savedCost,
+            kwh: savedKwh,
+            co2Kg: savedCo2,
+            efficiencyGainPercent: beforeMonthlyKwh > 0 ? (savedKwh / beforeMonthlyKwh) * 100 : 0
+          }
+        };
+      });
+
+    // Keep only one latest/strongest row per file.
+    const deduped = Array.from(
+      rawRows.reduce((map, row) => {
+        const prev = map.get(row.file);
+        if (!prev || row.savings.costUsd >= prev.savings.costUsd) map.set(row.file, row);
+        return map;
+      }, new Map()).values()
+    );
+    return deduped.sort((a, b) => b.savings.costUsd - a.savings.costUsd);
+  }, [comparisonData, allReports]);
+
   if (loading) return <LoadingState />;
   if (error) return <ErrorState error={error} onRetry={fetchAllReports} />;
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50">
-      <Navigation statistics={statistics} onRefresh={fetchAllReports} />
+      <Navigation
+        statistics={statistics}
+        onRefresh={fetchAllReports}
+        onShowComparison={fetchImpactComparison}
+      />
       
-      <div className="max-w-7xl mx-auto p-6">
+      <div className="max-w-7xl mx-auto p-4 sm:p-6">
+        {comparisonOpen && (
+          <div className="mb-6 bg-white rounded-2xl shadow-lg border border-gray-200 p-4 sm:p-6">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-4">
+              <h2 className="text-lg sm:text-xl font-semibold text-gray-800">Before vs After Module Impact</h2>
+              <button
+                onClick={() => setComparisonOpen(false)}
+                className="text-sm px-3 py-1 rounded-md bg-gray-100 hover:bg-gray-200"
+              >
+                Close
+              </button>
+            </div>
+            {comparisonLoading && <p className="text-gray-600">Loading comparison...</p>}
+            {comparisonError && <p className="text-red-600">{comparisonError}</p>}
+            {!comparisonLoading && comparisonData && (
+              <div className="space-y-4">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  <div className="p-4 rounded-xl border bg-red-50 border-red-200">
+                    <p className="text-sm text-red-700">Before Analysis (Monthly Cost)</p>
+                    <p className="text-2xl font-bold text-red-800">${comparisonData.before.monthlyCostUsd.toFixed(2)}</p>
+                    <p className="text-xs text-red-700">{comparisonData.before.monthlyKwh.toFixed(2)} kWh</p>
+                  </div>
+                  <div className="p-4 rounded-xl border bg-emerald-50 border-emerald-200">
+                    <p className="text-sm text-emerald-700">After Analysis (Monthly Cost)</p>
+                    <p className="text-2xl font-bold text-emerald-800">${comparisonData.after.monthlyCostUsd.toFixed(2)}</p>
+                    <p className="text-xs text-emerald-700">{comparisonData.after.monthlyKwh.toFixed(2)} kWh</p>
+                  </div>
+                  <div className="p-4 rounded-xl border bg-blue-50 border-blue-200">
+                    <p className="text-sm text-blue-700">Savings</p>
+                    <p className="text-2xl font-bold text-blue-800">${comparisonData.savings.costUsd.toFixed(2)}</p>
+                    <p className="text-xs text-blue-700">{comparisonData.savings.efficiencyGainPercent.toFixed(1)}% efficiency gain</p>
+                  </div>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="p-4 rounded-xl border bg-gray-50">
+                    <p className="font-semibold text-gray-800 mb-2">Monthly Impact</p>
+                    <p className="text-sm text-gray-700">Energy saved: {comparisonData.savings.kwh.toFixed(2)} kWh</p>
+                    <p className="text-sm text-gray-700">CO2 reduced: {comparisonData.savings.co2Kg.toFixed(2)} kg</p>
+                  </div>
+                  <div className="p-4 rounded-xl border bg-gray-50">
+                    <p className="font-semibold text-gray-800 mb-2">Annualized Impact</p>
+                    <p className="text-sm text-gray-700">Cost saved: ${comparisonData.annualized.costUsd.toFixed(2)}</p>
+                    <p className="text-sm text-gray-700">Energy saved: {comparisonData.annualized.kwh.toFixed(2)} kWh</p>
+                  </div>
+                </div>
+
+                <div className="mt-2">
+                  <h3 className="text-lg font-semibold text-gray-800 mb-3">Per-File Comparison</h3>
+                  <div className="overflow-x-auto border border-gray-200 rounded-xl">
+                    <table className="min-w-full text-sm">
+                      <thead className="bg-gray-50">
+                        <tr className="text-left text-gray-700">
+                          <th className="px-4 py-2">File</th>
+                          <th className="px-4 py-2">Methods</th>
+                          <th className="px-4 py-2">Before ($/mo)</th>
+                          <th className="px-4 py-2">After ($/mo)</th>
+                          <th className="px-4 py-2">Savings ($/mo)</th>
+                          <th className="px-4 py-2">Energy Saved (kWh/mo)</th>
+                          <th className="px-4 py-2">CO2 Saved (kg/mo)</th>
+                          <th className="px-4 py-2">Efficiency</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {comparisonRows.map((f, idx) => (
+                          <tr key={`${f.file}-${idx}`} className="border-t border-gray-100 hover:bg-emerald-50/40">
+                            <td className="px-4 py-2 font-medium text-gray-800">{f.file}</td>
+                            <td className="px-4 py-2 text-gray-700">{f.methods}</td>
+                            <td className="px-4 py-2 text-red-700">${f.before.monthlyCostUsd.toFixed(3)}</td>
+                            <td className="px-4 py-2 text-emerald-700">${f.after.monthlyCostUsd.toFixed(3)}</td>
+                            <td className="px-4 py-2 text-blue-700 font-semibold">${f.savings.costUsd.toFixed(3)}</td>
+                            <td className="px-4 py-2 text-gray-700">{f.savings.kwh.toFixed(3)}</td>
+                            <td className="px-4 py-2 text-gray-700">{f.savings.co2Kg.toFixed(3)}</td>
+                            <td className="px-4 py-2 text-gray-700">{f.savings.efficiencyGainPercent.toFixed(1)}%</td>
+                          </tr>
+                        ))}
+                        {comparisonRows.length === 0 && (
+                          <tr>
+                            <td className="px-4 py-3 text-gray-500" colSpan={8}>No per-file comparison available.</td>
+                          </tr>
+                        )}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+        )}
+
         <ClassSelector 
           allReports={allReports} 
           selectedClass={selectedClass} 
