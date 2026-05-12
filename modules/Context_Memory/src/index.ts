@@ -2,6 +2,7 @@ import fs from "fs";
 import path from "path";
 
 /* ---------- TYPES ---------- */
+// Context Memory Engine for GreenCode AI
 
 type Risk = "low" | "medium" | "high";
 

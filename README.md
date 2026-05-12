@@ -284,7 +284,7 @@ CI/CD Integration
 
 Dashboard Usage
 
-## 👥 Team
+## 👥 Team 
 
 **Sajad Ahmed**  
 **Saif-Ur-Rehman**  
@@ -301,7 +301,7 @@ GitHub Issues: Report Issues
 Documentation: Read Docs
 
 📚 References
-Pereira, R., et al. (2017). Energy Efficiency across Programming Languages
+Pereira,  R., et al. (2017). Energy Efficiency across Programming Languages
 
 Hindle, A. (2015). Green Mining: A Methodology of Mining Software Repositories
 
