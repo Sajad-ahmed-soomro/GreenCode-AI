@@ -41,7 +41,7 @@ const SEV_PRIORITY = { high: 0, medium: 1, low: 2 };
 
 function prioritize(issues) {
   return [...issues].sort((a, b) => {
-    const sev = SEV_PRIORITY[a.severity] ?? 2 - SEV_PRIORITY[b.severity] ?? 2;
+    const sev = (SEV_PRIORITY[a.severity] ?? 2) - (SEV_PRIORITY[b.severity] ?? 2);
     if (sev !== 0) return sev;
     const ap = AGENT_PRIORITY[a.agent] ?? 9;
     const bp = AGENT_PRIORITY[b.agent] ?? 9;
