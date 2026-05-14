@@ -358,8 +358,10 @@ export default class ComplianceAgent {
         const importMatch = lineText.match(/import\s+([\w.]+)(?:\s*;)?/);
         if (importMatch) {
           const importName = importMatch[1];
-          // Simple check: see if import is used in the code
-          const isUsed = code.includes(importName.split('.').pop() || '');
+          const importedSymbol = importName.split('.').pop() || '';
+          const restOfCode = lines.slice(lineNumber).join('\n');
+          const isUsed = restOfCode.includes(importedSymbol);
+
           if (!isUsed) {
             issues.push({
               line: lineNumber,
